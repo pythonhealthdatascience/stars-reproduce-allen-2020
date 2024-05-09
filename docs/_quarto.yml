@@ -1,18 +1,27 @@
 project:
   type: website
+  preview:
+    browser: true
 
 website:
   # Name of site in navbar
   title: "Reproducing Monks et al. 2016"
+  # Favicon image for site
+  favicon: "stars_logo_blue.png"
   # Settings for navbar across top of page
   navbar:
+    logo: "stars_logo_blue.png"
     # Left-aligned within navbar...
     left:
-      - about.qmd
+      - code_index.qmd
       - blog_index.qmd
-      #- href: notebooks.qmd
-      #  text: Notebooks
     # Right-aligned within navbar...
+    right:
+      - icon: github
+        href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+  page-footer:
+    left: |
+      This work forms part of work package 1 on the STARS project.
     right:
       - icon: github
         href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
