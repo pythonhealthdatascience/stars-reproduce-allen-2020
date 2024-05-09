@@ -1,0 +1,15 @@
+---
+title: "Post With Code"
+author: "Amy Heather"
+date: "2024-05-09"
+categories: [example, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+```{python}
+import random
+
+random.randint(0,9)
+```

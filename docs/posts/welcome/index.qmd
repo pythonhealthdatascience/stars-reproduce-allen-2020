@@ -1,0 +1,9 @@
+---
+title: "Example Post"
+author: "Amy Heather"
+date: "2024-05-09"
+categories: [analysis]
+image: "thumbnail.jpg"
+---
+
+This is an example post.

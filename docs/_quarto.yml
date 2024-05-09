@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  # Name of site in navbar
+  title: "Reproducing Monks et al. 2016"
+  # Settings for navbar across top of page
+  navbar:
+    # Left-aligned within navbar...
+    left:
+      - about.qmd
+      - blog_index.qmd
+      #- href: notebooks.qmd
+      #  text: Notebooks
+    # Right-aligned within navbar...
+    right:
+      - icon: github
+        href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
