@@ -1,10 +1,10 @@
 ---
 title: "Diary"
 listing:
-  contents: posts
+  contents: posts # All Quarto docs from 'posts' folder
   sort: "date desc"
-  type: default
-  categories: true
+  type: default # Can be 'default', 'table' or 'grid'
+  categories: true # Allows to sort by category
   sort-ui: false
   filter-ui: false
 page-layout: full

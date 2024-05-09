@@ -1,6 +1,8 @@
 ---
 authors:
   - name: Amy Heather
+    url: https://github.com/amyheather
+    orcid: 0000-0002-6596-3479
     affiliation: University of Exeter
 ---
 

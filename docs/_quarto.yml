@@ -13,7 +13,10 @@ website:
     logo: "stars_logo_blue.png"
     # Left-aligned within navbar...
     left:
-      - code_index.qmd
+      - text: Code
+        menu:
+          - example.ipynb
+          - ../simulation/example.ipynb
       - blog_index.qmd
     # Right-aligned within navbar...
     right:

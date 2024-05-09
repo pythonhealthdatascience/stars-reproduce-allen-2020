@@ -2,8 +2,23 @@
 title: "Day 1"
 author: "Amy Heather"
 date: "2024-05-09"
-categories: [analysis]
-image: "thumbnail.jpg"
+categories: [setup, reading]
 ---
 
 This is an example post.
+
+## 1100 - 1143 - Reading paper
+
+* 5 figures, 6 tables
+* Parameter A 123
+* Parameter B 456
+
+## 1145 - 1200 - Downloading materials
+
+Source: link to materials
+
+Saved to this repository.
+
+## 1200 - 1205 - Creating environment
+
+No environment file provided, so created based on packages used in scripts and versions provided in the paper.

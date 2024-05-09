@@ -1,4 +1,6 @@
-ipykernel
-pyyaml
-nbformat
-nbclient
+ipykernel==6.29.4
+pyyaml==6.0.1
+nbformat==5.10.4
+nbclient==0.10.0
+simpy==4.1.1
+pandas==2.2.2
