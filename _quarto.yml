@@ -7,17 +7,16 @@ website:
   # Name of site in navbar
   title: "Reproducing Monks et al. 2016"
   # Favicon image for site
-  favicon: "stars_logo_blue.png"
+  favicon: "docs/stars_logo_blue.png"
   # Settings for navbar across top of page
   navbar:
-    logo: "stars_logo_blue.png"
+    logo: "docs/stars_logo_blue.png"
     # Left-aligned within navbar...
     left:
       - text: Code
         menu:
-          - example.ipynb
-          - ../simulation/example.ipynb
-      - blog_index.qmd
+          - simulation/example.ipynb
+      - docs/blog_index.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
