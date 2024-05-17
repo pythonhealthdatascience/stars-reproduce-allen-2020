@@ -17,12 +17,16 @@ website:
         menu:
           - simulation/example.ipynb
       - docs/blog_index.qmd
+      - text: Checklist
+        href: docs/reproduction_checklist.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
         href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
   page-footer:
     left: |
+      [![](https://raw.githubusercontent.com/pythonhealthdatascience/stars-logo/main/stars_pointy_v2_text.png){fig-alt="STARS" width=300px}](https://github.com/pythonhealthdatascience)
+    center: |
       This work forms part of work package 1 on the STARS project.
     right:
       - icon: github
@@ -31,5 +35,5 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: docs/styles.css
     toc: true
