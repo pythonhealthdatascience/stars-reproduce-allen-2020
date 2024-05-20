@@ -17,8 +17,9 @@ website:
         menu:
           - simulation/example.ipynb
       - docs/blog_index.qmd
-      - text: Checklist
-        href: docs/reproduction_checklist.qmd
+      - text: Guidelines
+        menu:
+          - href: docs/badges.qmd
     # Right-aligned within navbar...
     right:
       - icon: github

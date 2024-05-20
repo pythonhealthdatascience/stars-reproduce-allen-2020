@@ -1,0 +1,103 @@
+---
+title: "Badges"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+<!--
+Template for evaluation of journal article against criteria of various reproducibility badges.
+
+To use this template:
+1. For each criteria in the Python cell, add a 0 if not met and 1 if it is met.
+2. Run the script (i.e. preview the Quarto book) - you will see that the code outputs a formatted list of criteria met, as well as the badges met.
+
+Although this script uses Python, it is applicable regardless of the language used by the study you are evaluating.
+-->
+
+```{python}
+import numpy as np
+import pandas as pd
+
+eval = {
+    # Code is stored in a permanent archive that is publicly and openly accessible
+    'archive': np.nan,
+    # It has a persistent identifier (e.g. DOI)
+    'id': np.nan,
+    # It has an open license
+    'license': np.nan,
+    # Complete set of materials shared (as would be needed to fully reproduce article)
+    'complete': np.nan,
+    # Metadata describes data/code sufficiently to enable reproduction (e.g. package versions)
+    'meta': np.nan,
+    # Manuscript has data availability statement
+    'statement': np.nan,
+    # Description
+    # etc. etc.
+}
+```
+
+TO DO: Change to full list of criteria
+
+TO DO: Change to full list of badges
+
+```{python}
+criteria = {
+    'archive': 'Code is stored in a permanent archive that is publicly and openly accessible',
+    'id': 'It has a persistent identifier (e.g. DOI)',
+    'license': 'It has an open license',
+    'complete': 'Complete set of materials shared (as would be needed to fully reproduce article)',
+    'meta': 'Metadata describes data/code sufficiently to enable reproduction (e.g. package versions)',
+    'statement': 'Manuscript has data availability statement'
+}
+
+badge_names = {
+    'open_niso': 'NISO "Open Research Objects"',
+    'open_acm': 'ACM "Artifacts Available"'
+}
+```
+
+```{python}
+# Example
+
+# Based on the criteria dictionary above, populate with 1 and 0
+eval = pd.Series({
+    'archive': 1,
+    'id': 1,
+    'license': 0,
+    'complete': 1,
+    'meta': 1,
+    'statement': 1
+    # etc. etc.
+})
+
+badges = {
+    'open_niso': ['archive', 'id', 'license', 'complete'],
+    'open_acm': ['archive', 'id']
+    # etc. etc.
+}
+
+# Identify which badges would be awarded based on criteria
+award = {}
+for badge in badges:
+    award[badge] = all([eval[key] == 1 for key in badges[badge]])
+```
+
+```{python}
+for key, value in eval.items(): 
+    if value == 1:
+        icon = '✅'
+    else:
+        icon = '⬜'
+    print(f'{icon} {criteria[key]}')
+```
+
+```{python}
+for key, value in award.items(): 
+    if value:
+        icon = '✅'
+    else:
+        icon = '⬜'
+    print(f'{icon} {badge_names[key]}')
+```
