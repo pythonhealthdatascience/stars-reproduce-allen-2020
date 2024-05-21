@@ -20,7 +20,6 @@ website:
       - text: Guidelines
         menu:
           - docs/badges.qmd
-          - docs/artefacts.qmd
           - docs/reporting.qmd
     # Right-aligned within navbar...
     right:
