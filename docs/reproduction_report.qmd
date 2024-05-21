@@ -1,0 +1,9 @@
+---
+title: "Computational reproducibility report"
+subtitle: "For Monks et al. 2016"
+abstract: >
+    This is a plain english summary for this reproduction report
+bibliography: references.bib
+---
+
+Plain english summary

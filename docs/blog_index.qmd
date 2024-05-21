@@ -1,5 +1,5 @@
 ---
-title: "Diary"
+title: "Logbook"
 listing:
   contents: posts # All Quarto docs from 'posts' folder
   sort: "date desc"

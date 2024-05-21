@@ -1,0 +1,6 @@
+---
+title: "Code"
+bibliography: references.bib
+---
+
+insert the code as copied into repository.

@@ -1,0 +1,10 @@
+---
+title: "Publication"
+bibliography: references.bib
+---
+
+embeds the article and supplementary
+
+(as they have been copied into repository)
+
+<iframe width="100%" height="800" src="monks_2016.pdf">

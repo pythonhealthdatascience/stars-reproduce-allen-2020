@@ -13,15 +13,23 @@ website:
     logo: "docs/stars_logo_blue.png"
     # Left-aligned within navbar...
     left:
-      - text: Code
+      - text: Original study
+        menu:
+          - docs/study_summary.qmd
+          - docs/study_publication.qmd
+          - docs/study_code.qmd
+      - text: Reproduction code
         menu:
           - simulation/example.ipynb
-      - docs/blog_index.qmd
-      - text: Guidelines
+      - text: Evaluation
         menu:
+          - docs/reproduction_success.qmd
           - docs/artefacts.qmd
           - docs/badges.qmd
           - docs/reporting.qmd
+      - docs/blog_index.qmd
+      - text: Report
+        href: docs/reproduction_report.qmd
     # Right-aligned within navbar...
     right:
       - icon: github

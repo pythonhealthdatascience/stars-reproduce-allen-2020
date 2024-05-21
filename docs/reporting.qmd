@@ -13,8 +13,6 @@ This page evaluates the extent to which Monks et al. 2016 meets the criteria fro
 
 <mark>if we apply this later down the line, what about if its not discrete-event?</mark>
 
-<mark>add citations</mark>
-
 ## STRESS-DES
 
 <mark>example fill in, not actual</mark>
