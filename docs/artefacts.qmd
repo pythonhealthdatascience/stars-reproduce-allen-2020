@@ -1,0 +1,47 @@
+---
+title: "Sharing research artefacts"
+bibliography: references.bib
+---
+
+<mark>there is considerable overlap between this and badges - do we want this?</mark>
+
+This page evaluates the extent to which Monks et al. 2016 meets the recommendations for the sharing of code and associated materials:
+
+* @monks_towards_2024 - STARS: Sharing Tools and Artefacts for Reusable Simulations in healthcare
+* <mark>add citation</mark> - Open Modeling Foundation (OMF) Minimum Reusability Standards
+
+## STARS
+
+| Component | Met by study? | Evidence/location |
+| - | - | - |
+| **Essential components** |
+| Open license | ✅ Fully |
+| Dependency management | 🟡 Partially |
+| Model created using free and open-source software (FOSS) | ❌ Not met |
+| Minimum documentation | ❔ Unclear |
+| Research artefact metadata: Open Researcher and Contributor ID (ORCID) and citation information |
+| Remote code repository |
+| Open science archive |
+| **Optional components** |
+| Enhanced documentation |
+| Documentation hosting |
+| Online coding environment |
+| Model interface |
+| Web app hosting |
+
+## OMF Minimum Reusability Standards
+
+| Requirement | Met by study? | Evidence/location |
+| - | - | - |
+| **Minimum reusability standards** |
+| Meet the OMF minimal standards for accessibility and documentation (as below) |
+| Have a clear and accessible open source, OSI approved license |
+| Include detailed metadata that facilitate reuse (e.g., input and output semantics, data types, units) |
+| Include detailed provenance on authorship and contributions |
+| Provide qualified information on all software and system dependencies with versions (operating system, software and system libraries) |
+| Provide clear instructions on how to execute the software |
+| **Minimum accessibility standards** |
+| Model code and documentation should be archived in a searchable, open access, trusted digital repository. A DOI, permanent URL or other permanent digital resource locator for accessing the model code must be provided that links to the specific version of the code used. The archive should adhere to FORCE11 software citation principles (\url{https://www.force11.org/software-citation-principles}) and expose their metadata in open, interoperable formats like schema.org or codemeta. |
+| **Minimum documentation standards** |
+
+<mark>the minimum documentation standards are confusing/incomplete</mark>
