@@ -28,7 +28,7 @@ website:
         href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
   page-footer:
     left: |
-      [![](https://raw.githubusercontent.com/pythonhealthdatascience/stars-logo/main/stars_pointy_v2_text.png){fig-alt="STARS" width=300px}](https://github.com/pythonhealthdatascience)
+      [![](https://raw.githubusercontent.com/pythonhealthdatascience/stars-logo/main/stars_logo_blue_text.png){fig-alt="STARS" width=300px}](https://github.com/pythonhealthdatascience)
     center: |
       This work forms part of work package 1 on the STARS project.
     right:
