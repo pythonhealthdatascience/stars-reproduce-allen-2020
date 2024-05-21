@@ -19,6 +19,7 @@ website:
       - docs/blog_index.qmd
       - text: Guidelines
         menu:
+          - docs/artefacts.qmd
           - docs/badges.qmd
           - docs/reporting.qmd
     # Right-aligned within navbar...

@@ -1,0 +1,45 @@
+---
+title: "Sharing research artefacts"
+bibliography: references.bib
+---
+
+This page evaluates the extent to which Monks et al. 2016 meets the recommendations for the sharing of code and associated materials.
+
+First, it copies information from the best practice audit by @monks_computer_2023. The items in this audit were based on <mark>ADD CITATIONS</mark>.
+
+Secondly, it assesses whether the article meets recommendations from the recently published STARS framework by @monks_towards_2024.
+
+## Best practice audit (Monks and Harper 2023)
+
+| Item | Description | Met by study? |
+| - | -- | - |
+| Digital Object Identifier | Does the model have a DOI and promise of persistence? Can it be cited?
+| Open Researcher and Contributor ID | Is the model linked to one or more of the authors via an ORCID?
+| Licence | Does the repository have a recognised open license to control the use of code, liabilty and credit?
+| Readme file | Is there an obvious file that provides an overview of the repository/model and it purpose?
+| Link to published paper | Do models shared externally from journal articles contain a link to the published article?
+| Steps to run code | Does the readme file or similar describe the steps required to execute the simulation model?
+| Formal dependency management | Has a formal tool, e.g. renv, conda, or poetry been used to manage software dependencies for the simulation model? |
+| Informal dependency management | Has an informal list or description of software, or OS dependencies been provided?
+| Code Testing | Is there any evidence of tests that have been applied to the code to check that it functions correctly?
+| Local execution | Can the simulation model and associated files be downloaded and in theory executed on a local machine
+| Remote execution | Can the simulation model be executed online using free or commercial infrastructure?
+
+## STARS
+
+| Component | Met by study? | Evidence/location |
+| - | - | - |
+| **Essential components** |
+| Open license | ✅ Fully |
+| Dependency management | 🟡 Partially |
+| Model created using free and open-source software (FOSS) | ❌ Not met |
+| Minimum documentation | ❔ Unclear |
+| Research artefact metadata: Open Researcher and Contributor ID (ORCID) and citation information |
+| Remote code repository |
+| Open science archive |
+| **Optional components** |
+| Enhanced documentation |
+| Documentation hosting |
+| Online coding environment |
+| Model interface |
+| Web app hosting |
