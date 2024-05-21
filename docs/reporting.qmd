@@ -1,64 +1,94 @@
 ---
 title: "Reporting"
+format:
+    html:
+        page-layout: full
+bibliography: references.bib
 ---
 
 This page evaluates the extent to which Monks et al. 2016 meets the criteria from two discrete-event simulation study reporting guidelines:
 
-* STRESS-DES: Strengthening The Reporting of Empirical Simulation Studies (Discrete-Event
-Simulation) (Version 1.0)
-* The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports.
+* @monks_strengthening_2019 - STRESS-DES: Strengthening The Reporting of Empirical Simulation Studies (Discrete-Event Simulation) (Version 1.0).
+* @zhang_reporting_2020 - The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports.
+
+<mark>if we apply this later down the line, what about if its not discrete-event?</mark>
+
+<mark>add citations</mark>
 
 ## STRESS-DES
 
 <mark>example fill in, not actual</mark>
 
-| Section/Item | Recommendation | Met by Monks et al. 2016? |
-| - | -- | - |
+Total (out of 5):
+
+* ✅ Fully - 20% (n=1)
+* 🟡 Partially - 20% (n=1)
+* ❌ Not met - 20% (n=1)
+* ❔ Unclear - 40% (n=2)
+
+| Item | Recommendation | Met by study? | Evidence/location |
+| - | -- | - | - |
 | **Objectives** | 
 | 1.1 Purpose of the model | Explain the background and objectives for the model | ✅ Fully |
 | 1.2 Model outputs | Define all quantitative performance measures that are reported, using equations where necessary.  Specify how and when they are calculated during the model run along with how any measures of error such as confidence intervals are calculated. | 🟡 Partially |
 | 1.3 Experimentation aims | If the model has been used for experimentation, state the objectives that it was used to investigate.<br>(A) Scenario based analysis – Provide a name and description for each scenario, providing a rationale for the choice of scenarios and ensure that item 2.3 (below) is completed.<br>(B) Design of experiments – Provide details of the overall design of the experiments with reference to performance measures and their parameters (provide further details in data below).<br>(C) Simulation Optimisation – (if appropriate) Provide full details of what is to be optimised, the parameters that were included and the algorithm(s) that was be used.  Where possible provide a citation of the algorithm(s). | ❌ Not met |
 | **Logic** |
-| 2.1 Base model overview diagram | Describe the base model using appropriate diagrams and description.  This could include one or more process flow, activity cycle or equivalent diagrams sufficient to describe the model to readers.  Avoid complicated diagrams in the main text.  The goal is to describe the breadth and depth of the model with respect to the system being studied. | ❔ To evaluate |
-| 2.2 Base model logic | Give details of the base model logic. Give additional model logic details sufficient to communicate to the reader how the model works. | ❔ To evaluate |
-| 2.3 Scenario logic | Give details of the logical difference between the base case model and scenarios (if any).  This could be incorporated as text or where differences are substantial could be incorporated in the same manner as 2.2. | ❔ To evaluate |
-| 2.4 Algorithms | Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.  scheduling of arrivals/appointments/operations/maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible.  Pseudo-code may be used to describe an algorithm. | ❔ To evaluate |
-| 2.5.1 Components - entities | Give details of all entities within the simulation including a description of their role in the model and a description of all their attributes. | ❔ To evaluate |
-| 2.5.2 Components - activities | Describe the activities that entities engage in within the model.  Provide details of entity routing into and out of the activity. | ❔ To evaluate |
-| 2.5.3 Components - resources | List all the resources included within the model and which activities make use of them. | ❔ To evaluate |
-| 2.5.4 Components - queues | Give details of the assumed queuing discipline used in the model (e.g. First in First Out, Last in First Out, prioritisation, etc.). Where one or more queues have a different discipline from the rest, provide a list of queues, indicating the queuing discipline used for each.  If reneging, balking or jockeying occur, etc., provide details of the rules. Detail any delays or capacity constraints on the queues. | ❔ To evaluate |
-| 2.5.5 Components - entry/exit points | Give details of the model boundaries i.e. all arrival and exit points of entities.  Detail the arrival mechanism (e.g. ‘thinning’ to mimic a non-homogenous Poisson process or balking) | ❔ To evaluate |
+| 2.1 Base model overview diagram | Describe the base model using appropriate diagrams and description.  This could include one or more process flow, activity cycle or equivalent diagrams sufficient to describe the model to readers.  Avoid complicated diagrams in the main text.  The goal is to describe the breadth and depth of the model with respect to the system being studied. | ❔ Unclear |
+| 2.2 Base model logic | Give details of the base model logic. Give additional model logic details sufficient to communicate to the reader how the model works. | ❔ Unclear |
+| 2.3 Scenario logic | Give details of the logical difference between the base case model and scenarios (if any).  This could be incorporated as text or where differences are substantial could be incorporated in the same manner as 2.2. |
+| 2.4 Algorithms | Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.  scheduling of arrivals/appointments/operations/maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible.  Pseudo-code may be used to describe an algorithm. |
+| 2.5.1 Components - entities | Give details of all entities within the simulation including a description of their role in the model and a description of all their attributes. |
+| 2.5.2 Components - activities | Describe the activities that entities engage in within the model.  Provide details of entity routing into and out of the activity. |
+| 2.5.3 Components - resources | List all the resources included within the model and which activities make use of them. |
+| 2.5.4 Components - queues | Give details of the assumed queuing discipline used in the model (e.g. First in First Out, Last in First Out, prioritisation, etc.). Where one or more queues have a different discipline from the rest, provide a list of queues, indicating the queuing discipline used for each.  If reneging, balking or jockeying occur, etc., provide details of the rules. Detail any delays or capacity constraints on the queues. |
+| 2.5.5 Components - entry/exit points | Give details of the model boundaries i.e. all arrival and exit points of entities.  Detail the arrival mechanism (e.g. ‘thinning’ to mimic a non-homogenous Poisson process or balking) |
 | **Data** |
-| 3.1 Data sources | List and detail all data sources. Sources may include:<br>• Interviews with stakeholders,<br>• Samples of routinely collected data,<br>• Prospectively collected samples for the purpose of the simulation study,<br>• Public domain data published in either academic or organisational literature.   Provide, where possible, the link and DOI to the data or reference to published literature.<br>All data source descriptions should include details of the sample size, sample date ranges and use within the study. | ❔ To evaluate |
-| 3.2 Pre-processing | Provide details of any data manipulation that has taken place before its use in the simulation, e.g. interpolation to account for missing data or the removal of outliers. | ❔ To evaluate |
-| 3.3 Input parameters | List all input variables in the model. Provide a description of their use and include parameter values.  For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters.  Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions. | ❔ To evaluate |
-| 3.4 Assumptions | Where data or knowledge of the real system is unavailable what assumptions are included in the model?  This might include parameter values, distributions or routing logic within the model. | ❔ To evaluate |
+| 3.1 Data sources | List and detail all data sources. Sources may include:<br>• Interviews with stakeholders,<br>• Samples of routinely collected data,<br>• Prospectively collected samples for the purpose of the simulation study,<br>• Public domain data published in either academic or organisational literature.   Provide, where possible, the link and DOI to the data or reference to published literature.<br>All data source descriptions should include details of the sample size, sample date ranges and use within the study. |
+| 3.2 Pre-processing | Provide details of any data manipulation that has taken place before its use in the simulation, e.g. interpolation to account for missing data or the removal of outliers. |
+| 3.3 Input parameters | List all input variables in the model. Provide a description of their use and include parameter values.  For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters.  Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions. |
+| 3.4 Assumptions | Where data or knowledge of the real system is unavailable what assumptions are included in the model?  This might include parameter values, distributions or routing logic within the model. |
 | **Experimentation** |
-| 4.1 Initialisation | Report if the system modelled is terminating or non-terminating.  State if a warm-up period has been used, its length and the analysis method used to select it.  For terminating systems state the stopping condition.<br>State what if any initial model conditions have been included, e.g., pre-loaded queues and activities.  Report whether initialisation of these variables is deterministic or stochastic. | ❔ To evaluate |
-| 4.2 Run length | Detail the run length of the simulation model and time units. | ❔ To evaluate |
-| 4.3 Estimation approach | State the method used to account for the stochasticity: For example, two common methods are multiple replications or batch means. Where multiple replications have been used, state the number of replications and for batch means, indicate the batch length and whether the batch means procedure is standard, spaced or overlapping. For both procedures provide a justification for   the methods used and the number of replications/size of batches. | ❔ To evaluate |
+| 4.1 Initialisation | Report if the system modelled is terminating or non-terminating.  State if a warm-up period has been used, its length and the analysis method used to select it.  For terminating systems state the stopping condition.<br>State what if any initial model conditions have been included, e.g., pre-loaded queues and activities.  Report whether initialisation of these variables is deterministic or stochastic. |
+| 4.2 Run length | Detail the run length of the simulation model and time units. |
+| 4.3 Estimation approach | State the method used to account for the stochasticity: For example, two common methods are multiple replications or batch means. Where multiple replications have been used, state the number of replications and for batch means, indicate the batch length and whether the batch means procedure is standard, spaced or overlapping. For both procedures provide a justification for   the methods used and the number of replications/size of batches. |
 | **Implementation** |
-| 5.1 Software or programming language | State the operating system and version and build number.<br>State the name, version and build number of commercial or open source DES software that the model is implemented in.<br>State the name and version of general-purpose programming languages used (e.g. Python 3.5).<br>Where frameworks and libraries have been used provide all details including version numbers. | ❔ To evaluate |
-| 5.2 Random sampling | State the algorithm used to generate random samples in the software/programming language used e.g. Mersenne Twister.<br>If common random numbers are used, state how seeds (or random number streams) are distributed among sampling processes. | ❔ To evaluate |
-| 5.3 Model execution | State the event processing mechanism used e.g. three phase, event, activity, process interaction.<br>*Note that in some commercial software the event processing mechanism may not be published. In these cases authors should adhere to item 5.1 software recommendations.*<br>State all priority rules included if entities/activities compete for resources.<br>If the model is parallel, distributed and/or use grid or cloud computing, etc., state and preferably reference the technology used.  For parallel and distributed simulations the time management algorithms used.  If the HLA is used then state the version of the standard, which run-time infrastructure (and version), and any supporting documents (FOMs, etc.) | ❔ To evaluate |
-| 5.4 System specification | State the model run time and specification of hardware used.  This is particularly important for large scale models that require substantial computing power.  For parallel, distributed and/or use grid or cloud computing, etc. state the details of all systems used in the implementation (processors, network, etc.) | ❔ To evaluate |
+| 5.1 Software or programming language | State the operating system and version and build number.<br>State the name, version and build number of commercial or open source DES software that the model is implemented in.<br>State the name and version of general-purpose programming languages used (e.g. Python 3.5).<br>Where frameworks and libraries have been used provide all details including version numbers. |
+| 5.2 Random sampling | State the algorithm used to generate random samples in the software/programming language used e.g. Mersenne Twister.<br>If common random numbers are used, state how seeds (or random number streams) are distributed among sampling processes. |
+| 5.3 Model execution | State the event processing mechanism used e.g. three phase, event, activity, process interaction.<br>*Note that in some commercial software the event processing mechanism may not be published. In these cases authors should adhere to item 5.1 software recommendations.*<br>State all priority rules included if entities/activities compete for resources.<br>If the model is parallel, distributed and/or use grid or cloud computing, etc., state and preferably reference the technology used.  For parallel and distributed simulations the time management algorithms used.  If the HLA is used then state the version of the standard, which run-time infrastructure (and version), and any supporting documents (FOMs, etc.) |
+| 5.4 System specification | State the model run time and specification of hardware used.  This is particularly important for large scale models that require substantial computing power.  For parallel, distributed and/or use grid or cloud computing, etc. state the details of all systems used in the implementation (processors, network, etc.) |
 | **Code access** |
-| 6.1 Computer model sharing statement | Describe how someone could obtain the model described in the paper, the simulation software and any other associated software (or hardware) needed to reproduce the results.  Provide, where possible, the link and DOIs to these. | ❔ To evaluate |
-
-: Compliance with STRESS-DES reporting guidelines
-
-<mark>are the components all to inc. seperate? presume so</mark>
-
-<mark>if we apply this later down the line, what about if its not discrete-event?</mark>
-
-<mark>do we just want to say if it's met, or do we want to populate it like Tom did in the simpy example? presume just the former?</mark>
-
-Could include emojis to help with reading through
-
-✅🟢🌟⭐🎯🥇😊🙂
-
-🟡🥈➖〰️😐
-
-❌🔴🛑🕳️❗🙁
+| 6.1 Computer model sharing statement | Describe how someone could obtain the model described in the paper, the simulation software and any other associated software (or hardware) needed to reproduce the results.  Provide, where possible, the link and DOIs to these. |
 
 ## ISPOR-SDM
+
+Total (out of 4):
+
+* ✅ Fully - 25% (n=1)
+* 🟡 Partially - 25% (n=1)
+* ❌ Not met - 25% (n=1)
+* ❔ Unclear - 25% (n=1)
+
+| Item | Assessed if... | Met by study? | Evidence/location |
+| - | -- | - | - |
+| **Model conceptualisation** |
+| 1 Is the focused health-related decision problem clarified? | ...the decision problem under investigation was defined. DES studies included different types of decision problems, eg, those listed in previously developed taxonomies. | 🟡 Partially |
+| 2 Is the modeled healthcare setting/health condition clarified? | ...the physical context/scope (eg, a certain healthcare unit or a broader system) or disease spectrum simulated was described. | ❌ Not met |
+| 3 Is the model structure described? | ...the model’s conceptual structure was described in the form of either graphical or text presentation. | ✅ Fully |
+| 4 Is the time horizon given? | ...the time period covered by the simulation was reported. |
+| 5 Are all simulated strategies/scenarios specified? | ...the comparators under test were described in terms of their components, corresponding variations, etc | ❔ Unclear |
+| 6 Is the target population described? | ...the entities simulated and their main attributes were characterized. |
+| **Paramaterisation and uncertainty assessment** |
+| 7 Are data sources informing parameter estimations provided? | ...the sources of all data used to inform model inputs were reported. |
+| 8 Are the parameters used to populate model frameworks specified? | ...all relevant parameters fed into model frameworks were disclosed. |
+| 9 Are model uncertainties discussed? | ...the uncertainty surrounding parameter estimations and adopted statistical methods (eg, 95% confidence intervals or possibility distributions) were reported. |
+| 10 Are sensitivity analyses performed and reported? | ...the robustness of model outputs to input uncertainties was examined, for example via deterministic (based on parameters’ plausible ranges) or probabilistic (based on a priori-defined probability distributions) sensitivity analyses, or both. |
+| **Validation** |
+| 11 Is face validity evaluated and reported? | ...it was reported that the model was subjected to the examination on how well model designs correspond to the reality and intuitions. It was assumed that this type of validation should be conducted by external evaluators with no stake in the study. |
+| 12 Is cross validation performed and reported | ...comparison across similar modeling studies which deal with the same decision problem was undertaken. |
+| 13 Is external validation performed and reported? | ...the modeler(s) examined how well the model’s results match the empirical data of an actual event modeled. |
+| 14 Is predictive validation performed or attempted? | ...the modeler(s) examined the consistency of a model’s predictions of a future event and the actual outcomes in the future. If this was not undertaken, it was assessed whether the reasons were discussed. |
+| **Generalisability and stakeholder involvement** |
+| 15 Is the model generalizability issue discussed? | ...the modeler(s) discussed the potential of the resulting model for being applicable to other settings/populations (single/multiple application). |
+| 16 Are decision makers or other stakeholders involved in modeling? | ...the modeler(s) reported in which part throughout the modeling process decision makers and other stakeholders (eg, subject experts) were engaged. |
+| 17 Is the source of funding stated? | ...the sponsorship of the study was indicated. |
+| 18 Are model limitations discussed? | ...limitations of the assessed model, especially limitations of interest to decision makers, were discussed. |
