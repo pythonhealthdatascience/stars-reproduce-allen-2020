@@ -19,7 +19,9 @@ website:
       - docs/blog_index.qmd
       - text: Guidelines
         menu:
-          - href: docs/badges.qmd
+          - docs/badges.qmd
+          - docs/code.qmd
+          - docs/reporting.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
