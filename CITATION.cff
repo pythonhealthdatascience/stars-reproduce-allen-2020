@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Reproducing Monks et al. 2016
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Amy
+    family-names: Heather
+    name-suffix: Ms
+    email: a.heather2@exeter.ac.uk
+    affiliation: University of Exeter
+    orcid: 'https://orcid.org/0000-0002-6596-3479'
+repository-code: >-
+  https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+abstract: >-
+  This repository forms part of work package 1 on the
+  NIHR-funded project STARS: Sharing Tools and Artefacts for
+  Reproducible Simulations. It assesses the computational
+  reproducibility of: Monks, T., Worthington, D., Allen, M.,
+  Pitt, M., Stein, K., & James, M. A. **A modelling tool for
+  capacity planning in acute and community stroke
+  services**. *BMC Health Services Research* 16, 530 (2016).
+  https://doi.org/10.1186/s12913-016-1789-4
+keywords:
+  - reproducibility
+license: MIT
+date-released: '2024-05-21'
