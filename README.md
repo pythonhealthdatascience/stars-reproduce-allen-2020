@@ -1,4 +1,4 @@
-# Reproducing Monks et al. 2016
+# STARS: Computational reproducibility of Monks et al. 2016
 
 ⚠️ ***This repository is a test-run for STARS work package 1 (and is not one of the six reproduced DES models). It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
@@ -42,6 +42,7 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 * `reproduction/` - Reproduction of the simulation model. Once complete, this functions as a research compendium for the model, containing all the code, parameters, outputs and documentation
 * `_quarto.yml` - Set-up instructions for the Quarto website
 * `.gitignore` - Instructions for Git of which local objects should not be included in the repository
+* `CHANGELOG.md` - Details changes between versions (as in GitHub releases and versions on Zenodo)
 * `CITATION.cff` - Instructions for citing this repository, created using [CFF INIT](https://citation-file-format.github.io/)
 * `index.qmd` - Home page for the Quarto website
 * `LICENSE` - Details of the license for this work

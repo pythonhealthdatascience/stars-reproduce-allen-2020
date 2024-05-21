@@ -8,6 +8,9 @@ website:
   title: "Reproducing Monks et al. 2016"
   # Favicon image for site
   favicon: "quarto_site/stars_logo_blue.png"
+  # Adds edit and issue buttons to footer
+  repo-url: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+  repo-actions: [edit, issue]
   # Settings for navbar across top of page
   navbar:
     logo: "quarto_site/stars_logo_blue.png"
@@ -37,8 +40,9 @@ website:
   page-footer:
     left: |
       [![](https://raw.githubusercontent.com/pythonhealthdatascience/stars-logo/main/stars_logo_blue_text.png){fig-alt="STARS" width=300px}](https://github.com/pythonhealthdatascience)
-    center: |
-      This work forms part of work package 1 on the STARS project.
+    center:
+      - text: "Changelog"
+        href: CHANGELOG.md
     right:
       - icon: github
         href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
