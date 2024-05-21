@@ -3,7 +3,7 @@ title: "Reporting"
 format:
     html:
         page-layout: full
-bibliography: references.bib
+bibliography: ../quarto_site/references.bib
 ---
 
 This page evaluates the extent to which Monks et al. 2016 meets the criteria from two discrete-event simulation study reporting guidelines:

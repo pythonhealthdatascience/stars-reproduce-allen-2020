@@ -7,29 +7,29 @@ website:
   # Name of site in navbar
   title: "Reproducing Monks et al. 2016"
   # Favicon image for site
-  favicon: "docs/stars_logo_blue.png"
+  favicon: "quarto_site/stars_logo_blue.png"
   # Settings for navbar across top of page
   navbar:
-    logo: "docs/stars_logo_blue.png"
+    logo: "quarto_site/stars_logo_blue.png"
     # Left-aligned within navbar...
     left:
       - text: Original study
         menu:
-          - docs/study_summary.qmd
-          - docs/study_publication.qmd
-          - docs/study_code.qmd
+          - quarto_site/study_summary.qmd
+          - quarto_site/study_publication.qmd
+          - quarto_site/study_code.qmd
       - text: Reproduction code
         menu:
-          - simulation/example.ipynb
+          - reproduction/scripts/example.ipynb
       - text: Evaluation
         menu:
-          - docs/reproduction_success.qmd
-          - docs/artefacts.qmd
-          - docs/badges.qmd
-          - docs/reporting.qmd
-      - docs/blog_index.qmd
+          - evaluation/reproduction_success.qmd
+          - evaluation/artefacts.qmd
+          - evaluation/badges.qmd
+          - evaluation/reporting.qmd
+      - evaluation/logbook.qmd
       - text: Report
-        href: docs/reproduction_report.qmd
+        href: evaluation/reproduction_report.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
