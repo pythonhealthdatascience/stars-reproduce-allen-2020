@@ -3,11 +3,11 @@
 <!-- Status badge indicating whether CITATION file is still valid via GitHub action-->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
 
-⚠️ ***This is a test-run for STARS work package 1. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
+⚠️ ***This is a test-run for STARS work package 1 using a paper that Tom Monks was involved with. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
 This repository forms part of work package 1 on the NIHR-funded project STARS: Sharing Tools and Artefacts for Reproducible Simulations. It assesses the computational reproducibility of:
 
-> Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. **A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic**. *PLoS One* 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.
+> Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. **A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic**. *PLoS One* 15, 8 (2020). <https://doi.org/10.1371%2Fjournal.pone.0237628>
 
 ## Website
 
@@ -24,6 +24,9 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 ## Repository layout
 
 ```bash
+├── .github
+│   └──  workflows
+│        └──  ...
 ├── evaluation
 │   └──  ...
 ├── original_study
@@ -43,6 +46,7 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 └── index.qmd
 ```
 
+* `.github/workflows/` - GitHub actions
 * `evaluation/` - Markdown files from the evaluation of computational reproducibility. This includes the logbook, assessment of reproduction success, and comparison of the original study materials against various guidelines, criteria and frameworks
 * `original_study/` - Journal article, supplementary material, code and any other research artefacts from the original study. These items are uploaded here for reference, but should be otherwise untouched.
 * `quarto_site/` - A Quarto website is used to share information from this repository (including the original study, reproduced model, and reproducibility evaluation). This folder contains any additional files required for creation of the site that do not otherwise belong in the other folders (for example, logo image files, or `.qmd` files that appropriately pull and display the original study PDF on the website)

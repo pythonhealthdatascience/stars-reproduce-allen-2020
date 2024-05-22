@@ -6,13 +6,40 @@ authors:
     affiliation: University of Exeter
 ---
 
+## About
+
 This book captures the reproduction of:
 
 > Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. **A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic**. *PLoS One* 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.
 
+Use the navigation bar above to view:
+
+* **Original study** - the original study article and associated artefacts.
+* **Reproduction code** - code and documentation from reproduction of the model.
+* **Evaluation** - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.
+* **Logbook** - chronological entries detailing reproduction work.
+* **Report** - final report describing the computational reproducibility assessment.
+
+## Project team
+
+Conducting this reproduction:
+
+* Amy Heather
+
+Other team members:
+
+* Thomas Monks
+* Alison Harper
+* Navonil Mustafee
+* Andy Mayne
+
 ## Citation
 
-**APA**:
+**APA:**
 {{< include citation_apalike.apa >}}
 
 See `CITATION.cff` and `citation_bibtex.bib` for alternative formats.
+
+## License
+
+{{< include LICENSE >}}
