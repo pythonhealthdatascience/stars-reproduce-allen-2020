@@ -179,12 +179,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#figures-and-tables" id="toc-figures-and-tables" class="nav-link active" data-scroll-target="#figures-and-tables">Figures and tables</a>
-  <ul class="collapse">
-  <li><a href="#within-scope" id="toc-within-scope" class="nav-link" data-scroll-target="#within-scope">Within scope</a></li>
-  <li><a href="#not-in-scope" id="toc-not-in-scope" class="nav-link" data-scroll-target="#not-in-scope">Not in scope</a></li>
-  </ul></li>
-  <li><a href="#key-results-from-elsewhere-in-article" id="toc-key-results-from-elsewhere-in-article" class="nav-link" data-scroll-target="#key-results-from-elsewhere-in-article">Key results from elsewhere in article</a></li>
+  <li><a href="#within-scope" id="toc-within-scope" class="nav-link active" data-scroll-target="#within-scope">Within scope</a></li>
+  <li><a href="#outside-scope" id="toc-outside-scope" class="nav-link" data-scroll-target="#outside-scope">Outside scope</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/scope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -211,64 +207,180 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This page outlines that parts of the journal article which we will attempt to reproduce.</p>
-<section id="figures-and-tables" class="level2">
-<h2 class="anchored" data-anchor-id="figures-and-tables">Figures and tables</h2>
-<section id="within-scope" class="level3">
-<h3 class="anchored" data-anchor-id="within-scope">Within scope</h3>
-<p><strong>Figure 2</strong> - number of patients in each COVID state over 150 days</p>
+<section id="within-scope" class="level2">
+<h2 class="anchored" data-anchor-id="within-scope">Within scope</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../original_study/article_fig2.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 2</figcaption>
+<p><img src="../original_study/article_fig2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Figure 2. “Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
 </figure>
 </div>
-<p><strong>Figure 3</strong> - similar to figure 2, but with different categories and divided by unit <img src="../original_study/article_fig3.png" class="img-fluid" alt="Figure 3"></p>
-<p><strong>Figure 4</strong> - patients displaced from current unit and travel times added</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../original_study/article_fig3.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. “Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig4.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4</figcaption>
+<figcaption>Figure 4. “Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
 </figure>
 </div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section from results about being unallocated to a session
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>From results section:</strong> “In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).”</p>
+<p><strong>Why this is in scope:</strong> The figures do not provide any information on the count of unallocated patients. The change in dialysis frequency is assumed to be an implicit consequence of whether or not there are any unallocated patients necessitating they wait a day or change frequency in the model.</p>
+<p><strong>Exactly what we are aiming to reproduce from this statement:</strong> Observation of no patients being unable to be allocated to a session.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="not-in-scope" class="level3">
-<h3 class="anchored" data-anchor-id="not-in-scope">Not in scope</h3>
-<p><strong>Figure 1</strong> - as it is a flow chart representing of pathways in model.</p>
+<section id="outside-scope" class="level2">
+<h2 class="anchored" data-anchor-id="outside-scope">Outside scope</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outside scope as it is a flow chart representing the model pathways.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig1.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1</figcaption>
+<figcaption>Figure 1. “Schematic representation of patient pathway.”</figcaption>
 </figure>
 </div>
-<p><strong>Table 1</strong> - as it lists parameters for the model.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Table 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outside scope as it is a table of model parameters rather than outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_tab1.png" class="img-fluid figure-img"></p>
-<figcaption>Table 1</figcaption>
+<figcaption>Table 1. “Baseline model parameters.”</figcaption>
 </figure>
 </div>
-<p><strong>Figure 5</strong> - as it is a result from the Markov model</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outside scope as it is a result of the Markov model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig1.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1</figcaption>
+<figcaption>Figure 5. “One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.”</figcaption>
 </figure>
 </div>
-<p><strong>Figure 6</strong> - as it is a result from the Markov model</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outside scope as it is a result of the Markov model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig6.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 6</figcaption>
+<figcaption>Figure 6. “Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.”</figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="key-results-from-elsewhere-in-article" class="level2">
-<h2 class="anchored" data-anchor-id="key-results-from-elsewhere-in-article">Key results from elsewhere in article</h2>
-<p>“In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes <strong>without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency)</strong>. Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).”</p>
-<ul>
-<li>This is in scope, as the figures don’t provided any information on the count of unallocated patients, or therefore on whether any therefore had changes in dialysis frequency (which assuming is the implicit conclusion of being unallocated changing frequency). Hence, aim to reproduce: <strong>observation of no patients being unable to be allocated to a session</strong></li>
-</ul>
+</div>
+</div>
+</div>
 
 
 </section>
