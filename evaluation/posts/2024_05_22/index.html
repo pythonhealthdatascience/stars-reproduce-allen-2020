@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -214,14 +248,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#made-repository-3.1.2" id="toc-made-repository-3.1.2" class="nav-link active" data-scroll-target="#made-repository-3.1.2">Made repository (3.1.2)</a></li>
-  <li><a href="#upload-materials-3.1.3" id="toc-upload-materials-3.1.3" class="nav-link" data-scroll-target="#upload-materials-3.1.3">12.11 - 12.16 Upload materials (3.1.3)</a></li>
-  <li><a href="#choose-license-3.1.4" id="toc-choose-license-3.1.4" class="nav-link" data-scroll-target="#choose-license-3.1.4">12.18-12.19 Choose license (3.1.4)</a></li>
-  <li><a href="#display-on-website" id="toc-display-on-website" class="nav-link" data-scroll-target="#display-on-website">Display on website</a></li>
-  <li><a href="#reading-article-3.2.1" id="toc-reading-article-3.2.1" class="nav-link" data-scroll-target="#reading-article-3.2.1">13.20-13.46 Reading article (3.2.1)</a></li>
-  <li><a href="#consolidating-notes-on-article-3.2.1" id="toc-consolidating-notes-on-article-3.2.1" class="nav-link" data-scroll-target="#consolidating-notes-on-article-3.2.1">13.47-13.56 Consolidating notes on article (3.2.1)</a></li>
-  <li><a href="#identifying-scope" id="toc-identifying-scope" class="nav-link" data-scroll-target="#identifying-scope">13.56-14.27 Identifying scope</a></li>
-  <li><a href="#untimed-reorganising-scope-page" id="toc-untimed-reorganising-scope-page" class="nav-link" data-scroll-target="#untimed-reorganising-scope-page">Untimed reorganising scope page</a></li>
+  <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
+  <ul class="collapse">
+  <li><a href="#untimed-inform-the-authors" id="toc-untimed-inform-the-authors" class="nav-link" data-scroll-target="#untimed-inform-the-authors">Untimed: Inform the authors</a></li>
+  <li><a href="#untimed-made-repository" id="toc-untimed-made-repository" class="nav-link" data-scroll-target="#untimed-made-repository">Untimed: Made repository</a></li>
+  <li><a href="#upload-materials" id="toc-upload-materials" class="nav-link" data-scroll-target="#upload-materials">12.11 - 12.16: Upload materials</a></li>
+  <li><a href="#choose-license" id="toc-choose-license" class="nav-link" data-scroll-target="#choose-license">12.18-12.19: Choose license</a></li>
+  <li><a href="#untimed-display-article-on-website" id="toc-untimed-display-article-on-website" class="nav-link" data-scroll-target="#untimed-display-article-on-website">Untimed: Display article on website</a></li>
+  <li><a href="#reading-article" id="toc-reading-article" class="nav-link" data-scroll-target="#reading-article">13.20-13.56: Reading article</a></li>
+  <li><a href="#identifying-scope" id="toc-identifying-scope" class="nav-link" data-scroll-target="#identifying-scope">13.56-14.27: Identifying scope</a></li>
+  <li><a href="#untimed-reorganising-scope-page" id="toc-untimed-reorganising-scope-page" class="nav-link" data-scroll-target="#untimed-reorganising-scope-page">Untimed: Reorganising scope page</a></li>
+  <li><a href="#untimed-consensus-decision-on-scope" id="toc-untimed-consensus-decision-on-scope" class="nav-link" data-scroll-target="#untimed-consensus-decision-on-scope">Untimed: Consensus decision on scope</a></li>
+  <li><a href="#untimed-uploading-to-zenodo" id="toc-untimed-uploading-to-zenodo" class="nav-link" data-scroll-target="#untimed-uploading-to-zenodo">Untimed: Uploading to Zenodo</a></li>
+  </ul></li>
+  <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
+  <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -232,13 +273,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Created repository, uploaded materials, chose license.</p>
-<section id="made-repository-3.1.2" class="level2">
-<h2 class="anchored" data-anchor-id="made-repository-3.1.2">Made repository (3.1.2)</h2>
-<p>Without using template (does not yet exist, will create based on this repository, which is a test-run)</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Total time elapsed
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>1h 12m (3%)</p>
+</div>
+</div>
+<section id="work-log" class="level2">
+<h2 class="anchored" data-anchor-id="work-log">Work log</h2>
+<section id="untimed-inform-the-authors" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-inform-the-authors">Untimed: Inform the authors</h3>
+<p>Not relevant for this, as it is a test-run using a paper Tom was involved with and is one of the corresponding authors on.</p>
 </section>
-<section id="upload-materials-3.1.3" class="level2">
-<h2 class="anchored" data-anchor-id="upload-materials-3.1.3">12.11 - 12.16 Upload materials (3.1.3)</h2>
+<section id="untimed-made-repository" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-made-repository">Untimed: Made repository</h3>
+<p>As this is a test-run, was not made using a template (as it does not yet exist, but will be created based on this repository).</p>
+</section>
+<section id="upload-materials" class="level3">
+<h3 class="anchored" data-anchor-id="upload-materials">12.11 - 12.16: Upload materials</h3>
+<p>Links to source of uploaded materials…</p>
 <p>Article:</p>
 <ul>
 <li><a href="https://doi.org/10.1371%2Fjournal.pone.0237628" class="uri">https://doi.org/10.1371%2Fjournal.pone.0237628</a></li>
@@ -253,48 +313,134 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a></li>
 <li><a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a></li>
 </ul>
-<p><mark>Protocol: Suggest what to record in logbook i.e.&nbsp;record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive.</mark></p>
 </section>
-<section id="choose-license-3.1.4" class="level2">
-<h2 class="anchored" data-anchor-id="choose-license-3.1.4">12.18-12.19 Choose license (3.1.4)</h2>
+<section id="choose-license" class="level3">
+<h3 class="anchored" data-anchor-id="choose-license">12.18-12.19: Choose license</h3>
 <p>No need to change from MIT, as that was used by Allen et al.&nbsp;2020.</p>
-<p><mark>Protocol: Say that default in template is MIT but may need to change. Makes sense to have this as a combined step with above perhaps? Although helpful to see seperate.</mark></p>
-<p><mark>Template: Set as STARS Project Team in default MIT license - is that correct?</mark></p>
 </section>
-<section id="display-on-website" class="level2">
-<h2 class="anchored" data-anchor-id="display-on-website">Display on website</h2>
-<p>Set up article and supplementary to display on website in <code>study_publciation.qmd</code>.</p>
-<p><mark>Protocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it. I naturally found I wanted to do it after upload. Publication in study_publication. Code in study_code. Although that does mean looking at the code before scoping? So actually, makes sense to do code later, when write up.</mark></p>
+<section id="untimed-display-article-on-website" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-display-article-on-website">Untimed: Display article on website</h3>
+<p>Set up article and supplementary to display on website in <code>study_publication.qmd</code>.</p>
 </section>
-<section id="reading-article-3.2.1" class="level2">
-<h2 class="anchored" data-anchor-id="reading-article-3.2.1">13.20-13.46 Reading article (3.2.1)</h2>
-<p>Read article, making notes in <code>study_summary.qmd</code></p>
-<p><mark>easier to consolidate reading into a summary if it has a structure to it</mark></p>
-<p><mark>are the description of the sample part of scope? could do with some recommendation on this.</mark></p>
-<p><mark>need seperate page for scope</mark></p>
-<p><mark>whilst reading, find myself highlighting things for scope</mark></p>
-<p><mark>for something like RCR, would it count as reproduction if we only focussed on part of the paper? worth perhaps noting that - although doesn’t change what we do now</mark></p>
-<p><mark>Protocol: This can be changed later. For now, when want to add images, added them into quarto_site alongside study_summary. If decide in scope, later move to reproduction/</mark></p>
-<p><mark>i made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn’t have to be prescriptive?</mark></p>
+<section id="reading-article" class="level3">
+<h3 class="anchored" data-anchor-id="reading-article">13.20-13.56: Reading article</h3>
+<p>Read article, making notes in <code>study_summary.qmd</code> (initially rough notes, then tidied slightly).</p>
 </section>
-<section id="consolidating-notes-on-article-3.2.1" class="level2">
-<h2 class="anchored" data-anchor-id="consolidating-notes-on-article-3.2.1">13.47-13.56 Consolidating notes on article (3.2.1)</h2>
-<p>Make rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.</p>
-<p>Didn’t yet have a pre-defined structure for this. Just sort of tidied it. Did think about doing STRESS-DES structure. That would require deeper understanding though? And this should just be a bout reading and making some notes. So kept in genreal sort of structure of the article order.</p>
+<section id="identifying-scope" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-scope">13.56-14.27: Identifying scope</h3>
+<p>Made page for scope under evaluation - <code>scope.qmd</code>. Then went through process of:</p>
+<ol type="1">
+<li>Uploading tables and figures</li>
+<li>Added each table and figure, and marking as being within scope or not</li>
+<li>Looking through paper for key results, focussing on abstract and results section.</li>
+<li>Compared those against the tables and figures to check if they are captured or not.</li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes from identification of key results and comparison with figures
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Abstract: * <strong>Need secondary site, reduces workload in other sites, increases in primary site:</strong> “Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients.” * Captured in Figure 3 * <strong>Up to 140 COVID positive with 40-90 inpatients, breaching capacity:</strong> “At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity.” * Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)</p>
+<p>Results: * <strong>No patients unallocated:</strong> “In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).” * Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line) * <strong>Displaced patients have 20 minutes (sometimes up to 50) extra travel time</strong> “Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis.” * Visible in Figure 4</p>
+</div>
+</div>
+</div>
 </section>
-<section id="identifying-scope" class="level2">
-<h2 class="anchored" data-anchor-id="identifying-scope">13.56-14.27 Identifying scope</h2>
-<p>Made page for scope under evaluation - <code>scope.qmd</code>.</p>
-<p>First, went through all tables and figures in paper and marked as being results of our model or not.</p>
-<p>Then organised/cleaned it, by just downloading all the figures and tables and adding to the page. Decided to move the figures and tables into the original_study folder, as that is a centralised place and untouched otherwise so makes sense to be there. <mark>perhaps just download all at start in first stage?</mark></p>
-<p>Then looked for “key results” in abstract, conclusion, or prominent in results. <mark>Protocol: Don’t need to add discussion, keep as is, as that felt like it made the most sense, although can be suggestion, as you may find some paper putting all results in discussion for some reason. Purpose of discussion is interpretation though so shouldn’t need it.</mark> Made rough notes throughout, then tidied and just kept bits describing missing results. Copy of rough notes:</p>
-<p><mark>Initially felt unclear whether the description of the sample was relevant - decided no as it is about model results - if agreed on, then perhaps modify protocol to mention this as a suggestion</mark></p>
-<p>Abstract: * If current out- patient capacity is maintained there is sufficient capacity in the South of England to keep COVID-19 negative/recovered and positive patients in separate sessions, but rapid reallo- cation of patients may be needed. <strong>key result: sufficient capacity, but vague/concluding statement rather than testable result</strong> * <strong>too vague</strong> * Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients. <strong>key result: will need secondary site, will reduce workload in other sites, primary site will have increased workload, but again, this is more like a “conclusion” than a testable number?</strong> * <strong>can see this is a description of figure 3 - green lines dip, red line enters in BST, and if you combines the lines on HU it would be higher than where it starts. </strong> * At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity. <strong>key result: up to 140 positive with 40-90 patients, breaches capacity</strong> * <strong>Looks like figure 2, combining the yellow and red lines. So do we need to try and reproduce this? Think breaching capacity is Figure 3, where they can’t all fit in one hospital, so not a new result</strong></p>
-<p>Results: * States current median travel time from home to dialysis unit, and current capacity. * <strong>this feels like baseline parameter rather than result of simulation - which i think answers question of whether we try and replicate the geographic descriptions - no, as we are focussing on reproducing model</strong> * Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months. * Figure 2 - number of patients in each COVID state over 150 days * Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown. * Figure 4 - patients displced from current unit, and travel time added * Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency. * <strong>figures don’t show this - that there are no patients unallocated, and no need to change dialysis frequency, so feels like key result</strong> * Reduces workflow in units not taking COVID positive patients. * <strong>visible in figures</strong> * Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes) * <strong>visible in figures, just interpretation of figure 4</strong></p>
+<section id="untimed-reorganising-scope-page" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-reorganising-scope-page">Untimed: Reorganising scope page</h3>
+<p>Reorganised into collapsible boxes for clearer layout.</p>
 </section>
-<section id="untimed-reorganising-scope-page" class="level2">
-<h2 class="anchored" data-anchor-id="untimed-reorganising-scope-page">Untimed reorganising scope page</h2>
-<p>Don’t yet have a defined structure for scope page, so spent some time reorganising it into hopefully a clearer layout.</p>
+<section id="untimed-consensus-decision-on-scope" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-consensus-decision-on-scope">Untimed: Consensus decision on scope</h3>
+<p>Discussed scope with Tom Monks.</p>
+<ul>
+<li>Corrected “Markov” is “Monte Carlo”.</li>
+<li>Whilst discussing, noticed that the number of unallocated patients is in Figure 2, so removed from scope.</li>
+<li>Otherwise agreed with scope.</li>
+</ul>
+</section>
+<section id="untimed-uploading-to-zenodo" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-uploading-to-zenodo">Untimed: Uploading to Zenodo</h3>
+<p>Not doing for this one as it is a test-run.</p>
+</section>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="4724bb52" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># List of time tuples with prescribed format</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>FMT <span class="op">=</span> <span class="st">'%H.%M'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.11'</span>, <span class="st">'12.16'</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.18'</span>, <span class="st">'12.19'</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.20'</span>, <span class="st">'13.56'</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.56'</span>, <span class="st">'14.27'</span>)]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>total_min <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to datetime object</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    h0 <span class="op">=</span> datetime.strptime(t[<span class="dv">0</span>], FMT)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    h1 <span class="op">=</span> datetime.strptime(t[<span class="dv">1</span>], FMT)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find difference in minutes and add to total</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    total_min <span class="op">+=</span> (h1 <span class="op">-</span> h0).total_seconds() <span class="op">/</span> <span class="dv">60</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Time in hours and minutes</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time spent today: </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Find time remaining</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span> <span class="op">=</span> <span class="dv">40</span><span class="op">*</span><span class="dv">60</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>remain_min <span class="op">=</span> <span class="bu">max</span> <span class="op">-</span> total_min</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time remaining: </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">//</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">%</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">m'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Find proportion out of 40 hours</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Used </span><span class="sc">{</span>total_min<span class="op">/</span><span class="bu">max</span><span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">% of 40 hours max'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 1h 13m
+Time remaining: 38h 47m
+Used 3.041666666666667% of 40 hours max</code></pre>
+</div>
+</div>
+</section>
+<section id="suggested-changes-for-protocoltemplate" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
+<p>✅ = Made the change.</p>
+<p>Protocol:</p>
+<ul>
+<li>✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)</li>
+<li>Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.</li>
+<li>When do we create pages that display the original files that were uploaded?
+<ul>
+<li>Journal article and supplementary: I naturally wanted to do it after upload</li>
+<li>Code: I haven’t looked at yet, and feel I wouldn’t want to do until I have gone through familiarisation with the code</li>
+<li>Perhaps put both at that later stage, but make note in protocol about it not necessarily being a prescribed order?</li>
+</ul></li>
+<li>Reflect on how want to deal with summary page. I used it to help me read through and summarise the article. However, later down the line, the STRESS-DES and ISPOR reporting guidelines could potentially provide a more complete summary (depending on how do the “evidence” sections - i.e.&nbsp;copying in text, or just referring to a part in the paper). So do we need a summary page? Or are these just notes that I make in the logbook? As don’t necessarily want to prescribe that everyone has to write a summary? Leaning towards that.</li>
+<li>Make reference to particular pages in template (e.g.&nbsp;when define scope, the file path to the scope template)</li>
+<li>For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.</li>
+<li>For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.</li>
+<li>Add to stage when upload journal articles, that at the same time, they also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.</li>
+<li>For scope, simplify protocol to just look for key results in abstract and results sections. Don’t think should really need to look in discussion or conclusion, as those are more interpretation focussed, and should otherwise be highlighted in abstract - but don’t make it prescriptive, just a recommendation, as focus here is just on finding key results, and recommending where they are likely to be in most (but not necessarily all) papers</li>
+</ul>
+<p>Template:</p>
+<ul>
+<li>In license, have set “Copyright (c) 2024 STARS Project Team” - is this correct? Also, should it mention the original authors or not? Presuming not, as they will already have license file within that folder, and we will add yet another license file to the reproduction folder so it is stand alone.</li>
+<li>Should we have MIT license for reproduction/ and then CC-BY license for main repository?
+<ul>
+<li>In which case, would need to specify in repository that changing license in reproduction/ folder and not main folder. And explain somewhere what the license files apply to.</li>
+</ul></li>
+</ul>
+<p>Other:</p>
+<ul>
+<li>We might sometimes only reproduce part of a study - for example, a paper with multiple models and we focus on the discrete-event simulation. Think about the impact this has, and whether we need to note this somewhere? For example, whether the badges would actually be awarded for this work (or whether that matters - or if important bit is about ability to reproduce the simulation)? Depending on planned output for this work (e.g.&nbsp;if did want to explore publishing with <a href="https://rescience.github.io/">Rescience C</a>, what this would mean). Doesn’t change what we do during replication - just perhaps comments around it re: badges, and what we do with it.</li>
+</ul>
 
 
 </section>
