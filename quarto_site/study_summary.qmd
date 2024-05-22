@@ -1,6 +1,0 @@
----
-title: "Summary"
-bibliography: references.bib
----
-
-all those key information bits that we pull during reproduction
