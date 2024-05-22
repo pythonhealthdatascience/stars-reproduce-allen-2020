@@ -3,8 +3,12 @@ title: "Publication"
 bibliography: references.bib
 ---
 
-embeds the article and supplementary
+## Journal article
 
-(as they have been copied into repository)
+<iframe width="100%" height="800" src="../original_study/article.pdf"></iframe>
 
-<!-- <iframe width="100%" height="800" src="../original_study/monks_2016.pdf"> --!>
+## Supplementary materials
+
+<iframe width="100%" height="800" src="../original_study/supp_1.pdf"></iframe>
+
+<iframe width="100%" height="800" src="../original_study/supp_2.pdf"></iframe>
