@@ -5,13 +5,27 @@ date: "2024-05-22"
 categories: [setup, read, scope]
 ---
 
-Created repository, uploaded materials, chose license.
+::: {.callout-note}
 
-## Made repository (3.1.2)
+## Total time elapsed
 
-Without using template (does not yet exist, will create based on this repository, which is a test-run)
+1h 12m (3%)
 
-## 12.11 - 12.16 Upload materials (3.1.3)
+:::
+
+## Work log
+
+### Untimed: Inform the authors
+
+Not relevant for this, as it is a test-run using a paper Tom was involved with and is one of the corresponding authors on.
+
+### Untimed: Made repository
+
+As this is a test-run, was not made using a template (as it does not yet exist, but will be created based on this repository).
+
+### 12.11 - 12.16: Upload materials
+
+Links to source of uploaded materials...
 
 Article:
 
@@ -27,80 +41,119 @@ Code - both code sources should be the same and pretty much same data, hence use
 * <https://zenodo.org/records/3760626>
 * <https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19> 
 
-<mark>Protocol: Suggest what to record in logbook i.e. record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive.</mark>
-
-## 12.18-12.19 Choose license (3.1.4)
+### 12.18-12.19: Choose license
 
 No need to change from MIT, as that was used by Allen et al. 2020.
 
-<mark>Protocol: Say that default in template is MIT but may need to change. Makes sense to have this as a combined step with above perhaps? Although helpful to see seperate.</mark>
+### Untimed: Display article on website
 
-<mark>Template: Set as STARS Project Team in default MIT license - is that correct?</armk>
+Set up article and supplementary to display on website in `study_publication.qmd`.
 
-## Display on website
+### 13.20-13.56: Reading article
 
-Set up article and supplementary to display on website in `study_publciation.qmd`.
+Read article, making notes in `study_summary.qmd` (initially rough notes, then tidied slightly).
 
-<mark>Protocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it. I naturally found I wanted to do it after upload. Publication in study_publication. Code in study_code. Although that does mean looking at the code before scoping? So actually, makes sense to do code later, when write up.</mark>
+### 13.56-14.27: Identifying scope
 
-## 13.20-13.46 Reading article (3.2.1)
+Made page for scope under evaluation - `scope.qmd`. Then went through process of:
 
-Read article, making notes in `study_summary.qmd`
+1. Uploading tables and figures
+2. Added each table and figure, and marking as being within scope or not
+3. Looking through paper for key results, focussing on abstract and results section.
+4. Compared those against the tables and figures to check if they are captured or not.
 
-<mark>easier to consolidate reading into a summary if it has a structure to it</mark>
+::: {.callout-note appearance="minimal" collapse=true}
 
-<mark>are the description of the sample part of scope? could do with some recommendation on this.</mark>
-
-<mark>need seperate page for scope</mark>
-
-<mark>whilst reading, find myself highlighting things for scope</mark>
-
-<mark>for something like RCR, would it count as reproduction if we only focussed on part of the paper? worth perhaps noting that - although doesn't change what we do now</mark>
-
-<mark>Protocol: This can be changed later. For now, when want to add images, added them into quarto_site alongside study_summary. If decide in scope, later move to reproduction/</mark>
-
-<mark>i made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn't have to be prescriptive?</mark>
-
-## 13.47-13.56 Consolidating notes on article (3.2.1)
-
-Make rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.
-
-Didn't yet have a pre-defined structure for this. Just sort of tidied it. Did think about doing STRESS-DES structure. That would require deeper understanding though? And this should just be a bout reading and making some notes. So kept in genreal sort of structure of the article order.
-
-## 13.56-14.27 Identifying scope
-
-Made page for scope under evaluation - `scope.qmd`.
-
-First, went through all tables and figures in paper and marked as being results of our model or not.
-
-Then organised/cleaned it, by just downloading all the figures and tables and adding to the page. Decided to move the figures and tables into the original_study folder, as that is a centralised place and untouched otherwise so makes sense to be there. <mark>perhaps just download all at start in first stage?</mark>
-
-Then looked for "key results" in abstract, conclusion, or prominent in results. <mark>Protocol: Don't need to add discussion, keep as is, as that felt like it made the most sense, although can be suggestion, as you may find some paper putting all results in discussion for some reason. Purpose of discussion is interpretation though so shouldn't need it.</mark> Made rough notes throughout, then tidied and just kept bits describing missing results. Copy of rough notes:
-
-<mark>Initially felt unclear whether the description of the sample was relevant - decided no as it is about model results - if agreed on, then perhaps modify protocol to mention this as a suggestion</mark>
+## Notes from identification of key results and comparison with figures
 
 Abstract:
-* If current out- patient capacity is maintained there is sufficient capacity in the South of England to keep COVID-19 negative/recovered and positive patients in separate sessions, but rapid reallo- cation of patients may be needed. **key result: sufficient capacity, but vague/concluding statement rather than testable result**
-    * **too vague**
-* Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients. **key result: will need secondary site, will reduce workload in other sites, primary site will have increased workload, but again, this is more like a "conclusion" than a testable number?**
-    * **can see this is a description of figure 3 - green lines dip, red line enters in BST, and if you combines the lines on HU it would be higher than where it starts. **
-* At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity. **key result: up to 140 positive with 40-90 patients, breaches capacity**
-    * **Looks like figure 2, combining the yellow and red lines. So do we need to try and reproduce this? Think breaching capacity is Figure 3, where they can't all fit in one hospital, so not a new result**
+* **Need secondary site, reduces workload in other sites, increases in primary site:** "Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients."
+    * Captured in Figure 3
+* **Up to 140 COVID positive with 40-90 inpatients, breaching capacity:** "At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity."
+    * Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)
 
 Results:
-* States current median travel time from home to dialysis unit, and current capacity.
-    * **this feels like baseline parameter rather than result of simulation - which i think answers question of whether we try and replicate the geographic descriptions - no, as we are focussing on reproducing model**
-* Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months. 
-    * Figure 2 - number of patients in each COVID state over 150 days
-    * Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown.
-    * Figure 4 - patients displced from current unit, and travel time added
-* Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.
-    * **figures don't show this - that there are no patients unallocated, and no need to change dialysis frequency, so feels like key result**
-* Reduces workflow in units not taking COVID positive patients.
-    * **visible in figures**
-* Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)
-    * **visible in figures, just interpretation of figure 4**
+* **No patients unallocated:** "In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients)."
+    * Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line)
+* **Displaced patients have 20 minutes (sometimes up to 50) extra travel time** "Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis."
+    * Visible in Figure 4
 
-## Untimed reorganising scope page
+:::
 
-Don't yet have a defined structure for scope page, so spent some time reorganising it into hopefully a clearer layout.
+### Untimed: Reorganising scope page
+
+Reorganised into collapsible boxes for clearer layout.
+
+### Untimed: Consensus decision on scope
+
+Discussed scope with Tom Monks.
+
+* Corrected "Markov" is "Monte Carlo".
+* Whilst discussing, noticed that the number of unallocated patients is in Figure 2, so removed from scope.
+* Otherwise agreed with scope.
+
+### Untimed: Uploading to Zenodo
+
+Not doing for this one as it is a test-run.
+
+## Timings
+
+```{python}
+from datetime import datetime
+
+# List of time tuples with prescribed format
+FMT = '%H.%M'
+times = [
+    ('12.11', '12.16'),
+    ('12.18', '12.19'),
+    ('13.20', '13.56'),
+    ('13.56', '14.27')]
+
+total_min = 0
+for t in times:
+    # Convert to datetime object
+    h0 = datetime.strptime(t[0], FMT)
+    h1 = datetime.strptime(t[1], FMT)
+    # Find difference in minutes and add to total
+    total_min += (h1 - h0).total_seconds() / 60
+
+# Time in hours and minutes
+print(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')
+
+# Find time remaining
+max = 40*60
+remain_min = max - total_min
+print(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')
+
+# Find proportion out of 40 hours
+print(f'Used {total_min/max*100}% of 40 hours max')
+```
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.
+
+Protocol:
+
+* ✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)
+* Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.
+* When do we create pages that display the original files that were uploaded?
+    * Journal article and supplementary: I naturally wanted to do it after upload
+    * Code: I haven't looked at yet, and feel I wouldn't want to do until I have gone through familiarisation with the code
+    * Perhaps put both at that later stage, but make note in protocol about it not necessarily being a prescribed order?
+* Reflect on how want to deal with summary page. I used it to help me read through and summarise the article. However, later down the line, the STRESS-DES and ISPOR reporting guidelines could potentially provide a more complete summary (depending on how do the "evidence" sections - i.e. copying in text, or just referring to a part in the paper). So do we need a summary page? Or are these just notes that I make in the logbook? As don't necessarily want to prescribe that everyone has to write a summary? Leaning towards that.
+* Make reference to particular pages in template (e.g. when define scope, the file path to the scope template)
+* For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.
+* For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.
+* Add to stage when upload journal articles, that at the same time, they also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.
+* For scope, simplify protocol to just look for key results in abstract and results sections. Don't think should really need to look in discussion or conclusion, as those are more interpretation focussed, and should otherwise be highlighted in abstract - but don't make it prescriptive, just a recommendation, as focus here is just on finding key results, and recommending where they are likely to be in most (but not necessarily all) papers
+
+Template:
+
+* In license, have set "Copyright (c) 2024 STARS Project Team" - is this correct? Also, should it mention the original authors or not? Presuming not, as they will already have license file within that folder, and we will add yet another license file to the reproduction folder so it is stand alone.
+* Should we have MIT license for reproduction/ and then CC-BY license for main repository?
+    * In which case, would need to specify in repository that changing license in reproduction/ folder and not main folder. And explain somewhere what the license files apply to.
+
+Other:
+
+* We might sometimes only reproduce part of a study - for example, a paper with multiple models and we focus on the discrete-event simulation. Think about the impact this has, and whether we need to note this somewhere? For example, whether the badges would actually be awarded for this work (or whether that matters - or if important bit is about ability to reproduce the simulation)? Depending on planned output for this work (e.g. if did want to explore publishing with [Rescience C](https://rescience.github.io/), what this would mean). Doesn't change what we do during replication - just perhaps comments around it re: badges, and what we do with it.
