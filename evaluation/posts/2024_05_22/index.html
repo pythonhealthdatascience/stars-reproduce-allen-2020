@@ -129,6 +129,10 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
+    <a class="dropdown-item" href="../../../evaluation/scope.html">
+ <span class="dropdown-text">Scope</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
@@ -175,6 +179,8 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Day 1</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">setup</div>
+                <div class="quarto-category">read</div>
+                <div class="quarto-category">scope</div>
               </div>
                   </div>
   </div>
@@ -213,7 +219,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#choose-license-3.1.4" id="toc-choose-license-3.1.4" class="nav-link" data-scroll-target="#choose-license-3.1.4">12.18-12.19 Choose license (3.1.4)</a></li>
   <li><a href="#display-on-website" id="toc-display-on-website" class="nav-link" data-scroll-target="#display-on-website">Display on website</a></li>
   <li><a href="#reading-article-3.2.1" id="toc-reading-article-3.2.1" class="nav-link" data-scroll-target="#reading-article-3.2.1">13.20-13.46 Reading article (3.2.1)</a></li>
-  <li><a href="#consolidating-notes-on-article-3.2.1" id="toc-consolidating-notes-on-article-3.2.1" class="nav-link" data-scroll-target="#consolidating-notes-on-article-3.2.1">13.47- Consolidating notes on article (3.2.1)</a></li>
+  <li><a href="#consolidating-notes-on-article-3.2.1" id="toc-consolidating-notes-on-article-3.2.1" class="nav-link" data-scroll-target="#consolidating-notes-on-article-3.2.1">13.47-13.56 Consolidating notes on article (3.2.1)</a></li>
+  <li><a href="#identifying-scope" id="toc-identifying-scope" class="nav-link" data-scroll-target="#identifying-scope">13.56-14.27 Identifying scope</a></li>
+  <li><a href="#untimed-reorganising-scope-page" id="toc-untimed-reorganising-scope-page" class="nav-link" data-scroll-target="#untimed-reorganising-scope-page">Untimed reorganising scope page</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -270,9 +278,23 @@ ul.task-list li input[type="checkbox"] {
 <p><mark>i made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn’t have to be prescriptive?</mark></p>
 </section>
 <section id="consolidating-notes-on-article-3.2.1" class="level2">
-<h2 class="anchored" data-anchor-id="consolidating-notes-on-article-3.2.1">13.47- Consolidating notes on article (3.2.1)</h2>
+<h2 class="anchored" data-anchor-id="consolidating-notes-on-article-3.2.1">13.47-13.56 Consolidating notes on article (3.2.1)</h2>
 <p>Make rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.</p>
-<p>Didn’t yet have a pre-defined structure for this. Figued simplest option is to use STRESS DES structure?</p>
+<p>Didn’t yet have a pre-defined structure for this. Just sort of tidied it. Did think about doing STRESS-DES structure. That would require deeper understanding though? And this should just be a bout reading and making some notes. So kept in genreal sort of structure of the article order.</p>
+</section>
+<section id="identifying-scope" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-scope">13.56-14.27 Identifying scope</h2>
+<p>Made page for scope under evaluation - <code>scope.qmd</code>.</p>
+<p>First, went through all tables and figures in paper and marked as being results of our model or not.</p>
+<p>Then organised/cleaned it, by just downloading all the figures and tables and adding to the page. Decided to move the figures and tables into the original_study folder, as that is a centralised place and untouched otherwise so makes sense to be there. <mark>perhaps just download all at start in first stage?</mark></p>
+<p>Then looked for “key results” in abstract, conclusion, or prominent in results. <mark>Protocol: Don’t need to add discussion, keep as is, as that felt like it made the most sense, although can be suggestion, as you may find some paper putting all results in discussion for some reason. Purpose of discussion is interpretation though so shouldn’t need it.</mark> Made rough notes throughout, then tidied and just kept bits describing missing results. Copy of rough notes:</p>
+<p><mark>Initially felt unclear whether the description of the sample was relevant - decided no as it is about model results - if agreed on, then perhaps modify protocol to mention this as a suggestion</mark></p>
+<p>Abstract: * If current out- patient capacity is maintained there is sufficient capacity in the South of England to keep COVID-19 negative/recovered and positive patients in separate sessions, but rapid reallo- cation of patients may be needed. <strong>key result: sufficient capacity, but vague/concluding statement rather than testable result</strong> * <strong>too vague</strong> * Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients. <strong>key result: will need secondary site, will reduce workload in other sites, primary site will have increased workload, but again, this is more like a “conclusion” than a testable number?</strong> * <strong>can see this is a description of figure 3 - green lines dip, red line enters in BST, and if you combines the lines on HU it would be higher than where it starts. </strong> * At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity. <strong>key result: up to 140 positive with 40-90 patients, breaches capacity</strong> * <strong>Looks like figure 2, combining the yellow and red lines. So do we need to try and reproduce this? Think breaching capacity is Figure 3, where they can’t all fit in one hospital, so not a new result</strong></p>
+<p>Results: * States current median travel time from home to dialysis unit, and current capacity. * <strong>this feels like baseline parameter rather than result of simulation - which i think answers question of whether we try and replicate the geographic descriptions - no, as we are focussing on reproducing model</strong> * Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months. * Figure 2 - number of patients in each COVID state over 150 days * Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown. * Figure 4 - patients displced from current unit, and travel time added * Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency. * <strong>figures don’t show this - that there are no patients unallocated, and no need to change dialysis frequency, so feels like key result</strong> * Reduces workflow in units not taking COVID positive patients. * <strong>visible in figures</strong> * Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes) * <strong>visible in figures, just interpretation of figure 4</strong></p>
+</section>
+<section id="untimed-reorganising-scope-page" class="level2">
+<h2 class="anchored" data-anchor-id="untimed-reorganising-scope-page">Untimed reorganising scope page</h2>
+<p>Don’t yet have a defined structure for scope page, so spent some time reorganising it into hopefully a clearer layout.</p>
 
 
 </section>
