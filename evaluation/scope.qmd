@@ -30,29 +30,7 @@ This page outlines that parts of the journal article which we will attempt to re
 
 :::
 
-::: {.callout-note appearance="minimal" collapse=true}
-
-## Section from results about being unallocated to a session
-
-**From results section:** "In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients)."
-
-**Why this is in scope:** The figures do not provide any information on the count of unallocated patients. The change in dialysis frequency is assumed to be an implicit consequence of whether or not there are any unallocated patients necessitating they wait a day or change frequency in the model.
-
-**Exactly what we are aiming to reproduce from this statement:** Observation of no patients being unable to be allocated to a session.
-
-:::
-
 ## Outside scope
-
-::: {.callout-note appearance="minimal" collapse=true}
-
-## Figure 1
-
-Outside scope as it is a flow chart representing the model pathways.
-
-![Figure 1. "Schematic representation of patient pathway."](../original_study/article_fig1.png)
-
-:::
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
@@ -66,9 +44,19 @@ Outside scope as it is a table of model parameters rather than outputs.
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
+## Figure 1
+
+Outside scope as it is a flow chart representing the model pathways.
+
+![Figure 1. "Schematic representation of patient pathway."](../original_study/article_fig1.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
 ## Figure 5
 
-Outside scope as it is a result of the Markov model.
+Outside scope as it is a result of the Monte Carlo model.
 
 ![Figure 5. "One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time."](../original_study/article_fig1.png)
 
@@ -78,7 +66,7 @@ Outside scope as it is a result of the Markov model.
 
 ## Figure 6
 
-Outside scope as it is a result of the Markov model.
+Outside scope as it is a result of the Monte Carlo model.
 
 ![Figure 6. "Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time."](../original_study/article_fig6.png)
 
