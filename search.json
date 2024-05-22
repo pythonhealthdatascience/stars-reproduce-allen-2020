@@ -25,21 +25,35 @@
     "href": "evaluation/posts/2024_05_22/index.html#upload-materials-3.1.3",
     "title": "Day 1",
     "section": "12.11 - 12.16 Upload materials (3.1.3)",
-    "text": "12.11 - 12.16 Upload materials (3.1.3)\nArticle:\n\nhttps://doi.org/10.1371%2Fjournal.pone.0237628\n\nSupplementary materials:\n\nhttps://doi.org/10.1371/journal.pone.0237628.s001\nhttps://doi.org/10.1371/journal.pone.0237628.s002\n\nCode - both code sources should be the same and pretty much same data, hence used Zenodo as that is the archived version:\n\nhttps://zenodo.org/records/3760626\nhttps://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19\n\nProtocol: Suggest what to record in logbook i.e. record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive.\nProtocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it"
+    "text": "12.11 - 12.16 Upload materials (3.1.3)\nArticle:\n\nhttps://doi.org/10.1371%2Fjournal.pone.0237628\n\nSupplementary materials:\n\nhttps://doi.org/10.1371/journal.pone.0237628.s001\nhttps://doi.org/10.1371/journal.pone.0237628.s002\n\nCode - both code sources should be the same and pretty much same data, hence used Zenodo as that is the archived version:\n\nhttps://zenodo.org/records/3760626\nhttps://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19\n\nProtocol: Suggest what to record in logbook i.e. record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive."
   },
   {
     "objectID": "evaluation/posts/2024_05_22/index.html#choose-license-3.1.4",
     "href": "evaluation/posts/2024_05_22/index.html#choose-license-3.1.4",
     "title": "Day 1",
     "section": "12.18-12.19 Choose license (3.1.4)",
-    "text": "12.18-12.19 Choose license (3.1.4)\nNo need to change from MIT, as that was used by Allen et al. 2020.\nProtocol: Say that default in template is MIT but may need to change\nTemplate: Set as STARS Project Team in default MIT license - is that correct?"
+    "text": "12.18-12.19 Choose license (3.1.4)\nNo need to change from MIT, as that was used by Allen et al. 2020.\nProtocol: Say that default in template is MIT but may need to change. Makes sense to have this as a combined step with above perhaps? Although helpful to see seperate.\nTemplate: Set as STARS Project Team in default MIT license - is that correct?"
   },
   {
-    "objectID": "evaluation/posts/2024_05_22/index.html#section",
-    "href": "evaluation/posts/2024_05_22/index.html#section",
+    "objectID": "evaluation/posts/2024_05_22/index.html#display-on-website",
+    "href": "evaluation/posts/2024_05_22/index.html#display-on-website",
     "title": "Day 1",
-    "section": "12.25-",
-    "text": "12.25-"
+    "section": "Display on website",
+    "text": "Display on website\nSet up article and supplementary to display on website in study_publciation.qmd.\nProtocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it. I naturally found I wanted to do it after upload. Publication in study_publication. Code in study_code. Although that does mean looking at the code before scoping? So actually, makes sense to do code later, when write up."
+  },
+  {
+    "objectID": "evaluation/posts/2024_05_22/index.html#reading-article-3.2.1",
+    "href": "evaluation/posts/2024_05_22/index.html#reading-article-3.2.1",
+    "title": "Day 1",
+    "section": "13.20-13.46 Reading article (3.2.1)",
+    "text": "13.20-13.46 Reading article (3.2.1)\nRead article, making notes in study_summary.qmd\neasier to consolidate reading into a summary if it has a structure to it\nare the description of the sample part of scope? could do with some recommendation on this.\nneed seperate page for scope\nwhilst reading, find myself highlighting things for scope\nfor something like RCR, would it count as reproduction if we only focussed on part of the paper? worth perhaps noting that - although doesn’t change what we do now\nProtocol: This can be changed later. For now, when want to add images, added them into quarto_site alongside study_summary. If decide in scope, later move to reproduction/\ni made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn’t have to be prescriptive?"
+  },
+  {
+    "objectID": "evaluation/posts/2024_05_22/index.html#consolidating-notes-on-article-3.2.1",
+    "href": "evaluation/posts/2024_05_22/index.html#consolidating-notes-on-article-3.2.1",
+    "title": "Day 1",
+    "section": "13.47- Consolidating notes on article (3.2.1)",
+    "text": "13.47- Consolidating notes on article (3.2.1)\nMake rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.\nDidn’t yet have a pre-defined structure for this. Figued simplest option is to use STRESS DES structure?"
   },
   {
     "objectID": "evaluation/badges.html",
@@ -144,7 +158,7 @@
     "href": "quarto_site/study_summary.html",
     "title": "Summary",
     "section": "",
-    "text": "all those key information bits that we pull during reproduction"
+    "text": "Type of model: Discrete event simulation (excluding sections of the paper relevant to another model - a Monte-Carlo vehicle routing model of patient transport)\nPurpose of model: Model service delivery in dialysis network during change in COVID-19 cases.\nDiscrete event simulation to model service delivery in dialysis network\nPart of the paper is also about a Monte-Carlo vehile routing model of patient transport (not in our scope).\nWessex - mixed urban/rural setting, renal dialysis services cares for 644 patients, nine centres\n75% of patients use patient transport services\nCOVID-positive patients treated seperately to COVID-negative.\nChange in inpatient and outpatient workload during pandemic at each deialysis unit in network. Estimate over three to six months. Estimate number of patients required to travel to different unit and change in travel time. Estimate vehicle total travel implications. (Some of this will be Monte Carlo).\nPatient location postcode. Travel time routine. Worst case time spread COVID Fergeson. Mortality rate, time patient COVID-positive before admission, and inpatient rate of stay were local parameters.\nModel:\n\nPython 3.8\nSimPy 3\nMatPlotLib\nSTRESS reporting guidelines\nDES on Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux\n\nDefined period (e.g. one year). Patients progress through phases of COVID (negative, positive, some with inpatient care, recovred, died). In each COVID state, model seeks to put them in appropriate unit and session, opening COVID-positive sessions in units that allow it. COVID-positive don’t mis with others.\nRun 30 times, show median and extremes.\n\n\n\nPatient pathway figure from Allen et al. 2020\n\n\nAll patients receive dialysis 3 times a week. Each patient starts on either Monday or Tuesday.\nHave proportion of patients either fixed or sampled from stochastic distribution for phases of COVID state and care.\nCOVID seperate from unifected and recoered.\n\n\n\nBaseline model parameters from Allen et al. 2020\n\n\nFor allocation to units, use search strategy: * COVID negative or recovered - look for place in current unit, if no space, find closest unit (by travel time) with available space * COVID positive - put in Queen Alexandara, and if full, make capacity in Basingstoke. If new COVID session required, more all COVID negative patients in that session as per neg rules. * COVID positive inpatient - all in Queen Alexandra (but allows search for unit with inpatients) * Unallocated - if can’t allocate to any units, attempt again next day\nOnce every week, attempts to reallocate patients back to starting unit or closest available. This is so cared more nearby and to compress COVID positive patients into few units and sessions.\nCOVID positive converted back to COVID negative when no longer needed.\nResults\nStates current median travel time from home to dialysis unit, and current capacity.\nFigures 2, 3, 4 show impact of COVID infecting 80% patients in next three months.\n\nUsing half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.\nReduces workflow in units not taking COVID positive patients.\nDisplaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)\n\n\n\n\nFigure 2\n\n\n\n\n\nFigure 3\n\n\n\n\n\nFigure 4\n\n\nDiscusion\nDialysis unit can cope with worst case spread. Requires reallocation of patients, will impact on ambulance and efficiency.\nLikely significant patient partessures, current capacity breached, consider moving dislaysi requipment during peak COVID positive.\nTransporting individually unsustainable.(Markov?)\nModel limitations - assumes can reallocate immediatley, assumes current capacity maintained (i.e. no staff shortage), not modelled timing, not included home dialysis."
   },
   {
     "objectID": "reproduction/scripts/example.html",
