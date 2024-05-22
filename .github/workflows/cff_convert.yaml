@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - CITATION.cff
+  workflow_dispatch:
 
 jobs:
   convert:
