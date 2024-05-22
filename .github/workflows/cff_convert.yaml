@@ -9,8 +9,9 @@ on:
 
 jobs:
   convert:
-    name: "convert"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out a copy of the repository
         uses: actions/checkout@v4
