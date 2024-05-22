@@ -29,14 +29,40 @@ Code - both code sources should be the same and pretty much same data, hence use
 
 <mark>Protocol: Suggest what to record in logbook i.e. record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive.</mark>
 
-<mark>Protocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it</mark>
-
 ## 12.18-12.19 Choose license (3.1.4)
 
 No need to change from MIT, as that was used by Allen et al. 2020.
 
-<mark>Protocol: Say that default in template is MIT but may need to change</mark>
+<mark>Protocol: Say that default in template is MIT but may need to change. Makes sense to have this as a combined step with above perhaps? Although helpful to see seperate.</mark>
 
 <mark>Template: Set as STARS Project Team in default MIT license - is that correct?</armk>
 
-## 12.25-
+## Display on website
+
+Set up article and supplementary to display on website in `study_publciation.qmd`.
+
+<mark>Protocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it. I naturally found I wanted to do it after upload. Publication in study_publication. Code in study_code. Although that does mean looking at the code before scoping? So actually, makes sense to do code later, when write up.</mark>
+
+## 13.20-13.46 Reading article (3.2.1)
+
+Read article, making notes in `study_summary.qmd`
+
+<mark>easier to consolidate reading into a summary if it has a structure to it</mark>
+
+<mark>are the description of the sample part of scope? could do with some recommendation on this.</mark>
+
+<mark>need seperate page for scope</mark>
+
+<mark>whilst reading, find myself highlighting things for scope</mark>
+
+<mark>for something like RCR, would it count as reproduction if we only focussed on part of the paper? worth perhaps noting that - although doesn't change what we do now</mark>
+
+<mark>Protocol: This can be changed later. For now, when want to add images, added them into quarto_site alongside study_summary. If decide in scope, later move to reproduction/</mark>
+
+<mark>i made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn't have to be prescriptive?</mark>
+
+## 13.47- Consolidating notes on article (3.2.1)
+
+Make rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.
+
+Didn't yet have a pre-defined structure for this. Figued simplest option is to use STRESS DES structure?
