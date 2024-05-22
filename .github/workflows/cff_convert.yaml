@@ -1,0 +1,28 @@
+name: "Convert CITATION.cff"
+run-name: Convert CITATION.cff to other formats
+
+on:
+  push:
+    paths:
+      - CITATION.cff
+
+jobs:
+  convert:
+    name: "convert"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out a copy of the repository
+        uses: actions/checkout@v4
+
+      - name: Convert CITATION.cff to Bibtex
+        uses: citation-file-format/cffconvert-github-action@2.0.0
+        with:
+          args: "--infile ./CITATION.cff --format bibtex --outfile bibtex.bib"
+
+      - name: Commit and push Bibtex
+        run: |
+          git config --global user.name 'cffconvert GitHub Action'
+          git config --global user.email 'cffconvert@users.noreply.github.com'
+          git add bibtex.bib
+          git commit -m "Automated update of Bibtex citation"
+          git push
