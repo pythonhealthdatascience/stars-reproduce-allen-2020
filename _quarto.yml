@@ -5,11 +5,11 @@ project:
 
 website:
   # Name of site in navbar
-  title: "Reproducing Monks et al. 2016"
+  title: "Reproducing Allen et al. 2020"
   # Favicon image for site
   favicon: "quarto_site/stars_logo_blue.png"
   # Adds edit and issue buttons to footer
-  repo-url: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+  repo-url: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
   repo-actions: [edit, issue]
   # Settings for navbar across top of page
   navbar:
@@ -36,7 +36,7 @@ website:
     # Right-aligned within navbar...
     right:
       - icon: github
-        href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+        href: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
   page-footer:
     left: |
       [![](https://raw.githubusercontent.com/pythonhealthdatascience/stars-logo/main/stars_logo_blue_text.png){fig-alt="STARS" width=300px}](https://github.com/pythonhealthdatascience)
@@ -45,7 +45,7 @@ website:
         href: CHANGELOG.md
     right:
       - icon: github
-        href: https://github.com/pythonhealthdatascience/stars-reproduce-monks-2016
+        href: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
 
 format:
   html:

@@ -7,4 +7,4 @@ embeds the article and supplementary
 
 (as they have been copied into repository)
 
-<iframe width="100%" height="800" src="../original_study/monks_2016.pdf">
+<!-- <iframe width="100%" height="800" src="../original_study/monks_2016.pdf"> --!>

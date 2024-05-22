@@ -1,6 +1,6 @@
 ---
 title: "Computational reproducibility report"
-subtitle: "For Monks et al. 2016"
+subtitle: "For Allen et al. 2020"
 abstract: >
     This is a plain english summary for this reproduction report
 bibliography: ../quarto_site/references.bib

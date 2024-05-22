@@ -1,10 +1,10 @@
-# STARS: Computational reproducibility of Monks et al. 2016
+# STARS: Computational reproducibility of Allen et al. 2020
 
-⚠️ ***This repository is a test-run for STARS work package 1 (and is not one of the six reproduced DES models). It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
+⚠️ ***This is a test-run for STARS work package 1. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
 This repository forms part of work package 1 on the NIHR-funded project STARS: Sharing Tools and Artefacts for Reproducible Simulations. It assesses the computational reproducibility of:
 
-> Monks, T., Worthington, D., Allen, M., Pitt, M., Stein, K., & James, M. A. **A modelling tool for capacity planning in acute and community stroke services**. *BMC Health Services Research* 16, 530 (2016). https://doi.org/10.1186/s12913-016-1789-4
+> Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. **A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic**. *PLoS One* 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.
 
 ## Website
 
