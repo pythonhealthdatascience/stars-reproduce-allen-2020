@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Amy Heather">
-<meta name="dcterms.date" content="2024-05-09">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Day 1</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Dialysis capapcity model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,14 +108,14 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Reproducing Allen et al.&nbsp;2020</span>
     </a>
   </div>
@@ -99,15 +131,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-original-study">    
         <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_summary.html">
+    <a class="dropdown-item" href="../../quarto_site/study_summary.html">
  <span class="dropdown-text">Summary</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_publication.html">
+    <a class="dropdown-item" href="../../quarto_site/study_publication.html">
  <span class="dropdown-text">Publication</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_code.html">
+    <a class="dropdown-item" href="../../quarto_site/study_code.html">
  <span class="dropdown-text">Code</span></a>
   </li>  
     </ul>
@@ -118,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction-code">    
         <li>
-    <a class="dropdown-item" href="../../../reproduction/scripts/example.html">
+    <a class="dropdown-item" href="../../reproduction/scripts/example.html">
  <span class="dropdown-text">Example notebook (ipynb)</span></a>
   </li>  
     </ul>
@@ -129,29 +161,29 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="../../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/artefacts.html">
+    <a class="dropdown-item" href="../../evaluation/artefacts.html">
  <span class="dropdown-text">Sharing research artefacts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/badges.html">
+    <a class="dropdown-item" href="../../evaluation/badges.html">
  <span class="dropdown-text">Badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/reporting.html">
+    <a class="dropdown-item" href="../../evaluation/reporting.html">
  <span class="dropdown-text">Reporting</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/logbook.html"> 
+    <a class="nav-link" href="../../evaluation/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="../../evaluation/reproduction_report.html"> 
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
@@ -169,39 +201,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Day 1</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">setup</div>
-                <div class="quarto-category">reading</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Amy Heather </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">May 9, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -209,36 +209,147 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading-paper" id="toc-reading-paper" class="nav-link active" data-scroll-target="#reading-paper">1100 - 1143 - Reading paper</a></li>
-  <li><a href="#downloading-materials" id="toc-downloading-materials" class="nav-link" data-scroll-target="#downloading-materials">1145 - 1200 - Downloading materials</a></li>
-  <li><a href="#creating-environment" id="toc-creating-environment" class="nav-link" data-scroll-target="#creating-environment">1200 - 1205 - Creating environment</a></li>
+  <li><a href="#input-files" id="toc-input-files" class="nav-link active" data-scroll-target="#input-files">Input files</a>
+  <ul class="collapse">
+  <li><a href="#unit-capacity-and-use" id="toc-unit-capacity-and-use" class="nav-link" data-scroll-target="#unit-capacity-and-use">Unit capacity and use</a></li>
+  <li><a href="#patients" id="toc-patients" class="nav-link" data-scroll-target="#patients">Patients</a></li>
+  <li><a href="#travel-matrix" id="toc-travel-matrix" class="nav-link" data-scroll-target="#travel-matrix">Travel matrix</a></li>
+  </ul></li>
+  <li><a href="#code-and-example" id="toc-code-and-example" class="nav-link" data-scroll-target="#code-and-example">Code and example</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_09/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/original_study/dialysis-service-delivery-covid19-v1.0/Capacity_Model_Template.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dialysis capapcity model</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<p>This is an example post.</p>
-<section id="reading-paper" class="level2">
-<h2 class="anchored" data-anchor-id="reading-paper">1100 - 1143 - Reading paper</h2>
+</header>
+
+
+<p>The dialysis model runs through a defined period (e.g.&nbsp;one year) and simulates the progression of patients through phases of COVID infection: negative, positive (with some requiring inpatient care) and recovered or died. The speed of progression of infection through the population may be varied (typically 3-12 months).</p>
+<p>As patients change COVID state the model seeks to place them in the appropriate unit and session, opening up COVID-positive sessions in units that allow it. COVID-positive patients do not mix with any other patients. Opening up COVID-positive sessions causes other patients to be displaced from that session, and the model seeks to reallocate them either to the same unit or, if there is no space left, to the closest alternative unit.</p>
+<p>When allocating patients to units, the following search strategy is employed.</p>
 <ul>
-<li>5 figures, 6 tables</li>
-<li>Parameter A 123</li>
-<li>Parameter B 456</li>
+<li><p><em>COVID negative</em>: First look for place in current unit attended. If no room there place in the closest unit (judged by estimated travel time) with available space.</p></li>
+<li><p><em>COVID-positive</em>: Open up sessions in units for COVID positive patients in an order specified in the input files. If a new COVID session is required, the model will displace all COVID negative patients in that session, and seek to re-allocate them according to the rules for allocating COVID negative patients. COVID-positive sessions are converted back to COVID negative sessions when they are no longer needed.</p></li>
+<li><p>COVID-positive inpatient*: All inpatients are placed in Queen Alexandra Hospital, Portsmouth (though the model allows searching by travel time if another unit were to open to renal COVID-positive inpatients). If a new COVID session is required, the model will displace all COVID negative patients in that session, and seek to re-allocate them according to the rules for allocating COVID negative patients.</p></li>
+<li><p><em>COVID-recovered</em>: Treat as COVID negative.</p></li>
+<li><p><em>Unallocated patients</em>: If a patient cannot be allocated to any unit, the model attempts to allocate them each day.</p></li>
+</ul>
+<p>Patients, in the model, may end up being cared for at a more distant unit than their starting unit. Once every week, the model seeks to reallocate patients back to their starting unit, or closest available unit if room in their starting unit is not available. This will also compress COVID-positive patients into as few units and sessions as possible.</p>
+<section id="input-files" class="level2">
+<h2 class="anchored" data-anchor-id="input-files">Input files</h2>
+<section id="unit-capacity-and-use" class="level3">
+<h3 class="anchored" data-anchor-id="unit-capacity-and-use">Unit capacity and use</h3>
+<p>The input file <em>./sim/units.csv</em> allows definition and use of units:</p>
+<ul>
+<li><em>unit</em>: the name used in outputs.</li>
+<li><em>subunit</em>: units may be broken down into two or more subunits. This may be done, for example, if only a part of the unit will be made available to COVID-19 positive patients.</li>
+<li><em>Chairs</em>: the number of dialysis chairs available in each session.</li>
+<li><em>inpatient</em>: Set to 1 for hospitals that can accept COVID postive dialysis inpatients.</li>
+<li><em>Allow cov +</em>: a value of 1 indicates that sessions for that unit, or subunit, may be made available to COVID positive patients.</li>
+<li><em>Cov +ve order</em>: The order in which units open up for COVID positive dialysis out patients.</li>
+<li><em>Mon_1 thru Tues_3</em>: Three sessions per day on Mon/Tues (which repeat on Wed/Thurs and Fri/Sat). A 1 indicates that the session is open for booking.</li>
 </ul>
 </section>
-<section id="downloading-materials" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-materials">1145 - 1200 - Downloading materials</h2>
-<p>Source: link to materials</p>
-<p>Saved to this repository.</p>
+<section id="patients" class="level3">
+<h3 class="anchored" data-anchor-id="patients">Patients</h3>
+<p>The input file <em>./sim/units.csv</em> contains information on patients:</p>
+<ul>
+<li><em>Patient ID</em>: Any id of patient.</li>
+<li><em>Patient type</em>: Not currently used in model.</li>
+<li><em>Postcode sector</em>: Home postcode sector of patient.</li>
+<li><em>Site</em>: Site patient currently attends.</li>
+<li><em>Subunit</em>: Allocation of patient to subunit (if subunits use, you can simply assign them to any of them at the beginning of the model).</li>
+<li><em>Site postcode</em>: Postcode of dialysis unit</li>
+<li><em>COVID status</em>: Can be set to <em>positive</em> if patients known to be positive at the start of the model run.</li>
+<li><em>first_day</em>: Either <em>Mon</em> or <em>Tues</em> for patients having dialysis Mon/Wed/Fri or Tues/Thurs/Sat.</li>
+<li>count*: set to 1 for all patients.</li>
+</ul>
 </section>
-<section id="creating-environment" class="level2">
-<h2 class="anchored" data-anchor-id="creating-environment">1200 - 1205 - Creating environment</h2>
-<p>No environment file provided, so created based on packages used in scripts and versions provided in the paper.</p>
+<section id="travel-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="travel-matrix">Travel matrix</h3>
+<p>The input file <em>./sim/travel_matrix.csv</em> contains travel times (minutes) from all patient postcode sectors to all dialysis units. We used Routino (routino.org) to obtain travel times.</p>
+</section>
+</section>
+<section id="code-and-example" class="level2">
+<h2 class="anchored" data-anchor-id="code-and-example">Code and example</h2>
+<div id="cell-3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sim_replicate <span class="im">as</span> sim</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sim.parameters <span class="im">import</span> Scenario, Uniform, Normal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Scenarios are defined in dictionaries as below. Multiple sceanrios may be defined and all results are saved to the <em>./output</em> folder.</p>
+<p>Parameters in the dictionary are:</p>
+<ul>
+<li><em>run_length</em>: Model run in days.</li>
+<li><em>total_proportion_people_infected</em>. The proportion of patients who may be infected in the model. We assume this will be limited by herd immunity (or a vaccine).</li>
+<li><em>time_to_infection</em>: The time from start of model run to the time patients are infected. For time to infection a normal distrubtion is used. The paramters applied are mean, standard deviation, and lower cut-off (use 0 to avoid negative values) in days. In scarios we describe as 3 months we assume that six standard deviations of the distrubution (3 either side of the mean) occur in 3 months, or 90 days, so a standard deviation of 90/6 (or 15) is used.</li>
+<li><em>time_positive</em>: The duration a patient is positive if they remain in outpatient dialysis. A uniform distribution is used.</li>
+<li><em>proportion_pos_requiring_inpatient</em>: The poportion of infected patients who will require inpatient dialysis.</li>
+<li><em>time_pos_before_inpatient</em>: For patients who will receive inpatient care, this is the time spent as a COVID positive outpatient before being hospitalised. A uniform distribution is used.</li>
+<li><em>time_inpatient</em>: The length of stay as an inpatient. A uniform distribution is used.</li>
+<li><em>mortality</em>: The average mortality of dialysis patients who become infected with COVID.</li>
+<li><em>random_positive_rate_at_start</em>: The model allows a proportion of patients to be randomly infected at the start of the model run.</li>
+</ul>
+<p>Define a sceanrio and the numebr of model runs below (the replicates will use all available CPU cores).</p>
+<div id="cell-5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>number_of_replications <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>scenarios <span class="op">=</span> {}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>scenarios[<span class="st">'base_3_month'</span>] <span class="op">=</span> Scenario(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    run_length<span class="op">=</span><span class="dv">150</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    total_proportion_people_infected <span class="op">=</span> <span class="fl">0.8</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    time_to_infection <span class="op">=</span> Normal(<span class="dv">60</span>, <span class="dv">15</span>, <span class="fl">0.0</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    time_positive <span class="op">=</span> Uniform(<span class="dv">7</span>, <span class="dv">14</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    proportion_pos_requiring_inpatient<span class="op">=</span> <span class="fl">0.6</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    time_pos_before_inpatient <span class="op">=</span> Uniform(<span class="dv">3</span>,<span class="dv">7</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    time_inpatient <span class="op">=</span> Uniform(<span class="fl">7.0</span>, <span class="fl">14.0</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    mortality <span class="op">=</span> <span class="fl">0.15</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    random_positive_rate_at_start <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Run the scenario. Three sets of charts will be outputed for each scenario (and saved with sceanrio names in the <em>./output</em> directory: * Numbers of patients in negative, positive outpatient, positive inpatient, recovered/died stages of COVID: * Number of patients displaced from their starting dialysis unit, and how much extra travel time there is to their unit of current care. * Numbers of patients (negative/recovered, positive outpatient, pisitive inpatient) at each dialysis unit.</p>
+<div id="cell-7" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim.run_replications(scenarios, number_of_replications)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running 30 reps of base_3_month =&gt; Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capacity_Model_Template_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capacity_Model_Template_files/figure-html/cell-4-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capacity_Model_Template_files/figure-html/cell-4-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -662,12 +773,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../../CHANGELOG.html">
+    <a class="nav-link" href="../../CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_09/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/original_study/dialysis-service-delivery-covid19-v1.0/Capacity_Model_Template.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amy Heather">
-<meta name="dcterms.date" content="2024-05-10">
+<meta name="dcterms.date" content="2024-05-22">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Day 2</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Day 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -206,10 +172,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Day 2</h1>
+      <h1 class="title">Day 1</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">example</div>
-                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">setup</div>
               </div>
                   </div>
   </div>
@@ -227,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 10, 2024</p>
+        <p class="date">May 22, 2024</p>
       </div>
     </div>
     
@@ -239,7 +204,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#made-repository-3.1.2" id="toc-made-repository-3.1.2" class="nav-link active" data-scroll-target="#made-repository-3.1.2">Made repository (3.1.2)</a></li>
+  <li><a href="#upload-materials-3.1.3" id="toc-upload-materials-3.1.3" class="nav-link" data-scroll-target="#upload-materials-3.1.3">12.11 - 12.16 Upload materials (3.1.3)</a></li>
+  <li><a href="#choose-license-3.1.4" id="toc-choose-license-3.1.4" class="nav-link" data-scroll-target="#choose-license-3.1.4">12.18-12.19 Choose license (3.1.4)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">12.25-</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -248,17 +222,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>This is a post with executable code.</p>
-<div id="d5b36106" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>random.randint(<span class="dv">0</span>,<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>1</code></pre>
-</div>
-</div>
+<p>Created repository, uploaded materials, chose license.</p>
+<section id="made-repository-3.1.2" class="level2">
+<h2 class="anchored" data-anchor-id="made-repository-3.1.2">Made repository (3.1.2)</h2>
+<p>Without using template (does not yet exist, will create based on this repository, which is a test-run)</p>
+</section>
+<section id="upload-materials-3.1.3" class="level2">
+<h2 class="anchored" data-anchor-id="upload-materials-3.1.3">12.11 - 12.16 Upload materials (3.1.3)</h2>
+<p>Article:</p>
+<ul>
+<li><a href="https://doi.org/10.1371%2Fjournal.pone.0237628" class="uri">https://doi.org/10.1371%2Fjournal.pone.0237628</a></li>
+</ul>
+<p>Supplementary materials:</p>
+<ul>
+<li><a href="https://doi.org/10.1371/journal.pone.0237628.s001" class="uri">https://doi.org/10.1371/journal.pone.0237628.s001</a></li>
+<li><a href="https://doi.org/10.1371/journal.pone.0237628.s002" class="uri">https://doi.org/10.1371/journal.pone.0237628.s002</a></li>
+</ul>
+<p>Code - both code sources should be the same and pretty much same data, hence used Zenodo as that is the archived version:</p>
+<ul>
+<li><a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a></li>
+<li><a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a></li>
+</ul>
+<p><mark>Protocol: Suggest what to record in logbook i.e.&nbsp;record the links. And that you record start time, do it, record end time, note down in logbook - unless that is too prescreptive.</mark></p>
+<p><mark>Protocol: Need to add creation of pages to display it within Quarto to logbook - when to do it, and when to time it</mark></p>
+</section>
+<section id="choose-license-3.1.4" class="level2">
+<h2 class="anchored" data-anchor-id="choose-license-3.1.4">12.18-12.19 Choose license (3.1.4)</h2>
+<p>No need to change from MIT, as that was used by Allen et al.&nbsp;2020.</p>
+<p><mark>Protocol: Say that default in template is MIT but may need to change</mark></p>
+<p><mark>Template: Set as STARS Project Team in default MIT license - is that correct?</mark></p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">12.25-</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -684,7 +682,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_10/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
