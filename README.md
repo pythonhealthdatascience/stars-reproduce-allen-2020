@@ -59,4 +59,4 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 
 ## Citation
 
-If you wish to cite this repository, please refer to the citation file `CITATION.cff`, and the auto-generated alternative format `bibtex.bib`.
+If you wish to cite this repository, please refer to the citation file `CITATION.cff`, and the auto-generated alternatives `citation_apalike.apa` and `citation_bibtex.bib`.

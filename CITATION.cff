@@ -10,7 +10,6 @@ type: software
 authors:
   - given-names: Amy
     family-names: Heather
-    name-suffix: Ms
     email: a.heather2@exeter.ac.uk
     affiliation: University of Exeter
     orcid: 'https://orcid.org/0000-0002-6596-3479'

@@ -12,4 +12,7 @@ This book captures the reproduction of:
 
 ## Citation
 
-If you wish to cite this repository, please refer to the `CITATION.cff` file.
+**APA**:
+{{< include citation_apalike.apa >}}
+
+See `CITATION.cff` and `citation_bibtex.bib` for alternative formats.
