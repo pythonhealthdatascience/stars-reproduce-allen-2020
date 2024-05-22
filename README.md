@@ -38,7 +38,8 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 ├── LICENSE
 ├── README.md
 ├── _quarto.yml
-├── bibtex.bib
+├── citation_apalike.apa
+├── citation_bibtex.bib
 └── index.qmd
 ```
 
@@ -52,7 +53,8 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 * `LICENSE` - Details of the license for this work
 * `README.md` - Description for this repository. You'll find a seperate README for the model within the `reproduction/` folder, and potentially also the `original_study/` folder if a README was created by the original study authors
 * `_quarto.yml` - Set-up instructions for the Quarto website
-* `bibtex.bib` - Bibtex citation generated from CITATION.cff
+* `citation_apalike.bib` - APA citation generated from CITATION.cff
+* `citation_bibtex.bib` - Bibtex citation generated from CITATION.cff
 * `index.qmd` - Home page for the Quarto website
 
 ## Citation
