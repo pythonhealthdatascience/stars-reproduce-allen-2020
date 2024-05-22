@@ -1,0 +1,44 @@
+---
+title: "Scope"
+---
+
+This page outlines that parts of the journal article which we will attempt to reproduce.
+
+## Figures and tables
+
+### Within scope
+
+**Figure 2** - number of patients in each COVID state over 150 days
+
+![Figure 2](../original_study/article_fig2.png)
+
+**Figure 3** - similar to figure 2, but with different categories and divided by unit
+![Figure 3](../original_study/article_fig3.png)
+
+**Figure 4** - patients displaced from current unit and travel times added
+
+![Figure 4](../original_study/article_fig4.png)
+
+### Not in scope
+
+**Figure 1** - as it is a flow chart representing of pathways in model.
+
+![Figure 1](../original_study/article_fig1.png)
+
+**Table 1** - as it lists parameters for the model.
+
+![Table 1](../original_study/article_tab1.png)
+
+**Figure 5** - as it is a result from the Markov model
+
+![Figure 1](../original_study/article_fig1.png)
+
+**Figure 6** - as it is a result from the Markov model
+
+![Figure 6](../original_study/article_fig6.png)
+
+## Key results from elsewhere in article
+
+"In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes **without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency)**. Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients)."
+
+* This is in scope, as the figures don't provided any information on the count of unallocated patients, or therefore on whether any therefore had changes in dialysis frequency (which assuming is the implicit conclusion of being unallocated changing frequency). Hence, aim to reproduce: **observation of no patients being unable to be allocated to a session**

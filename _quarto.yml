@@ -26,6 +26,7 @@ website:
           - reproduction/scripts/example.ipynb
       - text: Evaluation
         menu:
+          - evaluation/scope.qmd
           - evaluation/reproduction_success.qmd
           - evaluation/artefacts.qmd
           - evaluation/badges.qmd

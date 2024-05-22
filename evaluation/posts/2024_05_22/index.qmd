@@ -2,7 +2,7 @@
 title: "Day 1"
 author: "Amy Heather"
 date: "2024-05-22"
-categories: [setup]
+categories: [setup, read, scope]
 ---
 
 Created repository, uploaded materials, chose license.
@@ -61,8 +61,46 @@ Read article, making notes in `study_summary.qmd`
 
 <mark>i made notes here as i read paper as I find that helps me concentrate better when reading, but that doesn't have to be prescriptive?</mark>
 
-## 13.47- Consolidating notes on article (3.2.1)
+## 13.47-13.56 Consolidating notes on article (3.2.1)
 
 Make rough notes whilst reading article, tidied these into a structured summary of model, to consolidate my understanding of model.
 
-Didn't yet have a pre-defined structure for this. Figued simplest option is to use STRESS DES structure?
+Didn't yet have a pre-defined structure for this. Just sort of tidied it. Did think about doing STRESS-DES structure. That would require deeper understanding though? And this should just be a bout reading and making some notes. So kept in genreal sort of structure of the article order.
+
+## 13.56-14.27 Identifying scope
+
+Made page for scope under evaluation - `scope.qmd`.
+
+First, went through all tables and figures in paper and marked as being results of our model or not.
+
+Then organised/cleaned it, by just downloading all the figures and tables and adding to the page. Decided to move the figures and tables into the original_study folder, as that is a centralised place and untouched otherwise so makes sense to be there. <mark>perhaps just download all at start in first stage?</mark>
+
+Then looked for "key results" in abstract, conclusion, or prominent in results. <mark>Protocol: Don't need to add discussion, keep as is, as that felt like it made the most sense, although can be suggestion, as you may find some paper putting all results in discussion for some reason. Purpose of discussion is interpretation though so shouldn't need it.</mark> Made rough notes throughout, then tidied and just kept bits describing missing results. Copy of rough notes:
+
+<mark>Initially felt unclear whether the description of the sample was relevant - decided no as it is about model results - if agreed on, then perhaps modify protocol to mention this as a suggestion</mark>
+
+Abstract:
+* If current out- patient capacity is maintained there is sufficient capacity in the South of England to keep COVID-19 negative/recovered and positive patients in separate sessions, but rapid reallo- cation of patients may be needed. **key result: sufficient capacity, but vague/concluding statement rather than testable result**
+    * **too vague**
+* Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients. **key result: will need secondary site, will reduce workload in other sites, primary site will have increased workload, but again, this is more like a "conclusion" than a testable number?**
+    * **can see this is a description of figure 3 - green lines dip, red line enters in BST, and if you combines the lines on HU it would be higher than where it starts. **
+* At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity. **key result: up to 140 positive with 40-90 patients, breaches capacity**
+    * **Looks like figure 2, combining the yellow and red lines. So do we need to try and reproduce this? Think breaching capacity is Figure 3, where they can't all fit in one hospital, so not a new result**
+
+Results:
+* States current median travel time from home to dialysis unit, and current capacity.
+    * **this feels like baseline parameter rather than result of simulation - which i think answers question of whether we try and replicate the geographic descriptions - no, as we are focussing on reproducing model**
+* Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months. 
+    * Figure 2 - number of patients in each COVID state over 150 days
+    * Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown.
+    * Figure 4 - patients displced from current unit, and travel time added
+* Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.
+    * **figures don't show this - that there are no patients unallocated, and no need to change dialysis frequency, so feels like key result**
+* Reduces workflow in units not taking COVID positive patients.
+    * **visible in figures**
+* Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)
+    * **visible in figures, just interpretation of figure 4**
+
+## Untimed reorganising scope page
+
+Don't yet have a defined structure for scope page, so spent some time reorganising it into hopefully a clearer layout.
