@@ -1,5 +1,8 @@
 # STARS: Computational reproducibility of Allen et al. 2020
 
+<!-- Status badge indicating whether CITATION file is still valid via GitHub action-->
+[![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
+
 ⚠️ ***This is a test-run for STARS work package 1. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
 This repository forms part of work package 1 on the NIHR-funded project STARS: Sharing Tools and Artefacts for Reproducible Simulations. It assesses the computational reproducibility of:
