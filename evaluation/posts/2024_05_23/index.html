@@ -441,9 +441,9 @@ Notes from looking over their code and data
 <p>Original:</p>
 <p><img src="../../../original_study/article_fig4.png" width="500"></p>
 <p>Run 1:</p>
-<p><img src="../../../reproduction/output/displaced_base_3_month_rerun1.png" width="500"></p>
+<p><img src="displaced_base_3_month_rerun1.png" width="500"></p>
 <p>Run 2:</p>
-<p><img src="../../../reproduction/output/displaced_base_3_month_rerun2.png" width="500"></p>
+<p><img src="displaced_base_3_month_rerun2.png" width="500"></p>
 <ul>
 <li>Ran again and compared images to see if its varying between runs - it looked quite different! I saved each under new file names so not overwritten</li>
 <li>Model parameters input in the notebook look to match the paper (Table 1). Its 30 replications as in the paper too.</li>
@@ -492,13 +492,28 @@ scenarios['base_3_month'] = Scenario(
 <p>None of these would have any impact on results (besides it being re-run). Does confirm correct version of Joblib was used.</p>
 <p>Then looked back over older releases, but these were only just prior to the Zenodo publication (first was 20 April) and none use random state etc.</p>
 <p><strong>Run more replications than 30</strong></p>
+<p>Although it doesn’t match with the paper, I tried increasing replications to see what the figure averaged out to. However, then concluded that wasn’t particularly helpful in trying to get their results (although could be a way of saying that these are “more stable” results - although, it would impact on the confidence intervals and so on - if not able to set a seed).</p>
+<p><strong>Modifying script to set a random seed, to make the result I am getting from this code reproducible</strong></p>
+<p>Change random_state in parameters.py from None to having a value for each in their class:</p>
+<ul>
+<li>NormalParams 1</li>
+<li>UniformParams 2</li>
+</ul>
+<p>Original:</p>
+<p><img src="../../../original_study/article_fig4.png" width="500"></p>
+<p>Run 1 with seeds added:</p>
+<p><img src="displaced_base_3_month_seed1.png" width="500"></p>
+<p>Run 2 with seeds:</p>
+<p><img src="displaced_base_3_month_seed2.png" width="500"></p>
+<p>However, this definitely has <strong>not</strong> fixed the issue! Still varying - and I wouldn’t be able to reproduce my own results twice either.</p>
 <p><mark>what to do when there are multiple links to code like this - and add recommendations to protocol</mark></p>
 <p><mark>what to do when they don’t include a seed in a paper - and add recommendations to protocol</mark></p>
+<p><mark>do we need to focus on the interpretations and whether they hold? but we didn’t really want to do that as that is not our focus? but in this case, is it, if we want to know if we’ve reproduced, but can’t actually necessarily get the exact same results due to randomness?</mark></p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="3a48b496" class="cell" data-execution_count="1">
+<div id="6dce9ae9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
@@ -563,6 +578,7 @@ Used 5.2% of 40 hours max</code></pre>
 <li>For finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.</li>
 <li>Still feels unclear on when we are setting up the website (showing article, showing code). Decision I have made from trying to display the code is that actually, the simplest and clearest thing is to let people explore the code themselves (just direct them to the right folder on the GitHub), whilst for the article, it takes one minute to embed the PDFs, so just have that step (plus adding link to where the scripts are) when upload the articles, and call it a day.</li>
 <li>To do: move download sources from logbook to original study page (and modify as appropraite in protocol)</li>
+<li>Add suggestion to save outputs as go, as and when appropriate, as it’s helpful to be able to include images in the logbook, for example. So perhaps, copying images from output into the logbook folder images. <strong>Yes.</strong> I’ve started copying over and storing within the logbook folder, and just focusisng on e.g.&nbsp;the figure I was looking at and not copying over all the data associated.</li>
 </ul>
 <p>Thoughts as reading through code:</p>
 <ul>
@@ -573,6 +589,7 @@ Used 5.2% of 40 hours max</code></pre>
 <li>Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are</li>
 <li>Including an IDE within the dependencies (Spyder) created an issue, and also, am using own IDE. Or is that similar to when people require Jupyterlab?</li>
 <li>For reproducing stuff, it’s helpful to know how long code takes to run?</li>
+<li>Removing unused packages</li>
 </ul>
 
 
