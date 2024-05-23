@@ -1,0 +1,136 @@
+---
+title: "Day 2"
+author: "Amy Heather"
+date: "2024-05-23"
+categories: [read]
+---
+
+::: {.callout-note}
+
+## Total time elapsed
+
+TBC
+
+:::
+
+## Work log
+
+### 10.24-11.00 - Describe code/data
+
+Looked over code and data from original study, taking notes below.
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Notes from looking over their code and data
+
+Code files in main folder:
+
+* **Capacity_Model_Template.ipynb** - explain DES model, input files, code example importing `sim_replicate.py` and using functions from that
+* **sim_replicate.py** - importing from sim/, single and multiple runs of model, and multiple runs of prescribed scenarios, and function to get audit results from multiple runs, and parameters
+* **sim_single.py** - single run of model
+
+Other files in main folder:
+
+* **CONTRIBUTING.md** - lists Mike and Tom as the contributors
+* **environment.yaml** - conda environment
+* **.gitignore**
+* **LICENSE** - MIT
+* **README.md** - Instructs to use environment and then refer to `.ipynb` files
+* **Transport_Model_Template.ipynb** - Monte Carlo Model
+* **main_vrp.py** - importing from vrp/, but otherwise very similar to part of sim_replicate (single and multiple runs, and parameters). VRP = vehicle routing problem?
+
+Other folders:
+
+* **output/** - empty
+* **patient_geography_data/** - patient data
+* **sim/** - Discrete event
+* **vrp/** - Monte Carlo
+
+```bash
+├── output
+│   └── ...
+├── patient_geography_data
+│   └── ...
+├── sim
+│   └── ...
+├── vrp
+│   └── ...
+├── .gitignore
+├── CONTRIBUTING.md
+├── Capacity_Model_Template.ipynb
+├── LICENSE
+├── README.md
+├── Transport_Model_Template.ipynb
+├── environment.yaml
+├── main_vrp.py
+├── sim_replicate.py
+└── sim_single.py
+```
+
+More details on patient_geography_data/ folder:
+
+* **patient_counts_no_home_or_IOW.csv** - ? counts per postcode
+* **patients.csv** - table of patients with type, postcode, site, first day, and blank COVID status column
+* **travel_matrix_distance_km.csv** - travel distance (km) between postcodes
+* **travel_matrix_time_min.csv** - travel time (min) between postcodes
+
+```bash
+├── patient_geography_data
+│   ├── patient_counts_no_home_or_IOW.csv
+│   ├── patients.csv
+│   ├── travel_matrix_distance_km.csv
+│   └── travel_matrix_time_min.csv
+```
+
+More details on sim/ folder:
+
+* **allocation.py** - methods to allocate patients to units and shifts
+* **audit.py** - audit on patient and unit metrics
+* **end_trial_analysis.py** - analysis after replicates, creates charts
+* **helper_functions.py** - expands multi-index
+* **__init__.py** - blank, to initalise as package
+* **model.py** - model classes to hold patients, simulation model class
+* **parameters.py** - classes for normal and uniform distributions, and class with parameters for scenario
+* **patient.py** - patient class
+* **patients.csv** - looks similar to patients.csv in main folder
+* **travel_matrix.csv** - patient travel times to each of the units
+* **units.csv** - information on each of the units
+* **units.py** - unit information from CSV
+
+```bash
+├── sim
+│   ├── allocation.py
+│   ├── audit.py
+│   ├── end_trial_analysis.py
+│   ├── helper_functions.py
+│   ├── __init__.py
+│   ├── .ipynb_checkpoints
+│   │   ├── end_trial_analysis-checkpoint.py
+│   │   └── helper_functions-checkpoint.py
+│   ├── model.py
+│   ├── parameters.py
+│   ├── patient.py
+│   ├── patients.csv
+│   ├── travel_matrix.csv
+│   ├── units.csv
+│   └── units.py
+```
+
+:::
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.
+
+Protocol: 
+
+* Just suggestion not requirement to make notes about study, and make the notes within the logbook, as purpose is familiarising with study, and at this stage, may get details wrong! So rather than it be a seperate page where we're worried about getting it right, do it in logbook as still learning.
+* There's a balance between trying to understand the code, and just trying to run the code. Reading through and making notes on files is more along the lines of understanding, but without a direct purpose. Do we like it or not? It feels like a necessity, but it also feels a little unclear? Although perhaps that is ok. It felt like well used time to me, but would suggest not making it as prespective as I'd suggested, and that you and read and take notes if you like
+
+Thoughts as reading through code:
+
+* PEP8 of code (?)
+* Commenting/docstrings (if not already) in code (?)
+* Data not all stored in one place, mixing scripts and data
+* README stating what folders mean (e.g. vrp, took me a little while to realise this stood for vehicle routing problem)
+* Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are
