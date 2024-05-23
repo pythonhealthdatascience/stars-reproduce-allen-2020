@@ -22,7 +22,7 @@ website:
           - quarto_site/study_code.qmd
       - text: Reproduction code
         menu:
-          - reproduction/scripts/example.ipynb
+          - reproduction/example.ipynb
       - text: Evaluation
         menu:
           - evaluation/scope.qmd

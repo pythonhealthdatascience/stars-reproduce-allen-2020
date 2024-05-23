@@ -157,6 +157,23 @@ Found that:
 
 This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.
 
+### 13.26- Reproduction
+
+* Copied sim/ and sim_replicate.py into reproduction/.
+* Copied code cells from Capacity_Model_Template.ipynb.
+* Error no module named joblib - add this to environment.yaml. Code was archived 22 April 2020, paper was published 13 August 2020. Used date of code archive, looking at <https://pypi.org/project/joblib/#history>, can see the version closest to prior to that date is 0.14.1 (10 Dec 2019) (as the next is 0.15.0 which is 15 May 2020). Add it to environment.yaml then ran `conda env update --file environment.yaml --prune`. This fixed the error.
+* FileNotFoundError: [Errno 2] No such file or directory: 'output/base_3_month_reps_30_patient_audit.csv'. Not resolved by adding output/ folder.
+
+Protocol suggestion: On reflection, perhaps it would've better to copy over the whole code folder into reproduction/ and then modify there, rather than copying over stuff bit by bit?
+
+Switched to doing that -
+
+* Kept environment.yaml and example.ipynb, but otherwise copied everything over.
+* Deleted irrelevant files
+* Ran again and it worked fine, didn't get the FileNoteFoundError
+
+Images look similar to their notebook from Zenodo but, as with those figures, slight differences to paper, likely due to parameters.
+
 ## Timings
 
 ```{python}
@@ -209,7 +226,13 @@ Protocol:
 * Modify 3.2.4 - as we describe the scope during 3.2.2
 * RE: reproduction package, having the figures created within the notebooks if really handy when spotting what parts of the code create figures from article
 * With regards to creating the environment, I think taking the simplest approach is appropriate - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.
+    * Don't worry about operating system
+    * Keep suggestion about package list and versions using close to publication date <mark>but need to include instructions on HOW to find that out</mark>
+    * Simplest might just be looking manually for each of the packages. Can't find a way to prevent it in Python. Knowing versions of the imported packages is as close as you get to if they provided a yaml file (as even with a yaml file, the dependencies they install alongside may be more recent). **Go with this**.
 * For 3.4.2, this is the first time we might start using and modifying materials, so important to note that we should COPY over any environment stuff into our reproduction folder/, and not directly run scripts in original_study/, those should stay untouched.
+* Turn 3.5.1 into step-by-step instructions (e.g. make notebook, copy over code, insert images from article, create images). Or perhaps just more bolding.
+* For 3.5.1, need to shift emphasis onto the key things of (a) copying over stuff when running, and (b) taking very detailed notes in the logbook as go along of each copy, change, success, error. Super super detailed!
+* For finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.
 
 Thoughts as reading through code:
 
@@ -218,3 +241,5 @@ Thoughts as reading through code:
 * Data not all stored in one place, mixing scripts and data
 * README stating what folders mean (e.g. vrp, took me a little while to realise this stood for vehicle routing problem)
 * Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are
+* Including an IDE within the dependencies (Spyder) created an issue, and also, am using own IDE. Or is that similar to when people require Jupyterlab?
+* For reproducing stuff, it's helpful to know how long code takes to run?
