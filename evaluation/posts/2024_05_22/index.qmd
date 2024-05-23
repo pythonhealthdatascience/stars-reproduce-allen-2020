@@ -213,8 +213,9 @@ Protocol:
 * ✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)
 * ✅ Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.
 * ✅ Suggest that create pages to display the journal article, supplementary and code at a point after having gone through the code familiarisation steps.
-* Reflect on how want to deal with summary page. I used it to help me read through and summarise the article. However, later down the line, the STRESS-DES and ISPOR reporting guidelines could potentially provide a more complete summary (depending on how do the "evidence" sections - i.e. copying in text, or just referring to a part in the paper). So do we need a summary page? Or are these just notes that I make in the logbook? As don't necessarily want to prescribe that everyone has to write a summary? Leaning towards that.
-* Make reference to particular pages in template (e.g. when define scope, the file path to the scope template)
+* ✅ Remove suggestion of creating a summary page (as STRESS-DES and ISPOR provide rigorous summaries, and summaries for sake of understanding make more sense to be in logbook)
+    * ✅ And therefore, suggest those reporting guidelines bit include copying and pasting information to answer each there, as much as appropriate (rather than just stating a section in the text to refer to)
+* ✅ Make reference to particular pages in template (e.g. when define scope, the file path to the scope template)
 * For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.
 * For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.
 * Add to stage when upload journal articles, that at the same time, they also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.

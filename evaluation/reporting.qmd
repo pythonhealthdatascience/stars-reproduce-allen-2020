@@ -24,7 +24,9 @@ Total (out of 5):
 * ❌ Not met - 20% (n=1)
 * ❔ Unclear - 40% (n=2)
 
-| Item | Recommendation | Met by study? | Evidence/location |
+<!-- In the evidence column, include quotes from the text with their location, to answer each item. This is as much as appropriate - if it would be too much text/info, then just refer to sections in the article -->
+
+| Item | Recommendation | Met by study? | Evidence |
 | - | -- | - | - |
 | **Objectives** | 
 | 1.1 Purpose of the model | Explain the background and objectives for the model | ✅ Fully |
