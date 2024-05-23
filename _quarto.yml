@@ -17,9 +17,7 @@ website:
     # Left-aligned within navbar...
     left:
       - text: Original study
-        menu:
-          - quarto_site/study_publication.qmd
-          - quarto_site/study_code.qmd
+        href: quarto_site/study_publication.qmd
       - text: Reproduction code
         menu:
           - reproduction/example.ipynb
