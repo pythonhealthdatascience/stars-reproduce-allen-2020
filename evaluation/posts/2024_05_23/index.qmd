@@ -118,6 +118,84 @@ More details on sim/ folder:
 
 :::
 
+### Untimed: Trying out WebPlotDigitizer
+
+Tried using version 4, found it worked really well except:
+
+* It couldn't differentiate confidence interval lines from the primary lines, which makes the resulting points hard to use.
+* The points extracted from these charts don't necessarily align with the points obtained from the simulation (i.e. line chart draws line through the days but points are at specific locations and not completely continuous).
+
+Hence, I'm going to suggest that I don't think it is worth trying to use this tool, and that a simpler and more standardised approach would be visual comparison of figures, or overlaying of the figures when possible.
+
+### NA: Compile items in scope
+
+All items are figures, so no actions required.
+
+### 12.10-12.15 Search for code that produces item in scope
+
+`Capacity_Model_Template.ipynb` creates figures incredibly similar to the article. Can spot a few slight differences likely due to different parameters. Some examples:
+* Figure 2, slightly wider confidence intervals in the notebook
+* Figure 4 number of displaced patients, different "bumps" in the line
+
+### 12.15-12.16 Identify dependencies
+
+From article:
+
+* DES on Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux
+* Python 3.8
+
+Within environment.yaml, can see packages and versions, to create a conda environment.
+
+### 12.19-12.29 Create environment
+
+Copied environment.yaml file into reproduction. Run the command `conda env create --name covid19 --file environment.yaml` from terminal within reproduction folder to create environment.
+
+Found that:
+
+* Received error CondaEnvException: Pip failed, for installing pip dependencies, Pip subprocess error: ImportError: libffi.so.7: cannot open shared object file: No such file or directory        
+* Noticed it was including Spyder in the environment which is an IDE so removed that.
+
+This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.
+
+## Timings
+
+```{python}
+from datetime import datetime
+
+# --------------------------------------------------------------
+# Modify this section:
+
+# Time in minutes that has been used prior to this day
+used_to_date = 73
+
+# List of times from today (as string tuples in list)
+times = [
+    ('10.24', '11.00'),
+    ('12.10', '12.16'),
+    ('12.19', '12.29')]
+# --------------------------------------------------------------
+
+FMT = '%H.%M'
+total_min = 0
+for t in times:
+    # Convert to datetime object
+    h0 = datetime.strptime(t[0], FMT)
+    h1 = datetime.strptime(t[1], FMT)
+    # Find difference in minutes and add to total
+    total_min += (h1 - h0).total_seconds() / 60
+
+# Time in hours and minutes
+print(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')
+
+# Find time remaining
+max = 40*60
+remain_min = max - total_min - used_to_date
+print(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')
+
+# Find proportion out of 40 hours
+print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
+```
+
 ## Suggested changes for protocol/template
 
 ✅ = Made the change.
@@ -126,6 +204,12 @@ Protocol:
 
 * Just suggestion not requirement to make notes about study, and make the notes within the logbook, as purpose is familiarising with study, and at this stage, may get details wrong! So rather than it be a seperate page where we're worried about getting it right, do it in logbook as still learning.
 * There's a balance between trying to understand the code, and just trying to run the code. Reading through and making notes on files is more along the lines of understanding, but without a direct purpose. Do we like it or not? It feels like a necessity, but it also feels a little unclear? Although perhaps that is ok. It felt like well used time to me, but would suggest not making it as prespective as I'd suggested, and that you and read and take notes if you like
+* Remove sugestion of WebPlotDigitizer etc., and instead suggest standardised approach of visually comparing the figures (with overlaying where possible done to support that - need to explore simplest way of doing that).
+* To end of 3.2.3, suggest displaying those within the scope page also (that would be untimed though? although currently time writing out of scope above as that is just part of defining scope... so maybe just include for simplicity?)
+* Modify 3.2.4 - as we describe the scope during 3.2.2
+* RE: reproduction package, having the figures created within the notebooks if really handy when spotting what parts of the code create figures from article
+* With regards to creating the environment, I think taking the simplest approach is appropriate - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.
+* For 3.4.2, this is the first time we might start using and modifying materials, so important to note that we should COPY over any environment stuff into our reproduction folder/, and not directly run scripts in original_study/, those should stay untouched.
 
 Thoughts as reading through code:
 
