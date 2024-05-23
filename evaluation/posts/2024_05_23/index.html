@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Amy Heather">
+<meta name="dcterms.date" content="2024-05-23">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Logbook</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Day 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +22,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,65 +105,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -140,10 +116,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Reproducing Allen et al.&nbsp;2020</span>
     </a>
   </div>
@@ -159,11 +135,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-original-study">    
         <li>
-    <a class="dropdown-item" href="../quarto_site/study_publication.html">
+    <a class="dropdown-item" href="../../../quarto_site/study_publication.html">
  <span class="dropdown-text">Publication</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../quarto_site/study_code.html">
+    <a class="dropdown-item" href="../../../quarto_site/study_code.html">
  <span class="dropdown-text">Code</span></a>
   </li>  
     </ul>
@@ -174,7 +150,7 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction-code">    
         <li>
-    <a class="dropdown-item" href="../reproduction/scripts/example.html">
+    <a class="dropdown-item" href="../../../reproduction/scripts/example.html">
  <span class="dropdown-text">Example notebook (ipynb)</span></a>
   </li>  
     </ul>
@@ -185,33 +161,33 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../evaluation/scope.html">
+    <a class="dropdown-item" href="../../../evaluation/scope.html">
  <span class="dropdown-text">Scope</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/artefacts.html">
+    <a class="dropdown-item" href="../../../evaluation/artefacts.html">
  <span class="dropdown-text">Sharing research artefacts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/badges.html">
+    <a class="dropdown-item" href="../../../evaluation/badges.html">
  <span class="dropdown-text">Badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reporting.html">
+    <a class="dropdown-item" href="../../../evaluation/reporting.html">
  <span class="dropdown-text">Reporting</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="../evaluation/logbook.html" aria-current="page"> 
+    <a class="nav-link" href="../../../evaluation/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="../../../evaluation/reproduction_report.html"> 
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
@@ -232,117 +208,198 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Logbook</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Day 2</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">read</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Amy Heather </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 23, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="read">read <span class="quarto-category-count">(2)</span></div><div class="category" data-category="scope">scope <span class="quarto-category-count">(1)</span></div><div class="category" data-category="setup">setup <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
+  <ul class="collapse">
+  <li><a href="#describe-codedata" id="toc-describe-codedata" class="nav-link" data-scroll-target="#describe-codedata">10.24-11.00 - Describe code/data</a></li>
+  </ul></li>
+  <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_23/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Total time elapsed
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TBC</p>
+</div>
+</div>
+<section id="work-log" class="level2">
+<h2 class="anchored" data-anchor-id="work-log">Work log</h2>
+<section id="describe-codedata" class="level3">
+<h3 class="anchored" data-anchor-id="describe-codedata">10.24-11.00 - Describe code/data</h3>
+<p>Looked over code and data from original study, taking notes below.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes from looking over their code and data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Code files in main folder:</p>
+<ul>
+<li><strong>Capacity_Model_Template.ipynb</strong> - explain DES model, input files, code example importing <code>sim_replicate.py</code> and using functions from that</li>
+<li><strong>sim_replicate.py</strong> - importing from sim/, single and multiple runs of model, and multiple runs of prescribed scenarios, and function to get audit results from multiple runs, and parameters</li>
+<li><strong>sim_single.py</strong> - single run of model</li>
+</ul>
+<p>Other files in main folder:</p>
+<ul>
+<li><strong>CONTRIBUTING.md</strong> - lists Mike and Tom as the contributors</li>
+<li><strong>environment.yaml</strong> - conda environment</li>
+<li><strong>.gitignore</strong></li>
+<li><strong>LICENSE</strong> - MIT</li>
+<li><strong>README.md</strong> - Instructs to use environment and then refer to <code>.ipynb</code> files</li>
+<li><strong>Transport_Model_Template.ipynb</strong> - Monte Carlo Model</li>
+<li><strong>main_vrp.py</strong> - importing from vrp/, but otherwise very similar to part of sim_replicate (single and multiple runs, and parameters). VRP = vehicle routing problem?</li>
+</ul>
+<p>Other folders:</p>
+<ul>
+<li><strong>output/</strong> - empty</li>
+<li><strong>patient_geography_data/</strong> - patient data</li>
+<li><strong>sim/</strong> - Discrete event</li>
+<li><strong>vrp/</strong> - Monte Carlo</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> output</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── ...</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> patient_geography_data</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── ...</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sim</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── ...</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> vrp</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── ...</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> CONTRIBUTING.md</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Capacity_Model_Template.ipynb</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> LICENSE</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Transport_Model_Template.ipynb</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> environment.yaml</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> main_vrp.py</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sim_replicate.py</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> sim_single.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>More details on patient_geography_data/ folder:</p>
+<ul>
+<li><strong>patient_counts_no_home_or_IOW.csv</strong> - ? counts per postcode</li>
+<li><strong>patients.csv</strong> - table of patients with type, postcode, site, first day, and blank COVID status column</li>
+<li><strong>travel_matrix_distance_km.csv</strong> - travel distance (km) between postcodes</li>
+<li><strong>travel_matrix_time_min.csv</strong> - travel time (min) between postcodes</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> patient_geography_data</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── patient_counts_no_home_or_IOW.csv</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── patients.csv</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── travel_matrix_distance_km.csv</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── travel_matrix_time_min.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>More details on sim/ folder:</p>
+<ul>
+<li><strong>allocation.py</strong> - methods to allocate patients to units and shifts</li>
+<li><strong>audit.py</strong> - audit on patient and unit metrics</li>
+<li><strong>end_trial_analysis.py</strong> - analysis after replicates, creates charts</li>
+<li><strong>helper_functions.py</strong> - expands multi-index</li>
+<li><strong><strong>init</strong>.py</strong> - blank, to initalise as package</li>
+<li><strong>model.py</strong> - model classes to hold patients, simulation model class</li>
+<li><strong>parameters.py</strong> - classes for normal and uniform distributions, and class with parameters for scenario</li>
+<li><strong>patient.py</strong> - patient class</li>
+<li><strong>patients.csv</strong> - looks similar to patients.csv in main folder</li>
+<li><strong>travel_matrix.csv</strong> - patient travel times to each of the units</li>
+<li><strong>units.csv</strong> - information on each of the units</li>
+<li><strong>units.py</strong> - unit information from CSV</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sim</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── allocation.py</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── audit.py</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── end_trial_analysis.py</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── helper_functions.py</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── __init__.py</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── .ipynb_checkpoints</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> │&nbsp;&nbsp; ├── end_trial_analysis-checkpoint.py</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> │&nbsp;&nbsp; └── helper_functions-checkpoint.py</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── model.py</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── parameters.py</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── patient.py</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── patients.csv</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── travel_matrix.csv</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── units.csv</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── units.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="suggested-changes-for-protocoltemplate" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
+<p>✅ = Made the change.</p>
+<p>Protocol:</p>
+<ul>
+<li>Just suggestion not requirement to make notes about study, and make the notes within the logbook, as purpose is familiarising with study, and at this stage, may get details wrong! So rather than it be a seperate page where we’re worried about getting it right, do it in logbook as still learning.</li>
+<li>There’s a balance between trying to understand the code, and just trying to run the code. Reading through and making notes on files is more along the lines of understanding, but without a direct purpose. Do we like it or not? It feels like a necessity, but it also feels a little unclear? Although perhaps that is ok. It felt like well used time to me, but would suggest not making it as prespective as I’d suggested, and that you and read and take notes if you like</li>
+</ul>
+<p>Thoughts as reading through code:</p>
+<ul>
+<li>PEP8 of code (?)</li>
+<li>Commenting/docstrings (if not already) in code (?)</li>
+<li>Data not all stored in one place, mixing scripts and data</li>
+<li>README stating what folders mean (e.g.&nbsp;vrp, took me a little while to realise this stood for vehicle routing problem)</li>
+<li>Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="read" data-listing-date-sort="1716422400000" data-listing-file-modified-sort="1716458807821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="587">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">Day 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('read'); return false;">
-read
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">TBC</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">
-<div class="listing-date">
-May 23, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="setup,read,scope" data-listing-date-sort="1716336000000" data-listing-file-modified-sort="1716458807821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1913">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external">
-<p class="card-img-top"><img src="../original_study/article_fig1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">Day 1</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('setup'); return false;">
-setup
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('read'); return false;">
-read
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scope'); return false;">
-scope
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">1h 13m (3%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">
-<div class="listing-date">
-May 22, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -905,12 +962,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../CHANGELOG.html">
+    <a class="nav-link" href="../../../CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/logbook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_23/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

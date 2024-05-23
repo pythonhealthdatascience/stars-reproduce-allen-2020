@@ -72,10 +72,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,10 +134,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Original study</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-original-study">    
-        <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_summary.html">
- <span class="dropdown-text">Summary</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="../../../quarto_site/study_publication.html">
  <span class="dropdown-text">Publication</span></a>
@@ -202,6 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -283,7 +282,7 @@ Total time elapsed
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>1h 12m (3%)</p>
+<p>1h 13m (3%)</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -325,6 +324,107 @@ Total time elapsed
 <section id="reading-article" class="level3">
 <h3 class="anchored" data-anchor-id="reading-article">13.20-13.56: Reading article</h3>
 <p>Read article, making notes in <code>study_summary.qmd</code> (initially rough notes, then tidied slightly).</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes from read through of paper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Type of model:</strong> Discrete event simulation (excluding sections of the paper relevant to another model - a Monte-Carlo vehicle routing model of patient transport)</p>
+<p><strong>Purpose of model:</strong> Model service delivery in dialysis network during change in COVID-19 cases.</p>
+<p><strong>How model was created:</strong></p>
+<ul>
+<li>Python 3.8</li>
+<li>SimPy 3</li>
+<li>MatPlotLib</li>
+<li>STRESS reporting guidelines</li>
+<li>DES on Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux</li>
+</ul>
+<p><strong>Context:</strong></p>
+<ul>
+<li>Wessex - mixed urban/rural setting, renal dialysis services cares for 644 patients, nine centres. 75% of patients use patient transport services.</li>
+<li>COVID-positive patients treated seperately to COVID-negative.</li>
+</ul>
+<p><strong>Model design:</strong></p>
+<ul>
+<li>Model change in inpatient and outpatient workload during pandemic at each dialysis unit in network. Estimate over three to six months. Estimate number of patients required to travel to different unit and change in travel time.</li>
+<li>Inputs: Patient location postcode. Travel time routine. Worst case time spread COVID Fergeson. Mortality rate, time patient COVID-positive before admission, and inpatient rate of stay were local parameters.</li>
+<li>Defined period (e.g.&nbsp;one year). Patients progress through phases of COVID (negative, positive, some with inpatient care, recovred, died). In each COVID state, model seeks to put them in appropriate unit and session, opening COVID-positive sessions in units that allow it. COVID-positive don’t mis with others.</li>
+<li>Run 30 times, show median and extremes.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Patient pathway figure from Allen et al.&nbsp;2020</figcaption>
+</figure>
+</div>
+<ul>
+<li>All patients receive dialysis 3 times a week. Each patient starts on either Monday or Tuesday.</li>
+<li>Have proportion of patients either fixed or sampled from stochastic distribution for phases of COVID state and care.</li>
+<li>COVID seperate from uninfected and recovered.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_tab1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Baseline model parameters from Allen et al.&nbsp;2020</figcaption>
+</figure>
+</div>
+<p>For allocation to units, use search strategy:</p>
+<ul>
+<li>COVID negative or recovered - look for place in current unit, if no space, find closest unit (by travel time) with available space</li>
+<li>COVID positive - put in Queen Alexandara, and if full, make capacity in Basingstoke. If new COVID session required, more all COVID negative patients in that session as per neg rules.</li>
+<li>COVID positive inpatient - all in Queen Alexandra (but allows search for unit with inpatients)</li>
+<li>Unallocated - if can’t allocate to any units, attempt again next day</li>
+</ul>
+<p>Once every week, attempts to reallocate patients back to starting unit or closest available. This is so cared more nearby and to compress COVID positive patients into few units and sessions.</p>
+<p>COVID positive converted back to COVID negative when no longer needed.</p>
+<p><strong>Results:</strong></p>
+<ul>
+<li>States current median travel time from home to dialysis unit, and current capacity.</li>
+<li>Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months.
+<ul>
+<li>Figure 2 - number of patients in each COVID state over 150 days</li>
+<li>Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown.</li>
+<li>Figure 4 - patients displced from current unit, and travel time added</li>
+</ul></li>
+<li>Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.</li>
+<li>Reduces workflow in units not taking COVID positive patients.</li>
+<li>Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 2</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 3</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig4.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 4</figcaption>
+</figure>
+</div>
+<p><strong>Discusion:</strong></p>
+<ul>
+<li>Dialysis unit can cope with worst case spread. Requires reallocation of patients, will impact on ambulance and efficiency.</li>
+<li>Likely significant patient partessures, current capacity breached, consider moving dislaysi requipment during peak COVID positive.</li>
+<li>Transporting individually unsustainable.(Markov?)</li>
+<li>Model limitations - assumes can reallocate immediatley, assumes current capacity maintained (i.e.&nbsp;no staff shortage), not modelled timing, not included home dialysis.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="identifying-scope" class="level3">
 <h3 class="anchored" data-anchor-id="identifying-scope">13.56-14.27: Identifying scope</h3>
@@ -336,7 +436,7 @@ Total time elapsed
 <li>Compared those against the tables and figures to check if they are captured or not.</li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -345,10 +445,30 @@ Notes from identification of key results and comparison with figures
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Abstract: * <strong>Need secondary site, reduces workload in other sites, increases in primary site:</strong> “Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients.” * Captured in Figure 3 * <strong>Up to 140 COVID positive with 40-90 inpatients, breaching capacity:</strong> “At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity.” * Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)</p>
-<p>Results: * <strong>No patients unallocated:</strong> “In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).” * Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line) * <strong>Displaced patients have 20 minutes (sometimes up to 50) extra travel time</strong> “Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis.” * Visible in Figure 4</p>
+<p>Abstract:</p>
+<ul>
+<li><strong>Need secondary site, reduces workload in other sites, increases in primary site:</strong> “Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients.”
+<ul>
+<li>Captured in Figure 3</li>
+</ul></li>
+<li><strong>Up to 140 COVID positive with 40-90 inpatients, breaching capacity:</strong> “At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity.”
+<ul>
+<li>Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)</li>
+</ul></li>
+</ul>
+<p>Results:</p>
+<ul>
+<li><strong>No patients unallocated:</strong> “In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).”
+<ul>
+<li>Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line)</li>
+</ul></li>
+<li><strong>Displaced patients have 20 minutes (sometimes up to 50) extra travel time</strong> “Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis.”
+<ul>
+<li>Visible in Figure 4</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
@@ -373,7 +493,7 @@ Notes from identification of key results and comparison with figures
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="4724bb52" class="cell" data-execution_count="1">
+<div id="22b584d8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># List of time tuples with prescribed format</span></span>
@@ -401,11 +521,11 @@ Notes from identification of key results and comparison with figures
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time remaining: </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">//</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">%</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">m'</span>)</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Find proportion out of 40 hours</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Used </span><span class="sc">{</span>total_min<span class="op">/</span><span class="bu">max</span><span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">% of 40 hours max'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Used </span><span class="sc">{</span><span class="bu">round</span>(total_min<span class="op">/</span><span class="bu">max</span><span class="op">*</span><span class="dv">100</span>,<span class="dv">1</span>)<span class="sc">}</span><span class="ss">% of 40 hours max'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time spent today: 1h 13m
 Time remaining: 38h 47m
-Used 3.041666666666667% of 40 hours max</code></pre>
+Used 3.0% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
@@ -415,13 +535,8 @@ Used 3.041666666666667% of 40 hours max</code></pre>
 <p>Protocol:</p>
 <ul>
 <li>✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)</li>
-<li>Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.</li>
-<li>When do we create pages that display the original files that were uploaded?
-<ul>
-<li>Journal article and supplementary: I naturally wanted to do it after upload</li>
-<li>Code: I haven’t looked at yet, and feel I wouldn’t want to do until I have gone through familiarisation with the code</li>
-<li>Perhaps put both at that later stage, but make note in protocol about it not necessarily being a prescribed order?</li>
-</ul></li>
+<li>✅ Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.</li>
+<li>✅ Suggest that create pages to display the journal article, supplementary and code at a point after having gone through the code familiarisation steps.</li>
 <li>Reflect on how want to deal with summary page. I used it to help me read through and summarise the article. However, later down the line, the STRESS-DES and ISPOR reporting guidelines could potentially provide a more complete summary (depending on how do the “evidence” sections - i.e.&nbsp;copying in text, or just referring to a part in the paper). So do we need a summary page? Or are these just notes that I make in the logbook? As don’t necessarily want to prescribe that everyone has to write a summary? Leaning towards that.</li>
 <li>Make reference to particular pages in template (e.g.&nbsp;when define scope, the file path to the scope template)</li>
 <li>For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.</li>
@@ -466,6 +581,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
