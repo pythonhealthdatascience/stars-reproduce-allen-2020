@@ -7,9 +7,9 @@ categories: [read, reproduce]
 
 ::: {.callout-note}
 
-## Total time elapsed
+## Time elapsed
 
-TBC
+3h 23m today (total: 11.5%)
 
 :::
 
@@ -275,7 +275,7 @@ However, this definitely has **not** fixed the issue! Still varying - and I woul
 
 <mark>test! idea is to check that you are getting the same results between runs</mark>
 
-### 15.23- Reproduction
+### 15.23-16.35 Reproduction
 
 ::: {.callout-tip}
 ## Random seeds
@@ -306,6 +306,20 @@ I thought best option is to switch to using it how it is uses in the [treat-sim 
 So next things I did -
 
 * Delete the NormalParams and UniformParams classes as not used - checked if still run fine which it did.
+* Modified the Normal and Uniform so the random number sampling matches up with [treat-sim model docs](https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html#distribution-classes), and Scenario class so it's similar (class itself is just set up a little differently)
+* In .ipynb, removed the parameters from Scenario() that were identical to those when Scenario is created (except seed setting)
+
+Then ran it twice again (this time just with 5 replications). Not matching up yet -
+
+Run 1 with new random method:
+
+<img src="displaced_base_3_month_newclass1.png" width="500" /> 
+
+Run 2:
+
+<img src="displaced_base_3_month_newclass2.png" width="500" />
+
+<mark>Updating documentation after I've made changes to it - not priority during reproduction unless feel important to make obvious, but priority during the research compendium stage, to make sure documetnation is all as it should be</mark> or just do as go along...
 
 ## Timings
 
@@ -324,7 +338,8 @@ times = [
     ('12.10', '12.16'),
     ('12.19', '12.29'),
     ('13.26', '13.52'),
-    ('14.19', '15.12')]
+    ('14.19', '15.12'),
+    ('15.23', '16.35')]
 # --------------------------------------------------------------
 
 FMT = '%H.%M'

@@ -7,9 +7,9 @@ categories: [setup, read, scope]
 
 ::: {.callout-note}
 
-## Total time elapsed
+## Time elapsed
 
-1h 13m (3%)
+1h 13m today (total: 3%)
 
 :::
 
