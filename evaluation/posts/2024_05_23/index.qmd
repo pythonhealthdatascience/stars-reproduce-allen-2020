@@ -180,7 +180,7 @@ But can't decide how best to display it - or if it is worth trying to display it
 
 Updated the files accordingly.
 
-### 14.19- Reproduction
+### 14.19-15.12 Reproduction
 
 Original:
 
@@ -271,6 +271,42 @@ However, this definitely has **not** fixed the issue! Still varying - and I woul
 
 <mark>do we need to focus on the interpretations and whether they hold? but we didn't really want to do that as that is not our focus? but in this case, is it, if we want to know if we've reproduced, but can't actually necessarily get the exact same results due to randomness?</mark>
 
+<mark>look at tom's more recent examples where he has added seeds</mark>
+
+<mark>test! idea is to check that you are getting the same results between runs</mark>
+
+### 15.23- Reproduction
+
+::: {.callout-tip}
+## Random seeds
+
+At the moment, I would describe this model as reusable but not reproducible. It was really relatively quick to get the code up and running and see similar results to the paper. But in terms of getting it to match up to the paper, it is pretty much impossible, although I will try to get their via setting random seeds then running it lots of times to try and get a close match.
+
+This is important for STARS framework improvement - that controlling randomness is important for reproducibility. It can also be handy for someone reusing a model, as they may wish to reproduce just to verify that its running properly for them.
+
+And so for each of the studies, if this is a recurring thing that comes up, its seeing where and how to add random seeds in different models and languages, to enable reproducibility.
+:::
+
+From this [Stack Overflow post](https://stackoverflow.com/questions/59105921/why-is-numpy-random-seed-not-remaining-fixed-but-randomstate-is-when-run-in-para), I'm suspcious that perhaps the issue is that I am setting the random state as 1 and 2, which (a) would imply it's making it the same between each run, but (b) all using the same stream in parallel processing. But it's set using `RandomState`.
+
+Trying to google around use of seeds with parallel processing. 
+
+Had a chat with Tom about it and he suggested:
+
+* He pointed out that NormalParams is not being used, and that it would need to be setting a seed in the class Normal() when you use it in Scenario - e.g. extra parameter at end of here -
+    * `requiring_inpatient_random: Distribution = Uniform(0.0, 1.0)`
+    * `time_pos_before_inpatient: Distribution = Uniform(3,7)`
+* Good example of how set up, would recommend this - https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html#distribution-classes
+* LLM model generation of seeds
+
+Need seperate random number streams for each time make a distribution to use it.
+
+I thought best option is to switch to using it how it is uses in the [treat-sim model docs](https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html#distribution-classes), as focus here is just modifying code to allow it to reproduce each run.
+
+So next things I did -
+
+* Delete the NormalParams and UniformParams classes as not used - checked if still run fine which it did.
+
 ## Timings
 
 ```{python}
@@ -286,7 +322,9 @@ used_to_date = 73
 times = [
     ('10.24', '11.00'),
     ('12.10', '12.16'),
-    ('12.19', '12.29')]
+    ('12.19', '12.29'),
+    ('13.26', '13.52'),
+    ('14.19', '15.12')]
 # --------------------------------------------------------------
 
 FMT = '%H.%M'
@@ -333,6 +371,7 @@ Protocol:
 * Still feels unclear on when we are setting up the website (showing article, showing code). Decision I have made from trying to display the code is that actually, the simplest and clearest thing is to let people explore the code themselves (just direct them to the right folder on the GitHub), whilst for the article, it takes one minute to embed the PDFs, so just have that step (plus adding link to where the scripts are) when upload the articles, and call it a day.
 * To do: move download sources from logbook to original study page (and modify as appropraite in protocol)
 * Add suggestion to save outputs as go, as and when appropriate, as it's helpful to be able to include images in the logbook, for example. So perhaps, copying images from output into the logbook folder images. **Yes.** I've started copying over and storing within the logbook folder, and just focusisng on e.g. the figure I was looking at and not copying over all the data associated.
+* Can I ask for advice on issues with reproduction from rest of team? Would presume so, and that include that in timing and record what is discussed and said.
 
 Thoughts as reading through code:
 
