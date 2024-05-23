@@ -129,21 +129,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-original-study" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Original study</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-original-study">    
-        <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_publication.html">
- <span class="dropdown-text">Publication</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
+<span class="menu-text">Original study</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../../quarto_site/study_code.html">
- <span class="dropdown-text">Code</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reproduction-code" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Reproduction code</span>
@@ -253,7 +242,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#search-for-code-that-produces-item-in-scope" id="toc-search-for-code-that-produces-item-in-scope" class="nav-link" data-scroll-target="#search-for-code-that-produces-item-in-scope">12.10-12.15 Search for code that produces item in scope</a></li>
   <li><a href="#identify-dependencies" id="toc-identify-dependencies" class="nav-link" data-scroll-target="#identify-dependencies">12.15-12.16 Identify dependencies</a></li>
   <li><a href="#create-environment" id="toc-create-environment" class="nav-link" data-scroll-target="#create-environment">12.19-12.29 Create environment</a></li>
-  <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction">13.26- Reproduction</a></li>
+  <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction">13.26-13.52 Reproduction</a></li>
+  <li><a href="#untimed-set-up-display-of-their-code-within-the-quarto-website" id="toc-untimed-set-up-display-of-their-code-within-the-quarto-website" class="nav-link" data-scroll-target="#untimed-set-up-display-of-their-code-within-the-quarto-website">Untimed: Set up display of their code within the Quarto website</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -423,7 +413,7 @@ Notes from looking over their code and data
 <p>This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.</p>
 </section>
 <section id="reproduction" class="level3">
-<h3 class="anchored" data-anchor-id="reproduction">13.26- Reproduction</h3>
+<h3 class="anchored" data-anchor-id="reproduction">13.26-13.52 Reproduction</h3>
 <ul>
 <li>Copied sim/ and sim_replicate.py into reproduction/.</li>
 <li>Copied code cells from Capacity_Model_Template.ipynb.</li>
@@ -439,10 +429,15 @@ Notes from looking over their code and data
 </ul>
 <p>Images look similar to their notebook from Zenodo but, as with those figures, slight differences to paper, likely due to parameters.</p>
 </section>
+<section id="untimed-set-up-display-of-their-code-within-the-quarto-website" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-set-up-display-of-their-code-within-the-quarto-website">Untimed: Set up display of their code within the Quarto website</h3>
+<p>But can’t decide how best to display it - or if it is worth trying to display it all, or better just to suggest to browse the code repository themselves. Feels like an unhelpful distraction at present, and misleading compared to just allowing people to browse the code, so have suggested to change it to just displaying the PDFs and call it a day.</p>
+<p>Updated the files accordingly.</p>
+</section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="f5fa16bd" class="cell" data-execution_count="1">
+<div id="d63d47f9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
@@ -505,6 +500,7 @@ Used 5.2% of 40 hours max</code></pre>
 <li>Turn 3.5.1 into step-by-step instructions (e.g.&nbsp;make notebook, copy over code, insert images from article, create images). Or perhaps just more bolding.</li>
 <li>For 3.5.1, need to shift emphasis onto the key things of (a) copying over stuff when running, and (b) taking very detailed notes in the logbook as go along of each copy, change, success, error. Super super detailed!</li>
 <li>For finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.</li>
+<li>Still feels unclear on when we are setting up the website (showing article, showing code). Decision I have made from trying to display the code is that actually, the simplest and clearest thing is to let people explore the code themselves (just direct them to the right folder on the GitHub), whilst for the article, it takes one minute to embed the PDFs, so just have that step (plus adding link to where the scripts are) when upload the articles, and call it a day.</li>
 </ul>
 <p>Thoughts as reading through code:</p>
 <ul>
