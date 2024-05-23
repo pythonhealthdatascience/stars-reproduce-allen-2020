@@ -1,4 +1,4 @@
 _site/
 _freeze/
 /.quarto/
-reproduction/__pycache__/
+__pycache__/
