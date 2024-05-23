@@ -150,8 +150,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction-code">    
         <li>
-    <a class="dropdown-item" href="../../../reproduction/scripts/example.html">
- <span class="dropdown-text">Example notebook (ipynb)</span></a>
+    <a class="dropdown-item" href="../../../reproduction/example.html">
+ <span class="dropdown-text">Reproduction attempt</span></a>
   </li>  
     </ul>
   </li>
@@ -253,6 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#search-for-code-that-produces-item-in-scope" id="toc-search-for-code-that-produces-item-in-scope" class="nav-link" data-scroll-target="#search-for-code-that-produces-item-in-scope">12.10-12.15 Search for code that produces item in scope</a></li>
   <li><a href="#identify-dependencies" id="toc-identify-dependencies" class="nav-link" data-scroll-target="#identify-dependencies">12.15-12.16 Identify dependencies</a></li>
   <li><a href="#create-environment" id="toc-create-environment" class="nav-link" data-scroll-target="#create-environment">12.19-12.29 Create environment</a></li>
+  <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction">13.26- Reproduction</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -421,10 +422,27 @@ Notes from looking over their code and data
 </ul>
 <p>This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.</p>
 </section>
+<section id="reproduction" class="level3">
+<h3 class="anchored" data-anchor-id="reproduction">13.26- Reproduction</h3>
+<ul>
+<li>Copied sim/ and sim_replicate.py into reproduction/.</li>
+<li>Copied code cells from Capacity_Model_Template.ipynb.</li>
+<li>Error no module named joblib - add this to environment.yaml. Code was archived 22 April 2020, paper was published 13 August 2020. Used date of code archive, looking at <a href="https://pypi.org/project/joblib/#history" class="uri">https://pypi.org/project/joblib/#history</a>, can see the version closest to prior to that date is 0.14.1 (10 Dec 2019) (as the next is 0.15.0 which is 15 May 2020). Add it to environment.yaml then ran <code>conda env update --file environment.yaml --prune</code>. This fixed the error.</li>
+<li>FileNotFoundError: [Errno 2] No such file or directory: ‘output/base_3_month_reps_30_patient_audit.csv’. Not resolved by adding output/ folder.</li>
+</ul>
+<p>Protocol suggestion: On reflection, perhaps it would’ve better to copy over the whole code folder into reproduction/ and then modify there, rather than copying over stuff bit by bit?</p>
+<p>Switched to doing that -</p>
+<ul>
+<li>Kept environment.yaml and example.ipynb, but otherwise copied everything over.</li>
+<li>Deleted irrelevant files</li>
+<li>Ran again and it worked fine, didn’t get the FileNoteFoundError</li>
+</ul>
+<p>Images look similar to their notebook from Zenodo but, as with those figures, slight differences to paper, likely due to parameters.</p>
+</section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="9ad408a0" class="cell" data-execution_count="1">
+<div id="f5fa16bd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
@@ -477,8 +495,16 @@ Used 5.2% of 40 hours max</code></pre>
 <li>To end of 3.2.3, suggest displaying those within the scope page also (that would be untimed though? although currently time writing out of scope above as that is just part of defining scope… so maybe just include for simplicity?)</li>
 <li>Modify 3.2.4 - as we describe the scope during 3.2.2</li>
 <li>RE: reproduction package, having the figures created within the notebooks if really handy when spotting what parts of the code create figures from article</li>
-<li>With regards to creating the environment, I think taking the simplest approach is appropriate - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.</li>
+<li>With regards to creating the environment, I think taking the simplest approach is appropriate - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.
+<ul>
+<li>Don’t worry about operating system</li>
+<li>Keep suggestion about package list and versions using close to publication date <mark>but need to include instructions on HOW to find that out</mark></li>
+<li>Simplest might just be looking manually for each of the packages. Can’t find a way to prevent it in Python. Knowing versions of the imported packages is as close as you get to if they provided a yaml file (as even with a yaml file, the dependencies they install alongside may be more recent). <strong>Go with this</strong>.</li>
+</ul></li>
 <li>For 3.4.2, this is the first time we might start using and modifying materials, so important to note that we should COPY over any environment stuff into our reproduction folder/, and not directly run scripts in original_study/, those should stay untouched.</li>
+<li>Turn 3.5.1 into step-by-step instructions (e.g.&nbsp;make notebook, copy over code, insert images from article, create images). Or perhaps just more bolding.</li>
+<li>For 3.5.1, need to shift emphasis onto the key things of (a) copying over stuff when running, and (b) taking very detailed notes in the logbook as go along of each copy, change, success, error. Super super detailed!</li>
+<li>For finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.</li>
 </ul>
 <p>Thoughts as reading through code:</p>
 <ul>
@@ -487,6 +513,8 @@ Used 5.2% of 40 hours max</code></pre>
 <li>Data not all stored in one place, mixing scripts and data</li>
 <li>README stating what folders mean (e.g.&nbsp;vrp, took me a little while to realise this stood for vehicle routing problem)</li>
 <li>Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are</li>
+<li>Including an IDE within the dependencies (Spyder) created an issue, and also, am using own IDE. Or is that similar to when people require Jupyterlab?</li>
+<li>For reproducing stuff, it’s helpful to know how long code takes to run?</li>
 </ul>
 
 
