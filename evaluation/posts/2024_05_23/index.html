@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction">13.26-13.52 Reproduction</a></li>
   <li><a href="#untimed-set-up-display-of-their-code-within-the-quarto-website" id="toc-untimed-set-up-display-of-their-code-within-the-quarto-website" class="nav-link" data-scroll-target="#untimed-set-up-display-of-their-code-within-the-quarto-website">Untimed: Set up display of their code within the Quarto website</a></li>
   <li><a href="#reproduction-1" id="toc-reproduction-1" class="nav-link" data-scroll-target="#reproduction-1">14.19-15.12 Reproduction</a></li>
-  <li><a href="#reproduction-2" id="toc-reproduction-2" class="nav-link" data-scroll-target="#reproduction-2">15.23- Reproduction</a></li>
+  <li><a href="#reproduction-2" id="toc-reproduction-2" class="nav-link" data-scroll-target="#reproduction-2">15.23-16.35 Reproduction</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -266,11 +266,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Total time elapsed
+Time elapsed
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TBC</p>
+<p>3h 23m today (total: 11.5%)</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -514,7 +514,7 @@ scenarios['base_3_month'] = Scenario(
 <p><mark>test! idea is to check that you are getting the same results between runs</mark></p>
 </section>
 <section id="reproduction-2" class="level3">
-<h3 class="anchored" data-anchor-id="reproduction-2">15.23- Reproduction</h3>
+<h3 class="anchored" data-anchor-id="reproduction-2">15.23-16.35 Reproduction</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -547,12 +547,20 @@ Random seeds
 <p>So next things I did -</p>
 <ul>
 <li>Delete the NormalParams and UniformParams classes as not used - checked if still run fine which it did.</li>
+<li>Modified the Normal and Uniform so the random number sampling matches up with <a href="https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html#distribution-classes">treat-sim model docs</a>, and Scenario class so it’s similar (class itself is just set up a little differently)</li>
+<li>In .ipynb, removed the parameters from Scenario() that were identical to those when Scenario is created (except seed setting)</li>
 </ul>
+<p>Then ran it twice again (this time just with 5 replications). Not matching up yet -</p>
+<p>Run 1 with new random method:</p>
+<p><img src="displaced_base_3_month_newclass1.png" width="500"></p>
+<p>Run 2:</p>
+<p><img src="displaced_base_3_month_newclass2.png" width="500"></p>
+<p><mark>Updating documentation after I’ve made changes to it - not priority during reproduction unless feel important to make obvious, but priority during the research compendium stage, to make sure documetnation is all as it should be</mark> or just do as go along…</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="aed949d1" class="cell" data-execution_count="1">
+<div id="78a8b16e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
@@ -567,32 +575,33 @@ Random seeds
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.10'</span>, <span class="st">'12.16'</span>),</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.19'</span>, <span class="st">'12.29'</span>),</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.26'</span>, <span class="st">'13.52'</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.19'</span>, <span class="st">'15.12'</span>)]</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>FMT <span class="op">=</span> <span class="st">'%H.%M'</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>total_min <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to datetime object</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    h0 <span class="op">=</span> datetime.strptime(t[<span class="dv">0</span>], FMT)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    h1 <span class="op">=</span> datetime.strptime(t[<span class="dv">1</span>], FMT)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find difference in minutes and add to total</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    total_min <span class="op">+=</span> (h1 <span class="op">-</span> h0).total_seconds() <span class="op">/</span> <span class="dv">60</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Time in hours and minutes</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time spent today: </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m'</span>)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Find time remaining</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span> <span class="op">=</span> <span class="dv">40</span><span class="op">*</span><span class="dv">60</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>remain_min <span class="op">=</span> <span class="bu">max</span> <span class="op">-</span> total_min <span class="op">-</span> used_to_date</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time remaining: </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">//</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">%</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">m'</span>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Find proportion out of 40 hours</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Used </span><span class="sc">{</span><span class="bu">round</span>((total_min<span class="op">+</span>used_to_date)<span class="op">/</span><span class="bu">max</span><span class="op">*</span><span class="dv">100</span>,<span class="dv">1</span>)<span class="sc">}</span><span class="ss">% of 40 hours max'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.19'</span>, <span class="st">'15.12'</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.23'</span>, <span class="st">'16.35'</span>)]</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>FMT <span class="op">=</span> <span class="st">'%H.%M'</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>total_min <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to datetime object</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    h0 <span class="op">=</span> datetime.strptime(t[<span class="dv">0</span>], FMT)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    h1 <span class="op">=</span> datetime.strptime(t[<span class="dv">1</span>], FMT)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find difference in minutes and add to total</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    total_min <span class="op">+=</span> (h1 <span class="op">-</span> h0).total_seconds() <span class="op">/</span> <span class="dv">60</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Time in hours and minutes</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time spent today: </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(total_min)<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m'</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Find time remaining</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span> <span class="op">=</span> <span class="dv">40</span><span class="op">*</span><span class="dv">60</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>remain_min <span class="op">=</span> <span class="bu">max</span> <span class="op">-</span> total_min <span class="op">-</span> used_to_date</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Time remaining: </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">//</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span><span class="bu">int</span>(remain_min<span class="op">%</span><span class="dv">60</span>)<span class="sc">}</span><span class="ss">m'</span>)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Find proportion out of 40 hours</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Used </span><span class="sc">{</span><span class="bu">round</span>((total_min<span class="op">+</span>used_to_date)<span class="op">/</span><span class="bu">max</span><span class="op">*</span><span class="dv">100</span>,<span class="dv">1</span>)<span class="sc">}</span><span class="ss">% of 40 hours max'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 2h 11m
-Time remaining: 36h 36m
-Used 8.5% of 40 hours max</code></pre>
+<pre><code>Time spent today: 3h 23m
+Time remaining: 35h 24m
+Used 11.5% of 40 hours max</code></pre>
 </div>
 </div>
 </section>

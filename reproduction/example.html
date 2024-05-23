@@ -223,27 +223,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="cell-2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sim_replicate <span class="im">as</span> sim</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sim.parameters <span class="im">import</span> Scenario, Uniform, Normal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sim.parameters <span class="im">import</span> Scenario</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sim.model <span class="im">import</span> DialysisSim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>number_of_replications <span class="op">=</span> <span class="dv">30</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>number_of_replications <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>scenarios <span class="op">=</span> {}</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>scenarios[<span class="st">'base_3_month'</span>] <span class="op">=</span> Scenario(</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    run_length<span class="op">=</span><span class="dv">150</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    total_proportion_people_infected <span class="op">=</span> <span class="fl">0.8</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    time_to_infection <span class="op">=</span> Normal(<span class="dv">60</span>, <span class="dv">15</span>, <span class="fl">0.0</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    time_positive <span class="op">=</span> Uniform(<span class="dv">7</span>, <span class="dv">14</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    proportion_pos_requiring_inpatient<span class="op">=</span> <span class="fl">0.6</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    time_pos_before_inpatient <span class="op">=</span> Uniform(<span class="dv">3</span>,<span class="dv">7</span>),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    time_inpatient <span class="op">=</span> Uniform(<span class="fl">7.0</span>, <span class="fl">14.0</span>),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    mortality <span class="op">=</span> <span class="fl">0.15</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    random_positive_rate_at_start <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    proportion_pos_requiring_inpatient<span class="op">=</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim.run_replications(scenarios, number_of_replications)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Running 30 reps of base_3_month =&gt; 1, 2, 4, 6, 7, 10, 3, 8, 5, 13, 9, 14, 0, 15, 11, 16, 18, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, Done.</code></pre>
+<pre><code>Running 5 reps of base_3_month =&gt; 3, 1, 4, 0, 2, Done.</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
