@@ -30,7 +30,7 @@ class NormalParams:
     mean: float = 0.0
     std: float = 1.0
     minimum: float = None
-    random_state: int = None
+    random_state: int = 1
     
 
 @dataclass(frozen=True)
@@ -51,7 +51,7 @@ class UniformParams:
     '''
     maximum: float = 0.0
     minimum: float = 1.0
-    random_state: int = None
+    random_state: int = 2
     
     
 class Distribution(ABC):
