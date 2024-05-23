@@ -18,7 +18,6 @@ website:
     left:
       - text: Original study
         menu:
-          - quarto_site/study_summary.qmd
           - quarto_site/study_publication.qmd
           - quarto_site/study_code.qmd
       - text: Reproduction code
@@ -50,5 +49,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: [solar, quarto_site/dark.scss]
     toc: true

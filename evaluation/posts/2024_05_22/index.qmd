@@ -9,7 +9,7 @@ categories: [setup, read, scope]
 
 ## Total time elapsed
 
-1h 12m (3%)
+1h 13m (3%)
 
 :::
 
@@ -53,6 +53,79 @@ Set up article and supplementary to display on website in `study_publication.qmd
 
 Read article, making notes in `study_summary.qmd` (initially rough notes, then tidied slightly).
 
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Notes from read through of paper
+
+**Type of model:** Discrete event simulation (excluding sections of the paper relevant to another model - a Monte-Carlo vehicle routing model of patient transport)
+
+**Purpose of model:** Model service delivery in dialysis network during change in COVID-19 cases.
+
+**How model was created:**
+
+* Python 3.8
+* SimPy 3
+* MatPlotLib
+* STRESS reporting guidelines
+* DES on Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux
+
+**Context:**
+
+* Wessex - mixed urban/rural setting, renal dialysis services cares for 644 patients, nine centres. 75% of patients use patient transport services.
+* COVID-positive patients treated seperately to COVID-negative.
+
+**Model design:**
+
+* Model change in inpatient and outpatient workload during pandemic at each dialysis unit in network. Estimate over three to six months. Estimate number of patients required to travel to different unit and change in travel time.
+* Inputs: Patient location postcode. Travel time routine. Worst case time spread COVID Fergeson. Mortality rate, time patient COVID-positive before admission, and inpatient rate of stay were local parameters.
+* Defined period (e.g. one year). Patients progress through phases of COVID (negative, positive, some with inpatient care, recovred, died). In each COVID state, model seeks to put them in appropriate unit and session, opening COVID-positive sessions in units that allow it. COVID-positive don't mis with others.
+* Run 30 times, show median and extremes.
+
+![Patient pathway figure from Allen et al. 2020](../../../original_study/article_fig1.png){width=50%}
+
+* All patients receive dialysis 3 times a week. Each patient starts on either Monday or Tuesday.
+* Have proportion of patients either fixed or sampled from stochastic distribution for phases of COVID state and care.
+* COVID seperate from uninfected and recovered.
+
+![Baseline model parameters from Allen et al. 2020](../../../original_study/article_tab1.png){width=50%}
+
+For allocation to units, use search strategy:
+
+* COVID negative or recovered - look for place in current unit, if no space, find closest unit (by travel time) with available space
+* COVID positive - put in Queen Alexandara, and if full, make capacity in Basingstoke. If new COVID session required, more all COVID negative patients in that session as per neg rules.
+* COVID positive inpatient - all in Queen Alexandra (but allows search for unit with inpatients)
+* Unallocated - if can't allocate to any units, attempt again next day
+
+Once every week, attempts to reallocate patients back to starting unit or closest available. This is so cared more nearby and to compress COVID positive patients into few units and sessions.
+
+COVID positive converted back to COVID negative when no longer needed.
+
+**Results:**
+
+* States current median travel time from home to dialysis unit, and current capacity.
+* Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months. 
+    * Figure 2 - number of patients in each COVID state over 150 days
+    * Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown.
+    * Figure 4 - patients displced from current unit, and travel time added
+* Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.
+* Reduces workflow in units not taking COVID positive patients.
+* Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)
+
+![Figure 2](../../../original_study/article_fig2.png){width=50%}
+
+![Figure 3](../../../original_study/article_fig3.png){width=50%}
+
+![Figure 4](../../../original_study/article_fig4.png){width=50%}
+
+**Discusion:**
+
+* Dialysis unit can cope with worst case spread. Requires reallocation of patients, will impact on ambulance and efficiency.
+* Likely significant patient partessures, current capacity breached, consider moving dislaysi requipment during peak COVID positive.
+* Transporting individually unsustainable.(Markov?)
+* Model limitations - assumes can reallocate immediatley, assumes current capacity maintained (i.e. no staff shortage), not modelled timing, not included home dialysis.
+
+:::
+
 ### 13.56-14.27: Identifying scope
 
 Made page for scope under evaluation - `scope.qmd`. Then went through process of:
@@ -67,12 +140,14 @@ Made page for scope under evaluation - `scope.qmd`. Then went through process of
 ## Notes from identification of key results and comparison with figures
 
 Abstract:
+
 * **Need secondary site, reduces workload in other sites, increases in primary site:** "Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients."
     * Captured in Figure 3
 * **Up to 140 COVID positive with 40-90 inpatients, breaching capacity:** "At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity."
     * Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)
 
 Results:
+
 * **No patients unallocated:** "In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients)."
     * Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line)
 * **Displaced patients have 20 minutes (sometimes up to 50) extra travel time** "Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis."
@@ -126,7 +201,7 @@ remain_min = max - total_min
 print(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')
 
 # Find proportion out of 40 hours
-print(f'Used {total_min/max*100}% of 40 hours max')
+print(f'Used {round(total_min/max*100,1)}% of 40 hours max')
 ```
 
 ## Suggested changes for protocol/template
@@ -136,11 +211,8 @@ print(f'Used {total_min/max*100}% of 40 hours max')
 Protocol:
 
 * ✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)
-* Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.
-* When do we create pages that display the original files that were uploaded?
-    * Journal article and supplementary: I naturally wanted to do it after upload
-    * Code: I haven't looked at yet, and feel I wouldn't want to do until I have gone through familiarisation with the code
-    * Perhaps put both at that later stage, but make note in protocol about it not necessarily being a prescribed order?
+* ✅ Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.
+* ✅ Suggest that create pages to display the journal article, supplementary and code at a point after having gone through the code familiarisation steps.
 * Reflect on how want to deal with summary page. I used it to help me read through and summarise the article. However, later down the line, the STRESS-DES and ISPOR reporting guidelines could potentially provide a more complete summary (depending on how do the "evidence" sections - i.e. copying in text, or just referring to a part in the paper). So do we need a summary page? Or are these just notes that I make in the logbook? As don't necessarily want to prescribe that everyone has to write a summary? Leaning towards that.
 * Make reference to particular pages in template (e.g. when define scope, the file path to the scope template)
 * For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.
