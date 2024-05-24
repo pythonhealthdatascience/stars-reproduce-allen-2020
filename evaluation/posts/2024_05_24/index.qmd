@@ -1,23 +1,27 @@
 ---
 title: "Day 3"
 author: "Amy Heather"
-date: "2024-05-23"
+date: "2024-05-24"
 categories: [reproduce]
 ---
 
 ::: {.callout-note}
 
-## Time elapsed
-
-1h 9m today (total: 14.4%)
+Fixed model so that it is reproducible between runs. Total time used: 5h 45m (14.4%)
 
 :::
 
 ## Work log
 
+## Untimed - Revision on random numbers
+
+Spent some time revises how number generation works in Python - [notes here](https://amyheather.github.io/programming_notes/python/seeds.html). I felt this was external to reproducing the model, so did not include it in time.
+
+If I would have timed it though, it would've been apx. 9.30-11.28.
+
 ## 11.29-12.38 Reproduction
 
-After some [untimed general revision of how random number generation works in Python](https://amyheather.github.io/programming_notes/python/seeds.html), I returned to trying to modify the code so it can reproduce results between runs.
+I returned to trying to modify the code so it can reproduce results between runs.
 
 A simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.
 
@@ -46,45 +50,56 @@ Run 2:
 
 <img src="figure_2b.png" width="500" />
 
+## Untimed: Exploring methods for overlaying figures
+
+Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.
+
+Decided that it's not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.
+
+If timed, 13.33-13.57.
+
+```{python}
+import cv2
+import matplotlib.pyplot as plt
+
+original = cv2.imread('../../../original_study/article_fig4.png')
+overlay = cv2.imread('figure_2a.png')
+
+# Resize overlay to match original image dimensions
+overlay_resize = cv2.resize(overlay, (original.shape[1], original.shape[0]))
+
+# View new image
+img = plt.imshow(overlay_resize)
+plt.axis('off')
+img
+```
+
+```{python}
+# Overlay transparenly
+combined = cv2.addWeighted(original,0.4,overlay_resize,0.1,0)
+
+# View new image
+img = plt.imshow(combined)
+plt.axis('off')
+img
+```
+
 ## Timings
 
 ```{python}
-from datetime import datetime
+import sys
+sys.path.append('../')
+from timings import calculate_times
 
-# --------------------------------------------------------------
-# Modify this section:
-
-# Time in minutes that has been used prior to this day
+# Minutes used prior to today
 used_to_date = 276
 
-# List of times from today (as string tuples in list)
+# Times from today
 times = [
     ('11.29', '12.38')]
-# --------------------------------------------------------------
 
-FMT = '%H.%M'
-total_min = 0
-for t in times:
-    # Convert to datetime object
-    h0 = datetime.strptime(t[0], FMT)
-    h1 = datetime.strptime(t[1], FMT)
-    # Find difference in minutes and add to total
-    total_min += (h1 - h0).total_seconds() / 60
-
-# Time in hours and minutes
-print(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')
-
-# Total time used
-total_used = total_min + used_to_date
-print(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')
-
-# Find time remaining
-max = 40*60
-remain_min = max - total_used
-print(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')
-
-# Find proportion out of 40 hours
-print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
+# Print time used and remaining
+calculate_times(used_to_date, times)
 ```
 
 ## Suggested changes for protocol/template
@@ -94,3 +109,5 @@ print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
 Protocol: 
 
 * Increasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies
+* Should I have timed the revision of random number generators?
+* Could it be that time to get it running we are interested in is partly just "its working" and partly "i can reproduce between runs" and then "i can get this and that figure". In the case of this example, the figure from Krafczyk wouldn't make alot of sense, as we all-or-nothing reproduce them. Depending on decision, need to be clear in protocol about what is being timed and what is not.

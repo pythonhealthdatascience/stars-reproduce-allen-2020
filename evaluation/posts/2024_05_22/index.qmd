@@ -7,9 +7,7 @@ categories: [setup, read, scope]
 
 ::: {.callout-note}
 
-## Time elapsed
-
-1h 13m today (total: 3%)
+Set-up, reading and defining scope. Total time used: 1h 13m (3%)
 
 :::
 
@@ -174,45 +172,21 @@ Not doing for this one as it is a test-run.
 ## Timings
 
 ```{python}
-from datetime import datetime
+import sys
+sys.path.append('../')
+from timings import calculate_times
 
-# --------------------------------------------------------------
-# Modify this section:
-
-# Time in minutes that has been used prior to this day
+# Minutes used prior to today
 used_to_date = 0
 
-# List of times from today (as string tuples in list)
+# Times from today
 times = [
     ('12.11', '12.16'),
     ('12.18', '12.19'),
     ('13.20', '13.56'),
     ('13.56', '14.27')]
-# --------------------------------------------------------------
 
-FMT = '%H.%M'
-total_min = 0
-for t in times:
-    # Convert to datetime object
-    h0 = datetime.strptime(t[0], FMT)
-    h1 = datetime.strptime(t[1], FMT)
-    # Find difference in minutes and add to total
-    total_min += (h1 - h0).total_seconds() / 60
-
-# Time in hours and minutes
-print(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')
-
-# Total time used
-total_used = total_min + used_to_date
-print(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')
-
-# Find time remaining
-max = 40*60
-remain_min = max - total_used
-print(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')
-
-# Find proportion out of 40 hours
-print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
+calculate_times(used_to_date, times)
 ```
 
 ## Suggested changes for protocol/template
