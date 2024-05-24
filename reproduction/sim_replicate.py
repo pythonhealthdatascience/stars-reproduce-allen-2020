@@ -68,10 +68,7 @@ def run_replications(scenarios, number_of_replications=30):
         
         print('Done.')
 
-
-
-    # All sceanrios complete        
-    
+    # All scenarios complete        
 
 
 def multiple_replications(scenario, n_reps=10, n_jobs=1):
@@ -94,20 +91,21 @@ def multiple_replications(scenario, n_reps=10, n_jobs=1):
         List of Tuples (1 for each replication)
             0: Patient Audit.
             1. Unit Audit
-    
+
     TM Note: At the moment this is not combined....
 
     '''
-    
-    audits = Parallel(n_jobs=n_jobs)(delayed(single_run)(scenario, i) 
-                                     for i in range(n_reps))
-    
+    # Run in parallel, using the replication number as the random number set
+    audits = Parallel(n_jobs=n_jobs)(
+        delayed(single_run)(scenario, i, random_number_set=i)
+        for i in range(n_reps))
+
     return unpack_audits(audits)
 
     
-def single_run(scenario, i=0):
+def single_run(scenario, i=0, random_number_set=None):
     '''
-    Single run of DialySim for scenario
+    Single run of DialysisSim for scenario
     
     Parameters
     ----------
@@ -115,6 +113,9 @@ def single_run(scenario, i=0):
         Parameters for model run.
     i : int, optional
         Replication number (0 if just single run). The default is 0.
+    random_number_set : int or None, optional (default=None)
+        Controls the set of random seeds used by stochastic parts of the model.
+        Use None for a random set of seeds.
 
     Returns
     -------
@@ -124,25 +125,29 @@ def single_run(scenario, i=0):
         Unit Audit.
 
     '''
-    print(f'{i}, ', end='' )
+    # Set random number set
+    scenario.set_random_no_set(random_number_set)
+
+    # Run the model
+    print(f'{i}, ', end='')
     model = DialysisSim(scenario)
     model.run()
-    # return audits
+
+    # Return audits
     return model.audit.patient_audit, model.audit.unit_audit, \
         model.audit.displaced_audit, model.audit.inpatient_audit
-            
 
 
 def unpack_audits(audits):
     '''
     Unpacks the tuple returned from multiple reps into seperate multi-index 
     data frames.
-    
+
     Returns a tuple with 2 dataframes.  These are multi-index dataframes.
     (rep, day).  E,g, if run length is 360 days and there are two replications
     there there are 720 rows.  360 have a first index column = 0; and the 
     second 360 have first index column = 1.
-     
+
     Parameters
     ----------
     audits : Tuple

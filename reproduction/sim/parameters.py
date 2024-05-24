@@ -1,11 +1,10 @@
 '''
-Contains data classes for simulation model
+Contains classes for simulation model
 '''
-from dataclasses import dataclass
 import numpy as np
 
 
-class Normal():
+class Normal:
     '''
     Wraps a normal distribution and its parameters.
     Allows lower truncation of normal distribution.
@@ -38,7 +37,7 @@ class Normal():
 
     def sample(self, size=None):
         '''
-        Samples from the normal distribution with 
+        Samples from the normal distribution with
         specified parameters.
 
         Lower truncates values if self.trunc is set.
@@ -50,7 +49,7 @@ class Normal():
 
         Returns
         -------
-        scalar or numpy.array of 
+        scalar or numpy.array of
             normally distributed variates.
 
         '''
@@ -65,7 +64,7 @@ class Normal():
         return sample
 
 
-class Uniform():
+class Uniform:
     '''
     Wraps a uniform distribution and its parameters
     Allows control of random number stream.
@@ -102,7 +101,7 @@ class Uniform():
 
         Returns
         -------
-        scalar or numpy.array of 
+        scalar or numpy.array of
             uniform distributed variates.
         '''
 
@@ -110,61 +109,110 @@ class Uniform():
             low=self.minimum, high=self.maximum, size=size)
 
 
-@dataclass(frozen=True)
+DEFAULT_RUN_LENGTH = 200
+DEFAULT_AUDIT_INTERVAL = 1
+DEFAULT_PROPORTION_INFECTED = 0.8
+DEFAULT_PROPORTION_NEG_COV_QUERY = 0.02
+DEFAULT_MORTALITY = 0.15
+DEFAULT_PROPORTION_POS_INPATIENT = 0.4
+DEFAULT_RANDOM_POSITIVE = 0
+DEFAULT_OPEN_ALL_SESSIONS = False
+DEFAULT_DROP_TO_TWO_SESSIONS = False
+DEFAULT_PROPORTION_DROP_TO_TWO = 0.9
+
+
 class Scenario:
     '''
-    Dataclass for DialysisSim
-
-    Encapsulates all parameters for the simulation model.  
-
-    Note the @dataclass decorator.  This takes
-    a parameter call frozen which means the class
-    is immutable.  That's nice for parameters!
+    Container class for DialysisSim parameters/arguments.
+    Passed to the model and its process classes.
     '''
+    def __init__(
+            self,
+            run_length=DEFAULT_RUN_LENGTH,
+            audit_interval=DEFAULT_AUDIT_INTERVAL,
+            total_proportion_people_infected=DEFAULT_PROPORTION_INFECTED,
+            prop_neg_patients_cov_query=DEFAULT_PROPORTION_NEG_COV_QUERY,
+            mortality=DEFAULT_MORTALITY,
+            proportion_pos_requiring_inpatient=(
+                DEFAULT_PROPORTION_POS_INPATIENT),
+            random_positive_rate_at_start=DEFAULT_RANDOM_POSITIVE,
+            open_all_sessions=DEFAULT_OPEN_ALL_SESSIONS,
+            drop_to_two_sessions=DEFAULT_DROP_TO_TWO_SESSIONS,
+            prop_patients_drop_to_two_sessions=DEFAULT_DROP_TO_TWO_SESSIONS):
+        '''
+        Create a scenario to with parameters for the simulation model
 
-    # Generate N_STREAMS high quality child seeds
-    default_seed = 42
-    n_streams = 20
-    seed_sequence = np.random.SeedSequence(default_seed)
-    seeds = seed_sequence.spawn(n_streams)
+        Parameters:
+        -----------
+        TODO: Add these.
+        '''
+        # Parameters
+        self.run_length = run_length
+        self.audit_interval = audit_interval
+        # Proportion of all people who will get infected (limited by herd
+        # immunity) really this is init only...
+        self.total_proportion_people_infected = (
+            total_proportion_people_infected)
+        # Proportion negative people who 'may' have COV
+        self.prop_neg_patients_cov_query = prop_neg_patients_cov_query
+        # Mortality rate
+        self.mortality = mortality
+        # Proportion Cov+ requiring inpatient care
+        self.proportion_pos_requiring_inpatient = (
+            proportion_pos_requiring_inpatient)
+        # Add random positives at start; applies to negative patients
+        self.random_positive_rate_at_start = random_positive_rate_at_start
 
-    run_length: float = 200
+        # Sampling (set up with no seed provided - can later rerun with a seed
+        # via set_random_no_set())
+        self.random_number_set = None
+        self.init_sampling()
 
-    audit_interval: int = 1
+        # Strategies
+        self.open_all_sessions = open_all_sessions
+        self.drop_to_two_sessions = drop_to_two_sessions
+        self.prop_patients_drop_to_two_sessions = (
+            prop_patients_drop_to_two_sessions)
 
-    # Proportion of all people who will get infected (limited by herd immunity)
-    # really this is init only...
-    total_proportion_people_infected: float = 0.8
+    def set_random_no_set(self, random_number_set):
+        '''
+        Controls the random sampling - can pass in a new random number set and
+        do the sampling using that instead of the default.
 
-    # Proportion negative people who 'may' have COV
-    prop_neg_patients_cov_query: float = 0.02
+        Parameters:
+        ----------
+        random_number_set: int
+            Used to control the set of pseudorandom numbers
+            used by the distributions in the simulation.
+        '''
+        # Replace the random_number_set
+        self.random_number_set = random_number_set
+        # Trigger recreation of sampling distributions
+        self.init_sampling()
 
-    # Infection distribution type (default = Normal)
-    time_to_infection = Normal(60, 15, 0.0, random_seed=seeds[0])
+    def init_sampling(self):
+        '''
+        Create the distributions used by the model and initialise
+        the random seeds of each.
+        '''
+        # Generate 20 high quality child seeds to use to create separate
+        # independent random number generators for each distribution
+        seeds = np.random.SeedSequence(self.random_number_set).spawn(20)
 
-    # Sampling distribution for time positive
-    time_positive = Uniform(7, 14, random_seed=seeds[1])
+        # Infection distribution type (default = Normal)
+        self.time_to_infection = Normal(60, 15, 0.0, random_seed=seeds[0])
 
-    # Proportion Cov+ requiring inpatient care
-    proportion_pos_requiring_inpatient: float = 0.4
-    requiring_inpatient_random = Uniform(0.0, 1.0, random_seed=seeds[2])
-    time_pos_before_inpatient = Uniform(3, 7, random_seed=seeds[3])
-    time_inpatient = Uniform(7.0, 14.0, random_seed=seeds[4])
+        # Sampling distribution for time positive
+        self.time_positive = Uniform(7, 14, random_seed=seeds[1])
 
-    # Mortality rate
-    mortality: float = 0.15
+        # Proportion Cov+ requiring inpatient care
+        self.requiring_inpatient_random = Uniform(
+            0.0, 1.0, random_seed=seeds[2])
+        self.time_pos_before_inpatient = Uniform(3, 7, random_seed=seeds[3])
+        self.time_inpatient = Uniform(7.0, 14.0, random_seed=seeds[4])
 
-    # Mortality random number
-    mortality_rand = Uniform(0.0, 1.0, random_seed=seeds[5])
+        # Mortality random number
+        self.mortality_rand = Uniform(0.0, 1.0, random_seed=seeds[5])
 
-    # Add random positives at start; applies to negative patients
-    random_positive_rate_at_start: float = 0.0
-
-    # Restrict the maximum proportion of people who can be infected
-    will_be_infected_rand = Uniform(0.0, 1.0, random_seed=seeds[6])
-
-    # Strategies ---------------------------------
-
-    open_all_sessions: bool = False
-    drop_to_two_sessions: bool = False
-    prop_patients_drop_to_two_sessions: float = 0.9
+        # Restrict the maximum proportion of people who can be infected
+        self.will_be_infected_rand = Uniform(0.0, 1.0, random_seed=seeds[6])

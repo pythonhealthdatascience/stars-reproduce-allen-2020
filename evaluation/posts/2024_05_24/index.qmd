@@ -1,0 +1,47 @@
+---
+title: "Day 3"
+author: "Amy Heather"
+date: "2024-05-23"
+categories: [reproduce]
+---
+
+::: {.callout-note}
+
+## Time elapsed
+
+TBC today (total: TBC%)
+
+:::
+
+## Work log
+
+## 11.29-12.38 Reproduction
+
+After some [untimed general revision of how random number generation works in Python](https://amyheather.github.io/programming_notes/python/seeds.html), I returned to trying to modify the code so it can reproduce results between runs.
+
+A simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.
+
+Run 1:
+
+<img src="figure_1a.png" width="500" /> 
+
+Run 2:
+
+<img src="figure_1b.png" width="500" />
+
+
+Then we needed a seperate seed with each run (else every run will produce identical results) This required changes to:
+    * `single_run()` within `sim_replicate.py` so it can accept random number set as an argument, and then when it was called in `multiple_replications()`, to use the rep number as the starting seed
+    * Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that
+
+These changes were based on [this model](https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html).
+
+As can see, this has fixed it, as we have reproducible results between runs, and varying results within runs.
+
+Run 1:
+
+<img src="figure_2a.png" width="500" /> 
+
+Run 2:
+
+<img src="figure_2b.png" width="500" />
