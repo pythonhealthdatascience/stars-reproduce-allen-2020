@@ -1,2 +1,7 @@
-jupyter
-pandas
+jupyter==1.0.0
+pandas==2.2.2
+
+# Use to test overlaying of images - but don't keep in future environments,
+# as decided that overlay is not the right approach
+opencv-python==4.9.0.80
+matplotlib==3.9.0
