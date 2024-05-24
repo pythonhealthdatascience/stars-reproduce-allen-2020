@@ -32,7 +32,7 @@
     "href": "evaluation/posts/2024_05_24/index.html",
     "title": "Day 3",
     "section": "",
-    "text": "Time elapsed\n\n\n\nTBC today (total: TBC%)"
+    "text": "Time elapsed\n\n\n\n1h 9m today (total: 14.4%)"
   },
   {
     "objectID": "evaluation/posts/2024_05_24/index.html#work-log",
@@ -47,6 +47,20 @@
     "title": "Day 3",
     "section": "11.29-12.38 Reproduction",
     "text": "11.29-12.38 Reproduction\nAfter some untimed general revision of how random number generation works in Python, I returned to trying to modify the code so it can reproduce results between runs.\nA simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.\nRun 1:\n\nRun 2:\n\nThen we needed a seperate seed with each run (else every run will produce identical results) This required changes to: * single_run() within sim_replicate.py so it can accept random number set as an argument, and then when it was called in multiple_replications(), to use the rep number as the starting seed * Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that\nThese changes were based on this model.\nAs can see, this has fixed it, as we have reproducible results between runs, and varying results within runs.\nRun 1:\n\nRun 2:"
+  },
+  {
+    "objectID": "evaluation/posts/2024_05_24/index.html#timings",
+    "href": "evaluation/posts/2024_05_24/index.html#timings",
+    "title": "Day 3",
+    "section": "Timings",
+    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 276\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('11.29', '12.38')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 69m - or 1h 9m\nTotal used to date: 345m - or 5h 45m\nTime remaining: 2055m - or 34h 15m\nUsed 14.4% of 40 hours max"
+  },
+  {
+    "objectID": "evaluation/posts/2024_05_24/index.html#suggested-changes-for-protocoltemplate",
+    "href": "evaluation/posts/2024_05_24/index.html#suggested-changes-for-protocoltemplate",
+    "title": "Day 3",
+    "section": "Suggested changes for protocol/template",
+    "text": "Suggested changes for protocol/template\n✅ = Made the change.\nProtocol:\n\nIncreasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies"
   },
   {
     "objectID": "evaluation/reporting.html",
@@ -256,7 +270,7 @@
     "href": "evaluation/posts/2024_05_22/index.html#timings",
     "title": "Day 1",
     "section": "Timings",
-    "text": "Timings\n\nfrom datetime import datetime\n\n# List of time tuples with prescribed format\nFMT = '%H.%M'\ntimes = [\n    ('12.11', '12.16'),\n    ('12.18', '12.19'),\n    ('13.20', '13.56'),\n    ('13.56', '14.27')]\n\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_min\nprint(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round(total_min/max*100,1)}% of 40 hours max')\n\nTime spent today: 1h 13m\nTime remaining: 38h 47m\nUsed 3.0% of 40 hours max"
+    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 0\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('12.11', '12.16'),\n    ('12.18', '12.19'),\n    ('13.20', '13.56'),\n    ('13.56', '14.27')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 73m - or 1h 13m\nTotal used to date: 73m - or 1h 13m\nTime remaining: 2327m - or 38h 47m\nUsed 3.0% of 40 hours max"
   },
   {
     "objectID": "evaluation/posts/2024_05_22/index.html#suggested-changes-for-protocoltemplate",
@@ -284,7 +298,7 @@
     "href": "evaluation/posts/2024_05_23/index.html#timings",
     "title": "Day 2",
     "section": "Timings",
-    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 73\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('10.24', '11.00'),\n    ('12.10', '12.16'),\n    ('12.19', '12.29'),\n    ('13.26', '13.52'),\n    ('14.19', '15.12'),\n    ('15.23', '16.35')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_min - used_to_date\nprint(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 3h 23m\nTime remaining: 35h 24m\nUsed 11.5% of 40 hours max"
+    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 73\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('10.24', '11.00'),\n    ('12.10', '12.16'),\n    ('12.19', '12.29'),\n    ('13.26', '13.52'),\n    ('14.19', '15.12'),\n    ('15.23', '16.35')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 203m - or 3h 23m\nTotal used to date: 276m - or 4h 36m\nTime remaining: 2124m - or 35h 24m\nUsed 11.5% of 40 hours max"
   },
   {
     "objectID": "evaluation/posts/2024_05_23/index.html#suggested-changes-for-protocoltemplate",
