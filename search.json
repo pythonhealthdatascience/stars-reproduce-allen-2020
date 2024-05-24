@@ -25,14 +25,14 @@
     "href": "evaluation/logbook.html",
     "title": "Logbook",
     "section": "",
-    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 3\n\n\n\n\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nMay 23, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 2\n\n\n\n\n\n\nread\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nMay 23, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\nread\n\n\nscope\n\n\n\n\n\n\n\n\n\nMay 22, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
+    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 3\n\n\n\n\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nMay 24, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 2\n\n\n\n\n\n\nread\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nMay 23, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\nread\n\n\nscope\n\n\n\n\n\n\n\n\n\nMay 22, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "evaluation/posts/2024_05_24/index.html",
     "href": "evaluation/posts/2024_05_24/index.html",
     "title": "Day 3",
     "section": "",
-    "text": "Time elapsed\n\n\n\n1h 9m today (total: 14.4%)"
+    "text": "Note\n\n\n\nFixed model so that it is reproducible between runs. Total time used: 5h 45m (14.4%)"
   },
   {
     "objectID": "evaluation/posts/2024_05_24/index.html#work-log",
@@ -42,25 +42,39 @@
     "text": "Work log"
   },
   {
+    "objectID": "evaluation/posts/2024_05_24/index.html#untimed---revision-on-random-numbers",
+    "href": "evaluation/posts/2024_05_24/index.html#untimed---revision-on-random-numbers",
+    "title": "Day 3",
+    "section": "Untimed - Revision on random numbers",
+    "text": "Untimed - Revision on random numbers\nSpent some time revises how number generation works in Python - notes here. I felt this was external to reproducing the model, so did not include it in time.\nIf I would have timed it though, it would’ve been apx. 9.30-11.28."
+  },
+  {
     "objectID": "evaluation/posts/2024_05_24/index.html#reproduction",
     "href": "evaluation/posts/2024_05_24/index.html#reproduction",
     "title": "Day 3",
     "section": "11.29-12.38 Reproduction",
-    "text": "11.29-12.38 Reproduction\nAfter some untimed general revision of how random number generation works in Python, I returned to trying to modify the code so it can reproduce results between runs.\nA simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.\nRun 1:\n\nRun 2:\n\nThen we needed a seperate seed with each run (else every run will produce identical results) This required changes to: * single_run() within sim_replicate.py so it can accept random number set as an argument, and then when it was called in multiple_replications(), to use the rep number as the starting seed * Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that\nThese changes were based on this model.\nAs can see, this has fixed it, as we have reproducible results between runs, and varying results within runs.\nRun 1:\n\nRun 2:"
+    "text": "11.29-12.38 Reproduction\nI returned to trying to modify the code so it can reproduce results between runs.\nA simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.\nRun 1:\n\nRun 2:\n\nThen we needed a seperate seed with each run (else every run will produce identical results) This required changes to: * single_run() within sim_replicate.py so it can accept random number set as an argument, and then when it was called in multiple_replications(), to use the rep number as the starting seed * Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that\nThese changes were based on this model.\nAs can see, this has fixed it, as we have reproducible results between runs, and varying results within runs.\nRun 1:\n\nRun 2:"
+  },
+  {
+    "objectID": "evaluation/posts/2024_05_24/index.html#untimed-exploring-methods-for-overlaying-figures",
+    "href": "evaluation/posts/2024_05_24/index.html#untimed-exploring-methods-for-overlaying-figures",
+    "title": "Day 3",
+    "section": "Untimed: Exploring methods for overlaying figures",
+    "text": "Untimed: Exploring methods for overlaying figures\nExploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.\nDecided that it’s not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.\nIf timed, 13.33-13.57.\n\nimport cv2\nimport matplotlib.pyplot as plt\n\noriginal = cv2.imread('../../../original_study/article_fig4.png')\noverlay = cv2.imread('figure_2a.png')\n\n# Resize overlay to match original image dimensions\noverlay_resize = cv2.resize(overlay, (original.shape[1], original.shape[0]))\n\n# View new image\nimg = plt.imshow(overlay_resize)\nplt.axis('off')\nimg\n\n\n\n\n\n\n\n\n\n# Overlay transparenly\ncombined = cv2.addWeighted(original,0.4,overlay_resize,0.1,0)\n\n# View new image\nimg = plt.imshow(combined)\nplt.axis('off')\nimg"
   },
   {
     "objectID": "evaluation/posts/2024_05_24/index.html#timings",
     "href": "evaluation/posts/2024_05_24/index.html#timings",
     "title": "Day 3",
     "section": "Timings",
-    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 276\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('11.29', '12.38')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 69m - or 1h 9m\nTotal used to date: 345m - or 5h 45m\nTime remaining: 2055m - or 34h 15m\nUsed 14.4% of 40 hours max"
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 276\n\n# Times from today\ntimes = [\n    ('11.29', '12.38')]\n\n# Print time used and remaining\ncalculate_times(used_to_date, times)\n\nTime spent today: 69m, or 1h 9m\nTotal used to date: 345m, or 5h 45m\nTime remaining: 2055m, or 34h 15m\nUsed 14.4% of 40 hours max"
   },
   {
     "objectID": "evaluation/posts/2024_05_24/index.html#suggested-changes-for-protocoltemplate",
     "href": "evaluation/posts/2024_05_24/index.html#suggested-changes-for-protocoltemplate",
     "title": "Day 3",
     "section": "Suggested changes for protocol/template",
-    "text": "Suggested changes for protocol/template\n✅ = Made the change.\nProtocol:\n\nIncreasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies"
+    "text": "Suggested changes for protocol/template\n✅ = Made the change.\nProtocol:\n\nIncreasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies\nShould I have timed the revision of random number generators?\nCould it be that time to get it running we are interested in is partly just “its working” and partly “i can reproduce between runs” and then “i can get this and that figure”. In the case of this example, the figure from Krafczyk wouldn’t make alot of sense, as we all-or-nothing reproduce them. Depending on decision, need to be clear in protocol about what is being timed and what is not."
   },
   {
     "objectID": "evaluation/reporting.html",
@@ -256,7 +270,7 @@
     "href": "evaluation/posts/2024_05_22/index.html",
     "title": "Day 1",
     "section": "",
-    "text": "Time elapsed\n\n\n\n1h 13m today (total: 3%)"
+    "text": "Note\n\n\n\nSet-up, reading and defining scope. Total time used: 1h 13m (3%)"
   },
   {
     "objectID": "evaluation/posts/2024_05_22/index.html#work-log",
@@ -270,7 +284,7 @@
     "href": "evaluation/posts/2024_05_22/index.html#timings",
     "title": "Day 1",
     "section": "Timings",
-    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 0\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('12.11', '12.16'),\n    ('12.18', '12.19'),\n    ('13.20', '13.56'),\n    ('13.56', '14.27')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 73m - or 1h 13m\nTotal used to date: 73m - or 1h 13m\nTime remaining: 2327m - or 38h 47m\nUsed 3.0% of 40 hours max"
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('12.11', '12.16'),\n    ('12.18', '12.19'),\n    ('13.20', '13.56'),\n    ('13.56', '14.27')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 73m, or 1h 13m\nTotal used to date: 73m, or 1h 13m\nTime remaining: 2327m, or 38h 47m\nUsed 3.0% of 40 hours max"
   },
   {
     "objectID": "evaluation/posts/2024_05_22/index.html#suggested-changes-for-protocoltemplate",
@@ -284,7 +298,7 @@
     "href": "evaluation/posts/2024_05_23/index.html",
     "title": "Day 2",
     "section": "",
-    "text": "Time elapsed\n\n\n\n3h 23m today (total: 11.5%)"
+    "text": "Time elapsed\n\n\n\nReviewing code and running model with reproduction of results between runs. Total time used: 4h 36m (11.5%)"
   },
   {
     "objectID": "evaluation/posts/2024_05_23/index.html#work-log",
@@ -298,7 +312,7 @@
     "href": "evaluation/posts/2024_05_23/index.html#timings",
     "title": "Day 2",
     "section": "Timings",
-    "text": "Timings\n\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# Modify this section:\n\n# Time in minutes that has been used prior to this day\nused_to_date = 73\n\n# List of times from today (as string tuples in list)\ntimes = [\n    ('10.24', '11.00'),\n    ('12.10', '12.16'),\n    ('12.19', '12.29'),\n    ('13.26', '13.52'),\n    ('14.19', '15.12'),\n    ('15.23', '16.35')]\n# --------------------------------------------------------------\n\nFMT = '%H.%M'\ntotal_min = 0\nfor t in times:\n    # Convert to datetime object\n    h0 = datetime.strptime(t[0], FMT)\n    h1 = datetime.strptime(t[1], FMT)\n    # Find difference in minutes and add to total\n    total_min += (h1 - h0).total_seconds() / 60\n\n# Time in hours and minutes\nprint(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')\n\n# Total time used\ntotal_used = total_min + used_to_date\nprint(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')\n\n# Find time remaining\nmax = 40*60\nremain_min = max - total_used\nprint(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')\n\n# Find proportion out of 40 hours\nprint(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')\n\nTime spent today: 203m - or 3h 23m\nTotal used to date: 276m - or 4h 36m\nTime remaining: 2124m - or 35h 24m\nUsed 11.5% of 40 hours max"
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 73\n\n# Times from today\ntimes = [\n    ('10.24', '11.00'),\n    ('12.10', '12.16'),\n    ('12.19', '12.29'),\n    ('13.26', '13.52'),\n    ('14.19', '15.12'),\n    ('15.23', '16.35')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 203m, or 3h 23m\nTotal used to date: 276m, or 4h 36m\nTime remaining: 2124m, or 35h 24m\nUsed 11.5% of 40 hours max"
   },
   {
     "objectID": "evaluation/posts/2024_05_23/index.html#suggested-changes-for-protocoltemplate",
