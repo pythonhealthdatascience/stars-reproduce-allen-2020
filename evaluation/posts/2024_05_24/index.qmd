@@ -9,7 +9,7 @@ categories: [reproduce]
 
 ## Time elapsed
 
-TBC today (total: TBC%)
+1h 9m today (total: 14.4%)
 
 :::
 
@@ -45,3 +45,52 @@ Run 1:
 Run 2:
 
 <img src="figure_2b.png" width="500" />
+
+## Timings
+
+```{python}
+from datetime import datetime
+
+# --------------------------------------------------------------
+# Modify this section:
+
+# Time in minutes that has been used prior to this day
+used_to_date = 276
+
+# List of times from today (as string tuples in list)
+times = [
+    ('11.29', '12.38')]
+# --------------------------------------------------------------
+
+FMT = '%H.%M'
+total_min = 0
+for t in times:
+    # Convert to datetime object
+    h0 = datetime.strptime(t[0], FMT)
+    h1 = datetime.strptime(t[1], FMT)
+    # Find difference in minutes and add to total
+    total_min += (h1 - h0).total_seconds() / 60
+
+# Time in hours and minutes
+print(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')
+
+# Total time used
+total_used = total_min + used_to_date
+print(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')
+
+# Find time remaining
+max = 40*60
+remain_min = max - total_used
+print(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')
+
+# Find proportion out of 40 hours
+print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
+```
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.
+
+Protocol: 
+
+* Increasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies

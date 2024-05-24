@@ -352,12 +352,16 @@ for t in times:
     total_min += (h1 - h0).total_seconds() / 60
 
 # Time in hours and minutes
-print(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')
+print(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')
+
+# Total time used
+total_used = total_min + used_to_date
+print(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')
 
 # Find time remaining
 max = 40*60
-remain_min = max - total_min - used_to_date
-print(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')
+remain_min = max - total_used
+print(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')
 
 # Find proportion out of 40 hours
 print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')

@@ -176,14 +176,21 @@ Not doing for this one as it is a test-run.
 ```{python}
 from datetime import datetime
 
-# List of time tuples with prescribed format
-FMT = '%H.%M'
+# --------------------------------------------------------------
+# Modify this section:
+
+# Time in minutes that has been used prior to this day
+used_to_date = 0
+
+# List of times from today (as string tuples in list)
 times = [
     ('12.11', '12.16'),
     ('12.18', '12.19'),
     ('13.20', '13.56'),
     ('13.56', '14.27')]
+# --------------------------------------------------------------
 
+FMT = '%H.%M'
 total_min = 0
 for t in times:
     # Convert to datetime object
@@ -193,15 +200,19 @@ for t in times:
     total_min += (h1 - h0).total_seconds() / 60
 
 # Time in hours and minutes
-print(f'Time spent today: {int(total_min)//60}h {int(total_min)%60}m')
+print(f'Time spent today: {int(total_min)}m - or {int(total_min)//60}h {int(total_min)%60}m')
+
+# Total time used
+total_used = total_min + used_to_date
+print(f'Total used to date: {int(total_used)}m - or {int(total_used//60)}h {int(total_used%60)}m')
 
 # Find time remaining
 max = 40*60
-remain_min = max - total_min
-print(f'Time remaining: {int(remain_min//60)}h {int(remain_min%60)}m')
+remain_min = max - total_used
+print(f'Time remaining: {int(remain_min)}m - or {int(remain_min//60)}h {int(remain_min%60)}m')
 
 # Find proportion out of 40 hours
-print(f'Used {round(total_min/max*100,1)}% of 40 hours max')
+print(f'Used {round((total_min+used_to_date)/max*100,1)}% of 40 hours max')
 ```
 
 ## Suggested changes for protocol/template
