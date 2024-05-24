@@ -86,7 +86,7 @@ class Uniform():
             A random seed to reproduce samples. If set to none then a unique
             sample is created.
         '''
-        self.rand = np.random.default_rng(seed=random_seed)
+        self.rng = np.random.default_rng(seed=random_seed)
         self.maximum = maximum
         self.minimum = minimum
 
@@ -106,7 +106,7 @@ class Uniform():
             uniform distributed variates.
         '''
 
-        return self.rand.uniform(
+        return self.rng.uniform(
             low=self.minimum, high=self.maximum, size=size)
 
 
@@ -123,10 +123,10 @@ class Scenario:
     '''
 
     # Generate N_STREAMS high quality child seeds
-    DEFAULT_RNG_SET = 42
-    N_STREAMS = 20
-    seed_sequence = np.random.SeedSequence(DEFAULT_RNG_SET)
-    seeds = seed_sequence.spawn(N_STREAMS)
+    default_seed = 42
+    n_streams = 20
+    seed_sequence = np.random.SeedSequence(default_seed)
+    seeds = seed_sequence.spawn(n_streams)
 
     run_length: float = 200
 
@@ -155,13 +155,13 @@ class Scenario:
     mortality: float = 0.15
 
     # Mortality random number
-    mortality_rand = Uniform(0.0, 1.0)
+    mortality_rand = Uniform(0.0, 1.0, random_seed=seeds[5])
 
     # Add random positives at start; applies to negative patients
     random_positive_rate_at_start: float = 0.0
 
-    # Restrict the maximum proportion of people who can be infected    
-    will_be_infected_rand = Uniform(0.0, 1.0)
+    # Restrict the maximum proportion of people who can be infected
+    will_be_infected_rand = Uniform(0.0, 1.0, random_seed=seeds[6])
 
     # Strategies ---------------------------------
 
