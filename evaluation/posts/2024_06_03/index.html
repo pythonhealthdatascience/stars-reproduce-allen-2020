@@ -233,6 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#fixed-issue-in-duplication-between-my-replications" id="toc-fixed-issue-in-duplication-between-my-replications" class="nav-link" data-scroll-target="#fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</a></li>
   <li><a href="#compared-against-article-figures" id="toc-compared-against-article-figures" class="nav-link" data-scroll-target="#compared-against-article-figures">11.56-12.00 Compared against article figures</a></li>
   <li><a href="#comparing-against-original-paper" id="toc-comparing-against-original-paper" class="nav-link" data-scroll-target="#comparing-against-original-paper">12.19-12.45 Comparing against original paper</a></li>
+  <li><a href="#tidying-the-notebook-and-creating-reproduction-success-page" id="toc-tidying-the-notebook-and-creating-reproduction-success-page" class="nav-link" data-scroll-target="#tidying-the-notebook-and-creating-reproduction-success-page">16.13-16.24 Tidying the notebook, and creating reproduction success page</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -256,7 +257,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Found seed that produces results fairly visually similar to paper. Total time used: 6h 55m (17.3%). Reproduction stage complete.</p>
+<p>Found seed that produces results fairly visually similar to paper. Total time used: 7h 6m (17.8%). Reproduction stage complete.</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -375,12 +376,16 @@ Simulation stability
 </div>
 </div>
 <p>As I believe the parameters are consistent with the paper (as checked on Day 2), and as the models successfully run and produce broadly similar figures (with differences believed to be due to randomness/seeds, and related to simulation stability with this number of replications), I hence believe that at this point, reproduction is complete, and that each of these figures can be considered a <strong>successful reproduction</strong>.</p>
-<p><strong>Reproduction success: 3 out of 3, 100%.</strong></p>
+</section>
+<section id="tidying-the-notebook-and-creating-reproduction-success-page" class="level3">
+<h3 class="anchored" data-anchor-id="tidying-the-notebook-and-creating-reproduction-success-page">16.13-16.24 Tidying the notebook, and creating reproduction success page</h3>
+<p>Simplified the reproduction notebook to just use the base number 2700, deleting the other results.</p>
+<p>Created a reproduction success page, presenting those figures alongside the figures from the original study.</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="17765f54" class="cell" data-execution_count="1">
+<div id="a3dede82" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -393,15 +398,16 @@ Simulation stability
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.30'</span>, <span class="st">'11.03'</span>),</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'11.36'</span>),</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.56'</span>, <span class="st">'12.00'</span>),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.19'</span>, <span class="st">'12.45'</span>)]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.19'</span>, <span class="st">'12.45'</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'16.13'</span>, <span class="st">'16.24'</span>)]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 70m, or 1h 10m
-Total used to date: 415m, or 6h 55m
-Time remaining: 1985m, or 33h 5m
-Used 17.3% of 40 hours max</code></pre>
+<pre><code>Time spent today: 81m, or 1h 21m
+Total used to date: 426m, or 7h 6m
+Time remaining: 1974m, or 32h 54m
+Used 17.8% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
