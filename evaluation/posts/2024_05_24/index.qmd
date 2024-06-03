@@ -13,17 +13,17 @@ Fixed model so that it is reproducible between runs. Total time used: 5h 45m (14
 
 ## Work log
 
-## Untimed - Revision on random numbers
+### Untimed - Revision on random numbers
 
 Spent some time revises how number generation works in Python - [notes here](https://amyheather.github.io/programming_notes/python/seeds.html). I felt this was external to reproducing the model, so did not include it in time.
 
 If I would have timed it though, it would've been apx. 9.30-11.28.
 
-## 11.29-12.38 Reproduction
+### 11.29-12.38 Reproduction
 
 I returned to trying to modify the code so it can reproduce results between runs.
 
-A simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run exactly the same each time.
+A simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run **exactly the same** each time.
 
 Run 1:
 
@@ -33,10 +33,10 @@ Run 2:
 
 <img src="figure_1b.png" width="500" />
 
+Then we needed a **seperate seed with each run** (else every run will produce identical results) This required changes to:
 
-Then we needed a seperate seed with each run (else every run will produce identical results) This required changes to:
-    * `single_run()` within `sim_replicate.py` so it can accept random number set as an argument, and then when it was called in `multiple_replications()`, to use the rep number as the starting seed
-    * Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that
+* `single_run()` within `sim_replicate.py` so it can accept random number set as an argument, and then when it was called in `multiple_replications()`, to use the rep number as the starting seed
+* Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that
 
 These changes were based on [this model](https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html).
 
@@ -50,7 +50,7 @@ Run 2:
 
 <img src="figure_2b.png" width="500" />
 
-## Untimed: Exploring methods for overlaying figures
+### Untimed: Exploring methods for overlaying figures
 
 Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.
 
@@ -75,7 +75,7 @@ img
 ```
 
 ```{python}
-# Overlay transparenly
+# Overlay transparently
 combined = cv2.addWeighted(original,0.4,overlay_resize,0.1,0)
 
 # View new image
