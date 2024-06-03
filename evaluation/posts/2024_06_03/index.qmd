@@ -7,7 +7,7 @@ categories: [reproduce]
 
 ::: {.callout-note}
 
-Found seed that produces results fairly visually similar to paper. Total time used: TBCh TBCm (TBC%)
+Found seed that produces results fairly visually similar to paper. Total time used: 6h 55m (17.3%). Reproduction stage complete.
 
 :::
 
@@ -58,7 +58,58 @@ As in 'Simulation: The Practice of Model Development and Use' by Stewart Robinso
 * Confidence interval method (recommended method) - Similar to above, but including confidence intervals in the plot (e.g. 95%), and basing decision on narrowness of these itnervals. This can be done by calculating the percentage deviations of the confidence interval on each side of the mean with the increasing number of replications. You then set a threshold of the amount of deviation desired.
 :::
 
-### ??-
+### 12.19-12.45 Comparing against original paper
+
+Still none with similar blue peak, but decided appropriate number of different seeds have now been tried. From visual comparison, felt base of 2700 produced results that were fairly visually similar - but from looking across them all, often there wasn't alot between them.
+
+Here are comparisons of:
+
+* Original study figure
+* Figure from base 2700
+* Figure from base 2100 (which you can see looks more different from the original than base 2700 - although still pretty similar!)
+
+Examples of differences to spot between them:
+
+* Peaks of lines in left figure of Figure 4 (and resultant Y axis)
+* Peaks of red line in right figure of Figure 4
+* Interval of green line in Figure 2
+
+::: {layout-ncol=3}
+Original Figure 2:
+<img src="../../../original_study/article_fig2.png" />
+
+Base 2700:
+<img src="patients_base_3_month_base2700.png" />
+
+Base 2100:
+<img src="patients_base_3_month_base2100.png" />
+:::
+
+::: {layout-ncol=3}
+Original Figure 3:
+<img src="../../../original_study/article_fig3.png" width="500" />
+
+Base 2700:
+<img src="units_base_3_month_base2700.png" width="500" />
+
+Base 2100:
+<img src="units_base_3_month_base2100.png" width="500" />
+:::
+
+::: {layout-ncol=3}
+Original Figure 4:
+<img src="../../../original_study/article_fig4.png" width="500" />
+
+Base 2700:
+<img src="displaced_base_3_month_base2700.png" width="500" />
+
+Base 2100:
+<img src="displaced_base_3_month_base2100.png" width="500" />
+:::
+
+As I believe the parameters are consistent with the paper (as checked on Day 2), and as the models successfully run and produce broadly similar figures (with differences believed to be due to randomness/seeds, and related to simulation stability with this number of replications), I hence believe that at this point, reproduction is complete, and that each of these figures can be considered a **successful reproduction**.
+
+**Reproduction success: 3 out of 3, 100%.**
 
 ## Timings
 
@@ -73,7 +124,9 @@ used_to_date = 345
 # Times from today
 times = [
     ('10.30', '11.03'),
-    ('11.29', '11.36')]
+    ('11.29', '11.36'),
+    ('11.56', '12.00'),
+    ('12.19', '12.45')]
 
 # Print time used and remaining
 calculate_times(used_to_date, times)
@@ -83,6 +136,7 @@ calculate_times(used_to_date, times)
 
 ✅ = Made the change.
 
-Research compendium:
-
 * Testing - could test whether results are stable with the chosen number of replications? Although that might be too much about validity of results, than about reproducibility of results?
+* Reflection: Was the time invested into trying different seeds worth it?
+* Reproduction complete not necessarily when figures exactly match, but when you think they are quite similar and you think differences are due to things like seeds/randomness, and model stability
+* In template repository, include an example blog post including various stages from the protocol (e.g. working through set-up stages and so on). Add notes like "include links for uploaded materials here" and so on.
