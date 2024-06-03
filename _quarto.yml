@@ -19,8 +19,7 @@ website:
       - text: Original study
         href: quarto_site/study_publication.qmd
       - text: Reproduction code
-        menu:
-          - reproduction/example.ipynb
+        href: reproduction/reproduction.ipynb
       - text: Evaluation
         menu:
           - evaluation/scope.qmd
