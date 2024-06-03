@@ -193,6 +193,8 @@ calculate_times(used_to_date, times)
 
 ✅ = Made the change.
 
+💬 = Noted to discuss with team.
+
 Protocol:
 
 * ✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)
@@ -201,17 +203,16 @@ Protocol:
 * ✅ Remove suggestion of creating a summary page (as STRESS-DES and ISPOR provide rigorous summaries, and summaries for sake of understanding make more sense to be in logbook)
     * ✅ And therefore, suggest those reporting guidelines bit include copying and pasting information to answer each there, as much as appropriate (rather than just stating a section in the text to refer to)
 * ✅ Make reference to particular pages in template (e.g. when define scope, the file path to the scope template)
-* For defining scope, add a suggestion that the description of the sample is unlikely to be part of scope, and that focus is on the discrete event simulation and the results of that model, and use that to guide you when deciding what is in scope.
-* For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.
-* Add to stage when upload journal articles, that at the same time, they also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.
-* For scope, simplify protocol to just look for key results in abstract and results sections. Don't think should really need to look in discussion or conclusion, as those are more interpretation focussed, and should otherwise be highlighted in abstract - but don't make it prescriptive, just a recommendation, as focus here is just on finding key results, and recommending where they are likely to be in most (but not necessarily all) papers
+* ✅ For scope, suggest focus is on results of simulation, rather than other results like description of sample
+* ✅ For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.
+* ✅ When upload journal articles, require to also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.
+* ✅ For scope, simplify protocol to just look for key results in abstract and results sections. Don't think should really need to look in discussion or conclusion, as those are more interpretation focussed, and should otherwise be highlighted in abstract - but don't make it prescriptive, just a recommendation, as focus here is just on finding key results, and recommending where they are likely to be in most (but not necessarily all) papers
 
 Template:
 
-* In license, have set "Copyright (c) 2024 STARS Project Team" - is this correct? Also, should it mention the original authors or not? Presuming not, as they will already have license file within that folder, and we will add yet another license file to the reproduction folder so it is stand alone.
-* Should we have MIT license for reproduction/ and then CC-BY license for main repository?
-    * In which case, would need to specify in repository that changing license in reproduction/ folder and not main folder. And explain somewhere what the license files apply to.
+* 💬 In license, have set "Copyright (c) 2024 STARS Project Team" - is this correct? Also, should it mention the original authors or not? Presuming not, as they will already have license file within that folder, and we will add yet another license file to the reproduction folder so it is stand alone.
+* 💬 Should we have MIT license for reproduction/ and then CC-BY license for main repository? In which case, would need to specify in repository that changing license in reproduction/ folder and not main folder. And explain somewhere what the license files apply to.
 
 Other:
 
-* We might sometimes only reproduce part of a study - for example, a paper with multiple models and we focus on the discrete-event simulation. Think about the impact this has, and whether we need to note this somewhere? For example, whether the badges would actually be awarded for this work (or whether that matters - or if important bit is about ability to reproduce the simulation)? Depending on planned output for this work (e.g. if did want to explore publishing with [Rescience C](https://rescience.github.io/), what this would mean). Doesn't change what we do during replication - just perhaps comments around it re: badges, and what we do with it.
+* 💬 We might sometimes only reproduce part of a study - for example, a paper with multiple models and we focus on the discrete-event simulation. Think about the impact this has, and whether we need to note this somewhere? For example, whether the badges would actually be awarded for this work (or whether that matters - or if important bit is about ability to reproduce the simulation)? Depending on planned output for this work (e.g. if did want to explore publishing with [Rescience C](https://rescience.github.io/), what this would mean). Doesn't change what we do during replication - just perhaps comments around it re: badges, and what we do with it.
