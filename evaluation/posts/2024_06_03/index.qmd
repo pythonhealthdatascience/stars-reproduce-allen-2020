@@ -38,6 +38,28 @@ Hence, changed this in `reproduction.ipynb` so the base numbers were 0, 100, 200
 
 Then paused timing as reran again...
 
+### 11.56-12.00 Compared against article figures
+
+Compared against paper figures. Figures 2 and 3 always generally look quite consistent. Figure 4 can look quite different, and from the runs I've done, you can spot for example that our peaks in the left figure, and in the maximum of the right figure, often look lower.
+
+Trying again with another set of 15, this time 1500 to 2900.
+
+An alternative to this would be to identify the number of replications required for stable results - but that feels like less of a focus on reproducibility, and more of a focus on valid results.
+
+::: {.callout-tip}
+## Simulation stability
+
+From 15 different versions, I'm finding the peaks of the figures from the paper to be slightly higher than typical. Assuming that model parameters are correct and that control of randomness is now implemented appropriately, this highlights the relevance of simulation stability. Although 30 replications were performed, there was not assessment of whether this was the number needed for stability of results. This might be relevant to consider for STARS framework.
+
+As in 'Simulation: The Practice of Model Development and Use' by Stewart Robinson, there are three approaches for selecting the number of replications:
+
+* Rule of thumb - Law and McComas (1990) suggest at least 3-5, although models will often need more than that
+* Graphical method - Plot cumulative mean of an output in a graph (X axis is replication number, and Y axis is cumulative mean), and identify when that line becomes flat
+* Confidence interval method (recommended method) - Similar to above, but including confidence intervals in the plot (e.g. 95%), and basing decision on narrowness of these itnervals. This can be done by calculating the percentage deviations of the confidence interval on each side of the mean with the increasing number of replications. You then set a threshold of the amount of deviation desired.
+:::
+
+### ??-
+
 ## Timings
 
 ```{python}
@@ -50,7 +72,8 @@ used_to_date = 345
 
 # Times from today
 times = [
-    ('10.30', '10.31')]
+    ('10.30', '11.03'),
+    ('11.29', '11.36')]
 
 # Print time used and remaining
 calculate_times(used_to_date, times)
@@ -59,3 +82,7 @@ calculate_times(used_to_date, times)
 ## Suggested changes for protocol/template
 
 ✅ = Made the change.
+
+Research compendium:
+
+* Testing - could test whether results are stable with the chosen number of replications? Although that might be too much about validity of results, than about reproducibility of results?
