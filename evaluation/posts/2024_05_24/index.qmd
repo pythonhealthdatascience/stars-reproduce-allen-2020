@@ -106,8 +106,8 @@ calculate_times(used_to_date, times)
 
 ✅ = Made the change.
 
+💬 = Noted to discuss with team.
+
 Protocol: 
 
-* Increasing the emphasis on fiddling with the random number generators and seeds as likely being a large part of trying to reproduce the studies
-* Should I have timed the revision of random number generators?
-* Could it be that time to get it running we are interested in is partly just "its working" and partly "i can reproduce between runs" and then "i can get this and that figure". In the case of this example, the figure from Krafczyk wouldn't make alot of sense, as we all-or-nothing reproduce them. Depending on decision, need to be clear in protocol about what is being timed and what is not.
+* 💬 Protocol should more clearly state if certain timestamps are needed. Currently the suggestion is time to create each figure - but is this definitely our focus? Or is it instead, time to set up the environment, time to get the simulation running, time to get it to reproduce between runs, time to successful reproduction. For this study, the figure from Krafczyk wouldn't make alot of sense, as we all-or-nothing reproduce them. Depending on decision, need to be clear in protocol about what is being timed and what is not.
