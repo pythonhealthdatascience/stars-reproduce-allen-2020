@@ -22,11 +22,21 @@ Made changes to `sim_replicate.py`:
 
 Started changing `end_trial_analysis.py` to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn't require changing their code in multiple places) is just to use `os.rename()` within our notebook. Set up notebook to run through 15 different base seeds. Paused timing whilst this ran...
 
-### 11.29-
+### 11.29-11.36 Fixed issue in duplication between my replications
 
-Resumed timing after finished running the 15 different base seeds.
+Looked over images, but all looked very similar to one another. Realised this was because my method for modifying the seeds still had lots of matching seeds between each run - for example:
 
-Compared each by eye against the original figures in the paper.
+* Base 0: Random number sets are 0-30
+* Base 1: Random number sets are 1-31
+* Base 2: Random number sets are 2-32
+
+Hence, changed this in `reproduction.ipynb` so the base numbers were 0, 100, 200, 300 etc, and so:
+
+* Base 0: Random number set 0-30
+* Base 100: Random number set 100-130
+* Base 200: Random number set 200-230
+
+Then paused timing as reran again...
 
 ## Timings
 
