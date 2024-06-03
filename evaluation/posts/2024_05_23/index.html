@@ -547,7 +547,7 @@ Random seeds
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="7d5b879d" class="cell" data-execution_count="1">
+<div id="0d94d0a1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -578,32 +578,32 @@ Used 11.5% of 40 hours max</code></pre>
 <p>✅ = Made the change.</p>
 <p>Protocol:</p>
 <ul>
-<li>Just suggestion not requirement to make notes about study, and make the notes within the logbook, as purpose is familiarising with study, and at this stage, may get details wrong! So rather than it be a seperate page where we’re worried about getting it right, do it in logbook as still learning.</li>
-<li>There’s a balance between trying to understand the code, and just trying to run the code. Reading through and making notes on files is more along the lines of understanding, but without a direct purpose. Do we like it or not? It feels like a necessity, but it also feels a little unclear? Although perhaps that is ok. It felt like well used time to me, but would suggest not making it as prespective as I’d suggested, and that you and read and take notes if you like</li>
-<li>Remove sugestion of WebPlotDigitizer etc., and instead suggest standardised approach of visually comparing the figures (with overlaying where possible done to support that - need to explore simplest way of doing that).</li>
-<li>To end of 3.2.3, suggest displaying those within the scope page also (that would be untimed though? although currently time writing out of scope above as that is just part of defining scope… so maybe just include for simplicity?)</li>
-<li>Modify 3.2.4 - as we describe the scope during 3.2.2</li>
-<li>RE: reproduction package, having the figures created within the notebooks if really handy when spotting what parts of the code create figures from article</li>
-<li>With regards to creating the environment, I think taking the simplest approach is appropriate - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.
+<li>✅ Change from requiring to make notes about code and data, to just suggesting this. Focus should be on familiarisation rather than record keeping. These notes should just be within the logbook.</li>
+<li>✅ Change from requiring search for code that produces scope, to just recommending it (as feel it can be helpful in familiarising, but not a necessity).</li>
+<li>✅ Remove sugestion of WebPlotDigitizer etc., and instead suggest standardised approach of visually comparing the figures.</li>
+<li>✅ For environment, suggest using the simplest approach - so using their environment file (or creating based on packages), and not worrying about operating system used. Could consider that with regards to troubleshooting though.
 <ul>
-<li>Don’t worry about operating system</li>
-<li>Keep suggestion about package list and versions using close to publication date <mark>but need to include instructions on HOW to find that out</mark></li>
-<li>Simplest might just be looking manually for each of the packages. Can’t find a way to prevent it in Python. Knowing versions of the imported packages is as close as you get to if they provided a yaml file (as even with a yaml file, the dependencies they install alongside may be more recent). <strong>Go with this</strong>.</li>
+<li>✅ Don’t worry about operating system</li>
+<li>✅ Keep suggestion about package list and versions using close to publication date. Include how - i.e.&nbsp;for finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.</li>
+<li>✅ To select packages, use the simplest method: looking manually at version history of each package. Can’t find a way to prevent it in Python. Knowing versions of the imported packages is as close as you get to if they provided a yaml file (as even with a yaml file, the dependencies they install alongside may be more recent).</li>
 </ul></li>
-<li>For 3.4.2, this is the first time we might start using and modifying materials, so important to note that we should COPY over any environment stuff into our reproduction folder/, and not directly run scripts in original_study/, those should stay untouched.</li>
-<li>Turn 3.5.1 into step-by-step instructions (e.g.&nbsp;make notebook, copy over code, insert images from article, create images). Or perhaps just more bolding.</li>
-<li>For 3.5.1, need to shift emphasis onto the key things of (a) copying over stuff when running, and (b) taking very detailed notes in the logbook as go along of each copy, change, success, error. Super super detailed!</li>
-<li>For finding packages that were missing, base version date on Zenodo/code archive/github if possible/earlier than the paper - if later than the paper, then base on the paper - or just base on the paper.</li>
-<li>Still feels unclear on when we are setting up the website (showing article, showing code). Decision I have made from trying to display the code is that actually, the simplest and clearest thing is to let people explore the code themselves (just direct them to the right folder on the GitHub), whilst for the article, it takes one minute to embed the PDFs, so just have that step (plus adding link to where the scripts are) when upload the articles, and call it a day.</li>
-<li>To do: move download sources from logbook to original study page (and modify as appropraite in protocol)</li>
-<li>Add suggestion to save outputs as go, as and when appropriate, as it’s helpful to be able to include images in the logbook, for example. So perhaps, copying images from output into the logbook folder images. <strong>Yes.</strong> I’ve started copying over and storing within the logbook folder, and just focusisng on e.g.&nbsp;the figure I was looking at and not copying over all the data associated.</li>
-<li>Can I ask for advice on issues with reproduction from rest of team? Would presume so, and that include that in timing and record what is discussed and said.</li>
-<li>Consider what to do when there are multiple versions of the code available (such as in this example, where we had some minor differences between GitHub and Zenodo), and whether there are any recommendations I can make on this in protocol (likely along the lines of using that which fits timing-wise with article publication).</li>
-<li>Add recommendations on what to do when they don’t include any control of randomness with seeds etc.</li>
-<li>When making comparison of results of figure by eye, part of this decision on how similar they are will be subjective or based slightly on whether interpretations still hold - is that correct? We don’t want to focus too much on that - but we anticipate we will often not get exactly similar results due to randomness. Look over my suggestions on decision making for figure similarity and decide whether they fit our situation.</li>
+<li>✅ When create environment, this is the first time we might start using and modifying materials, so important to note that we should COPY over any environment stuff into our reproduction folder/, and not directly run scripts in original_study/, those should stay untouched</li>
+<li>✅ Recommend that if there are multiple versions of code available (e.g.&nbsp;a GitHub and Zenodo repository), that it is at researcher discretion to choose which is appropriate (for example, if one has later date than publication, then that aligning with publication date should be used).</li>
 </ul>
-<p>Thoughts as reading through code:</p>
+<p>Change section of reproducing items to:</p>
 <ul>
+<li>✅ Emphasise importance of copying over stuff when running (and not working in original_study/)</li>
+<li>✅ Reminder to take very detailed notes in the logbook as go along of each copy, change, success, error.</li>
+<li>✅ Suggestion to copy outputs (e.g.&nbsp;images, tables) into blog post folder and displaying them in the post, so can easily share where up to at a given point.</li>
+<li>✅ Allow troubleshooting step of asking STARS team, and that in these cases, that should be timed and a record should be made of the discussion and any recommendations made.</li>
+<li>✅ Add recommendation on what to do if there is no control for randomness with seeds etc. (which anticipate to be likely)</li>
+<li>✅ Integrate reproduction success within this (as it is done iteratively as you work, rather than all in one go at the end).</li>
+<li>✅ Change figure reproduction success to be less about numbers (as not extracting those), and just about comparison by eye</li>
+<li>✅ For all assessment of reproduction success, recommend that doesn’t require perfect match to state that it is successfully reproduced, but instead should be belief of researcher that the differences could likely be down to randomness (if not controlled).</li>
+</ul>
+<p>Research compendium:</p>
+<ul>
+<li>Require that notebooks are used to produce items in the scope, since this is really handy for spotting which parts of the code create figures from the article.</li>
 <li>PEP8 of code (?)</li>
 <li>Commenting/docstrings (if not already) in code (?)</li>
 <li>Data not all stored in one place, mixing scripts and data</li>
