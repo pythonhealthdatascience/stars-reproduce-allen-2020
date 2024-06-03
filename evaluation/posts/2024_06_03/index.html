@@ -229,7 +229,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">10.30-</a></li>
+  <li><a href="#modifying-code-to-provide-more-control-over-replication-seeds" id="toc-modifying-code-to-provide-more-control-over-replication-seeds" class="nav-link" data-scroll-target="#modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">11.29-</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -258,19 +259,24 @@ Note
 </div>
 <section id="work-log" class="level2">
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">10.30-</h3>
+<section id="modifying-code-to-provide-more-control-over-replication-seeds" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</h3>
 <p>Made changes to <code>sim_replicate.py</code>:</p>
 <ul>
 <li>Changed <code>multiple_replications()</code> to accept a base number, so the random number set is the replication number plus the base number</li>
 <li>Changed <code>run_replications()</code> to accept base number to function, and input this to call of <code>multiple_replications()</code></li>
-<li>Started changing <code>end_trial_analysis.py</code> to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn’t require changing their code in multiple places) is just to use <code>os.rename()</code> within our notebook</li>
 </ul>
+<p>Started changing <code>end_trial_analysis.py</code> to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn’t require changing their code in multiple places) is just to use <code>os.rename()</code> within our notebook. Set up notebook to run through 15 different base seeds. Paused timing whilst this ran…</p>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">11.29-</h3>
+<p>Resumed timing after finished running the 15 different base seeds.</p>
+<p>Compared each by eye against the original figures in the paper.</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="c2f00a6b" class="cell" data-execution_count="1">
+<div id="2edc0756" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
