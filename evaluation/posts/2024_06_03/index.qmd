@@ -13,13 +13,20 @@ Found seed that produces results fairly visually similar to paper. Total time us
 
 ## Work log
 
-### 10.30-
+### 10.30-11.03 Modifying code to provide more control over replication seeds
 
 Made changes to `sim_replicate.py`:
 
 * Changed `multiple_replications()` to accept a base number, so the random number set is the replication number plus the base number
 * Changed `run_replications()` to accept base number to function, and input this to call of `multiple_replications()`
-* Started changing `end_trial_analysis.py` to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn't require changing their code in multiple places) is just to use `os.rename()` within our notebook
+
+Started changing `end_trial_analysis.py` to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn't require changing their code in multiple places) is just to use `os.rename()` within our notebook. Set up notebook to run through 15 different base seeds. Paused timing whilst this ran...
+
+### 11.29-
+
+Resumed timing after finished running the 15 different base seeds.
+
+Compared each by eye against the original figures in the paper.
 
 ## Timings
 
