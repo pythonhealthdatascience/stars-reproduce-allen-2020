@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#modifying-code-to-provide-more-control-over-replication-seeds" id="toc-modifying-code-to-provide-more-control-over-replication-seeds" class="nav-link" data-scroll-target="#modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</a></li>
   <li><a href="#fixed-issue-in-duplication-between-my-replications" id="toc-fixed-issue-in-duplication-between-my-replications" class="nav-link" data-scroll-target="#fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</a></li>
   <li><a href="#compared-against-article-figures" id="toc-compared-against-article-figures" class="nav-link" data-scroll-target="#compared-against-article-figures">11.56-12.00 Compared against article figures</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">??-</a></li>
+  <li><a href="#comparing-against-original-paper" id="toc-comparing-against-original-paper" class="nav-link" data-scroll-target="#comparing-against-original-paper">12.19-12.45 Comparing against original paper</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -256,7 +256,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Found seed that produces results fairly visually similar to paper. Total time used: TBCh TBCm (TBC%)</p>
+<p>Found seed that produces results fairly visually similar to paper. Total time used: 6h 55m (17.3%). Reproduction stage complete.</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -311,13 +311,76 @@ Simulation stability
 </div>
 </div>
 </section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">??-</h3>
+<section id="comparing-against-original-paper" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-against-original-paper">12.19-12.45 Comparing against original paper</h3>
+<p>Still none with similar blue peak, but decided appropriate number of different seeds have now been tried. From visual comparison, felt base of 2700 produced results that were fairly visually similar - but from looking across them all, often there wasn’t alot between them.</p>
+<p>Here are comparisons of:</p>
+<ul>
+<li>Original study figure</li>
+<li>Figure from base 2700</li>
+<li>Figure from base 2100 (which you can see looks more different from the original than base 2700 - although still pretty similar!)</li>
+</ul>
+<p>Examples of differences to spot between them:</p>
+<ul>
+<li>Peaks of lines in left figure of Figure 4 (and resultant Y axis)</li>
+<li>Peaks of red line in right figure of Figure 4</li>
+<li>Interval of green line in Figure 2</li>
+</ul>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 2: <img src="../../../original_study/article_fig2.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="patients_base_3_month_base2700.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="patients_base_3_month_base2100.png"></p>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 3: <img src="../../../original_study/article_fig3.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="units_base_3_month_base2700.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="units_base_3_month_base2100.png" width="500"></p>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 4: <img src="../../../original_study/article_fig4.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="displaced_base_3_month_base2700.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="displaced_base_3_month_base2100.png" width="500"></p>
+</div>
+</div>
+</div>
+<p>As I believe the parameters are consistent with the paper (as checked on Day 2), and as the models successfully run and produce broadly similar figures (with differences believed to be due to randomness/seeds, and related to simulation stability with this number of replications), I hence believe that at this point, reproduction is complete, and that each of these figures can be considered a <strong>successful reproduction</strong>.</p>
+<p><strong>Reproduction success: 3 out of 3, 100%.</strong></p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="d898dbaa" class="cell" data-execution_count="1">
+<div id="4603897a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -328,24 +391,28 @@ Simulation stability
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.30'</span>, <span class="st">'11.03'</span>),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'11.36'</span>)]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'11.36'</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.56'</span>, <span class="st">'12.00'</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.19'</span>, <span class="st">'12.45'</span>)]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 40m, or 0h 40m
-Total used to date: 385m, or 6h 25m
-Time remaining: 2015m, or 33h 35m
-Used 16.0% of 40 hours max</code></pre>
+<pre><code>Time spent today: 70m, or 1h 10m
+Total used to date: 415m, or 6h 55m
+Time remaining: 1985m, or 33h 5m
+Used 17.3% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
 <p>✅ = Made the change.</p>
-<p>Research compendium:</p>
 <ul>
 <li>Testing - could test whether results are stable with the chosen number of replications? Although that might be too much about validity of results, than about reproducibility of results?</li>
+<li>Reflection: Was the time invested into trying different seeds worth it?</li>
+<li>Reproduction complete not necessarily when figures exactly match, but when you think they are quite similar and you think differences are due to things like seeds/randomness, and model stability</li>
+<li>In template repository, include an example blog post including various stages from the protocol (e.g.&nbsp;working through set-up stages and so on). Add notes like “include links for uploaded materials here” and so on.</li>
 </ul>
 
 
