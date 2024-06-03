@@ -500,11 +500,6 @@ scenarios['base_3_month'] = Scenario(
 <p>Run 2 with seeds:</p>
 <p><img src="displaced_base_3_month_seed2.png" width="500"></p>
 <p>However, this definitely has <strong>not</strong> fixed the issue! Still varying - and I wouldn’t be able to reproduce my own results twice either.</p>
-<p><mark>what to do when there are multiple links to code like this - and add recommendations to protocol</mark></p>
-<p><mark>what to do when they don’t include a seed in a paper - and add recommendations to protocol</mark></p>
-<p><mark>do we need to focus on the interpretations and whether they hold? but we didn’t really want to do that as that is not our focus? but in this case, is it, if we want to know if we’ve reproduced, but can’t actually necessarily get the exact same results due to randomness?</mark></p>
-<p><mark>look at tom’s more recent examples where he has added seeds</mark></p>
-<p><mark>test! idea is to check that you are getting the same results between runs</mark></p>
 </section>
 <section id="reproduction-2" class="level3">
 <h3 class="anchored" data-anchor-id="reproduction-2">15.23-16.35 Reproduction</h3>
@@ -523,7 +518,7 @@ Random seeds
 <p>And so for each of the studies, if this is a recurring thing that comes up, its seeing where and how to add random seeds in different models and languages, to enable reproducibility.</p>
 </div>
 </div>
-<p>From this <a href="https://stackoverflow.com/questions/59105921/why-is-numpy-random-seed-not-remaining-fixed-but-randomstate-is-when-run-in-para">Stack Overflow post</a>, I’m suspcious that perhaps the issue is that I am setting the random state as 1 and 2, which (a) would imply it’s making it the same between each run, but (b) all using the same stream in parallel processing. But it’s set using <code>RandomState</code>.</p>
+<p>From this <a href="https://stackoverflow.com/questions/59105921/why-is-numpy-random-seed-not-remaining-fixed-but-randomstate-is-when-run-in-para">Stack Overflow post</a>, I’m suspicious that perhaps the issue is that I am setting the random state as 1 and 2, which (a) would imply it’s making it the same between each run, but (b) all using the same stream in parallel processing. But it’s set using <code>RandomState</code>.</p>
 <p>Trying to google around use of seeds with parallel processing.</p>
 <p>Had a chat with Tom about it and he suggested:</p>
 <ul>
@@ -548,12 +543,11 @@ Random seeds
 <p><img src="displaced_base_3_month_newclass1.png" width="500"></p>
 <p>Run 2:</p>
 <p><img src="displaced_base_3_month_newclass2.png" width="500"></p>
-<p><mark>Updating documentation after I’ve made changes to it - not priority during reproduction unless feel important to make obvious, but priority during the research compendium stage, to make sure documetnation is all as it should be</mark> or just do as go along…</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="cf957f3a" class="cell" data-execution_count="1">
+<div id="0e228ae9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -604,6 +598,9 @@ Used 11.5% of 40 hours max</code></pre>
 <li>To do: move download sources from logbook to original study page (and modify as appropraite in protocol)</li>
 <li>Add suggestion to save outputs as go, as and when appropriate, as it’s helpful to be able to include images in the logbook, for example. So perhaps, copying images from output into the logbook folder images. <strong>Yes.</strong> I’ve started copying over and storing within the logbook folder, and just focusisng on e.g.&nbsp;the figure I was looking at and not copying over all the data associated.</li>
 <li>Can I ask for advice on issues with reproduction from rest of team? Would presume so, and that include that in timing and record what is discussed and said.</li>
+<li>Consider what to do when there are multiple versions of the code available (such as in this example, where we had some minor differences between GitHub and Zenodo), and whether there are any recommendations I can make on this in protocol (likely along the lines of using that which fits timing-wise with article publication).</li>
+<li>Add recommendations on what to do when they don’t include any control of randomness with seeds etc.</li>
+<li>When making comparison of results of figure by eye, part of this decision on how similar they are will be subjective or based slightly on whether interpretations still hold - is that correct? We don’t want to focus too much on that - but we anticipate we will often not get exactly similar results due to randomness. Look over my suggestions on decision making for figure similarity and decide whether they fit our situation.</li>
 </ul>
 <p>Thoughts as reading through code:</p>
 <ul>
@@ -615,6 +612,7 @@ Used 11.5% of 40 hours max</code></pre>
 <li>Including an IDE within the dependencies (Spyder) created an issue, and also, am using own IDE. Or is that similar to when people require Jupyterlab?</li>
 <li>For reproducing stuff, it’s helpful to know how long code takes to run?</li>
 <li>Removing unused packages</li>
+<li>Testing, focussed on being able to get same results from models with particular runs</li>
 </ul>
 
 

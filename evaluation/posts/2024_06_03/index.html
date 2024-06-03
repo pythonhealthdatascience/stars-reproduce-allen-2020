@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
   <li><a href="#modifying-code-to-provide-more-control-over-replication-seeds" id="toc-modifying-code-to-provide-more-control-over-replication-seeds" class="nav-link" data-scroll-target="#modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">11.29-</a></li>
+  <li><a href="#fixed-issue-in-duplication-between-my-replications" id="toc-fixed-issue-in-duplication-between-my-replications" class="nav-link" data-scroll-target="#fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -268,15 +268,26 @@ Note
 </ul>
 <p>Started changing <code>end_trial_analysis.py</code> to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn’t require changing their code in multiple places) is just to use <code>os.rename()</code> within our notebook. Set up notebook to run through 15 different base seeds. Paused timing whilst this ran…</p>
 </section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">11.29-</h3>
-<p>Resumed timing after finished running the 15 different base seeds.</p>
-<p>Compared each by eye against the original figures in the paper.</p>
+<section id="fixed-issue-in-duplication-between-my-replications" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</h3>
+<p>Looked over images, but all looked very similar to one another. Realised this was because my method for modifying the seeds still had lots of matching seeds between each run - for example:</p>
+<ul>
+<li>Base 0: Random number sets are 0-30</li>
+<li>Base 1: Random number sets are 1-31</li>
+<li>Base 2: Random number sets are 2-32</li>
+</ul>
+<p>Hence, changed this in <code>reproduction.ipynb</code> so the base numbers were 0, 100, 200, 300 etc, and so:</p>
+<ul>
+<li>Base 0: Random number set 0-30</li>
+<li>Base 100: Random number set 100-130</li>
+<li>Base 200: Random number set 200-230</li>
+</ul>
+<p>Then paused timing as reran again…</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="2edc0756" class="cell" data-execution_count="1">
+<div id="cab0b8d4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
