@@ -7,7 +7,7 @@ categories: [reproduce]
 
 ::: {.callout-note}
 
-Found seed that produces results fairly visually similar to paper. Total time used: 6h 55m (17.3%). Reproduction stage complete.
+Found seed that produces results fairly visually similar to paper. Total time used: 7h 6m (17.8%). Reproduction stage complete.
 
 :::
 
@@ -109,7 +109,11 @@ Base 2100:
 
 As I believe the parameters are consistent with the paper (as checked on Day 2), and as the models successfully run and produce broadly similar figures (with differences believed to be due to randomness/seeds, and related to simulation stability with this number of replications), I hence believe that at this point, reproduction is complete, and that each of these figures can be considered a **successful reproduction**.
 
-**Reproduction success: 3 out of 3, 100%.**
+### 16.13-16.24 Tidying the notebook, and creating reproduction success page
+
+Simplified the reproduction notebook to just use the base number 2700, deleting the other results.
+
+Created a reproduction success page, presenting those figures alongside the figures from the original study.
 
 ## Timings
 
@@ -126,7 +130,8 @@ times = [
     ('10.30', '11.03'),
     ('11.29', '11.36'),
     ('11.56', '12.00'),
-    ('12.19', '12.45')]
+    ('12.19', '12.45'),
+    ('16.13', '16.24')]
 
 # Print time used and remaining
 calculate_times(used_to_date, times)

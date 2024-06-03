@@ -2,4 +2,36 @@
 title: "Reproduction success"
 ---
 
-A
+Of the three items in the scope, 100% (3 out of 3) were considered to be **successfully reproduced**.
+
+In each case, it was felt that there were **minimal variation** between the original figures and reproduction, and that any variation was likely due to randomness of the simulation (as the original simulation was not controlled using seeds).
+
+## Figure 2
+
+Original figure:
+
+![](../original_study/article_fig2.png){width=70% fig-align="center"}
+
+Reproduction:
+
+![](../reproduction/output/patients_base_3_month.png){width=80% fig-align="center"}
+
+## Figure 3
+
+Original figure:
+
+![](../original_study/article_fig3.png){width=70% fig-align="center"}
+
+Reproduction:
+
+![](../reproduction/output/units_base_3_month.png){width=80% fig-align="center"}
+
+## Figure 4
+
+Original figure:
+
+![](../original_study/article_fig4.png){width=70% fig-align="center"}
+
+Reproduction:
+
+![](../reproduction/output/displaced_base_3_month.png){width=80% fig-align="center"}
