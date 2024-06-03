@@ -1,0 +1,44 @@
+---
+title: "Day 4"
+author: "Amy Heather"
+date: "2024-06-03"
+categories: [reproduce]
+---
+
+::: {.callout-note}
+
+Found seed that produces results fairly visually similar to paper. Total time used: TBCh TBCm (TBC%)
+
+:::
+
+## Work log
+
+### 10.30-
+
+Made changes to `sim_replicate.py`:
+
+* Changed `multiple_replications()` to accept a base number, so the random number set is the replication number plus the base number
+* Changed `run_replications()` to accept base number to function, and input this to call of `multiple_replications()`
+* Started changing `end_trial_analysis.py` to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn't require changing their code in multiple places) is just to use `os.rename()` within our notebook
+
+## Timings
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 345
+
+# Times from today
+times = [
+    ('10.30', '10.31')]
+
+# Print time used and remaining
+calculate_times(used_to_date, times)
+```
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.

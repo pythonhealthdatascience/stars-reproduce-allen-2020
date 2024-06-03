@@ -6,13 +6,13 @@ from joblib import Parallel, delayed
 import pandas as pd
 
 
-def run_replications(scenarios, number_of_replications=30):
+def run_replications(scenarios, number_of_replications=30, base_random_set=0):
     """
-    Main simulation code. Calls multiple runs of prescribed sceanrios.
-    
+    Main simulation code. Calls multiple runs of prescribed scenarios.
+
     Overview:
-        
-    * Prescribe number of runs per sceanrio
+
+    * Prescribe number of runs per scenario
     * Define scenarios (as dictionary items)
     * Get audits from each scenario:
         * p_audits: count of all patients in different stages of COVID
@@ -24,30 +24,39 @@ def run_replications(scenarios, number_of_replications=30):
     * Pass audits to end-run analysis
 
     Runs scenarios in separate threads using joblib
-    
+
+    Parameters
+    ----------
+    scenarios : dataclass Scenario
+        parameters for the scenario.
+    number_of_replications : int, optional
+        Number of independent replications. The default is 30.
+    base_random_set : int, optional
+        To create the random number set for each replication, the replication
+        number is added to this value. The default is 0.
+
     Returns
     -------
     None.
 
     """
-    
-    # Number of runs per sceanrio
+    # Number of runs per scenario
     N_REPS = number_of_replications
-    
+
     # Add scenarios to be run to dictionary
     scenarios = scenarios
 
-   
     # Loop through all scenarios
     for name, scenario in scenarios.items():
-        
-        print(f'Running {N_REPS} reps of {name} =>', end=' ')
-        # Get audits from each sceanrio
 
-        # Run each sceanrio in separate CPU thread (limit threads with n_jobs) 
-        p_audits, u_audits, d_audits, i_audits = \
-            multiple_replications(scenarios[name], n_reps=N_REPS, n_jobs=-1)
-        
+        print(f'Running {N_REPS} reps of {name} =>', end=' ')
+        # Get audits from each scenario
+
+        # Run each scenario in separate CPU thread (limit threads with n_jobs)
+        p_audits, u_audits, d_audits, i_audits = multiple_replications(
+            scenarios[name], n_reps=N_REPS, n_jobs=-1,
+            base_random_set=base_random_set)
+
         # Expand multi-index to save as CSV
         p_audits = expand_multi_index(p_audits, ['scenario', 'day'])
         d_audits = expand_multi_index(d_audits, ['scenario', 'day'])
@@ -55,23 +64,27 @@ def run_replications(scenarios, number_of_replications=30):
         i_audits = expand_multi_index(i_audits, ['scenario', 'audit#'])
 
         # Save as CSV
-        p_audits.to_csv(f'output/{name}_reps_{N_REPS}_patient_audit.csv', index=False)
-        u_audits.to_csv(f'output/{name}_reps_{N_REPS}_unit_audit.csv', index=False)
-        d_audits.to_csv(f'output/{name}_reps_{N_REPS}_displaced_audit.csv', index=False)
-        i_audits.to_csv(f'output/{name}_reps_{N_REPS}_inpatient_audit.csv', index=False)
+        p_audits.to_csv(
+            f'output/{name}_reps_{N_REPS}_patient_audit.csv', index=False)
+        u_audits.to_csv(
+            f'output/{name}_reps_{N_REPS}_unit_audit.csv', index=False)
+        d_audits.to_csv(
+            f'output/{name}_reps_{N_REPS}_displaced_audit.csv', index=False)
+        i_audits.to_csv(
+            f'output/{name}_reps_{N_REPS}_inpatient_audit.csv', index=False)
 
-        # Run analysis after all replicate runs in a sceanrio
+        # Run analysis after all replicate runs in a scenario
         analysis = EndTrialAnalysis(name, p_audits, u_audits, d_audits, i_audits)
         analysis.plot_patient_audit()
-        analysis.plot_displaced_audit() 
+        analysis.plot_displaced_audit()
         analysis.plot_unit_audit()
-        
+
         print('Done.')
 
-    # All scenarios complete        
+    # All scenarios complete
 
 
-def multiple_replications(scenario, n_reps=10, n_jobs=1):
+def multiple_replications(scenario, n_reps=10, n_jobs=1, base_random_set=0):
     '''
     Multiple independent replications of DialysisSim for a 
     scenario
@@ -84,6 +97,9 @@ def multiple_replications(scenario, n_reps=10, n_jobs=1):
         number of independent replications. The default is 10.
     n_jobs : int, optional
         No.of cores for parallel reps (-1 for all cores). The default is 1.
+    base_random_set : int, optional
+        To create the random number set for each replication, the replication
+        number is added to this value. The default is 0.
 
     Returns
     -------
@@ -97,16 +113,16 @@ def multiple_replications(scenario, n_reps=10, n_jobs=1):
     '''
     # Run in parallel, using the replication number as the random number set
     audits = Parallel(n_jobs=n_jobs)(
-        delayed(single_run)(scenario, i, random_number_set=i)
+        delayed(single_run)(scenario, i, random_number_set=i+base_random_set)
         for i in range(n_reps))
 
     return unpack_audits(audits)
 
-    
+
 def single_run(scenario, i=0, random_number_set=None):
     '''
     Single run of DialysisSim for scenario
-    
+
     Parameters
     ----------
     scenario : dataclass Scenario
@@ -162,34 +178,33 @@ def unpack_audits(audits):
 
     '''
     
-    # Set up lists for seperate model ausits
+    # Set up lists for seperate model audits
     patient_audits = []
     unit_audits = []
     displaced_audits = []
     inpatient_audits = []
-    
+
     # Loop through model reps
     for i in range(len(audits)):
         patient_audits.append(audits[i][0])
         unit_audits.append(audits[i][1])
         displaced_audits.append(audits[i][2])
         inpatient_audits.append(audits[i][3])
-    
-    #convert to multi-index DF
-    df_patient = pd.concat(patient_audits, 
+
+    # Convert to multi-index DF
+    df_patient = pd.concat(patient_audits,
                            keys=[i for i in range(len(audits))])
     df_unit = pd.concat(unit_audits, keys=[i for i in range(len(audits))])
-    
+
     df_displaced = pd.concat(displaced_audits, keys=[i for i in range(len(audits))])
     df_inpatients = pd.concat(inpatient_audits, keys=[i for i in range(len(audits))])
-    
+
     # Remove duplicate 'day'
     df_patient.drop('day', axis=1, inplace=True)
     df_displaced.drop('day', axis=1, inplace=True)
-    
+
     # Return patient, unit, displaced patients, and inpatient audits
     return df_patient, df_unit, df_displaced, df_inpatients
-
 
 
 if __name__ == '__main__':
