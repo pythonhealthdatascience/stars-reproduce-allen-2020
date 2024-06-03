@@ -231,6 +231,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#modifying-code-to-provide-more-control-over-replication-seeds" id="toc-modifying-code-to-provide-more-control-over-replication-seeds" class="nav-link" data-scroll-target="#modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</a></li>
   <li><a href="#fixed-issue-in-duplication-between-my-replications" id="toc-fixed-issue-in-duplication-between-my-replications" class="nav-link" data-scroll-target="#fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</a></li>
+  <li><a href="#compared-against-article-figures" id="toc-compared-against-article-figures" class="nav-link" data-scroll-target="#compared-against-article-figures">11.56-12.00 Compared against article figures</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">??-</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
@@ -284,10 +286,38 @@ Note
 </ul>
 <p>Then paused timing as reran again…</p>
 </section>
+<section id="compared-against-article-figures" class="level3">
+<h3 class="anchored" data-anchor-id="compared-against-article-figures">11.56-12.00 Compared against article figures</h3>
+<p>Compared against paper figures. Figures 2 and 3 always generally look quite consistent. Figure 4 can look quite different, and from the runs I’ve done, you can spot for example that our peaks in the left figure, and in the maximum of the right figure, often look lower.</p>
+<p>Trying again with another set of 15, this time 1500 to 2900.</p>
+<p>An alternative to this would be to identify the number of replications required for stable results - but that feels like less of a focus on reproducibility, and more of a focus on valid results.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Simulation stability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From 15 different versions, I’m finding the peaks of the figures from the paper to be slightly higher than typical. Assuming that model parameters are correct and that control of randomness is now implemented appropriately, this highlights the relevance of simulation stability. Although 30 replications were performed, there was not assessment of whether this was the number needed for stability of results. This might be relevant to consider for STARS framework.</p>
+<p>As in ‘Simulation: The Practice of Model Development and Use’ by Stewart Robinson, there are three approaches for selecting the number of replications:</p>
+<ul>
+<li>Rule of thumb - Law and McComas (1990) suggest at least 3-5, although models will often need more than that</li>
+<li>Graphical method - Plot cumulative mean of an output in a graph (X axis is replication number, and Y axis is cumulative mean), and identify when that line becomes flat</li>
+<li>Confidence interval method (recommended method) - Similar to above, but including confidence intervals in the plot (e.g.&nbsp;95%), and basing decision on narrowness of these itnervals. This can be done by calculating the percentage deviations of the confidence interval on each side of the mean with the increasing number of replications. You then set a threshold of the amount of deviation desired.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">??-</h3>
+</section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="cab0b8d4" class="cell" data-execution_count="1">
+<div id="d898dbaa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -297,21 +327,26 @@ Note
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.30'</span>, <span class="st">'10.31'</span>)]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.30'</span>, <span class="st">'11.03'</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'11.36'</span>)]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 1m, or 0h 1m
-Total used to date: 346m, or 5h 46m
-Time remaining: 2054m, or 34h 14m
-Used 14.4% of 40 hours max</code></pre>
+<pre><code>Time spent today: 40m, or 0h 40m
+Total used to date: 385m, or 6h 25m
+Time remaining: 2015m, or 33h 35m
+Used 16.0% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
 <p>✅ = Made the change.</p>
+<p>Research compendium:</p>
+<ul>
+<li>Testing - could test whether results are stable with the chosen number of replications? Although that might be too much about validity of results, than about reproducibility of results?</li>
+</ul>
 
 
 </section>
