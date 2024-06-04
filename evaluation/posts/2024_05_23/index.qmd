@@ -157,6 +157,10 @@ Found that:
 
 This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.
 
+::: {.callout-tip}
+This was fixed in a later version of the repository, but I used an earlier one that matched up with the publication date. Tom suggested learning here for use of a CHANGELOG, to clearly show changes in future versions.
+:::
+
 ### 13.26-13.52 Reproduction
 
 * Copied sim/ and sim_replicate.py into reproduction/.

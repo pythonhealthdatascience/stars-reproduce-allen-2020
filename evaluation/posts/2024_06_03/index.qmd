@@ -7,7 +7,7 @@ categories: [reproduce]
 
 ::: {.callout-note}
 
-Found seed that produces results fairly visually similar to paper. Total time used: 7h 6m (17.8%). Reproduction stage complete.
+Chose a seed that produced results fairly visually similar to the paper, and decided that each figure had now been successfully reproduced. Total time used: 7h 6m (17.8%). Reproduction stage complete.
 
 :::
 
@@ -114,6 +114,8 @@ As I believe the parameters are consistent with the paper (as checked on Day 2),
 Simplified the reproduction notebook to just use the base number 2700, deleting the other results.
 
 Created a reproduction success page, presenting those figures alongside the figures from the original study.
+
+Not archiving on Zenodo as this is the test-run.
 
 ## Timings
 

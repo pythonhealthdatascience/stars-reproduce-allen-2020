@@ -16,95 +16,95 @@ To use this template:
 Although this script uses Python, it is applicable regardless of the language used by the study you are evaluating.
 -->
 
-This page evaluates the extent to which Monks et al. 2016 meets the criteria of badges related to reproducibility from various organisations and journals.
+This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
 ```{python}
 import numpy as np
 import pandas as pd
 
 criteria = {
-    'archive': 'Code is stored in a permanent archive that is publicly and openly accessible',
-    'id': 'It has a persistent identifier (e.g. DOI)',
-    'license': 'It has an open license',
-    'complete_open': 'Complete set of materials shared (as would be needed to fully reproduce article)',
-    'meta': 'Metadata describes data/code sufficiently to enable reproduction (e.g. package versions)',
-    'statement': 'Manuscript has data availability statement',
-    # DUPE with complete_open above (to reflect on)
-    'complete_review': 'Complete set of materials shared (as would be needed to fully reproduce article)',
-    # DUPE with meta above (to reflect on)
-    'describe_minimal': 'There is a minimal but sufficient description of artefacts',
-    'describe_careful': 'There is a more detailed, careful documentation of artefacts',
-    'artefacts_structure': 'Artefacts are well structured to facilitate reuse, adhering to norms and standards of research community',
+    'archive': 'Stored in a permanent archive that is publicly and openly accessible',
+    'id': 'Has a persistent identifier',
+    'license': 'Includes an open license',
+    'complete': 'Complete set of materials shared (as would be needed to fully reproduce article)',
+    'documentation_sufficient': 'Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)',
+    'documentation_careful': 'Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)',
+    'relevant': '''Arefacts are relevant to and contribute to the article's results''',
+    'execute': 'Scripts can be successfully executed',
+    'structure': 'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)',
     'regenerated': 'Independent party regenerated results using the authors research artefacts',
     'hour': 'Reproduced within approximately one hour (excluding compute time)',
-    # DUPE with artefacts_structure and meta/describe
-    'reproduce_organise': 'Requires data and scripts to be well-organised, clearly documented and with a README file with step-by-step instructions on how to reproduce results in the manuscript'
+    # This criteria is kept seperate to documentation_careful, as it specifically requires a README file
+    'documentation_readme': 'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript'
 }
 
 badge_names = {
-    # ISSUE: need to make seperate criteria for code and data (unless just do code?)
-    'open_niso': 'NISO "Open Research Objects"',
+    # Open objects
+    'open_niso': 'NISO "Open Research Objects (ORO)"',
+    'open_niso_all': 'NISO "Open Research Objects - All (ORO-A)"',
     'open_acm': 'ACM "Artifacts Available"',
-    'open_cos_data': 'COS "Open Data"',
-    'open_cos_materials': 'COS "Open Materials"',
-    'open_cos_code': 'COS "Open Code"',
-    # ISSUE: need to make seperate criteria for code and data (unless just do code?)
-    'open_ieee_code': 'IEEE "Code Available"',
-    'open_ieee_data': 'IEEE "Datasets Available"',
-    'open_springer': 'Springer Nature "Badge for Open Data"',
+    'open_cos': 'COS "Open Code"',
+    'open_ieee': 'IEEE "Code Available"',
+    # Object review
     'review_acm_functional': 'ACM "Artifacts Evaluated - Functional"',
     'review_acm_reusable': 'ACM "Artifacts Evaluated - Reusable"',
-    # ISSUE: need to make seperate criteria for code and data (unless just do code?)
-    'review_ieee_code': 'IEEE "Code Reviewed"',
-    'review_ieee_data': 'IEEE "Datasets Reviewed"',
-    'reproduce_niso': 'NISO "Results Reproduced"',
+    'review_ieee': 'IEEE "Code Reviewed"',
+    # Results reproduced
+    'reproduce_niso': 'NISO "Results Reproduced (ROR-R)"',
     'reproduce_acm': 'ACM "Results Reproduced"',
-    # ISSUE: need to make seperate criteria for code and data (unless just do code?)
-    'reproduce_ieee_code': 'IEEE "Code Reproducible"',
-    'reproduce_ieee_data': 'IEEE "Dataset Reproducible"',
+    'reproduce_ieee': 'IEEE "Code Reproducible"',
     'reproduce_psy': 'Psychological Science "Computational Reproducibility"'
 }
 
-open_cos = ['archive', 'id', 'license', 'complete_open', 'meta']
-
 badges = {
-    'open_niso': ['archive', 'id', 'license', 'complete_open'],
+    # Open objects
+    'open_niso': ['archive', 'id', 'license'],
+    'open_niso_all': ['archive', 'id', 'license', 'complete'],
     'open_acm': ['archive', 'id'],
-    'open_cos_data': open_cos,
-    'open_cos_materials': open_cos,
-    'open_cos_code': open_cos,
-    'open_ieee_code': ['complete_open'],
-    # etc. etc.
+    'open_cos': ['archive', 'id', 'license', 'complete', 'documentation_sufficient'],
+    'open_ieee': ['complete'],
+    # Object review
+    'review_acm_functional': ['documentation_sufficient', 'relevant', 'complete', 'execute'],
+    'review_acm_reusable': ['documentation_sufficient', 'documentation_careful', 'relevant', 'complete', 'execute', 'structure'],
+    'review_ieee': ['complete', 'execute'],
+    # Results reproduced
+    'reproduce_niso': ['regenerated'],
+    'reproduce_acm': ['regenerated'],
+    'reproduce_ieee': ['regenerated'],
+    'reproduce_psy': ['regenerated', 'hour', 'structure', 'documentation_readme'],
 }
 ```
 
-TO DO: Change to full list of criteria
-
-TO DO: Change to full list of badges
-
-TO DO: Add a table (perhaps minimise-able) that summarises the criteria of each badge, so can see how/why did or did not meet each of the badges.
-
 ```{python}
-# Example (not done for Monks et al. 2016 yet)
+# Example (not done for Allen et al. 2020 yet)
 # Based on the criteria dictionary above, populate with 1 and 0
 eval = pd.Series({
     'archive': 1,
     'id': 1,
-    'license': 0,
-    'complete_open': 1,
-    'meta': 1,
-    'statement': 1
-    # etc. etc.
+    'license': 1,
+    'complete': 1,
+    'documentation_sufficient': 1,
+    'documentation_careful': 0,
+    'relevant': 1,
+    'execute': 1,
+    'structure': 1,
+    'regenerated': 1,
+    'hour': 0,
+    'documentation_readme': 0,
 })
 ```
+
+✅ = Meets criteria ⬜ = Does not meet criteria 📝 = Not yet evaluated
 
 ```{python}
 # Print compliance to each criteria
 for key, value in eval.items(): 
     if value == 1:
         icon = '✅'
-    else:
+    elif value == 0:
         icon = '⬜'
+    else:
+        icon = '📝'
     print(f'{icon} {criteria[key]}')
 ```
 
@@ -121,4 +121,7 @@ for key, value in award.items():
     else:
         icon = '⬜'
     print(f'{icon} {badge_names[key]}')
+
+award_list = list(award.values())
+print(f'Met criteria for {sum(award_list)} of {len(award_list)} badges ({round(sum(award_list)/len(award_list)*100, 1)}%)')
 ```
