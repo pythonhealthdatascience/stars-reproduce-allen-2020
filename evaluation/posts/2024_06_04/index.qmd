@@ -7,7 +7,7 @@ categories: [guidelines]
 
 ::: {.callout-note}
 
-Evaluated study against badges.
+Evaluated study against badge criteria and recommendations for sharing of research artefacts.
 
 :::
 
@@ -15,7 +15,7 @@ Evaluated study against badges.
 
 ### Badges
 
-Evaluating artefacts as in https://zenodo.org/records/3760626 (as has been copied into `original_study/`).
+Evaluating artefacts as in <https://zenodo.org/records/3760626> (as has been copied into `original_study/`).
 
 Felt uncertain around these criteria:
 
@@ -31,6 +31,60 @@ Felt uncertain around these criteria:
     * Others don't specify either way
 * `documentation_readme` - I wouldn't say it explicitly meets this criteria, although it was simple enough that it could do it anyway
 
+### Sharing research artefacts
+
+Evaluated against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).
+
+Uncertainities:
+
+* Readme for audit - does it matter if that information is in the readme file? can they pass if readme links to template which overviews it? I think so? Although Table 1 in Monks and Harper 2023 specifies item as Readme, the description is just whether there is an obvious file overviewing purpose
+* Citation information - not provided for this study, although Zenodo does provide it, but as code materials themselves don't contain it, feel it fails this
+* Remote code repository - STARS talks about why you should use them (e.g. version control) - but here, evaluating, someone might have done a single upload and not used properly - but purpose of STARS is not to evaluate if something is right or wrong upload so doesn't specify further - in this case, assuming simplest route of if it is on something like GitHub then it meets criteria
+* Enhanced documentation - lots of suggestions of what to do for this
+* Remote execution/Online coding environment - Zenodo doesn't but GitLab does. I was largely working with Zenodo as that was the archived version, but in this case, did say met criteria via GitLab. Importance of which code is chosen when there are two versions. I didn't initially think it met criteria until checked the GitLab too. Have recommended both are referred to. But do they meet criteria if changes are made to repository after publication? After submission? For example, if we asked them to add a license.
+
+Compared my decisions for the best practice audit against those made in Monks and Harper. Don't think I would normally plan to do this. Their GitHub is [TomMonks/des_sharing_lit_review](https://github.com/TomMonks/des_sharing_lit_review), which provides the file `share_sim_data_extract.zip`. I used the provided code to clean this and saved it as `share_sim_data_extract_clean.csv`, which can then view here:
+
+```{python}
+import pandas as pd
+
+# Import review results
+review = pd.read_csv('share_sim_data_extract_clean.csv')
+
+# View the results for Allen et al. 2020
+review[review['key'] == 'R4ZLYWPP'].T
+```
+
+Consistent:
+
+* DOI
+* URL
+* BinderHub
+
+Differences:
+
+* Review doesn't mention Orcid
+* Review doesn't mention license
+* Review doesn't mention README
+* Review doesn't mention steps to run code
+* Review doesn't mention formal or informal dependency management
+* Review doesn't mention code testing
+* Review doesn't mention local execution
+
+::: {.callout-tip}
+## Keeping code repository and archive in sync and up-to-date
+
+Evaluation was made harder as there were slight differences between the archived code (Zenodo) and the production code (GitLab). You might not always want to keep them in sync. But it would be good to keep them in sync up until submission.
+:::
+
+## Reporting guidelines
+
+::: {.callout-tip}
+## Including checklist
+
+Tom mentioned how this study they provided the filled out STRESS checklist to the journal, but it wasn't published alongside the article, but that would have been beneficial. This is a good suggestion to think about.
+:::
+
 ## Suggested changes for protocol/template
 
 ✅ = Made the change.
@@ -38,3 +92,6 @@ Felt uncertain around these criteria:
 Protocol: 
 
 * Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team
+* Suggest to detail those uncertainties within logbook
+* Any advice can give following uncertainties raised above
+* If there are multiple code locations (e.g. code repository and archive), then refer to both when assessing against criteria

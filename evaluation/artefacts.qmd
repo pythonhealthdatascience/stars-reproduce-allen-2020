@@ -3,43 +3,61 @@ title: "Sharing research artefacts"
 bibliography: ../quarto_site/references.bib
 ---
 
-This page evaluates the extent to which Monks et al. 2016 meets the recommendations for the sharing of code and associated materials.
+This page evaluates the extent to which the original study meets the recommendations for the sharing of code and associated materials. We compare against two standards:
 
-First, it copies information from the best practice audit by @monks_computer_2023. The items in this audit were based on <mark>ADD CITATIONS</mark>.
+* **Best practice audit** - requirements from the best practice audit by Monks et al. 2023 @monks_computer_2023. The items in this audit were based on the Turing Way  @the_turing_way_community_turing_2022, Taylor et al. 2017 @taylor_open_2017, and the Open Modelling Foundation @the_open_modeling_foundation_omf_reusability_2024.
+* **STARS** - recommendations from the recently published STARS framework by Monks et al. 2024. @monks_towards_2024.
 
-Secondly, it assesses whether the article meets recommendations from the recently published STARS framework by @monks_towards_2024.
+## Best practice audit
 
-## Best practice audit (Monks and Harper 2023)
+Of the **11** items in this audit:
 
-| Item | Description | Met by study? |
-| - | -- | - |
-| Digital Object Identifier | Does the model have a DOI and promise of persistence? Can it be cited?
-| Open Researcher and Contributor ID | Is the model linked to one or more of the authors via an ORCID?
-| Licence | Does the repository have a recognised open license to control the use of code, liabilty and credit?
-| Readme file | Is there an obvious file that provides an overview of the repository/model and it purpose?
-| Link to published paper | Do models shared externally from journal articles contain a link to the published article?
-| Steps to run code | Does the readme file or similar describe the steps required to execute the simulation model?
-| Formal dependency management | Has a formal tool, e.g. renv, conda, or poetry been used to manage software dependencies for the simulation model? |
-| Informal dependency management | Has an informal list or description of software, or OS dependencies been provided?
-| Code Testing | Is there any evidence of tests that have been applied to the code to check that it functions correctly?
-| Local execution | Can the simulation model and associated files be downloaded and in theory executed on a local machine
-| Remote execution | Can the simulation model be executed online using free or commercial infrastructure?
+* **10** were met fully (✅)
+* **1** was not met (❌)
+
+| Item | Description | Met by study? | Evidence/location |
+| - | - | :-: | - |
+| Digital Object Identifier | Does the model have a DOI and promise of persistence? Can it be cited? | ✅ Fully | [10.5281/zenodo.3760625](https://zenodo.org/doi/10.5281/zenodo.3760625) |
+| Open Researcher and Contributor ID (ORCID) | Is the model linked to one or more of the authors via an ORCID? | ✅ Fully | Monks linked to ORCID on Zenodo and in journal article |
+| License | Does the repository have a recognised open license to control the use of code, liabilty and credit? | ✅ Fully | MIT license |
+| Model overview | Is there an obvious file that provides an overview of the repository/model and it purpose (e.g. in README file)? | ✅ Fully | `README.md` present but doesn't overview repository/model or purpose, although does like to `Capacity_Model_Template.ipynb` which does overview the model |
+| Link to published paper | Do models shared externally from journal articles contain a link to the published article? | ✅ Fully | Zenodo citations section includes link to the article |
+| Steps to run code | Does the readme file or similar describe the steps required to execute the simulation model? | ✅ Fully | Provided in `Capacity_Model_Template.ipynb` |
+| Formal dependency management | Has a formal tool, e.g. renv, conda, or poetry been used to manage software dependencies for the simulation model? | ✅ Fully | Conda - `environment.yaml` |
+| Informal dependency management | Has an informal list or description of software, or OS dependencies been provided? | ✅ Fully | Within `environment.yaml` |
+| Code Testing | Is there any evidence of tests that have been applied to the code to check that it functions correctly? | ❌ Not met | No tests found |
+| Local execution | Can the simulation model and associated files be downloaded and in theory executed on a local machine | ✅ Fully | I have successfully executed |
+| Remote execution | Can the simulation model be executed online using free or commercial infrastructure? | ✅ Fully | The archived code on Zenodo has not been set up to allow this but the [production code on GitLab](https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19) was set up to allow this (on 23rd April 2020, prior to date journal received article) |
+: {tbl-colwidths="[25, 25, 25, 25]"}
 
 ## STARS
 
-| Component | Met by study? | Evidence/location |
-| - | - | - |
+Of the **7** essential STARS components:
+
+* **5** were met fully (✅)
+* **1** was met partially (🟡)
+* **1** was not met (❌)
+
+Of the **5** optional STARS components:
+
+* **1** was met fully (✅)
+* **4** were not met (❌)
+
+| Component | Description | Met by study? | Evidence/location |
+| - | - | :-: | - |
 | **Essential components** |
-| Open license | ✅ Fully |
-| Dependency management | 🟡 Partially |
-| Model created using free and open-source software (FOSS) | ❌ Not met |
-| Minimum documentation | ❔ Unclear |
-| Research artefact metadata: Open Researcher and Contributor ID (ORCID) and citation information |
-| Remote code repository |
-| Open science archive |
+| Open license | Free and open-source software (FOSS) license (e.g. MIT, GNU Public License (GPL)) | ✅ Fully | MIT license |
+| Dependency management | Specify software libraries, version numbers and sources (e.g. dependency management tools like pip virtual environment, conda environment, poetry) | ✅ Fully | Conda - `environment.yaml` |
+| FOSS model | Coded in FOSS language (e.g. R, Julia, Python) | ✅ Fully | Python |
+| Minimum documentation | Minimal instructions (e.g. in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiements | | |
+| ORCID | ORCID for each study author | 🟡 Partially | Only provided for Monks |
+| Citation information | Instructions on how to cite the research artefact (e.g. CITATION.cff file) | ❌ Not met | Not provided |
+| Remote code repository | Code available in a remote code repository (e.g. GitHub, GitLab, BitBucket) | ✅ Fully | [GitLab](https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19) |
+| Open science archive | Code stored in an open science archive with FORCE11 compliant citation and guaranteed persistance of digital artefacts (e.g. Figshare, Zenodo, the Open Science Framework (OSF), and the Computational Modeling in the Social and Ecological Sciences Network (CoMSES Net)) | ✅ Fully | [Zenodo](https://zenodo.org/doi/10.5281/zenodo.3760625) |
 | **Optional components** |
-| Enhanced documentation |
-| Documentation hosting |
-| Online coding environment |
-| Model interface |
-| Web app hosting |
+| Enhanced documentation | Open and high quality documentation on how the model is implemented and works  (e.g. via notebooks and markdown files, brought together using software like Quarto and Jupyter Book). Suggested content includes:<br>• Plain english summary of project and model<br>• Clarifying license<br>• Citation instructions<br>• Contribution instructions<br>• Model installation instructions<br>• Structured code walk through of model<br>• Documentation of modelling cycle using TRACE<br>• Annotated simulation reporting guidelines<br>• Clear description of model validation including its intended purpose | ❌ Not met | `README.md` has simple installation instructions, whilst `Capacity_Model_Template.ipynb` has plain english summary of model and simple walk through. However, many of these suggestions are not captured, and documentation is felt to just meet the criteria of "minimum documentation" |
+| Documentation hosting | Host documentation (e.g. with GitHub pages, GitLab pages, BitBucket Cloud, Quarto Pub) | ❌ Not met | Not hosted. |
+| Online coding environment | Provide an online environment where users can run and change code (e.g. BinderHub, Google Colaboratory, Deepnote) | ✅ Fully | The archived code on Zenodo has not been set up to allow this but the [production code on GitLab](https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19) was set up to allow this (on 23rd April 2020, prior to date journal received article) |
+| Model interface | Provide web application interface to the model so it is accessible to less technical simulation users | ❌ Not met | - |
+| Web app hosting | Host web app online (e.g. Streamlit Community Cloud, ShinyApps hosting) | ❌ Not met | - |
+: {tbl-colwidths="[20, 35, 20, 25]"}
