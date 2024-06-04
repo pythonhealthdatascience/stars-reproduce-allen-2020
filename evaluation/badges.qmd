@@ -30,16 +30,16 @@ criteria = {
     'archive': 'Stored in a permanent archive that is publicly and openly accessible',
     'id': 'Has a persistent identifier',
     'license': 'Includes an open license',
+    'relevant': '''Arefacts are relevant to and contribute to the article's results''',
     'complete': 'Complete set of materials shared (as would be needed to fully reproduce article)',
+    'structure': 'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)',
     'documentation_sufficient': 'Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)',
     'documentation_careful': 'Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)',
-    'relevant': '''Arefacts are relevant to and contribute to the article's results''',
+    # This criteria is kept seperate to documentation_careful, as it specifically requires a README file
+    'documentation_readme': 'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript',
     'execute': 'Scripts can be successfully executed',
-    'structure': 'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)',
     'regenerated': 'Independent party regenerated results using the authors research artefacts',
     'hour': 'Reproduced within approximately one hour (excluding compute time)',
-    # This criteria is kept seperate to documentation_careful, as it specifically requires a README file
-    'documentation_readme': 'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript'
 }
 
 # Full badge names
@@ -104,21 +104,61 @@ for badge in badges:
 # Get list of badges met (True/False) overall
 award_list = list(award.values())
 
-# Create Markdown list with...
-callout_icon = {True: '✅',
-                False: '⬜'}
-full_criteria_list = ''.join([
-    '* ' +
-    callout_icon[eval[key]] + # Icon based on whether it met criteria
-    ' ' +
-    value + # Full text description of criteria
-    '\n' for key, value in criteria.items()])
+# Define function for creating the markdown formatted list of criteria met
+def create_criteria_list(criteria_dict):
+    '''
+    Creates a string which contains a Markdown formatted list with icons to
+    indicate whether each criteria was met
+
+    Parameters:
+    -----------
+    criteria_dict : dict
+        Dictionary where keys are the criteria (variable name) and values are
+        Boolean (True/False of whether this study met the criteria)
+
+    Returns:
+    --------
+    formatted_list : string
+        Markdown formatted list
+    '''
+    callout_icon = {True: '✅',
+                    False: '❌'}
+    # Create list with...
+    formatted_list = ''.join([
+        '* ' +
+        callout_icon[eval[key]] + # Icon based on whether it met criteria
+        ' ' +
+        value + # Full text description of criteria
+        '\n' for key, value in criteria_dict.items()])
+    return(formatted_list)
+
+# Define groups of criteria
+criteria_share_how = ['archive', 'id', 'license']
+criteria_share_what = ['relevant', 'complete']
+criteria_doc_struc = ['structure', 'documentation_sufficient', 'documentation_careful', 'documentation_readme']
+criteria_run = ['execute', 'regenerated', 'hour']
 
 # Create text section
 display(Markdown(f'''
-To assess whether the author's materials met the requirements of each badge, a list of criteria was produced. Between each badge (and between categories of badge), there is often alot of overlap in criteria. This study met **{sum(award_list)} of the {len(award_list)}** unique criteria items. These were as follows (where '✅' indicates criteria were met, whilst '⬜' indicates they were not):
+To assess whether the author's materials met the requirements of each badge, a list of criteria was produced. Between each badge (and between categories of badge), there is often alot of overlap in criteria. This study met **{sum(award_list)} of the {len(award_list)}** unique criteria items. These were as follows:
 
-{full_criteria_list}'''))
+Criteria related to how artefacts are shared -
+
+{create_criteria_list({k: criteria[k] for k in criteria_share_how})}
+
+Criteria related to what artefacts are shared -
+
+{create_criteria_list({k: criteria[k] for k in criteria_share_what})}
+
+Criteria related to the structure and documentation of the artefacts -
+
+{create_criteria_list({k: criteria[k] for k in criteria_doc_struc})}
+
+Criteria related to running and reproducing results -
+
+{create_criteria_list({k: criteria[k] for k in criteria_run})}
+'''))
+
 ```
 
 ## Badges
@@ -154,7 +194,7 @@ def create_badge_callout(award_dict):
     callout_appearance = {True: 'tip',
                           False: 'warning'}
     callout_icon = {True: '✅',
-                    False: '⬜'}
+                    False: '❌'}
     callout_text = {True: 'Meets all criteria:',
                     False: 'Does not meet all criteria:'}
 
