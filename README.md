@@ -11,7 +11,7 @@ This repository forms part of work package 1 on the NIHR-funded project STARS: S
 
 ## Website
 
-⭐ **Check out the website for this repository ([insert link]).** ⭐
+⭐ **[Click here to check out the website for this repository](https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/)** ⭐
 
 This website is created using Quarto and hosted using GitHub Pages. It shares everything from this computational reproducibility assessment, displaying:
 * The original study article and associated artefacts.

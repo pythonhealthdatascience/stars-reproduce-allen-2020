@@ -7,7 +7,7 @@ categories: [reproduce]
 
 ::: {.callout-note}
 
-Chose a seed that produced results fairly visually similar to the paper, and decided that each figure had now been successfully reproduced. Total time used: 7h 6m (17.8%). Reproduction stage complete.
+Chose a seed that produced fairly similar figures to paper. Decided that each figure had now been successfully reproduced. Total time used: 7h 6m (17.8%).
 
 :::
 
