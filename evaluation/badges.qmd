@@ -18,10 +18,13 @@ Although this script uses Python, it is applicable regardless of the language us
 
 This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
+## Code to evaluate against criteria for each badge
+
 ```{python}
 import numpy as np
 import pandas as pd
 
+# Criteria and their definitions
 criteria = {
     'archive': 'Stored in a permanent archive that is publicly and openly accessible',
     'id': 'Has a persistent identifier',
@@ -38,6 +41,7 @@ criteria = {
     'documentation_readme': 'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript'
 }
 
+# Full badge names
 badge_names = {
     # Open objects
     'open_niso': 'NISO "Open Research Objects (ORO)"',
@@ -56,6 +60,7 @@ badge_names = {
     'reproduce_psy': 'Psychological Science "Computational Reproducibility"'
 }
 
+# Criteria required by each badge
 badges = {
     # Open objects
     'open_niso': ['archive', 'id', 'license'],
@@ -73,11 +78,8 @@ badges = {
     'reproduce_ieee': ['regenerated'],
     'reproduce_psy': ['regenerated', 'hour', 'structure', 'documentation_readme'],
 }
-```
 
-```{python}
-# Example (not done for Allen et al. 2020 yet)
-# Based on the criteria dictionary above, populate with 1 and 0
+# Evaluation for this study
 eval = pd.Series({
     'archive': 1,
     'id': 1,
@@ -92,12 +94,24 @@ eval = pd.Series({
     'hour': 0,
     'documentation_readme': 0,
 })
+
+# Identify which badges would be awarded based on criteria
+award = {}
+for badge in badges:
+    award[badge] = all([eval[key] == 1 for key in badges[badge]])
 ```
 
-✅ = Meets criteria ⬜ = Does not meet criteria 📝 = Not yet evaluated
+## Simple presentation of results
 
 ```{python}
+# Print index
+print('''Key:
+✅ = Meets criteria
+⬜ = Does not meet criteria
+📝 = Not yet evaluated''')
+
 # Print compliance to each criteria
+print('\nCriteria:')
 for key, value in eval.items(): 
     if value == 1:
         icon = '✅'
@@ -106,15 +120,9 @@ for key, value in eval.items():
     else:
         icon = '📝'
     print(f'{icon} {criteria[key]}')
-```
-
-```{python}
-# Identify which badges would be awarded based on criteria
-award = {}
-for badge in badges:
-    award[badge] = all([eval[key] == 1 for key in badges[badge]])
 
 # Print results
+print('\nBadges:')
 for key, value in award.items(): 
     if value:
         icon = '✅'
@@ -123,5 +131,59 @@ for key, value in award.items():
     print(f'{icon} {badge_names[key]}')
 
 award_list = list(award.values())
-print(f'Met criteria for {sum(award_list)} of {len(award_list)} badges ({round(sum(award_list)/len(award_list)*100, 1)}%)')
+print(f'\nMet criteria for {sum(award_list)} of {len(award_list)} badges ({round(sum(award_list)/len(award_list)*100, 1)}%)')
 ```
+
+## More detailed presentation of results
+
+In total, the original study met the criteria for **10 of the 12** badges. This included:
+
+* **5 of the 5** "open objects" badges
+* **2 of the 3** "object review" badges
+* **2 of the 3** "reproduced" badges
+
+### "Open objects" badges
+
+These badges relate to research artefacts being made openly available.
+
+::: {.callout-tip appearance="minimal" collapse=true}
+
+## ✅ NISO "Open Research Objects (ORO)"
+
+Meets all criteria:
+
+* ✅ Stored in a permanent archive that is publicly and openly accessible
+* ✅ Has a persistent identifier
+* ✅ Includes an open license
+:::
+
+::: {.callout-warning appearance="minimal" collapse=true}
+
+## ⬜ ACM "Artifacts Evaluated - Reusable"
+
+Does not meet all criteria:
+
+* ✅ Stored in a permanent archive that is publicly and openly accessible
+* ✅ Has a persistent identifier
+* ✅ Includes an open license
+* ✅ Complete set of materials shared (as would be needed to fully reproduce article)
+* ✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)
+* ⬜ Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)
+:::
+
+### Full criteria list
+
+Between each badge, there is lots of overlapping criteria. Below is a list of whether the original study met each of the unique criteria items.
+
+* ✅ Stored in a permanent archive that is publicly and openly accessible
+* ✅ Has a persistent identifier
+* ✅ Includes an open license
+* ✅ Complete set of materials shared (as would be needed to fully reproduce article)
+* ✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)
+* ⬜ Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)
+* ✅ Arefacts are relevant to and contribute to the article's results
+* ✅ Scripts can be successfully executed
+* ✅ Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)
+* ✅ Independent party regenerated results using the authors research artefacts
+* ⬜ Reproduced within approximately one hour (excluding compute time)
+* ⬜ Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript
