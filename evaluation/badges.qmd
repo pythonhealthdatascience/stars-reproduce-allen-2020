@@ -18,9 +18,10 @@ Although this script uses Python, it is applicable regardless of the language us
 
 This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
-## Code to evaluate against criteria for each badge
+## Criteria
 
 ```{python}
+from IPython.display import display, Markdown
 import numpy as np
 import pandas as pd
 
@@ -99,91 +100,103 @@ eval = pd.Series({
 award = {}
 for badge in badges:
     award[badge] = all([eval[key] == 1 for key in badges[badge]])
-```
 
-## Simple presentation of results
-
-```{python}
-# Print index
-print('''Key:
-✅ = Meets criteria
-⬜ = Does not meet criteria
-📝 = Not yet evaluated''')
-
-# Print compliance to each criteria
-print('\nCriteria:')
-for key, value in eval.items(): 
-    if value == 1:
-        icon = '✅'
-    elif value == 0:
-        icon = '⬜'
-    else:
-        icon = '📝'
-    print(f'{icon} {criteria[key]}')
-
-# Print results
-print('\nBadges:')
-for key, value in award.items(): 
-    if value:
-        icon = '✅'
-    else:
-        icon = '⬜'
-    print(f'{icon} {badge_names[key]}')
-
+# Get list of badges met (True/False) overall
 award_list = list(award.values())
-print(f'\nMet criteria for {sum(award_list)} of {len(award_list)} badges ({round(sum(award_list)/len(award_list)*100, 1)}%)')
+
+# Create Markdown list with...
+callout_icon = {True: '✅',
+                False: '⬜'}
+full_criteria_list = ''.join([
+    '* ' +
+    callout_icon[eval[key]] + # Icon based on whether it met criteria
+    ' ' +
+    value + # Full text description of criteria
+    '\n' for key, value in criteria.items()])
+
+# Create text section
+display(Markdown(f'''
+To assess whether the author's materials met the requirements of each badge, a list of criteria was produced. Between each badge (and between categories of badge), there is often alot of overlap in criteria. This study met **{sum(award_list)} of the {len(award_list)}** unique criteria items. These were as follows (where '✅' indicates criteria were met, whilst '⬜' indicates they were not):
+
+{full_criteria_list}'''))
 ```
 
-## More detailed presentation of results
+## Badges
+```{python}
 
-In total, the original study met the criteria for **10 of the 12** badges. This included:
+# Write introduction
+# Get list of badges met (True/False) by category
+award_open = [v for k,v in award.items() if k.startswith('open_')]
+award_review = [v for k,v in award.items() if k.startswith('review_')]
+award_reproduce = [v for k,v in award.items() if k.startswith('reproduce_')]
 
-* **5 of the 5** "open objects" badges
-* **2 of the 3** "object review" badges
-* **2 of the 3** "reproduced" badges
+# Create and display text for introduction
+display(Markdown(f'''
+In total, the original study met the criteria for **{sum(award_list)} of the {len(award_list)} badges**. This included:
 
+* **{sum(award_open)} of the {len(award_open)}** “open objects” badges
+* **{sum(award_review)} of the {len(award_review)}** “object review” badges
+* **{sum(award_reproduce)} of the {len(award_reproduce)}** “reproduced” badges
+'''))
+
+# Make function that creates collapsible callouts for each badge
+def create_badge_callout(award_dict):
+    '''
+    Displays Markdown callouts created for each badge in the dictionary, showing
+    whether the criteria for that badge was met.
+
+    Parameters:
+    -----------
+    award_dict : dict
+        Dictionary where key is badge (as variable name), and value is Boolean
+        (whether badge is awarded)
+    '''
+    callout_appearance = {True: 'tip',
+                          False: 'warning'}
+    callout_icon = {True: '✅',
+                    False: '⬜'}
+    callout_text = {True: 'Meets all criteria:',
+                    False: 'Does not meet all criteria:'}
+
+    for key, value in award_dict.items():
+        # Create Markdown list with...
+        criteria_list = ''.join([
+            '* ' +
+            callout_icon[eval[k]] + # Icon based on whether it met criteria
+            ' ' +
+            criteria[k] + # Full text description of criteria
+            '\n' for k in badges[key]])
+        # Create the callout and display it
+        display(Markdown(f'''
+::: {{.callout-{callout_appearance[value]} appearance="minimal" collapse=true}}
+
+## {callout_icon[value]} {badge_names[key]}
+
+{callout_text[value]}
+
+{criteria_list}
+:::
+'''))
+
+# Create badge functions with introductions and callouts
+display(Markdown('''
 ### "Open objects" badges
 
 These badges relate to research artefacts being made openly available.
+'''))
+create_badge_callout({k: v for (k, v) in award.items() if k.startswith('open_')})
 
-::: {.callout-tip appearance="minimal" collapse=true}
+display(Markdown('''
+### "Object review" badges
 
-## ✅ NISO "Open Research Objects (ORO)"
+These badges relate to the research artefacts being reviewed against criteria of the badge issuer.
+'''))
+create_badge_callout({k: v for (k, v) in award.items() if k.startswith('review_')})
 
-Meets all criteria:
+display(Markdown('''
+### "Reproduced" badges
 
-* ✅ Stored in a permanent archive that is publicly and openly accessible
-* ✅ Has a persistent identifier
-* ✅ Includes an open license
-:::
-
-::: {.callout-warning appearance="minimal" collapse=true}
-
-## ⬜ ACM "Artifacts Evaluated - Reusable"
-
-Does not meet all criteria:
-
-* ✅ Stored in a permanent archive that is publicly and openly accessible
-* ✅ Has a persistent identifier
-* ✅ Includes an open license
-* ✅ Complete set of materials shared (as would be needed to fully reproduce article)
-* ✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)
-* ⬜ Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)
-:::
-
-### Full criteria list
-
-Between each badge, there is lots of overlapping criteria. Below is a list of whether the original study met each of the unique criteria items.
-
-* ✅ Stored in a permanent archive that is publicly and openly accessible
-* ✅ Has a persistent identifier
-* ✅ Includes an open license
-* ✅ Complete set of materials shared (as would be needed to fully reproduce article)
-* ✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)
-* ⬜ Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)
-* ✅ Arefacts are relevant to and contribute to the article's results
-* ✅ Scripts can be successfully executed
-* ✅ Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)
-* ✅ Independent party regenerated results using the authors research artefacts
-* ⬜ Reproduced within approximately one hour (excluding compute time)
-* ⬜ Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript
+These badges relate to an independent party regenerating the reuslts of the article using the author objects.
+'''))
+create_badge_callout({k: v for (k, v) in award.items() if k.startswith('reproduce_')})
+```
