@@ -62,6 +62,9 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -212,24 +215,23 @@ div.csl-indent {
 <li><span class="citation" data-cites="monks_strengthening_2019">Monks et al. (<a href="#ref-monks_strengthening_2019" role="doc-biblioref">2019</a>)</span> - STRESS-DES: Strengthening The Reporting of Empirical Simulation Studies (Discrete-Event Simulation) (Version 1.0).</li>
 <li><span class="citation" data-cites="zhang_reporting_2020">Zhang, Lhachimi, and Rogowski (<a href="#ref-zhang_reporting_2020" role="doc-biblioref">2020</a>)</span> - The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports.</li>
 </ul>
-<p><mark>if we apply this later down the line, what about if its not discrete-event?</mark></p>
 <section id="stress-des" class="level2">
 <h2 class="anchored" data-anchor-id="stress-des">STRESS-DES</h2>
-<p><mark>example fill in, not actual</mark></p>
-<p>Total (out of 5):</p>
+<p>Of the <strong>24</strong> items in the checklist:</p>
 <ul>
-<li>✅ Fully - 20% (n=1)</li>
-<li>🟡 Partially - 20% (n=1)</li>
-<li>❌ Not met - 20% (n=1)</li>
-<li>❔ Unclear - 40% (n=2)</li>
+<li>✅ Fully</li>
+<li>🟡 Partially</li>
+<li>❌ Not met</li>
+<li>❔ Unclear</li>
+<li>not applicable</li>
 </ul>
 <!-- In the evidence column, include quotes from the text with their location, to answer each item. This is as much as appropriate - if it would be too much text/info, then just refer to sections in the article -->
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 40%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -250,19 +252,19 @@ div.csl-indent {
 <td>1.1 Purpose of the model</td>
 <td>Explain the background and objectives for the model</td>
 <td>✅ Fully</td>
-<td></td>
+<td><code>Introduction</code>: “Planning service delivery that separates COVID-positive patients is complicated, due to the uncertainty of the spread of SARS-CoV-2, the variability seen in symptom onset, length of infectivity, and regional delivery of dialysis. We therefore sought to support decision making in the period prior to peak infection by developing mathematical models of dialysis service delivery and patient transport. We aimed to provide reusable tools to provide rapid information under various scenarios including a worst case three month spread.”</td>
 </tr>
 <tr class="odd">
 <td>1.2 Model outputs</td>
 <td>Define all quantitative performance measures that are reported, using equations where necessary. Specify how and when they are calculated during the model run along with how any measures of error such as confidence intervals are calculated.</td>
-<td>🟡 Partially</td>
-<td></td>
+<td>✅ Fully</td>
+<td><code>Materials and methods - Outcome measures</code>: “We estimated the the change in outpatient and inpatient workload during the epidemic in terms of COVID-positive negative and recovered, at each dialysis unit in the network. Estimates were produced over periods three to six months. We also estimated the number of patients who were required to travel to a different unit from normal and the change in travel time.”<br><br><code>Materials and methods - Dialysis model</code>: “The dialysis model is run 30 times to simulate 30 alternative years as, due to the randomness of infection, no two years will be exactly alike. Results show typical (median) and extreme years.”</td>
 </tr>
 <tr class="even">
 <td>1.3 Experimentation aims</td>
 <td>If the model has been used for experimentation, state the objectives that it was used to investigate.<br>(A) Scenario based analysis – Provide a name and description for each scenario, providing a rationale for the choice of scenarios and ensure that item 2.3 (below) is completed.<br>(B) Design of experiments – Provide details of the overall design of the experiments with reference to performance measures and their parameters (provide further details in data below).<br>(C) Simulation Optimisation – (if appropriate) Provide full details of what is to be optimised, the parameters that were included and the algorithm(s) that was be used. Where possible provide a citation of the algorithm(s).</td>
-<td>❌ Not met</td>
-<td></td>
+<td>✅ Fully</td>
+<td>Model can technically explore multiple scenarios, but the paper presents a single scenario: worst-case three month spread. The parameters for this scenario are described and justified.<br><br><code>Introduction</code>: “We aimed to provide reusable tools to provide rapid information under various scenarios including a worst case three month spread.”<br><br><code>Materials and methods - patient progression model</code>: “The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Materials and methods - data sources</code>: “The worst case time of spread of COVID-positive was taken from Fergeson et al.&nbsp;Mortality rate, time a patient was COVID-positive before admission and inpatient length of stay were local parameters.”<br><br><code>Materials and methods - verification and validation</code>: “We instead worked closely with clinicians, managers and informatics specialists within the local health system to review iterative versions of the model. We also opted to model a range of likely scenarios including what is widely believed to be the worst case.”</td>
 </tr>
 <tr class="odd">
 <td><strong>Logic</strong></td>
@@ -273,56 +275,56 @@ div.csl-indent {
 <tr class="even">
 <td>2.1 Base model overview diagram</td>
 <td>Describe the base model using appropriate diagrams and description. This could include one or more process flow, activity cycle or equivalent diagrams sufficient to describe the model to readers. Avoid complicated diagrams in the main text. The goal is to describe the breadth and depth of the model with respect to the system being studied.</td>
-<td>❔ Unclear</td>
-<td></td>
+<td>✅ Fully</td>
+<td><code>Figure 1</code>: “Schematic representation of patient pathway”<br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a></td>
 </tr>
 <tr class="odd">
 <td>2.2 Base model logic</td>
 <td>Give details of the base model logic. Give additional model logic details sufficient to communicate to the reader how the model works.</td>
-<td>❔ Unclear</td>
-<td></td>
+<td>✅ Fully</td>
+<td><code>Materials and methods - Dialysis model</code> section provides a detailed description of how the model works, and how patients flow through it</td>
 </tr>
 <tr class="even">
 <td>2.3 Scenario logic</td>
 <td>Give details of the logical difference between the base case model and scenarios (if any). This could be incorporated as text or where differences are substantial could be incorporated in the same manner as 2.2.</td>
-<td></td>
-<td></td>
+<td>N/A</td>
+<td>Not applicable (single scenario).</td>
 </tr>
 <tr class="odd">
 <td>2.4 Algorithms</td>
-<td>Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.&nbsp;scheduling of arrivals/appointments/operations/maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible. Pseudo-code may be used to describe an algorithm.</td>
-<td></td>
-<td></td>
+<td>Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.&nbsp;scheduling of arrivals/ appointments/ operations/ maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible. Pseudo-code may be used to describe an algorithm.</td>
+<td>✅ Fully</td>
+<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1”<br><br><code>Table 1</code>: Baseline model parameters<br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
 </tr>
 <tr class="even">
 <td>2.5.1 Components - entities</td>
 <td>Give details of all entities within the simulation including a description of their role in the model and a description of all their attributes.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>There is one entity - patients - and these can be in different COVID states, and inpatients or outpatients.<br><br><code>Materials and methods - dialysis model</code>: “simulates the progression of patients through phases of COVID infection: negative, positive (with some requiring inpatient care) and recovered or died.”</td>
 </tr>
 <tr class="odd">
 <td>2.5.2 Components - activities</td>
 <td>Describe the activities that entities engage in within the model. Provide details of entity routing into and out of the activity.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>Patients are allocated to units to receive dialysis three times a week. The unit search strategy for each patient type is provided.<br><br><code>Materials and methods - patient progression model</code>: “all patients should receive dialysis three times weekly, with each patient allocated to a starting day for the week of either Monday or Tuesday”<br><br><code>Materials and methods - unit search strategy</code>: “When allocating patients to units, the following search strategy is employed.<br>• COVID negative: First look for place in current unit attended. If no room there place in the closest unit (judged by estimated travel time) with available space.<br>• COVID-positive: Place all COVID-positive patients first in Queen Alexandra Hospital, Portsmouth, and if capacity there is fully utilised open up capacity in Basingstoke. If a new COVID session is required, the model will displace all COVID negative patients in that session, and seek to re-allocate them according to the rules for allocating COVID negative patients.<br>• COVID-positive inpatient: All inpatients are placed in Queen Alexandra Hospital, Portsmouth (though the model allows searching by travel time if another unit were to open to renal COVID-positive inpatients).<br>• COVID-recovered: Treat as COVID negative.<br>• Unallocated patients: If a patient cannot be allocated to any unit, the model attempts to allocate them each day.”</td>
 </tr>
 <tr class="even">
 <td>2.5.3 Components - resources</td>
 <td>List all the resources included within the model and which activities make use of them.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>There are nine units, and these are the only resource, used for dialysis appointments.<br><br><code>Materials and methods - study setting</code>: “The service operates a network of nine centres… The Queen Alexandra will be used as the primary site for positive outpatients and inpatients with spillover to a second site (Basingstoke) when capacity is insufficient.”</td>
 </tr>
 <tr class="odd">
 <td>2.5.4 Components - queues</td>
 <td>Give details of the assumed queuing discipline used in the model (e.g.&nbsp;First in First Out, Last in First Out, prioritisation, etc.). Where one or more queues have a different discipline from the rest, provide a list of queues, indicating the queuing discipline used for each. If reneging, balking or jockeying occur, etc., provide details of the rules. Detail any delays or capacity constraints on the queues.</td>
-<td></td>
-<td></td>
+<td>❌ Not met</td>
+<td>Not certain about in what order they get allocated to units (although is this a queue?)</td>
 </tr>
 <tr class="even">
 <td>2.5.5 Components - entry/exit points</td>
 <td>Give details of the model boundaries i.e.&nbsp;all arrival and exit points of entities. Detail the arrival mechanism (e.g.&nbsp;‘thinning’ to mimic a non-homogenous Poisson process or balking)</td>
-<td></td>
-<td></td>
+<td><strong>Not sure</strong></td>
+<td><strong>Not sure</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>Data</strong></td>
@@ -333,26 +335,26 @@ div.csl-indent {
 <tr class="even">
 <td>3.1 Data sources</td>
 <td>List and detail all data sources. Sources may include:<br>• Interviews with stakeholders,<br>• Samples of routinely collected data,<br>• Prospectively collected samples for the purpose of the simulation study,<br>• Public domain data published in either academic or organisational literature. Provide, where possible, the link and DOI to the data or reference to published literature.<br>All data source descriptions should include details of the sample size, sample date ranges and use within the study.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td><code>Materials and methods - study setting</code>: “We apply the service delivery modelling tools in the South of England in the region of Wessex: a mixed urban/rural setting where the renal dialysis service cares for 644 patients… In the analysis we excluded home patients (n = 80) and due to its separation from the mainland the Isle of Wight (n = 44).”<br><br><code>Materials and methods - data sources</code>: “Researchers had no access to individual patient level data. To ensure confidentiality, patient geographic locations was provided at the UK postcode sector level (alternatives might be output areas or northings and eastings). Travel times between these sectors were estimated using Routino (routino.org) with data from OpenStreetMap (openstreetmap.org). The worst case time of spread of COVID-positive was taken from Fergeson et al.&nbsp;Mortality rate, time a patient was COVID-positive before admission and inpatient length of stay were local parameters.”</td>
 </tr>
 <tr class="odd">
 <td>3.2 Pre-processing</td>
 <td>Provide details of any data manipulation that has taken place before its use in the simulation, e.g.&nbsp;interpolation to account for missing data or the removal of outliers.</td>
-<td></td>
-<td></td>
+<td>N/A</td>
+<td>No pre-processing.</td>
 </tr>
 <tr class="even">
 <td>3.3 Input parameters</td>
-<td>List all input variables in the model. Provide a description of their use and include parameter values. For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters. Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions.</td>
-<td></td>
-<td></td>
+<td>List all input variables in the model. Provide a description of their use and include parameter values. For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters. Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>• Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions.</td>
+<td>✅ Fully</td>
+<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1… The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Table 1</code>: Baseline model parameters<br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
 </tr>
 <tr class="odd">
 <td>3.4 Assumptions</td>
 <td>Where data or knowledge of the real system is unavailable what assumptions are included in the model? This might include parameter values, distributions or routing logic within the model.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>Assumes worst-case scenario (80% infected in 3 months with 15% mortality).<br><br><code>Materials and methods - patient progression model</code>: “We assume that COVID patients must be separated from uninfected patients, and that patients who have recovered from a COVID episode do not mix with those currently testing COVID positive. We do not deal specifically with suspected COVID patients in the model, anticipating that rapid testing will soon be available to diagnose which group they belong to.”<br><br>Assumes that patients travel alone - <code>Results - dialysis network</code>: “These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone)”<br><br><code>Discussion - limitations of the study</code>:<br>“•The model assumes that patients can be re-allocated to units/sessions immediately. In practice changes to session allocation (e.g.&nbsp;shifting from COVID-negative to COVID-positive are likely to be made a little in advance.<br>• The results reported here assume that current capacity is maintained throughout the COVID outbreak.<br>• We have not modelled the effect of reductions in capacity that may be caused by staff shortages. We have not modelled timing of sessions, but the model progressively allocates COVID-positive sessions as needed, and we would assume that these sessions would come later in the day, enabling cleaning at the end of the day, ready for any COVID-negative session the next morning.<br>• We have not included home dialysis patients, which may affect inpatient demand. A likely worst-case scenario (with home dialysis patients following the transmission spread, and need for inpatient care, of the dialysis units, is that inpatient demand may be increased 15%.”</td>
 </tr>
 <tr class="even">
 <td><strong>Experimentation</strong></td>
@@ -363,14 +365,14 @@ div.csl-indent {
 <tr class="odd">
 <td>4.1 Initialisation</td>
 <td>Report if the system modelled is terminating or non-terminating. State if a warm-up period has been used, its length and the analysis method used to select it. For terminating systems state the stopping condition.<br>State what if any initial model conditions have been included, e.g., pre-loaded queues and activities. Report whether initialisation of these variables is deterministic or stochastic.</td>
-<td></td>
-<td></td>
+<td>❌ Not met</td>
+<td>Not stated - but understand it to be terminating (starts empty and finishes empty), with the stopping condition being the run length of the simulation (3 months).</td>
 </tr>
 <tr class="even">
 <td>4.2 Run length</td>
 <td>Detail the run length of the simulation model and time units.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>Daily time unit (with “per day” mentioned throughout article), and run length of three months - <code>Materials and methods - patient progression model</code> - “The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”</td>
 </tr>
 <tr class="odd">
 <td>4.3 Estimation approach</td>
@@ -425,19 +427,18 @@ div.csl-indent {
 </section>
 <section id="ispor-sdm" class="level2">
 <h2 class="anchored" data-anchor-id="ispor-sdm">ISPOR-SDM</h2>
-<p>Total (out of 4):</p>
 <ul>
-<li>✅ Fully - 25% (n=1)</li>
-<li>🟡 Partially - 25% (n=1)</li>
-<li>❌ Not met - 25% (n=1)</li>
-<li>❔ Unclear - 25% (n=1)</li>
+<li>✅ Fully</li>
+<li>🟡 Partially</li>
+<li>❌ Not met</li>
+<li>❔ Unclear</li>
 </ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 40%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -457,19 +458,19 @@ div.csl-indent {
 <tr class="even">
 <td>1 Is the focused health-related decision problem clarified?</td>
 <td>…the decision problem under investigation was defined. DES studies included different types of decision problems, eg, those listed in previously developed taxonomies.</td>
-<td>🟡 Partially</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>2 Is the modeled healthcare setting/health condition clarified?</td>
 <td>…the physical context/scope (eg, a certain healthcare unit or a broader system) or disease spectrum simulated was described.</td>
-<td>❌ Not met</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>3 Is the model structure described?</td>
 <td>…the model’s conceptual structure was described in the form of either graphical or text presentation.</td>
-<td>✅ Fully</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -481,7 +482,7 @@ div.csl-indent {
 <tr class="even">
 <td>5 Are all simulated strategies/scenarios specified?</td>
 <td>…the comparators under test were described in terms of their components, corresponding variations, etc</td>
-<td>❔ Unclear</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -529,8 +530,8 @@ div.csl-indent {
 <tr class="even">
 <td>11 Is face validity evaluated and reported?</td>
 <td>…it was reported that the model was subjected to the examination on how well model designs correspond to the reality and intuitions. It was assumed that this type of validation should be conducted by external evaluators with no stake in the study.</td>
-<td></td>
-<td></td>
+<td>✅ Fully</td>
+<td>Materials and Methods - Verification and validation: “Quantitative validation of models (checking models are appropriate detailed and sufficiently accurate) is challenging in the COVID epidemic as the forecast is of unprecedented conditions. We instead worked closely with clinicians, managers and informatics specialists within the local health system to review iterative versions of the model. We also opted to model a range of likely scenarios including what is widely believed to be the worst case.”</td>
 </tr>
 <tr class="odd">
 <td>12 Is cross validation performed and reported</td>
@@ -1175,6 +1176,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

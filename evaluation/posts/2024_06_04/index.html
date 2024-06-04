@@ -257,7 +257,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Evaluated study against badge criteria and recommendations for sharing of research artefacts.</p>
+<p>Evaluated study against guidelines (badges, sharing artefacts, and starting on STRESS-DES reporting).</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -298,7 +298,7 @@ Note
 <li>Remote execution/Online coding environment - Zenodo doesn’t but GitLab does. I was largely working with Zenodo as that was the archived version, but in this case, did say met criteria via GitLab. Importance of which code is chosen when there are two versions. I didn’t initially think it met criteria until checked the GitLab too. Have recommended both are referred to. But do they meet criteria if changes are made to repository after publication? After submission? For example, if we asked them to add a license.</li>
 </ul>
 <p>Compared my decisions for the best practice audit against those made in Monks and Harper. Don’t think I would normally plan to do this. Their GitHub is <a href="https://github.com/TomMonks/des_sharing_lit_review">TomMonks/des_sharing_lit_review</a>, which provides the file <code>share_sim_data_extract.zip</code>. I used the provided code to clean this and saved it as <code>share_sim_data_extract_clean.csv</code>, which can then view here:</p>
-<div id="35207b43" class="cell" data-execution_count="1">
+<div id="ea7d1975" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import review results</span></span>
@@ -449,6 +449,15 @@ Keeping code repository and archive in sync and up-to-date
 </section>
 <section id="reporting-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="reporting-guidelines">Reporting guidelines</h2>
+<p>These were evaluated based ONLY on the journal article and supplementary materials (and not on the linked code repository).</p>
+<p>STRESS uncertanties:</p>
+<ul>
+<li>Model outputs - “Specify how and when they are calculated during the model run along with how any measures of error such as confidence intervals are calculated” - I find this criteria quite hard to apply? Here, it’s just N patients and additional time during model, mediane and extreme. Does it need more detail than that to meet it though?</li>
+<li>Experiementation aims - is it applicable? The DES model, as I understand, just tests one scenario - a worst case scenario - so it’s not really “scenario based analysis” comparing scenarios - but it does have A scenario and justification for it?</li>
+<li>Algorithms - is this applicable in this example? Parameters are just from sampling from distributions, or proportions. Assuming its applicable, and that distribing those distributions answers this question?</li>
+<li>Queues - wasn’t certain about this, as I don’t really know what order they get allocated to units. but that’s not a queue? but it kind of is - in that, at the start of the day, they are waiting to be assigned?</li>
+<li>Entry/exit points - they are in model on days they need dialysis, and then leave again? unless get unallocated? and then they never return if their state turns to dead? this isn’t really spelled out though.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -460,6 +469,7 @@ Including checklist
 </div>
 <div class="callout-body-container callout-body">
 <p>Tom mentioned how this study they provided the filled out STRESS checklist to the journal, but it wasn’t published alongside the article, but that would have been beneficial. This is a good suggestion to think about.</p>
+<p>Also, it has proven quite time consuming to evaluate against the checklist - hence, moreso reason to include it with the article, to make it easier for readers to spot these things.</p>
 </div>
 </div>
 </section>
@@ -472,6 +482,8 @@ Including checklist
 <li>Suggest to detail those uncertainties within logbook</li>
 <li>Any advice can give following uncertainties raised above</li>
 <li>If there are multiple code locations (e.g.&nbsp;code repository and archive), then refer to both when assessing against criteria</li>
+<li>Recommended sources for evaluation (e.g.&nbsp;reporting guidelines is based on article, badges and sharing of research artefacts are based on code)</li>
+<li>Given how long it is taking, would it be relevant to time these steps - in particular with the ambition of timing the evaluation against reporting guidelines - to illustrate how long it can take to find this information? And hence, provide rationale for the benefit of including it with the paper, clearly spelled out? Not much to learn from timing the badges or sharing artefacts evaluation though.</li>
 </ul>
 
 
