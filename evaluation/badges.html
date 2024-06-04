@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -223,109 +223,117 @@ To use this template:
 
 Although this script uses Python, it is applicable regardless of the language used by the study you are evaluating.
 -->
-<p>This page evaluates the extent to which Monks et al.&nbsp;2016 meets the criteria of badges related to reproducibility from various organisations and journals.</p>
-<div id="26e35024" class="cell" data-execution_count="1">
+<p>This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.</p>
+<div id="8ce98628" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>criteria <span class="op">=</span> {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'archive'</span>: <span class="st">'Code is stored in a permanent archive that is publicly and openly accessible'</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'id'</span>: <span class="st">'It has a persistent identifier (e.g. DOI)'</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'license'</span>: <span class="st">'It has an open license'</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete_open'</span>: <span class="st">'Complete set of materials shared (as would be needed to fully reproduce article)'</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'meta'</span>: <span class="st">'Metadata describes data/code sufficiently to enable reproduction (e.g. package versions)'</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'statement'</span>: <span class="st">'Manuscript has data availability statement'</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DUPE with complete_open above (to reflect on)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete_review'</span>: <span class="st">'Complete set of materials shared (as would be needed to fully reproduce article)'</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DUPE with meta above (to reflect on)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'describe_minimal'</span>: <span class="st">'There is a minimal but sufficient description of artefacts'</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'describe_careful'</span>: <span class="st">'There is a more detailed, careful documentation of artefacts'</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'artefacts_structure'</span>: <span class="st">'Artefacts are well structured to facilitate reuse, adhering to norms and standards of research community'</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'regenerated'</span>: <span class="st">'Independent party regenerated results using the authors research artefacts'</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hour'</span>: <span class="st">'Reproduced within approximately one hour (excluding compute time)'</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># DUPE with artefacts_structure and meta/describe</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_organise'</span>: <span class="st">'Requires data and scripts to be well-organised, clearly documented and with a README file with step-by-step instructions on how to reproduce results in the manuscript'</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>badge_names <span class="op">=</span> {</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ISSUE: need to make seperate criteria for code and data (unless just do code?)</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso'</span>: <span class="st">'NISO "Open Research Objects"'</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_acm'</span>: <span class="st">'ACM "Artifacts Available"'</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_data'</span>: <span class="st">'COS "Open Data"'</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_materials'</span>: <span class="st">'COS "Open Materials"'</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_code'</span>: <span class="st">'COS "Open Code"'</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ISSUE: need to make seperate criteria for code and data (unless just do code?)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_ieee_code'</span>: <span class="st">'IEEE "Code Available"'</span>,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_ieee_data'</span>: <span class="st">'IEEE "Datasets Available"'</span>,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_springer'</span>: <span class="st">'Springer Nature "Badge for Open Data"'</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_functional'</span>: <span class="st">'ACM "Artifacts Evaluated - Functional"'</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_reusable'</span>: <span class="st">'ACM "Artifacts Evaluated - Reusable"'</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ISSUE: need to make seperate criteria for code and data (unless just do code?)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_ieee_code'</span>: <span class="st">'IEEE "Code Reviewed"'</span>,</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_ieee_data'</span>: <span class="st">'IEEE "Datasets Reviewed"'</span>,</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_niso'</span>: <span class="st">'NISO "Results Reproduced"'</span>,</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_acm'</span>: <span class="st">'ACM "Results Reproduced"'</span>,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ISSUE: need to make seperate criteria for code and data (unless just do code?)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_ieee_code'</span>: <span class="st">'IEEE "Code Reproducible"'</span>,</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_ieee_data'</span>: <span class="st">'IEEE "Dataset Reproducible"'</span>,</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_psy'</span>: <span class="st">'Psychological Science "Computational Reproducibility"'</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>open_cos <span class="op">=</span> [<span class="st">'archive'</span>, <span class="st">'id'</span>, <span class="st">'license'</span>, <span class="st">'complete_open'</span>, <span class="st">'meta'</span>]</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>badges <span class="op">=</span> {</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>, <span class="st">'license'</span>, <span class="st">'complete_open'</span>],</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_acm'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>],</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_data'</span>: open_cos,</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_materials'</span>: open_cos,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos_code'</span>: open_cos,</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_ieee_code'</span>: [<span class="st">'complete_open'</span>],</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># etc. etc.</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'archive'</span>: <span class="st">'Stored in a permanent archive that is publicly and openly accessible'</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'id'</span>: <span class="st">'Has a persistent identifier'</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'license'</span>: <span class="st">'Includes an open license'</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete'</span>: <span class="st">'Complete set of materials shared (as would be needed to fully reproduce article)'</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_sufficient'</span>: <span class="st">'Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)'</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_careful'</span>: <span class="st">'Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)'</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'relevant'</span>: <span class="st">'''Arefacts are relevant to and contribute to the article's results'''</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'execute'</span>: <span class="st">'Scripts can be successfully executed'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'structure'</span>: <span class="st">'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)'</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'regenerated'</span>: <span class="st">'Independent party regenerated results using the authors research artefacts'</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hour'</span>: <span class="st">'Reproduced within approximately one hour (excluding compute time)'</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This criteria is kept seperate to documentation_careful, as it specifically requires a README file</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_readme'</span>: <span class="st">'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript'</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>badge_names <span class="op">=</span> {</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Open objects</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso'</span>: <span class="st">'NISO "Open Research Objects (ORO)"'</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso_all'</span>: <span class="st">'NISO "Open Research Objects - All (ORO-A)"'</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_acm'</span>: <span class="st">'ACM "Artifacts Available"'</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos'</span>: <span class="st">'COS "Open Code"'</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_ieee'</span>: <span class="st">'IEEE "Code Available"'</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Object review</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_functional'</span>: <span class="st">'ACM "Artifacts Evaluated - Functional"'</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_reusable'</span>: <span class="st">'ACM "Artifacts Evaluated - Reusable"'</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_ieee'</span>: <span class="st">'IEEE "Code Reviewed"'</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Results reproduced</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_niso'</span>: <span class="st">'NISO "Results Reproduced (ROR-R)"'</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_acm'</span>: <span class="st">'ACM "Results Reproduced"'</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_ieee'</span>: <span class="st">'IEEE "Code Reproducible"'</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_psy'</span>: <span class="st">'Psychological Science "Computational Reproducibility"'</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>badges <span class="op">=</span> {</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Open objects</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>, <span class="st">'license'</span>],</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_niso_all'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>, <span class="st">'license'</span>, <span class="st">'complete'</span>],</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_acm'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>],</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_cos'</span>: [<span class="st">'archive'</span>, <span class="st">'id'</span>, <span class="st">'license'</span>, <span class="st">'complete'</span>, <span class="st">'documentation_sufficient'</span>],</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'open_ieee'</span>: [<span class="st">'complete'</span>],</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Object review</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_functional'</span>: [<span class="st">'documentation_sufficient'</span>, <span class="st">'relevant'</span>, <span class="st">'complete'</span>, <span class="st">'execute'</span>],</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_acm_reusable'</span>: [<span class="st">'documentation_sufficient'</span>, <span class="st">'documentation_careful'</span>, <span class="st">'relevant'</span>, <span class="st">'complete'</span>, <span class="st">'execute'</span>, <span class="st">'structure'</span>],</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">'review_ieee'</span>: [<span class="st">'complete'</span>, <span class="st">'execute'</span>],</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Results reproduced</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_niso'</span>: [<span class="st">'regenerated'</span>],</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_acm'</span>: [<span class="st">'regenerated'</span>],</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_ieee'</span>: [<span class="st">'regenerated'</span>],</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reproduce_psy'</span>: [<span class="st">'regenerated'</span>, <span class="st">'hour'</span>, <span class="st">'structure'</span>, <span class="st">'documentation_readme'</span>],</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>TO DO: Change to full list of criteria</p>
-<p>TO DO: Change to full list of badges</p>
-<p>TO DO: Add a table (perhaps minimise-able) that summarises the criteria of each badge, so can see how/why did or did not meet each of the badges.</p>
-<div id="79297276" class="cell" data-execution_count="2">
+<div id="b7836b83" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example (not done for Monks et al. 2016 yet)</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example (not done for Allen et al. 2020 yet)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Based on the criteria dictionary above, populate with 1 and 0</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="op">=</span> pd.Series({</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'archive'</span>: <span class="dv">1</span>,</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'id'</span>: <span class="dv">1</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'license'</span>: <span class="dv">0</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete_open'</span>: <span class="dv">1</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'meta'</span>: <span class="dv">1</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'statement'</span>: <span class="dv">1</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># etc. etc.</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'license'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_sufficient'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_careful'</span>: <span class="dv">0</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'relevant'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'execute'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'structure'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'regenerated'</span>: <span class="dv">1</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hour'</span>: <span class="dv">0</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_readme'</span>: <span class="dv">0</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="f7f4e40a" class="cell" data-execution_count="3">
+<p>✅ = Meets criteria ⬜ = Does not meet criteria 📝 = Not yet evaluated</p>
+<div id="b0ad93a2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print compliance to each criteria</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> <span class="bu">eval</span>.items(): </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> value <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        icon <span class="op">=</span> <span class="st">'✅'</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> value <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        icon <span class="op">=</span> <span class="st">'⬜'</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>icon<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>criteria[key]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        icon <span class="op">=</span> <span class="st">'📝'</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>icon<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>criteria[key]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>✅ Code is stored in a permanent archive that is publicly and openly accessible
-✅ It has a persistent identifier (e.g. DOI)
-⬜ It has an open license
+<pre><code>✅ Stored in a permanent archive that is publicly and openly accessible
+✅ Has a persistent identifier
+✅ Includes an open license
 ✅ Complete set of materials shared (as would be needed to fully reproduce article)
-✅ Metadata describes data/code sufficiently to enable reproduction (e.g. package versions)
-✅ Manuscript has data availability statement</code></pre>
+✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)
+⬜ Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)
+✅ Arefacts are relevant to and contribute to the article's results
+✅ Scripts can be successfully executed
+✅ Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)
+✅ Independent party regenerated results using the authors research artefacts
+⬜ Reproduced within approximately one hour (excluding compute time)
+⬜ Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript</code></pre>
 </div>
 </div>
-<div id="bf67e1bc" class="cell" data-execution_count="4">
+<div id="813af45e" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify which badges would be awarded based on criteria</span></span>
@@ -339,15 +347,25 @@ Although this script uses Python, it is applicable regardless of the language us
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        icon <span class="op">=</span> <span class="st">'✅'</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        icon <span class="op">=</span> <span class="st">'⬜'</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>icon<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>badge_names[key]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>icon<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>badge_names[key]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>award_list <span class="op">=</span> <span class="bu">list</span>(award.values())</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Met criteria for </span><span class="sc">{</span><span class="bu">sum</span>(award_list)<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="bu">len</span>(award_list)<span class="sc">}</span><span class="ss"> badges (</span><span class="sc">{</span><span class="bu">round</span>(<span class="bu">sum</span>(award_list)<span class="op">/</span><span class="bu">len</span>(award_list)<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>)<span class="sc">}</span><span class="ss">%)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>⬜ NISO "Open Research Objects"
+<pre><code>✅ NISO "Open Research Objects (ORO)"
+✅ NISO "Open Research Objects - All (ORO-A)"
 ✅ ACM "Artifacts Available"
-⬜ COS "Open Data"
-⬜ COS "Open Materials"
-⬜ COS "Open Code"
-✅ IEEE "Code Available"</code></pre>
+✅ COS "Open Code"
+✅ IEEE "Code Available"
+✅ ACM "Artifacts Evaluated - Functional"
+⬜ ACM "Artifacts Evaluated - Reusable"
+✅ IEEE "Code Reviewed"
+✅ NISO "Results Reproduced (ROR-R)"
+✅ ACM "Results Reproduced"
+✅ IEEE "Code Reproducible"
+⬜ Psychological Science "Computational Reproducibility"
+Met criteria for 10 of 12 badges (83.3%)</code></pre>
 </div>
 </div>
 
