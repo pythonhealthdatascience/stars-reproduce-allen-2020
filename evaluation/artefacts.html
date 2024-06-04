@@ -180,7 +180,7 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#best-practice-audit-monks-and-harper-2023" id="toc-best-practice-audit-monks-and-harper-2023" class="nav-link active" data-scroll-target="#best-practice-audit-monks-and-harper-2023">Best practice audit (Monks and Harper 2023)</a></li>
+  <li><a href="#best-practice-audit" id="toc-best-practice-audit" class="nav-link active" data-scroll-target="#best-practice-audit">Best practice audit</a></li>
   <li><a href="#stars" id="toc-stars" class="nav-link" data-scroll-target="#stars">STARS</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/artefacts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -207,95 +207,128 @@ div.csl-indent {
 </header>
 
 
-<p>This page evaluates the extent to which Monks et al.&nbsp;2016 meets the recommendations for the sharing of code and associated materials.</p>
-<p>First, it copies information from the best practice audit by <span class="citation" data-cites="monks_computer_2023">Monks and Harper (<a href="#ref-monks_computer_2023" role="doc-biblioref">2023</a>)</span>. The items in this audit were based on <mark>ADD CITATIONS</mark>.</p>
-<p>Secondly, it assesses whether the article meets recommendations from the recently published STARS framework by <span class="citation" data-cites="monks_towards_2024">Monks, Harper, and Mustafee (<a href="#ref-monks_towards_2024" role="doc-biblioref">2024</a>)</span>.</p>
-<section id="best-practice-audit-monks-and-harper-2023" class="level2">
-<h2 class="anchored" data-anchor-id="best-practice-audit-monks-and-harper-2023">Best practice audit (Monks and Harper 2023)</h2>
+<p>This page evaluates the extent to which the original study meets the recommendations for the sharing of code and associated materials. We compare against two standards:</p>
+<ul>
+<li><strong>Best practice audit</strong> - requirements from the best practice audit by Monks et al.&nbsp;2023 <span class="citation" data-cites="monks_computer_2023">Monks and Harper (<a href="#ref-monks_computer_2023" role="doc-biblioref">2023</a>)</span>. The items in this audit were based on the Turing Way <span class="citation" data-cites="the_turing_way_community_turing_2022">Community (<a href="#ref-the_turing_way_community_turing_2022" role="doc-biblioref">2022</a>)</span>, Taylor et al.&nbsp;2017 <span class="citation" data-cites="taylor_open_2017">Taylor et al. (<a href="#ref-taylor_open_2017" role="doc-biblioref">2017</a>)</span>, and the Open Modelling Foundation <span class="citation" data-cites="the_open_modeling_foundation_omf_reusability_2024">(OMF) (<a href="#ref-the_open_modeling_foundation_omf_reusability_2024" role="doc-biblioref">2024</a>)</span>.</li>
+<li><strong>STARS</strong> - recommendations from the recently published STARS framework by Monks et al.&nbsp;2024. <span class="citation" data-cites="monks_towards_2024">Monks, Harper, and Mustafee (<a href="#ref-monks_towards_2024" role="doc-biblioref">2024</a>)</span>.</li>
+</ul>
+<section id="best-practice-audit" class="level2">
+<h2 class="anchored" data-anchor-id="best-practice-audit">Best practice audit</h2>
+<p>Of the <strong>11</strong> items in this audit:</p>
+<ul>
+<li><strong>10</strong> were met fully (✅)</li>
+<li><strong>1</strong> was not met (❌)</li>
+</ul>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Item</th>
 <th>Description</th>
-<th>Met by study?</th>
+<th style="text-align: center;">Met by study?</th>
+<th>Evidence/location</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Digital Object Identifier</td>
 <td>Does the model have a DOI and promise of persistence? Can it be cited?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td><a href="https://zenodo.org/doi/10.5281/zenodo.3760625">10.5281/zenodo.3760625</a></td>
 </tr>
 <tr class="even">
-<td>Open Researcher and Contributor ID</td>
+<td>Open Researcher and Contributor ID (ORCID)</td>
 <td>Is the model linked to one or more of the authors via an ORCID?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Monks linked to ORCID on Zenodo and in journal article</td>
 </tr>
 <tr class="odd">
-<td>Licence</td>
+<td>License</td>
 <td>Does the repository have a recognised open license to control the use of code, liabilty and credit?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>MIT license</td>
 </tr>
 <tr class="even">
-<td>Readme file</td>
-<td>Is there an obvious file that provides an overview of the repository/model and it purpose?</td>
-<td></td>
+<td>Model overview</td>
+<td>Is there an obvious file that provides an overview of the repository/model and it purpose (e.g.&nbsp;in README file)?</td>
+<td style="text-align: center;">✅ Fully</td>
+<td><code>README.md</code> present but doesn’t overview repository/model or purpose, although does like to <code>Capacity_Model_Template.ipynb</code> which does overview the model</td>
 </tr>
 <tr class="odd">
 <td>Link to published paper</td>
 <td>Do models shared externally from journal articles contain a link to the published article?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Zenodo citations section includes link to the article</td>
 </tr>
 <tr class="even">
 <td>Steps to run code</td>
 <td>Does the readme file or similar describe the steps required to execute the simulation model?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Provided in <code>Capacity_Model_Template.ipynb</code></td>
 </tr>
 <tr class="odd">
 <td>Formal dependency management</td>
 <td>Has a formal tool, e.g.&nbsp;renv, conda, or poetry been used to manage software dependencies for the simulation model?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Conda - <code>environment.yaml</code></td>
 </tr>
 <tr class="even">
 <td>Informal dependency management</td>
 <td>Has an informal list or description of software, or OS dependencies been provided?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Within <code>environment.yaml</code></td>
 </tr>
 <tr class="odd">
 <td>Code Testing</td>
 <td>Is there any evidence of tests that have been applied to the code to check that it functions correctly?</td>
-<td></td>
+<td style="text-align: center;">❌ Not met</td>
+<td>No tests found</td>
 </tr>
 <tr class="even">
 <td>Local execution</td>
 <td>Can the simulation model and associated files be downloaded and in theory executed on a local machine</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>I have successfully executed</td>
 </tr>
 <tr class="odd">
 <td>Remote execution</td>
 <td>Can the simulation model be executed online using free or commercial infrastructure?</td>
-<td></td>
+<td style="text-align: center;">✅ Fully</td>
+<td>The archived code on Zenodo has not been set up to allow this but the <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">production code on GitLab</a> was set up to allow this (on 23rd April 2020, prior to date journal received article)</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="stars" class="level2">
 <h2 class="anchored" data-anchor-id="stars">STARS</h2>
+<p>Of the <strong>7</strong> essential STARS components:</p>
+<ul>
+<li><strong>5</strong> were met fully (✅)</li>
+<li><strong>1</strong> was met partially (🟡)</li>
+<li><strong>1</strong> was not met (❌)</li>
+</ul>
+<p>Of the <strong>5</strong> optional STARS components:</p>
+<ul>
+<li><strong>1</strong> was met fully (✅)</li>
+<li><strong>4</strong> were not met (❌)</li>
+</ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Component</th>
-<th>Met by study?</th>
+<th>Description</th>
+<th style="text-align: center;">Met by study?</th>
 <th>Evidence/location</th>
 </tr>
 </thead>
@@ -303,72 +336,92 @@ div.csl-indent {
 <tr class="odd">
 <td><strong>Essential components</strong></td>
 <td></td>
+<td style="text-align: center;"></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Open license</td>
-<td>✅ Fully</td>
-<td></td>
+<td>Free and open-source software (FOSS) license (e.g.&nbsp;MIT, GNU Public License (GPL))</td>
+<td style="text-align: center;">✅ Fully</td>
+<td>MIT license</td>
 </tr>
 <tr class="odd">
 <td>Dependency management</td>
-<td>🟡 Partially</td>
-<td></td>
+<td>Specify software libraries, version numbers and sources (e.g.&nbsp;dependency management tools like pip virtual environment, conda environment, poetry)</td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Conda - <code>environment.yaml</code></td>
 </tr>
 <tr class="even">
-<td>Model created using free and open-source software (FOSS)</td>
-<td>❌ Not met</td>
-<td></td>
+<td>FOSS model</td>
+<td>Coded in FOSS language (e.g.&nbsp;R, Julia, Python)</td>
+<td style="text-align: center;">✅ Fully</td>
+<td>Python</td>
 </tr>
 <tr class="odd">
 <td>Minimum documentation</td>
-<td>❔ Unclear</td>
+<td>Minimal instructions (e.g.&nbsp;in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiements</td>
+<td style="text-align: center;"></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Research artefact metadata: Open Researcher and Contributor ID (ORCID) and citation information</td>
-<td></td>
-<td></td>
+<td>ORCID</td>
+<td>ORCID for each study author</td>
+<td style="text-align: center;">🟡 Partially</td>
+<td>Only provided for Monks</td>
 </tr>
 <tr class="odd">
+<td>Citation information</td>
+<td>Instructions on how to cite the research artefact (e.g.&nbsp;CITATION.cff file)</td>
+<td style="text-align: center;">❌ Not met</td>
+<td>Not provided</td>
+</tr>
+<tr class="even">
 <td>Remote code repository</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Open science archive</td>
-<td></td>
-<td></td>
+<td>Code available in a remote code repository (e.g.&nbsp;GitHub, GitLab, BitBucket)</td>
+<td style="text-align: center;">✅ Fully</td>
+<td><a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">GitLab</a></td>
 </tr>
 <tr class="odd">
+<td>Open science archive</td>
+<td>Code stored in an open science archive with FORCE11 compliant citation and guaranteed persistance of digital artefacts (e.g.&nbsp;Figshare, Zenodo, the Open Science Framework (OSF), and the Computational Modeling in the Social and Ecological Sciences Network (CoMSES Net))</td>
+<td style="text-align: center;">✅ Fully</td>
+<td><a href="https://zenodo.org/doi/10.5281/zenodo.3760625">Zenodo</a></td>
+</tr>
+<tr class="even">
 <td><strong>Optional components</strong></td>
 <td></td>
+<td style="text-align: center;"></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Enhanced documentation</td>
-<td></td>
-<td></td>
+<td>Open and high quality documentation on how the model is implemented and works (e.g.&nbsp;via notebooks and markdown files, brought together using software like Quarto and Jupyter Book). Suggested content includes:<br>• Plain english summary of project and model<br>• Clarifying license<br>• Citation instructions<br>• Contribution instructions<br>• Model installation instructions<br>• Structured code walk through of model<br>• Documentation of modelling cycle using TRACE<br>• Annotated simulation reporting guidelines<br>• Clear description of model validation including its intended purpose</td>
+<td style="text-align: center;">❌ Not met</td>
+<td><code>README.md</code> has simple installation instructions, whilst <code>Capacity_Model_Template.ipynb</code> has plain english summary of model and simple walk through. However, many of these suggestions are not captured, and documentation is felt to just meet the criteria of “minimum documentation”</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Documentation hosting</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Online coding environment</td>
-<td></td>
-<td></td>
+<td>Host documentation (e.g.&nbsp;with GitHub pages, GitLab pages, BitBucket Cloud, Quarto Pub)</td>
+<td style="text-align: center;">❌ Not met</td>
+<td>Not hosted.</td>
 </tr>
 <tr class="odd">
-<td>Model interface</td>
-<td></td>
-<td></td>
+<td>Online coding environment</td>
+<td>Provide an online environment where users can run and change code (e.g.&nbsp;BinderHub, Google Colaboratory, Deepnote)</td>
+<td style="text-align: center;">✅ Fully</td>
+<td>The archived code on Zenodo has not been set up to allow this but the <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">production code on GitLab</a> was set up to allow this (on 23rd April 2020, prior to date journal received article)</td>
 </tr>
 <tr class="even">
+<td>Model interface</td>
+<td>Provide web application interface to the model so it is accessible to less technical simulation users</td>
+<td style="text-align: center;">❌ Not met</td>
+<td>-</td>
+</tr>
+<tr class="odd">
 <td>Web app hosting</td>
-<td></td>
-<td></td>
+<td>Host web app online (e.g.&nbsp;Streamlit Community Cloud, ShinyApps hosting)</td>
+<td style="text-align: center;">❌ Not met</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -378,11 +431,20 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-the_turing_way_community_turing_2022" class="csl-entry" role="listitem">
+Community, The Turing Way. 2022. <span>“The <span>Turing</span> <span>Way</span>: <span>A</span> Handbook for Reproducible, Ethical and Collaborative Research (1.0.2).”</span> <em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.7625728">https://doi.org/10.5281/zenodo.7625728</a>.
+</div>
 <div id="ref-monks_computer_2023" class="csl-entry" role="listitem">
 Monks, Thomas, and Alison Harper. 2023. <span>“Computer Model and Code Sharing Practices in Healthcare Discrete-Event Simulation: A Systematic Scoping Review.”</span> <em>Journal of Simulation</em> 0 (0): 1–16. <a href="https://doi.org/10.1080/17477778.2023.2260772">https://doi.org/10.1080/17477778.2023.2260772</a>.
 </div>
 <div id="ref-monks_towards_2024" class="csl-entry" role="listitem">
 Monks, Thomas, Alison Harper, and Navonil Mustafee. 2024. <span>“Towards Sharing Tools and Artefacts for Reusable Simulations in Healthcare.”</span> <em>Journal of Simulation</em> 0 (0): 1–20. <a href="https://doi.org/10.1080/17477778.2024.2347882">https://doi.org/10.1080/17477778.2024.2347882</a>.
+</div>
+<div id="ref-the_open_modeling_foundation_omf_reusability_2024" class="csl-entry" role="listitem">
+(OMF), The Open Modeling Foundation. 2024. <span>“Reusability <span>Standards</span>.”</span> {OMF}. <a href="https://www.openmodelingfoundation.org/standards/reusability/">https://www.openmodelingfoundation.org/standards/reusability/</a>.
+</div>
+<div id="ref-taylor_open_2017" class="csl-entry" role="listitem">
+Taylor, Simon J. E., Anastasia Anagnostou, Adedeji Fabiyi, Christine Currie, Thomas Monks, Roberto Barbera, and Bruce Becker. 2017. <span>“Open Science: <span>Approaches</span> and Benefits for Modeling &amp; Simulation.”</span> In <em>2017 <span>Winter</span> <span>Simulation</span> <span>Conference</span> (<span>WSC</span>)</em>, 535–49. <a href="https://doi.org/10.1109/WSC.2017.8247813">https://doi.org/10.1109/WSC.2017.8247813</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

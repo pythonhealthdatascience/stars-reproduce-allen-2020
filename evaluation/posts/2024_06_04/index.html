@@ -22,10 +22,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,6 +105,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -196,7 +233,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
   <li><a href="#badges" id="toc-badges" class="nav-link" data-scroll-target="#badges">Badges</a></li>
+  <li><a href="#sharing-research-artefacts" id="toc-sharing-research-artefacts" class="nav-link" data-scroll-target="#sharing-research-artefacts">Sharing research artefacts</a></li>
   </ul></li>
+  <li><a href="#reporting-guidelines" id="toc-reporting-guidelines" class="nav-link" data-scroll-target="#reporting-guidelines">Reporting guidelines</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -218,14 +257,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Evaluated study against badges.</p>
+<p>Evaluated study against badge criteria and recommendations for sharing of research artefacts.</p>
 </div>
 </div>
 <section id="work-log" class="level2">
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
 <section id="badges" class="level3">
 <h3 class="anchored" data-anchor-id="badges">Badges</h3>
-<p>Evaluating artefacts as in https://zenodo.org/records/3760626 (as has been copied into <code>original_study/</code>).</p>
+<p>Evaluating artefacts as in <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a> (as has been copied into <code>original_study/</code>).</p>
 <p>Felt uncertain around these criteria:</p>
 <ul>
 <li><code>documentation_sufficient</code> - it was missing one package from environment - but it had an environment file, package versions, and a README explaining how to set up environment and referring to a notebook which runs the code that produces the output - hence, despite missing one, I felt it met this criteria</li>
@@ -247,6 +286,182 @@ Note
 <li><code>documentation_readme</code> - I wouldn’t say it explicitly meets this criteria, although it was simple enough that it could do it anyway</li>
 </ul>
 </section>
+<section id="sharing-research-artefacts" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-research-artefacts">Sharing research artefacts</h3>
+<p>Evaluated against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).</p>
+<p>Uncertainities:</p>
+<ul>
+<li>Readme for audit - does it matter if that information is in the readme file? can they pass if readme links to template which overviews it? I think so? Although Table 1 in Monks and Harper 2023 specifies item as Readme, the description is just whether there is an obvious file overviewing purpose</li>
+<li>Citation information - not provided for this study, although Zenodo does provide it, but as code materials themselves don’t contain it, feel it fails this</li>
+<li>Remote code repository - STARS talks about why you should use them (e.g.&nbsp;version control) - but here, evaluating, someone might have done a single upload and not used properly - but purpose of STARS is not to evaluate if something is right or wrong upload so doesn’t specify further - in this case, assuming simplest route of if it is on something like GitHub then it meets criteria</li>
+<li>Enhanced documentation - lots of suggestions of what to do for this</li>
+<li>Remote execution/Online coding environment - Zenodo doesn’t but GitLab does. I was largely working with Zenodo as that was the archived version, but in this case, did say met criteria via GitLab. Importance of which code is chosen when there are two versions. I didn’t initially think it met criteria until checked the GitLab too. Have recommended both are referred to. But do they meet criteria if changes are made to repository after publication? After submission? For example, if we asked them to add a license.</li>
+</ul>
+<p>Compared my decisions for the best practice audit against those made in Monks and Harper. Don’t think I would normally plan to do this. Their GitHub is <a href="https://github.com/TomMonks/des_sharing_lit_review">TomMonks/des_sharing_lit_review</a>, which provides the file <code>share_sim_data_extract.zip</code>. I used the provided code to clean this and saved it as <code>share_sim_data_extract_clean.csv</code>, which can then view here:</p>
+<div id="35207b43" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import review results</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>review <span class="op">=</span> pd.read_csv(<span class="st">'share_sim_data_extract_clean.csv'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the results for Allen et al. 2020</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>review[review[<span class="st">'key'</span>] <span class="op">==</span> <span class="st">'R4ZLYWPP'</span>].T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">388</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Unnamed: 0</td>
+<td>388</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">key</td>
+<td>R4ZLYWPP</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">item_type</td>
+<td>journalArticle</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pub_yr</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">author</td>
+<td>Allen, M.; Bhanji, A.; Willemsen, J.; Dudfield...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">title</td>
+<td>A simulation modelling toolkit for organising ...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pub_title</td>
+<td>PLoS ONE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">doi</td>
+<td>10.1371/journal.pone.0237628</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">url</td>
+<td>https://www.scopus.com/inward/record.uri?eid=2...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">study_included</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">model_code_available</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">reporting_guidelines_mention</td>
+<td>STRESS</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">covid</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sim_software</td>
+<td>SimPy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">foss_sim</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">model_archive</td>
+<td>Zenodo</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">model_repo</td>
+<td>GitLab</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">model_journal_supp</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">model_journal_supp.1</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">model_personal_org</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">model_platform</td>
+<td>BinderHub</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">available_on_req</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">excluded_reason</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Consistent:</p>
+<ul>
+<li>DOI</li>
+<li>URL</li>
+<li>BinderHub</li>
+</ul>
+<p>Differences:</p>
+<ul>
+<li>Review doesn’t mention Orcid</li>
+<li>Review doesn’t mention license</li>
+<li>Review doesn’t mention README</li>
+<li>Review doesn’t mention steps to run code</li>
+<li>Review doesn’t mention formal or informal dependency management</li>
+<li>Review doesn’t mention code testing</li>
+<li>Review doesn’t mention local execution</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Keeping code repository and archive in sync and up-to-date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluation was made harder as there were slight differences between the archived code (Zenodo) and the production code (GitLab). You might not always want to keep them in sync. But it would be good to keep them in sync up until submission.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="reporting-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-guidelines">Reporting guidelines</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Including checklist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tom mentioned how this study they provided the filled out STRESS checklist to the journal, but it wasn’t published alongside the article, but that would have been beneficial. This is a good suggestion to think about.</p>
+</div>
+</div>
 </section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
@@ -254,6 +469,9 @@ Note
 <p>Protocol:</p>
 <ul>
 <li>Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team</li>
+<li>Suggest to detail those uncertainties within logbook</li>
+<li>Any advice can give following uncertainties raised above</li>
+<li>If there are multiple code locations (e.g.&nbsp;code repository and archive), then refer to both when assessing against criteria</li>
 </ul>
 
 
