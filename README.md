@@ -2,6 +2,8 @@
 
 <!-- Status badge indicating whether CITATION file is still valid via GitHub action-->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
+<!-- Badge to show license for repository -->
+![GitHub License](https://img.shields.io/github/license/pythonhealthdatascience/stars-reproduce-allen-2020)
 
 ⚠️ ***This is a test-run for STARS work package 1 using a paper that Tom Monks was involved with. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
