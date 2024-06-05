@@ -1,0 +1,72 @@
+---
+title: "Day 6"
+author: "Amy Heather"
+date: "2024-06-05"
+categories: [guidelines]
+---
+
+::: {.callout-note}
+
+Evaluation against reporting guidelines - finished STRESS-DES, and did for ISPOR-SDM.
+
+:::
+
+## Work log
+
+### Evaluation against reporting guidelines
+
+Uncertainties for STRESS-DES:
+
+* Software or programming language - "Where frameworks and libraries have been used provide all details including version numbers." - not in the report, but is in the linked code. Passed them anyway, as wouldn't think you would put this information in the report?
+* Model execution - "State the event processing mechanism used e.g. three phase, event, activity, process interaction." - not sure what this is...
+    * `Simulation - The Practice of Model Development and Use` (Stewart Robinson):
+        * There are a few ways to model progress of time - one is time-slicing method, and other is discrete-event simulation (three phase method). "A number of machisms have been proposed for carrying out discrete-event simulation, among them are the **event-based, activity-based, process-based and three-phase approaches**. For a detailed discussion on these see Pidd (1998)"
+        * **Three phase** - Events are classified as B (bound or booked) or C (conditional). B events are state changes scheduled at a point in time (often relates to arrivals or finishing an activity). C events are state changes that depend on cidions of a model (e.g. needing to wait until operator is free, often relat to start of an activity)
+    * [Intro to DES](https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html):
+        * **Activity scanning** - "Basic building block is the activity. Model program's code segments consist of sequences of activities (operations) waiting to be executed. An activity sequence's conditions must be satisfied before it is executed. Simulation executive moves from event to event executing those activity sequences whose conditions are satisfied."
+        * **Event scheduling** - "Basic building block is the event. Model program's code segments consist of event routines waiting to be executed. Event routine associated with each event type -- performs required operations for that type. Simulation executive moves from event to event executing the corresponding event routines"
+        * **Process interaction** - "Basic building block is the process. System consists of a set of interacting processes. Model program's code for each process includes the operations that it carries out throughout its lifetime. Event sequence for system consists of merging of event sequences for all processes. Future event list consists of a sequence of event nodes (or notices). Each event node indicates the event time and process to which it belongs. Simulation executive carries out the following tasks: (a) placement of processes at particular points of time in the list (b) removal of processes from the event list (c) activation of the process corresponding to the next event node from the event list (d) rescheduling of processes in the event list. Typically, a process object can be in one of several states: (a) active -- process is currently executing There is only one such process in a system. (b) ready -- process is in event list, waiting for activation at a certain time (c) idle (or blocked) -- process is not in event list, but eligible to be be reactivated by some other entity (e.g., waiting for a passive resource) (d)  terminated -- process has completed its sequence of actions, is not in event list, and cannot be reactivated"
+    * **However, still not really sure what this would be?**
+
+Uncertainties from ISPOR SDM -
+
+* 15 Is the model generalizability issue discussed? - have I been too harsh on this one?
+
+::: {.callout-tip}
+## STRESS
+
+Event processing mechanisms are unfamiliar, and a little hard to google.
+:::
+
+### Comparison of my STRESS-DES against the original study
+
+Tom shared the completed STRESS-DES checklits from the original study, and I compared against my evaluation (bearing in mind that theirs relates to the DES model and the Mone-Carlo vehicle routing model, whilst mine just relates to the former). Amendments:
+
+| Section | Difference between checklists | Change made |
+| - | - | - |
+| 2.4 Algorithms | They included patient allocation to units (unit search strategy) | I have now added this |
+| 2.5.3 Components - resources | They refer to appendices to provide more details on units | I have now added this |
+| 2.5.4 Components - queues | They state this is N/A as there are no queues - I had been uncertain around this, | I think their answer is appropriate (and no need for article to have described queues when there are none) |
+| 2.5.5 - Components - entry/exit points | I had been uncertain on this. They state that this is a fixed population, and that patients exit the dialysis model at mortality, citing Figure 1. | It remains unmet (as I do not feel this is clearly stated in the paper), but I have added their description. |
+| 3.2 - Pre-processing | I had stated as not applicable. They stated that there was processing in generating a travel time matrix from routine and open street map | I have now added this |
+| 4.1 - Initialisation | This was not described in the paper. I had suggested it was terminating, but original study states it is non-terminating. | It remains unmet, but I have added their description. |
+| 5.3 - Model execution | I had been unsure on what the mechanism was. They state that SimPy was used and that this has a Process based simulation worldview. | It remains unmet, but I have added their description. |
+|5.4 - System specification | They mention that replications were run in parallel across multiple CPU cores. | I had not noted this, but as paper mentions using parallelism, have added a note of this. |
+
+<iframe width="100%" height="800" src="original_study_stress_des_checklist.pdf"></iframe>
+
+::: {.callout-tip}
+## STRESS
+
+When reporting multiple models in a paper, the STRESS checklist can easily/accidentally just be applied to one of the models in some instances, and it can make it harder to distinguish what relates to which model. As such, might suggest creating seperate checklists for each model.
+:::
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.
+
+Protocol: 
+
+* If did decide to time reporting checklist time spent, have issue that the second one you do is much faster than the first due to overlap in content.
+* When not provided in article, my assumption might sometimes be wrong - e.g. 4.1 terminating when it was non-terminating - hence, importance here of (a) highlighting that this is my assumption and not stated by paper, and (b) checking those suggestions with other team members if possible.
+* Quite a few differences between mine and the original - is this a concern or not? Always some human error on both sides of things. If wanted to be super rigorous you could have multiple evaluators. However, is that appropriate for this study, given motivations and capacity? Probably not. But would cite it as a limitation.

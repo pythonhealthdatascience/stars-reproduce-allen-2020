@@ -87,7 +87,7 @@ STRESS uncertanties:
 * Experiementation aims - is it applicable? The DES model, as I understand, just tests one scenario - a worst case scenario - so it's not really "scenario based analysis" comparing scenarios - but it does have A scenario and justification for it?
 * Algorithms - is this applicable in this example? Parameters are just from sampling from distributions, or proportions. Assuming its applicable, and that distribing those distributions answers this question?
 * Queues - wasn't certain about this, as I don't really know what order they get allocated to units. but that's not a queue? but it kind of is - in that, at the start of the day, they are waiting to be assigned?
-* Entry/exit points - they are in model on days they need dialysis, and then leave again? unless get unallocated? and then they never return if their state turns to dead? this isn't really spelled out though.
+* Entry/exit points - have said not met as can't find this stated, but also, not sure what the answer is. They are in model on days they need dialysis, and then leave again? unless get unallocated? and then they never return if their state turns to dead?
 
 ::: {.callout-tip}
 ## Including checklist
