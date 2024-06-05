@@ -42,6 +42,87 @@ criteria = {
     'hour': 'Reproduced within approximately one hour (excluding compute time)',
 }
 
+# Evaluation for this study
+eval = pd.Series({
+    'archive': 1,
+    'id': 1,
+    'license': 1,
+    'complete': 1,
+    'documentation_sufficient': 1,
+    'documentation_careful': 0,
+    'relevant': 1,
+    'execute': 1,
+    'structure': 1,
+    'regenerated': 1,
+    'hour': 0,
+    'documentation_readme': 0,
+})
+
+# Get list of criteria met (True/False) overall
+eval_list = list(eval)
+
+# Define function for creating the markdown formatted list of criteria met
+def create_criteria_list(criteria_dict):
+    '''
+    Creates a string which contains a Markdown formatted list with icons to
+    indicate whether each criteria was met
+
+    Parameters:
+    -----------
+    criteria_dict : dict
+        Dictionary where keys are the criteria (variable name) and values are
+        Boolean (True/False of whether this study met the criteria)
+
+    Returns:
+    --------
+    formatted_list : string
+        Markdown formatted list
+    '''
+    callout_icon = {True: '✅',
+                    False: '❌'}
+    # Create list with...
+    formatted_list = ''.join([
+        '* ' +
+        callout_icon[eval[key]] + # Icon based on whether it met criteria
+        ' ' +
+        value + # Full text description of criteria
+        '\n' for key, value in criteria_dict.items()])
+    return(formatted_list)
+
+# Define groups of criteria
+criteria_share_how = ['archive', 'id', 'license']
+criteria_share_what = ['relevant', 'complete']
+criteria_doc_struc = ['structure', 'documentation_sufficient', 'documentation_careful', 'documentation_readme']
+criteria_run = ['execute', 'regenerated', 'hour']
+
+# Create text section
+display(Markdown(f'''
+To assess whether the author's materials met the requirements of each badge, a list of criteria was produced. Between each badge (and between categories of badge), there is often alot of overlap in criteria.
+
+This study met **{sum(eval_list)} of the {len(eval_list)}** unique criteria items. These were as follows:
+
+Criteria related to how artefacts are shared -
+
+{create_criteria_list({k: criteria[k] for k in criteria_share_how})}
+
+Criteria related to what artefacts are shared -
+
+{create_criteria_list({k: criteria[k] for k in criteria_share_what})}
+
+Criteria related to the structure and documentation of the artefacts -
+
+{create_criteria_list({k: criteria[k] for k in criteria_doc_struc})}
+
+Criteria related to running and reproducing results -
+
+{create_criteria_list({k: criteria[k] for k in criteria_run})}
+'''))
+
+```
+
+## Badges
+```{python}
+
 # Full badge names
 badge_names = {
     # Open objects
@@ -80,89 +161,12 @@ badges = {
     'reproduce_psy': ['regenerated', 'hour', 'structure', 'documentation_readme'],
 }
 
-# Evaluation for this study
-eval = pd.Series({
-    'archive': 1,
-    'id': 1,
-    'license': 1,
-    'complete': 1,
-    'documentation_sufficient': 1,
-    'documentation_careful': 0,
-    'relevant': 1,
-    'execute': 1,
-    'structure': 1,
-    'regenerated': 1,
-    'hour': 0,
-    'documentation_readme': 0,
-})
-
 # Identify which badges would be awarded based on criteria
+# Get list of badges met (True/False) overall
 award = {}
 for badge in badges:
     award[badge] = all([eval[key] == 1 for key in badges[badge]])
-
-# Get list of badges met (True/False) overall
 award_list = list(award.values())
-
-# Define function for creating the markdown formatted list of criteria met
-def create_criteria_list(criteria_dict):
-    '''
-    Creates a string which contains a Markdown formatted list with icons to
-    indicate whether each criteria was met
-
-    Parameters:
-    -----------
-    criteria_dict : dict
-        Dictionary where keys are the criteria (variable name) and values are
-        Boolean (True/False of whether this study met the criteria)
-
-    Returns:
-    --------
-    formatted_list : string
-        Markdown formatted list
-    '''
-    callout_icon = {True: '✅',
-                    False: '❌'}
-    # Create list with...
-    formatted_list = ''.join([
-        '* ' +
-        callout_icon[eval[key]] + # Icon based on whether it met criteria
-        ' ' +
-        value + # Full text description of criteria
-        '\n' for key, value in criteria_dict.items()])
-    return(formatted_list)
-
-# Define groups of criteria
-criteria_share_how = ['archive', 'id', 'license']
-criteria_share_what = ['relevant', 'complete']
-criteria_doc_struc = ['structure', 'documentation_sufficient', 'documentation_careful', 'documentation_readme']
-criteria_run = ['execute', 'regenerated', 'hour']
-
-# Create text section
-display(Markdown(f'''
-To assess whether the author's materials met the requirements of each badge, a list of criteria was produced. Between each badge (and between categories of badge), there is often alot of overlap in criteria. This study met **{sum(award_list)} of the {len(award_list)}** unique criteria items. These were as follows:
-
-Criteria related to how artefacts are shared -
-
-{create_criteria_list({k: criteria[k] for k in criteria_share_how})}
-
-Criteria related to what artefacts are shared -
-
-{create_criteria_list({k: criteria[k] for k in criteria_share_what})}
-
-Criteria related to the structure and documentation of the artefacts -
-
-{create_criteria_list({k: criteria[k] for k in criteria_doc_struc})}
-
-Criteria related to running and reproducing results -
-
-{create_criteria_list({k: criteria[k] for k in criteria_run})}
-'''))
-
-```
-
-## Badges
-```{python}
 
 # Write introduction
 # Get list of badges met (True/False) by category
