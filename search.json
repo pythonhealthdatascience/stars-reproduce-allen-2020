@@ -200,7 +200,21 @@
     "href": "CHANGELOG.html",
     "title": "Changelog",
     "section": "",
-    "text": "Changelog\nAll notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard."
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nRelease date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study.\n\n\n\n\n\nRelease date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.2.0",
+    "href": "CHANGELOG.html#v0.2.0",
+    "title": "Changelog",
+    "section": "",
+    "text": "Release date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study."
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.1.0",
+    "href": "CHANGELOG.html#v0.1.0",
+    "title": "Changelog",
+    "section": "",
+    "text": "Release date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
   },
   {
     "objectID": "index.html",
