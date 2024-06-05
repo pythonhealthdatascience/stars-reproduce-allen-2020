@@ -1,8 +1,9 @@
 # STARS: Computational reproducibility of Allen et al. 2020
 
-<!-- Status badge indicating whether CITATION file is still valid via GitHub action-->
+<!-- Badges...
+* Status badge indicating whether CITATION file is still valid via GitHub action
+* License badge, so the license is display within the README -->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
-<!-- Badge to show license for repository -->
 ![GitHub License](https://img.shields.io/github/license/pythonhealthdatascience/stars-reproduce-allen-2020)
 
 ⚠️ ***This is a test-run for STARS work package 1 using a paper that Tom Monks was involved with. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
@@ -45,7 +46,8 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 ├── _quarto.yml
 ├── citation_apalike.apa
 ├── citation_bibtex.bib
-└── index.qmd
+├── index.qmd
+└── requirements.txt
 ```
 
 * `.github/workflows/` - GitHub actions
@@ -62,6 +64,7 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 * `citation_apalike.bib` - APA citation generated from CITATION.cff
 * `citation_bibtex.bib` - Bibtex citation generated from CITATION.cff
 * `index.qmd` - Home page for the Quarto website
+* `requirements.txt` - Environment for creation of Quarto site (used by `.github/workflows/quarto_publish.yaml`)
 
 ## Citation
 
