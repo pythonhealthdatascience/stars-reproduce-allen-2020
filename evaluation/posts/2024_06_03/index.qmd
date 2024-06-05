@@ -143,17 +143,6 @@ calculate_times(used_to_date, times)
 
 ✅ = Made the change.
 
-💬 = Noted to discuss with team.
-
 Protocol:
 
-* 💬 Reflection: Was the time invested into trying different seeds worth it?
 * ✅ Reproduction complete not necessarily when figures exactly match, but when you think they are quite similar and you think differences are due to things like seeds/randomness, and model stability
-
-Research compendium:
-
-* Testing - could test whether results are stable with the chosen number of replications? Although that might be too much about validity of results, than about reproducibility of results?
-
-Template:
-
-* In template repository, include an example blog post including various stages from the protocol (e.g. working through set-up stages and so on). Add notes like "include links for uploaded materials here" and so on.

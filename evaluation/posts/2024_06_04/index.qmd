@@ -73,11 +73,11 @@ Also, it has proven quite time consuming to evaluate against the checklist - hen
 
 ✅ = Made the change.
 
+💬 = Noted to discuss with team.
+
 Protocol: 
 
-* Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team
-* Suggest to detail those uncertainties within logbook
-* Any advice can give following uncertainties raised above
-* If there are multiple code locations (e.g. code repository and archive), then refer to both when assessing against criteria
-* Recommended sources for evaluation (e.g. reporting guidelines is based on article, badges and sharing of research artefacts are based on code)
-* Given how long it is taking, would it be relevant to time these steps - in particular with the ambition of timing the evaluation against reporting guidelines - to illustrate how long it can take to find this information? And hence, provide rationale for the benefit of including it with the paper, clearly spelled out? Not much to learn from timing the badges or sharing artefacts evaluation though.
+* ✅ Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team. Suggest to detail those uncertainties within logbook
+* ✅ If there are multiple code locations (e.g. code repository and archive), then refer to both when assessing against criteria
+* ✅ Recommended sources for evaluation (e.g. reporting guidelines is based on article, badges and sharing of research artefacts are based on code)
+* 💬 Given how long it is taking, would it be relevant to time these steps?

@@ -100,7 +100,6 @@ Different result:
 
 Protocol: 
 
-* If did decide to time reporting checklist time spent, have issue that the second one you do is much faster than the first due to overlap in content.
-* When not provided in article, my assumption might sometimes be wrong - e.g. 4.1 terminating when it was non-terminating - hence, importance here of (a) highlighting that this is my assumption and not stated by paper, and (b) checking those suggestions with other team members if possible.
-* Quite a few differences between mine and the original - is this a concern or not? Always some human error on both sides of things. If wanted to be super rigorous you could have multiple evaluators. However, is that appropriate for this study, given motivations and capacity? Probably not. But would cite it as a limitation.
-* All the studies should have been audited by Monks and Harper, so could add this comparison as a standard step to sense-check?
+* ✅ When not provided in article, my assumption might sometimes be wrong - e.g. 4.1 terminating when it was non-terminating - hence, importance here of (a) highlighting that this is my assumption and not stated by paper, and (b) checking those suggestions with other team members if possible.
+* ✅ Quite a few differences between mine and the original - is this a concern or not? Always some human error on both sides of things. If wanted to be super rigorous you could have multiple evaluators. However, is that appropriate for this study, given motivations and capacity? Probably not. But would cite it as a limitation.
+* ✅ All the studies should have been audited by Monks and Harper, so could add this comparison as a standard step to sense-check?

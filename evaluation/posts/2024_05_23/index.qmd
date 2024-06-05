@@ -157,10 +157,6 @@ Found that:
 
 This was then successful, and built quickly (within 30s). A quick glance over the environment confirmed that it looked to have the correct python version and packages.
 
-::: {.callout-tip}
-This was fixed in a later version of the repository, but I used an earlier one that matched up with the publication date. Tom suggested learning here for use of a CHANGELOG, to clearly show changes in future versions.
-:::
-
 ### 13.26-13.52 Reproduction
 
 * Copied sim/ and sim_replicate.py into reproduction/.
@@ -339,6 +335,8 @@ calculate_times(used_to_date, times)
 
 ✅ = Made the change.
 
+💬 = Noted to discuss with team.
+
 Protocol: 
 
 * ✅ Change from requiring to make notes about code and data, to just suggesting this. Focus should be on familiarisation rather than record keeping. These notes should just be within the logbook.
@@ -362,15 +360,11 @@ Change section of reproducing items to:
 * ✅ Change figure reproduction success to be less about numbers (as not extracting those), and just about comparison by eye
 * ✅ For all assessment of reproduction success, recommend that doesn't require perfect match to state that it is successfully reproduced, but instead should be belief of researcher that the differences could likely be down to randomness (if not controlled).
 
-Research compendium:
+Suggestions to consider for research compendium stage:
 
-* Require that notebooks are used to produce items in the scope, since this is really handy for spotting which parts of the code create figures from the article.
-* PEP8 of code (?)
-* Commenting/docstrings (if not already) in code (?)
-* Data not all stored in one place, mixing scripts and data
-* README stating what folders mean (e.g. vrp, took me a little while to realise this stood for vehicle routing problem)
-* Locations of parameters for simulation and finding them - convention is storing data seperately, but can be a little harder to spot where those parameters are
-* Including an IDE within the dependencies (Spyder) created an issue, and also, am using own IDE. Or is that similar to when people require Jupyterlab?
-* For reproducing stuff, it's helpful to know how long code takes to run?
-* Removing unused packages
-* Testing, focussed on being able to get same results from models with particular runs
+* 💬 Improve README (e.g. repository overview - in this example, it took me a while to realise that "vrp" was vehicle routing problem)
+* 💬 Appropriate seperation of data and code (as per convention for simulation - but ideal if parameters are stored seperately as easier to spot)
+* 💬 Improvements to code and clarity (e.g. PEP-8, comments, docstrings)
+* 💬 Include description of run time for given examples
+* 💬 Remove unused packages
+* 💬 Add testing, focussed on being able to get same results from models with particular runs
