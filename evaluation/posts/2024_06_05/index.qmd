@@ -61,6 +61,39 @@ Tom shared the completed STRESS-DES checklits from the original study, and I com
 When reporting multiple models in a paper, the STRESS checklist can easily/accidentally just be applied to one of the models in some instances, and it can make it harder to distinguish what relates to which model. As such, might suggest creating seperate checklists for each model.
 :::
 
+### Comparing best practice audit results with Monks and Harper
+
+Compared my decisions for the best practice audit against those made in Monks and Harper.
+
+Their GitHub is [TomMonks/des_sharing_lit_review](https://github.com/TomMonks/des_sharing_lit_review), which provides the file `bp_audit.zip`. I used the provided code to clean this and saved it as `bp_audit_clean.csv`, which can then view here:
+
+```{python}
+import pandas as pd
+
+# Import review results
+review = pd.read_csv('bp_audit_clean.csv')
+
+# View the results for Allen et al. 2020
+review[review['key'] == 'R4ZLYWPP'].T
+```
+
+Same result:
+
+* DOI
+* ORCID
+* License
+* Model overview
+* Steps to run code
+* Formal dependency management
+* Local execution
+* Remote execution
+
+Different result:
+
+* Link to published paper (I said yes as its within Zenodo, but they said no) **ask tom whether he think that is ok, or whether he thinks it needs to be within the files themselves?**
+* Informal dependency management (they failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not)
+* Code testing (they said yes, I said no) **ask tom what they felt was evidence of testing?**
+
 ## Suggested changes for protocol/template
 
 ✅ = Made the change.
@@ -70,3 +103,4 @@ Protocol:
 * If did decide to time reporting checklist time spent, have issue that the second one you do is much faster than the first due to overlap in content.
 * When not provided in article, my assumption might sometimes be wrong - e.g. 4.1 terminating when it was non-terminating - hence, importance here of (a) highlighting that this is my assumption and not stated by paper, and (b) checking those suggestions with other team members if possible.
 * Quite a few differences between mine and the original - is this a concern or not? Always some human error on both sides of things. If wanted to be super rigorous you could have multiple evaluators. However, is that appropriate for this study, given motivations and capacity? Probably not. But would cite it as a limitation.
+* All the studies should have been audited by Monks and Harper, so could add this comparison as a standard step to sense-check?

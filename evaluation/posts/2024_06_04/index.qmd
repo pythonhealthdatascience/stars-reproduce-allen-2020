@@ -43,34 +43,6 @@ Uncertainities:
 * Enhanced documentation - lots of suggestions of what to do for this
 * Remote execution/Online coding environment - Zenodo doesn't but GitLab does. I was largely working with Zenodo as that was the archived version, but in this case, did say met criteria via GitLab. Importance of which code is chosen when there are two versions. I didn't initially think it met criteria until checked the GitLab too. Have recommended both are referred to. But do they meet criteria if changes are made to repository after publication? After submission? For example, if we asked them to add a license.
 
-Compared my decisions for the best practice audit against those made in Monks and Harper. Don't think I would normally plan to do this. Their GitHub is [TomMonks/des_sharing_lit_review](https://github.com/TomMonks/des_sharing_lit_review), which provides the file `share_sim_data_extract.zip`. I used the provided code to clean this and saved it as `share_sim_data_extract_clean.csv`, which can then view here:
-
-```{python}
-import pandas as pd
-
-# Import review results
-review = pd.read_csv('share_sim_data_extract_clean.csv')
-
-# View the results for Allen et al. 2020
-review[review['key'] == 'R4ZLYWPP'].T
-```
-
-Consistent:
-
-* DOI
-* URL
-* BinderHub
-
-Differences:
-
-* Review doesn't mention Orcid
-* Review doesn't mention license
-* Review doesn't mention README
-* Review doesn't mention steps to run code
-* Review doesn't mention formal or informal dependency management
-* Review doesn't mention code testing
-* Review doesn't mention local execution
-
 ::: {.callout-tip}
 ## Keeping code repository and archive in sync and up-to-date
 
