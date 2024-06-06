@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -196,6 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#criteria" id="toc-criteria" class="nav-link active" data-scroll-target="#criteria">Criteria</a></li>
   <li><a href="#badges" id="toc-badges" class="nav-link" data-scroll-target="#badges">Badges</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/badges.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -221,19 +242,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!--
-Template for evaluation of journal article against criteria of various reproducibility badges.
-
-To use this template:
-1. For each criteria in the Python cell, add a 0 if not met and 1 if it is met.
-2. Run the script (i.e. preview the Quarto book) - you will see that the code outputs a formatted list of criteria met, as well as the badges met.
-
-Although this script uses Python, it is applicable regardless of the language used by the study you are evaluating.
--->
 <p>This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.</p>
 <section id="criteria" class="level2">
 <h2 class="anchored" data-anchor-id="criteria">Criteria</h2>
-<div id="6f489861" class="cell" data-execution_count="1">
+<div id="e3d64a26" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
@@ -365,7 +377,7 @@ Although this script uses Python, it is applicable regardless of the language us
 </section>
 <section id="badges" class="level2">
 <h2 class="anchored" data-anchor-id="badges">Badges</h2>
-<div id="00e52b43" class="cell" data-execution_count="2">
+<div id="c8b20a84" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Full badge names</span></span>
@@ -784,11 +796,61 @@ Although this script uses Python, it is applicable regardless of the language us
 </div>
 </div>
 </div>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p><strong>National Information Standards Organisation (NISO)</strong> (<span class="citation" data-cites="niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021">NISO Reproducibility Badging and Definitions Working Group (<a href="#ref-niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021" role="doc-biblioref">2021</a>)</span>)</p>
+<ul>
+<li>“Open Research Objects (ORO)”</li>
+<li>“Open Research Objects - All (ORO-A)”</li>
+<li>“Results Reproduced (ROR-R)”</li>
+</ul>
+<p><strong>Association for Computing Machinery (ACM)</strong> (<span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">Association for Computing Machinery (ACM) (<a href="#ref-association_for_computing_machinery_acm_artifact_2020" role="doc-biblioref">2020</a>)</span>)</p>
+<ul>
+<li>“Artifacts Available”</li>
+<li>“Artifacts Evaluated - Functional”</li>
+<li>“Artifacts Evaluated - Resuable”</li>
+<li>“Results Reproduced”</li>
+</ul>
+<p><strong>Center for Open Science (COS)</strong> (<span class="citation" data-cites="blohowiak_badges_2023">Blohowiak et al. (<a href="#ref-blohowiak_badges_2023" role="doc-biblioref">2023</a>)</span>)</p>
+<ul>
+<li>“Open Code”</li>
+</ul>
+<p><strong>Institute of Electrical and Electronics Engineers (IEEE)</strong> (<span class="citation" data-cites="institute_of_electrical_and_electronics_engineers_ieee_about_nodate">Institute of Electrical and Electronics Engineers (IEEE) (<a href="#ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" role="doc-biblioref">n.d.</a>)</span>)</p>
+<ul>
+<li>“Code Available”</li>
+<li>“Code Reviewed”</li>
+<li>“Code Reproducible”</li>
+</ul>
+<p><strong>Psychological Science</strong> (<span class="citation" data-cites="hardwicke_transparency_2023">Hardwicke and Vazire (<a href="#ref-hardwicke_transparency_2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="association_for_psychological_science_aps_psychological_2023">Association for Psychological Science (APS) (<a href="#ref-association_for_psychological_science_aps_psychological_2023" role="doc-biblioref">2023</a>)</span>)</p>
+<ul>
+<li>“Computational Reproducibility”</li>
+</ul>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-association_for_computing_machinery_acm_artifact_2020" class="csl-entry" role="listitem">
+Association for Computing Machinery (ACM). 2020. <span>“Artifact <span>Review</span> and <span>Badging</span> <span>Version</span> 1.1.”</span> <em>ACM</em>. <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">https://www.acm.org/publications/policies/artifact-review-and-badging-current</a>.
+</div>
+<div id="ref-association_for_psychological_science_aps_psychological_2023" class="csl-entry" role="listitem">
+Association for Psychological Science (APS). 2023. <span>“Psychological <span>Science</span> <span>Submission</span> <span>Guidelines</span>.”</span> <em>APS</em>. <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions">https://www.psychologicalscience.org/publications/psychological_science/ps-submissions</a>.
+</div>
+<div id="ref-blohowiak_badges_2023" class="csl-entry" role="listitem">
+Blohowiak, Ben B., Johanna Cohoon, Lee de-Wit, Eric Eich, Frank J. Farach, Fred Hasselman, Alex O. Holcombe, Macartan Humphreys, Melissa Lewis, and Brian A. Nosek. 2023. <span>“Badges to <span>Acknowledge</span> <span>Open</span> <span>Practices</span>.”</span> <a href="https://osf.io/tvyxz/">https://osf.io/tvyxz/</a>.
+</div>
+<div id="ref-hardwicke_transparency_2023" class="csl-entry" role="listitem">
+Hardwicke, Tom E., and Simine Vazire. 2023. <span>“Transparency <span>Is</span> <span>Now</span> the <span>Default</span> at <span>Psychological</span> <span>Science</span>.”</span> <em>Psychological Science</em> 0 (0). https://doi.org/<a href="https://doi.org/10.1177/09567976231221573">https://doi.org/10.1177/09567976231221573</a>.
+</div>
+<div id="ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" class="csl-entry" role="listitem">
+Institute of Electrical and Electronics Engineers (IEEE). n.d. <span>“About <span>Content</span> in <span>IEEE</span> <span>Xplore</span>.”</span> <em>IEEE Explore</em>. Accessed May 20, 2024. <a href="https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content">https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content</a>.
+</div>
+<div id="ref-niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021" class="csl-entry" role="listitem">
+NISO Reproducibility Badging and Definitions Working Group. 2021. <span>“Reproducibility <span>Badging</span> and <span>Definitions</span>.”</span> <a href="https://doi.org/10.3789/niso-rp-31-2021">https://doi.org/10.3789/niso-rp-31-2021</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

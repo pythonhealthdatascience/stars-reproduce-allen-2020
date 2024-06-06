@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -233,17 +253,17 @@ Note
 <li><code>documentation_sufficient</code> - it was missing one package from environment - but it had an environment file, package versions, and a README explaining how to set up environment and referring to a notebook which runs the code that produces the output - hence, despite missing one, I felt it met this criteria</li>
 <li><code>documentation_careful</code> - I feel the documentation is minimal, but that it was actually still sufficient for running the model - and, as such, presume it might meet this criteria? Unless “reuse” refers to being able to use and change - in which case, there is not much guidance on how to change the parameters, only on how to run it matching up with the paper? In which case, I don’t think it meets these. I think that interpretation also makes sense, as it then distinguishes from “sufficient”?
 <ul>
-<li>The criteria this relates to is from <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">@association_for_computing_machinery_acm_artifact_2020</span> : “The artifacts associated with the paper are of a quality that significantly exceeds minimal functionality. That is, they have all the qualities of the Artifacts Evaluated – Functional level, but, in addition, they are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated. In particular, norms and standards of the research community for artifacts of this type are strictly adhered to”</li>
+<li>The criteria this relates to is from the <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">Association for Computing Machinery (ACM) (<a href="#ref-association_for_computing_machinery_acm_artifact_2020" role="doc-biblioref">2020</a>)</span> : “The artifacts associated with the paper are of a quality that significantly exceeds minimal functionality. That is, they have all the qualities of the Artifacts Evaluated – Functional level, but, in addition, they are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated. In particular, norms and standards of the research community for artifacts of this type are strictly adhered to”</li>
 </ul></li>
 <li><code>execute</code> - yes, but with one change to environment. Do they allow changes? I’ve selected yes, as I’m assuming minor troubleshooting is allowed, and the distinction between this and reproduction is that this is just about running scripts, whilst reproduction is about getting sufficiently similar results. Execution required in ACM and IEEE criteria…
 <ul>
-<li>From <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">@association_for_computing_machinery_acm_artifact_2020</span>: “Included scripts and/or software used to generate the results in the associated paper can be successfully executed, and included data can be accessed and appropriately manipulated”, with no mention of whether minor troubleshooting is allowed</li>
-<li>From <span class="citation" data-cites="institute_of_electrical_and_electronics_engineers_ieee_about_nodate">@institute_of_electrical_and_electronics_engineers_ieee_about_nodate</span>: “runs to produce the outputs desired”, with no mention of whether minor troubleshooting is allowed</li>
+<li>From the <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">Association for Computing Machinery (ACM) (<a href="#ref-association_for_computing_machinery_acm_artifact_2020" role="doc-biblioref">2020</a>)</span>: “Included scripts and/or software used to generate the results in the associated paper can be successfully executed, and included data can be accessed and appropriately manipulated”, with no mention of whether minor troubleshooting is allowed</li>
+<li>From the <span class="citation" data-cites="institute_of_electrical_and_electronics_engineers_ieee_about_nodate">Institute of Electrical and Electronics Engineers (IEEE) (<a href="#ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" role="doc-biblioref">n.d.</a>)</span>: “runs to produce the outputs desired”, with no mention of whether minor troubleshooting is allowed</li>
 </ul></li>
 <li><code>regenerated</code> - as above, unclear whether modification is allowed. For simplicity, have assumed definition we allowed - that you can troubleshoot - but this might not align with journals. Is this an issue?</li>
 <li><code>hour</code> - failed this, but we weren’t trying to do this within an hour. If I had been asked to do that (rather than spend time reading and thinking beforehand), I anticipate I could’ve run it (without going on to then add seeds etc). Hence, does it pass this?
 <ul>
-<li>Psychological Science (<span class="citation" data-cites="hardwicke_transparency_2023">@hardwicke_transparency_2023</span>, <span class="citation" data-cites="association_for_psychological_science_aps_psychological_2023">@association_for_psychological_science_aps_psychological_2023</span>) require reproduction within an hour, which I think implies some minor troubleshooting would be allowed?</li>
+<li>Psychological Science (<span class="citation" data-cites="hardwicke_transparency_2023">Hardwicke and Vazire (<a href="#ref-hardwicke_transparency_2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="association_for_psychological_science_aps_psychological_2023">Association for Psychological Science (APS) (<a href="#ref-association_for_psychological_science_aps_psychological_2023" role="doc-biblioref">2023</a>)</span>) require reproduction within an hour, which I think implies some minor troubleshooting would be allowed?</li>
 <li>Others don’t specify either way</li>
 </ul></li>
 <li><code>documentation_readme</code> - I wouldn’t say it explicitly meets this criteria, although it was simple enough that it could do it anyway</li>
@@ -314,9 +334,23 @@ Including checklist
 </ul>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-association_for_computing_machinery_acm_artifact_2020" class="csl-entry" role="listitem">
+Association for Computing Machinery (ACM). 2020. <span>“Artifact <span>Review</span> and <span>Badging</span> <span>Version</span> 1.1.”</span> <em>ACM</em>. <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">https://www.acm.org/publications/policies/artifact-review-and-badging-current</a>.
+</div>
+<div id="ref-association_for_psychological_science_aps_psychological_2023" class="csl-entry" role="listitem">
+Association for Psychological Science (APS). 2023. <span>“Psychological <span>Science</span> <span>Submission</span> <span>Guidelines</span>.”</span> <em>APS</em>. <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions">https://www.psychologicalscience.org/publications/psychological_science/ps-submissions</a>.
+</div>
+<div id="ref-hardwicke_transparency_2023" class="csl-entry" role="listitem">
+Hardwicke, Tom E., and Simine Vazire. 2023. <span>“Transparency <span>Is</span> <span>Now</span> the <span>Default</span> at <span>Psychological</span> <span>Science</span>.”</span> <em>Psychological Science</em> 0 (0). https://doi.org/<a href="https://doi.org/10.1177/09567976231221573">https://doi.org/10.1177/09567976231221573</a>.
+</div>
+<div id="ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" class="csl-entry" role="listitem">
+Institute of Electrical and Electronics Engineers (IEEE). n.d. <span>“About <span>Content</span> in <span>IEEE</span> <span>Xplore</span>.”</span> <em>IEEE Explore</em>. Accessed May 20, 2024. <a href="https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content">https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
