@@ -219,8 +219,8 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="stress-des">STRESS-DES</h2>
 <p>Of the <strong>24</strong> items in the checklist:</p>
 <ul>
-<li><strong>16</strong> were met fully (✅)</li>
-<li><strong>2</strong> were partially met (🟡)</li>
+<li><strong>15</strong> were met fully (✅)</li>
+<li><strong>3</strong> were partially met (🟡)</li>
 <li><strong>4</strong> were not met (❌)</li>
 <li><strong>2</strong> were not applicable (N/A)</li>
 </ul>
@@ -387,8 +387,8 @@ div.csl-indent {
 <tr class="odd">
 <td>5.1 Software or programming language</td>
 <td>State the operating system and version and build number.<br>State the name, version and build number of commercial or open source DES software that the model is implemented in.<br>State the name and version of general-purpose programming languages used (e.g.&nbsp;Python 3.5).<br>Where frameworks and libraries have been used provide all details including version numbers.</td>
-<td>✅ Fully</td>
-<td><code>Materials and methods - analysis environment</code>: “All models were written in Python 3.8. We used SimPy 3 to implement the DES model… All charts were produced with MatPlotLib… The dialysis model results were run on an Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux.”<br><br>Full details for the libraries is provided in the linked code repository within the environment file.</td>
+<td>🟡 Partially</td>
+<td><code>Materials and methods - analysis environment</code>: “All models were written in Python 3.8. We used SimPy 3 to implement the DES model… All charts were produced with MatPlotLib… The dialysis model results were run on an Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux.”<br><br>Full details for the libraries is provided in the linked code repository within the environment file, but as this is not within the article itself (which is what STRESS evaluates), have set as partially met</td>
 </tr>
 <tr class="even">
 <td>5.2 Random sampling</td>
@@ -1181,7 +1181,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

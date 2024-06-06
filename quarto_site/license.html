@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Amy Heather">
-<meta name="dcterms.date" content="2024-06-05">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Day 6</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Open Source License</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,62 +20,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,9 +69,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -115,14 +76,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Reproducing Allen et al.&nbsp;2020</span>
     </a>
   </div>
@@ -133,11 +94,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
+    <a class="nav-link" href="../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../reproduction/reproduction.html"> 
+    <a class="nav-link" href="../reproduction/reproduction.html"> 
 <span class="menu-text">Reproduction code</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -146,33 +107,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../../../evaluation/scope.html">
+    <a class="dropdown-item" href="../evaluation/scope.html">
  <span class="dropdown-text">Scope</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/artefacts.html">
+    <a class="dropdown-item" href="../evaluation/artefacts.html">
  <span class="dropdown-text">Sharing research artefacts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/badges.html">
+    <a class="dropdown-item" href="../evaluation/badges.html">
  <span class="dropdown-text">Badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../evaluation/reporting.html">
+    <a class="dropdown-item" href="../evaluation/reporting.html">
  <span class="dropdown-text">Reporting guidelines</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/logbook.html"> 
+    <a class="nav-link" href="../evaluation/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="../evaluation/reproduction_report.html"> 
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
@@ -191,372 +152,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Day 6</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">guidelines</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Amy Heather </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 5, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
-  <ul class="collapse">
-  <li><a href="#evaluation-against-reporting-guidelines-pt.-2" id="toc-evaluation-against-reporting-guidelines-pt.-2" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines-pt.-2">Evaluation against reporting guidelines (pt.&nbsp;2)</a></li>
-  <li><a href="#comparison-of-my-stress-des-against-the-original-study" id="toc-comparison-of-my-stress-des-against-the-original-study" class="nav-link" data-scroll-target="#comparison-of-my-stress-des-against-the-original-study">Comparison of my STRESS-DES against the original study</a></li>
-  <li><a href="#comparing-best-practice-audit-results-with-monks-and-harper" id="toc-comparing-best-practice-audit-results-with-monks-and-harper" class="nav-link" data-scroll-target="#comparing-best-practice-audit-results-with-monks-and-harper">Comparing best practice audit results with Monks and Harper</a></li>
-  </ul></li>
-  <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_05/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Open Source License</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+</header>
+
+
+<p>This repository is licensed under the MIT License.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+View license
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Evaluation against reporting guidelines - finished STRESS-DES, and did for ISPOR-SDM.</p>
+<p>MIT License</p>
+<p>Copyright (c) 2024 STARS Project Team</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 </div>
 </div>
-<section id="work-log" class="level2">
-<h2 class="anchored" data-anchor-id="work-log">Work log</h2>
-<section id="evaluation-against-reporting-guidelines-pt.-2" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines-pt.-2">Evaluation against reporting guidelines (pt.&nbsp;2)</h3>
-<p>Finished STRESS-DES.</p>
-<p><strong>Uncertainties:</strong></p>
-<ul>
-<li><code>2.5.5 Components - entry and exit points</code>
-<ul>
-<li><strong>Get a second opinion</strong> on this - have I been too harsh?</li>
-<li><strong>Chat with Tom</strong> - fine, just describe and justify.</li>
-</ul></li>
-<li><code>5.1 Software or programming language</code>: “Where frameworks and libraries have been used provide all details including version numbers.”
-<ul>
-<li>This part of criteria is <strong>not</strong> in the report, but is in the linked code.</li>
-<li>Passed them anyway, as other parts of this criteria (OS, version, build DES software, Python) were provided - and also, wouldn’t think you would put this extra level of information in the report?</li>
-<li><strong>Chat with Tom</strong> - take a consistent approach (only basing on article) and therefore partially met if missing this (as purpose is to learn what people do and do not do)</li>
-</ul></li>
-<li><code>5.3 Model execution</code>: “State the event processing mechanism used e.g.&nbsp;three phase, event, activity, process interaction.”
-<ul>
-<li><strong>Feeling quite unclear on this</strong>. Did some research onto it but that hasn’t really cleared it up…</li>
-<li>Based answer on Tom’s, but don’t feel confident guessing at this for future ones</li>
-<li><strong>Chat with Tom</strong> - can often find based on package used, but do fail if not explicitly stated method in text</li>
-</ul></li>
-</ul>
+</div>
+<p>This is aligned with the original study, who also licensed their work under the MIT License.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Event processing mechanism
+View license
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>Simulation - The Practice of Model Development and Use</code> (Stewart Robinson):</p>
-<ul>
-<li>There are a few ways to model progress of time - one is time-slicing method, and other is discrete-event simulation (three phase method). “A number of machisms have been proposed for carrying out discrete-event simulation, among them are the <strong>event-based, activity-based, process-based and three-phase approaches</strong>. For a detailed discussion on these see Pidd (1998)”</li>
-<li><strong>Three phase</strong> - Events are classified as B (bound or booked) or C (conditional). B events are state changes scheduled at a point in time (often relates to arrivals or finishing an activity). C events are state changes that depend on cidions of a model (e.g.&nbsp;needing to wait until operator is free, often relat to start of an activity)</li>
-</ul>
-<p><a href="https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html">Intro to DES</a>:</p>
-<ul>
-<li><strong>Activity scanning</strong> - “Basic building block is the activity. Model program’s code segments consist of sequences of activities (operations) waiting to be executed. An activity sequence’s conditions must be satisfied before it is executed. Simulation executive moves from event to event executing those activity sequences whose conditions are satisfied.”</li>
-<li><strong>Event scheduling</strong> - “Basic building block is the event. Model program’s code segments consist of event routines waiting to be executed. Event routine associated with each event type – performs required operations for that type. Simulation executive moves from event to event executing the corresponding event routines”</li>
-<li><strong>Process interaction</strong> - “Basic building block is the process. System consists of a set of interacting processes. Model program’s code for each process includes the operations that it carries out throughout its lifetime. Event sequence for system consists of merging of event sequences for all processes. Future event list consists of a sequence of event nodes (or notices). Each event node indicates the event time and process to which it belongs. Simulation executive carries out the following tasks: (a) placement of processes at particular points of time in the list (b) removal of processes from the event list (c) activation of the process corresponding to the next event node from the event list (d) rescheduling of processes in the event list. Typically, a process object can be in one of several states: (a) active – process is currently executing There is only one such process in a system. (b) ready – process is in event list, waiting for activation at a certain time (c) idle (or blocked) – process is not in event list, but eligible to be be reactivated by some other entity (e.g., waiting for a passive resource) (d) terminated – process has completed its sequence of actions, is not in event list, and cannot be reactivated”</li>
-</ul>
+<p>MIT License</p>
+<p>Copyright (c) 2020 tmwm201</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 </div>
 </div>
 </div>
-<p>Then completed the guidelines adapted from ISPOR-SDM.</p>
-<p><strong>Uncertainties:</strong></p>
-<ul>
-<li><code>15 Is the model generalizability issue discussed?</code>
-<ul>
-<li>Have I been too harsh on this one? Or do we want it to be explicitly addressed?</li>
-<li><strong>Chat with Tom</strong> - fine, as before, just justify choice made</li>
-</ul></li>
-</ul>
-</section>
-<section id="comparison-of-my-stress-des-against-the-original-study" class="level3">
-<h3 class="anchored" data-anchor-id="comparison-of-my-stress-des-against-the-original-study">Comparison of my STRESS-DES against the original study</h3>
-<p>Tom shared the completed STRESS-DES checklits from the original study, and I compared against my evaluation (bearing in mind that theirs relates to the DES model and the Mone-Carlo vehicle routing model, whilst mine just relates to the former). Amendments:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>Difference between checklists</th>
-<th>Change made</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2.4 Algorithms</td>
-<td>They included patient allocation to units (unit search strategy)</td>
-<td>I have now added this</td>
-</tr>
-<tr class="even">
-<td>2.5.3 Components - resources</td>
-<td>They refer to appendices to provide more details on units</td>
-<td>I have now added this</td>
-</tr>
-<tr class="odd">
-<td>2.5.4 Components - queues</td>
-<td>They state this is N/A as there are no queues - I had been uncertain around this,</td>
-<td>I think their answer is appropriate (and no need for article to have described queues when there are none)</td>
-</tr>
-<tr class="even">
-<td>2.5.5 - Components - entry/exit points</td>
-<td>I had been uncertain on this. They state that this is a fixed population, and that patients exit the dialysis model at mortality, citing Figure 1.</td>
-<td>It remains unmet (as I do not feel this is clearly stated in the paper), but I have added their description.</td>
-</tr>
-<tr class="odd">
-<td>3.2 - Pre-processing</td>
-<td>I had stated as not applicable. They stated that there was processing in generating a travel time matrix from routine and open street map</td>
-<td>I have now added this</td>
-</tr>
-<tr class="even">
-<td>4.1 - Initialisation</td>
-<td>This was not described in the paper. I had suggested it was terminating, but original study states it is non-terminating.</td>
-<td>It remains unmet, but I have added their description.</td>
-</tr>
-<tr class="odd">
-<td>5.3 - Model execution</td>
-<td>I had been unsure on what the mechanism was. They state that SimPy was used and that this has a Process based simulation worldview.</td>
-<td>It remains unmet, but I have added their description.</td>
-</tr>
-<tr class="even">
-<td>5.4 - System specification</td>
-<td>They mention that replications were run in parallel across multiple CPU cores.</td>
-<td>I had not noted this, but as paper mentions using parallelism, have added a note of this.</td>
-</tr>
-</tbody>
-</table>
-<iframe width="100%" height="800" src="original_study_stress_des_checklist.pdf">
-</iframe>
-</section>
-<section id="comparing-best-practice-audit-results-with-monks-and-harper" class="level3">
-<h3 class="anchored" data-anchor-id="comparing-best-practice-audit-results-with-monks-and-harper">Comparing best practice audit results with Monks and Harper</h3>
-<p>Compared my decisions for the best practice audit against those made in Monks and Harper.</p>
-<p>Their GitHub is <a href="https://github.com/TomMonks/des_sharing_lit_review">TomMonks/des_sharing_lit_review</a>, which provides the file <code>bp_audit.zip</code>. I used the provided code to clean this and saved it as <code>bp_audit_clean.csv</code>, which can then view here:</p>
-<div id="018825c9" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import review results</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>review <span class="op">=</span> pd.read_csv(<span class="st">'bp_audit_clean.csv'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the results for Allen et al. 2020</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>review[review[<span class="st">'key'</span>] <span class="op">==</span> <span class="st">'R4ZLYWPP'</span>].T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">17</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Unnamed: 0</td>
-<td>17</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">model_format</td>
-<td>CODE</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">key</td>
-<td>R4ZLYWPP</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">item_type</td>
-<td>journalArticle</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">pub_yr</td>
-<td>2020</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">author</td>
-<td>Allen, M.; Bhanji, A.; Willemsen, J.; Dudfield...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">doi</td>
-<td>10.1371/journal.pone.0237628</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">reporting_guidelines_mention</td>
-<td>STRESS</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">covid</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">sim_software</td>
-<td>SimPy</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">foss_sim</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">model_archive</td>
-<td>Zenodo</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">model_repo</td>
-<td>GitHub</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">model_journal_supp</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">model_personal_org</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">model_platform</td>
-<td>BinderHub</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">github_url</td>
-<td>https://git.exeter.ac.uk/tmwm201/dialysis-serv...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">model_has_doi</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">orcid</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">license</td>
-<td>MIT</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">readme</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">link_to_paper</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">steps_run</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">formal_dep_mgt</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">informal_dep_mgt</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">evidence_testing</td>
-<td>1.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">downloadable</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">interactive_online</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Different results:</p>
-<ul>
-<li><code>Link to published paper</code>
-<ul>
-<li>I said yes as its within Zenodo, but they said no</li>
-<li>I have amended my answer, as on reflection, I agree that this should be part of the artefacts themselves, and not just meta-data on Zenodo, as the artefacts are what you download, but have kept this as “partially met”</li>
-</ul></li>
-<li>Informal dependency management
-<ul>
-<li>They failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not, so no changes to make here.</li>
-</ul></li>
-<li>Code testing
-<ul>
-<li>They said yes but I said no</li>
-<li><strong>Ask tom what they felt was evidence of testing?</strong></li>
-<li><strong>Chat with Tom</strong> - evidence was in GitLab rather than Zenodo (but was for the vehicle model, so evaluation remains the same)</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="suggested-changes-for-protocoltemplate" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
-<p>✅ = Made the change.</p>
-<p>Protocol:</p>
-<ul>
-<li>✅ When not provided in article, my assumption might sometimes be wrong - e.g.&nbsp;4.1 terminating when it was non-terminating - hence, importance here of (a) highlighting that this is my assumption and not stated by paper, and (b) checking those suggestions with other team members if possible.</li>
-<li>✅ Quite a few differences between mine and the original - is this a concern or not? Always some human error on both sides of things. If wanted to be super rigorous you could have multiple evaluators. However, is that appropriate for this study, given motivations and capacity? Probably not. But would cite it as a limitation.</li>
-<li>✅ All the studies should have been audited by Monks and Harper, so could add this comparison as a standard step to sense-check?</li>
-</ul>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1121,12 +788,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../../CHANGELOG.html">
+    <a class="nav-link" href="../CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_05/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/quarto_site/license.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
