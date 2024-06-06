@@ -1,10 +1,7 @@
 # STARS: Computational reproducibility of Allen et al. 2020
 
-<!-- Badges...
-* Status badge indicating whether CITATION file is still valid via GitHub action
-* License badge, so the license is display within the README -->
+<!-- Status badge indicating whether CITATION file is still valid via GitHub action -->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
-![GitHub License](https://img.shields.io/github/license/pythonhealthdatascience/stars-reproduce-allen-2020)
 
 ⚠️ ***This is a test-run for STARS work package 1 using a paper that Tom Monks was involved with. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
@@ -70,14 +67,8 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 
 If you wish to cite this repository, please refer to the citation file `CITATION.cff`, and the auto-generated alternatives `citation_apalike.apa` and `citation_bibtex.bib`.
 
-Test 1:
+## License
 
-https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/6e15e28839a0e35fccdf9d128114d622c665d329/citation_apalike.apa#L1
+This repository is licensed under the [MIT License](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/LICENSE).
 
-Test 2:
-
-https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/citation_apalike.apa
-
-Test 3:
-
-https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blame/main/citation_apalike.apa#L1
+This is aligned with the original study, who also licensed their work under the [MIT License](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/original_study/dialysis-service-delivery-covid19-v1.0/LICENSE).

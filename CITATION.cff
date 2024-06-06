@@ -7,12 +7,19 @@ message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
+# List the authors involved in reproduction: first, the primary researcher,
+# followed by those providing advice/feedback on the reproduction.
 authors:
   - given-names: Amy
     family-names: Heather
     email: a.heather2@exeter.ac.uk
     affiliation: University of Exeter
     orcid: 'https://orcid.org/0000-0002-6596-3479'
+  - given-names: Tom
+    family-names: Monks
+    email: t.m.w.monks@exeter.ac.uk
+    affiliation: University of Exeter
+    orcid: 'https://orcid.org/0000-0003-2631-4481'
 repository-code: >-
   https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
 abstract: >-
@@ -24,4 +31,6 @@ abstract: >-
   outpatient dialysis services during the COVID-19 pandemic. PLoS One
   15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.
 license: MIT
-date-released: '2024-05-21'
+# Manually update with each GitHub release
+version: '0.2.0'
+date-released: '2024-06-05'
