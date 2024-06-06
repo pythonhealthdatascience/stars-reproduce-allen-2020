@@ -26,7 +26,7 @@ Of the **11** items in this audit:
 | Steps to run code | Does the readme file or similar describe the steps required to execute the simulation model? | ✅ Fully | Provided in `Capacity_Model_Template.ipynb` |
 | Formal dependency management | Has a formal tool, e.g. renv, conda, or poetry been used to manage software dependencies for the simulation model? | ✅ Fully | Conda - `environment.yaml` |
 | Informal dependency management | Has an informal list or description of software, or OS dependencies been provided? | ✅ Fully | Within `environment.yaml` |
-| Code Testing | Is there any evidence of tests that have been applied to the code to check that it functions correctly? | ❌ Not met | No tests found |
+| Code Testing | Is there any evidence of tests that have been applied to the code to check that it functions correctly? | ❌ Not met | No tests found for DES model (tests for Monte Carlo model are available in GitLab repository) |
 | Local execution | Can the simulation model and associated files be downloaded and in theory executed on a local machine | ✅ Fully | I have successfully executed |
 | Remote execution | Can the simulation model be executed online using free or commercial infrastructure? | ✅ Fully | The archived code on Zenodo has not been set up to allow this but the [production code on GitLab](https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19) was set up to allow this (on 23rd April 2020, prior to date journal received article) |
 : {tbl-colwidths="[25, 25, 25, 25]"}

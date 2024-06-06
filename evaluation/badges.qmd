@@ -9,7 +9,7 @@ bibliography: ../quarto_site/references.bib
 
 This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
-*Caveat: Please note that these criteria are based on available information about each badge online, and that we have allowed troubleshooting for execution and reproduction. We cannot guarantee that the badges below would have been awarded in practice by these journals.*
+*Caveat: Please note that these criteria are based on available information about each badge online, and that we have likely differences in our procedure (e.g. allowed troubleshooting for execution and reproduction, not under tight time pressure to complete). We cannot guarantee that the badges below would have been awarded in practice by these journals.*
 
 ## Criteria
 

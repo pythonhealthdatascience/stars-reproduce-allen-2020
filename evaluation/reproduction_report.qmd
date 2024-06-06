@@ -4,6 +4,33 @@ subtitle: "For Allen et al. 2020"
 abstract: >
     This is a plain english summary for this reproduction report
 bibliography: ../quarto_site/references.bib
+authors:
+  - name: Amy Heather
+    url: https://github.com/amyheather
+    orcid: 0000-0002-6596-3479
+    affiliation: University of Exeter
+date: 06/06/2024
+date-format: "Do MMMM YYYY"
 ---
 
-Plain english summary
+
+Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. **A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic**. *PLoS One* 15, 8 (2020). <https://doi.org/10.1371%2Fjournal.pone.0237628>.
+
+Manuscript title:
+
+Authors (with email + orcid if known):
+
+Summary of paper:
+
+Links (DOI/URL) to everything available for that article (pre-reg, article, supplementary, code):
+
+Cite the protocol used for reproduction.
+
+Scope of reproducibility report:
+
+* The overall reproduction success of the paper can be described as the proportion of items from the scope that were determined to be reproduced (e.g. 4 out of 5, 80\%). This provides more context than just stating that a paper was or was not reproduced. When describing the reproduction success, it is important to include context on troubleshooting steps required (such as writing new code or contacting the author).
+
+Results:
+
+* Reproduction success
+* Evaluation (against sharing, badges, and reporting guidelines)

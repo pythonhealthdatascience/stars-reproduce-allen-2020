@@ -1,0 +1,24 @@
+---
+title: "Open Source License"
+---
+
+This repository is licensed under the MIT License.
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## View license
+
+{{< include  ../LICENSE >}}
+
+:::
+
+This is aligned with the original study, who also licensed their work under the MIT License.
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## View license
+
+{{< include  ../original_study/dialysis-service-delivery-covid19-v1.0/LICENSE >}}
+
+:::
+

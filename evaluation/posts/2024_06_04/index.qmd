@@ -24,14 +24,17 @@ Evaluating artefacts as in <https://zenodo.org/records/3760626> and <https://git
     * Required some minor changes to environment in order for scripts to run
     * However, not certain whether the badges would allow minor troubleshooting (or major troubleshooting) in order for a script to run?
     * By my criteria (allowing troubleshooting) this would be fine. The step up from this criteria is reproduction (which I again allow troubleshooting) - so it would make sense that this is getting it to run, whilst next step is getting sufficiently similar results. May just need to add a **caveat** that this is with troubleshooting allowed (which may not be journal policy) - in same way that caveat, this is my interpretation of badges from available information and cannot guarantee would or would not be awarded.
+    * **Chat with Tom:** Fine to just caveat.
 * `hour`: Reproduced within approximately one hour (excluding compute time)
     * Took longer than an hour, but I wasn't trying to get it done in that time
     * If I hadn't spent time reading and documenting and fiddling with the seeds, then I anticipate I could've run it within an hour
     * However, **I'm assuming to follow our process and fail it** (for consistency with how we are working and timing)
+    * **Chat with Tom:** Fine to just caveat.
 * `documentation_readme`: "Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript"
     * I wouldn't say it explicitly meets this criteria
     * Although it was simple enough that it could do it anyway - directed me to notebook, run that, job done.
     * **Uncertain on this one**
+    * Uncertainty is fine - just make a choice, and justify and document that choice in the logbook
 
 ### Sharing research artefacts
 
@@ -44,6 +47,7 @@ Evaluated again, this time against recommendations for sharing of research artef
     * However, this decision differs from documentation_readme above, although that requires "clear" documentation
 * Do they meet criteria is changes are made to a repository **after** publications? (this is general, not specific to this test-run)
     * Example: If we asked them to add a licence - do we then fail them on that? I'm presuming so?
+    * **Chat with Tom:** Agree that it should be based on stuff prior to publication.
 
 ### Evaluation against reporting guidelines (STRESS-DES pt. 1)
 
