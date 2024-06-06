@@ -12,7 +12,8 @@ This page evaluates the extent to which the original study meets the recommendat
 
 Of the **11** items in this audit:
 
-* **10** were met fully (✅)
+* **9** were met fully (✅)
+* **1** was met partially (🟡)
 * **1** was not met (❌)
 
 | Item | Description | Met by study? | Evidence/location |
@@ -21,7 +22,7 @@ Of the **11** items in this audit:
 | Open Researcher and Contributor ID (ORCID) | Is the model linked to one or more of the authors via an ORCID? | ✅ Fully | Monks linked to ORCID on Zenodo and in journal article |
 | License | Does the repository have a recognised open license to control the use of code, liabilty and credit? | ✅ Fully | MIT license |
 | Model overview | Is there an obvious file that provides an overview of the repository/model and it purpose (e.g. in README file)? | ✅ Fully | `README.md` present but doesn't overview repository/model or purpose, although does like to `Capacity_Model_Template.ipynb` which does overview the model |
-| Link to published paper | Do models shared externally from journal articles contain a link to the published article? | ✅ Fully | Zenodo citations section includes link to the article |
+| Link to published paper | Do models shared externally from journal articles contain a link to the published article? | 🟡 Partially | Zenodo citations section includes link to the article |
 | Steps to run code | Does the readme file or similar describe the steps required to execute the simulation model? | ✅ Fully | Provided in `Capacity_Model_Template.ipynb` |
 | Formal dependency management | Has a formal tool, e.g. renv, conda, or poetry been used to manage software dependencies for the simulation model? | ✅ Fully | Conda - `environment.yaml` |
 | Informal dependency management | Has an informal list or description of software, or OS dependencies been provided? | ✅ Fully | Within `environment.yaml` |

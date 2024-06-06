@@ -13,30 +13,43 @@ Evaluation against reporting guidelines - finished STRESS-DES, and did for ISPOR
 
 ## Work log
 
-### Evaluation against reporting guidelines
+### Evaluation against reporting guidelines (pt. 2)
 
-Uncertainties for STRESS-DES:
+Finished STRESS-DES.
 
-* Software or programming language - "Where frameworks and libraries have been used provide all details including version numbers." - not in the report, but is in the linked code. Passed them anyway, as wouldn't think you would put this information in the report?
-* Model execution - "State the event processing mechanism used e.g. three phase, event, activity, process interaction." - not sure what this is...
-    * `Simulation - The Practice of Model Development and Use` (Stewart Robinson):
-        * There are a few ways to model progress of time - one is time-slicing method, and other is discrete-event simulation (three phase method). "A number of machisms have been proposed for carrying out discrete-event simulation, among them are the **event-based, activity-based, process-based and three-phase approaches**. For a detailed discussion on these see Pidd (1998)"
-        * **Three phase** - Events are classified as B (bound or booked) or C (conditional). B events are state changes scheduled at a point in time (often relates to arrivals or finishing an activity). C events are state changes that depend on cidions of a model (e.g. needing to wait until operator is free, often relat to start of an activity)
-    * [Intro to DES](https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html):
-        * **Activity scanning** - "Basic building block is the activity. Model program's code segments consist of sequences of activities (operations) waiting to be executed. An activity sequence's conditions must be satisfied before it is executed. Simulation executive moves from event to event executing those activity sequences whose conditions are satisfied."
-        * **Event scheduling** - "Basic building block is the event. Model program's code segments consist of event routines waiting to be executed. Event routine associated with each event type -- performs required operations for that type. Simulation executive moves from event to event executing the corresponding event routines"
-        * **Process interaction** - "Basic building block is the process. System consists of a set of interacting processes. Model program's code for each process includes the operations that it carries out throughout its lifetime. Event sequence for system consists of merging of event sequences for all processes. Future event list consists of a sequence of event nodes (or notices). Each event node indicates the event time and process to which it belongs. Simulation executive carries out the following tasks: (a) placement of processes at particular points of time in the list (b) removal of processes from the event list (c) activation of the process corresponding to the next event node from the event list (d) rescheduling of processes in the event list. Typically, a process object can be in one of several states: (a) active -- process is currently executing There is only one such process in a system. (b) ready -- process is in event list, waiting for activation at a certain time (c) idle (or blocked) -- process is not in event list, but eligible to be be reactivated by some other entity (e.g., waiting for a passive resource) (d)  terminated -- process has completed its sequence of actions, is not in event list, and cannot be reactivated"
-    * **However, still not really sure what this would be?**
+**Uncertainties:**
 
-Uncertainties from ISPOR SDM -
+* `5.1 Software or programming language`: "Where frameworks and libraries have been used provide all details including version numbers."
+    * This part of criteria is **not** in the report, but is in the linked code.
+    * Passed them anyway, as other parts of this criteria (OS, version, build DES software, Python) were provided - and also, wouldn't think you would put this extra level of information in the report?
+* `5.3 Model execution`: "State the event processing mechanism used e.g. three phase, event, activity, process interaction."
+    * **Feeling quite unclear on this**. Did some research onto it but that hasn't really cleared it up...
+    * Based answer on Tom's, but don't feel confident guessing at this for future ones
+    * Any **recommended resources** to explain this?
 
-* 15 Is the model generalizability issue discussed? - have I been too harsh on this one?
+::: {.callout-note appearance="minimal" collapse=true}
 
-::: {.callout-tip}
-## STRESS
+## Event processing mechanism
 
-Event processing mechanisms are unfamiliar, and a little hard to google.
+`Simulation - The Practice of Model Development and Use` (Stewart Robinson):
+
+* There are a few ways to model progress of time - one is time-slicing method, and other is discrete-event simulation (three phase method). "A number of machisms have been proposed for carrying out discrete-event simulation, among them are the **event-based, activity-based, process-based and three-phase approaches**. For a detailed discussion on these see Pidd (1998)"
+* **Three phase** - Events are classified as B (bound or booked) or C (conditional). B events are state changes scheduled at a point in time (often relates to arrivals or finishing an activity). C events are state changes that depend on cidions of a model (e.g. needing to wait until operator is free, often relat to start of an activity)
+
+[Intro to DES](https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html):
+
+* **Activity scanning** - "Basic building block is the activity. Model program's code segments consist of sequences of activities (operations) waiting to be executed. An activity sequence's conditions must be satisfied before it is executed. Simulation executive moves from event to event executing those activity sequences whose conditions are satisfied."
+* **Event scheduling** - "Basic building block is the event. Model program's code segments consist of event routines waiting to be executed. Event routine associated with each event type -- performs required operations for that type. Simulation executive moves from event to event executing the corresponding event routines"
+* **Process interaction** - "Basic building block is the process. System consists of a set of interacting processes. Model program's code for each process includes the operations that it carries out throughout its lifetime. Event sequence for system consists of merging of event sequences for all processes. Future event list consists of a sequence of event nodes (or notices). Each event node indicates the event time and process to which it belongs. Simulation executive carries out the following tasks: (a) placement of processes at particular points of time in the list (b) removal of processes from the event list (c) activation of the process corresponding to the next event node from the event list (d) rescheduling of processes in the event list. Typically, a process object can be in one of several states: (a) active -- process is currently executing There is only one such process in a system. (b) ready -- process is in event list, waiting for activation at a certain time (c) idle (or blocked) -- process is not in event list, but eligible to be be reactivated by some other entity (e.g., waiting for a passive resource) (d)  terminated -- process has completed its sequence of actions, is not in event list, and cannot be reactivated"
+
 :::
+
+Then completed the guidelines adapted from ISPOR-SDM.
+
+**Uncertainties:**
+
+* `15 Is the model generalizability issue discussed?`
+    * Have I been too harsh on this one? Or do we want it to be explicitly addressed?
 
 ### Comparison of my STRESS-DES against the original study
 
@@ -55,12 +68,6 @@ Tom shared the completed STRESS-DES checklits from the original study, and I com
 
 <iframe width="100%" height="800" src="original_study_stress_des_checklist.pdf"></iframe>
 
-::: {.callout-tip}
-## STRESS
-
-When reporting multiple models in a paper, the STRESS checklist can easily/accidentally just be applied to one of the models in some instances, and it can make it harder to distinguish what relates to which model. As such, might suggest creating seperate checklists for each model.
-:::
-
 ### Comparing best practice audit results with Monks and Harper
 
 Compared my decisions for the best practice audit against those made in Monks and Harper.
@@ -77,22 +84,17 @@ review = pd.read_csv('bp_audit_clean.csv')
 review[review['key'] == 'R4ZLYWPP'].T
 ```
 
-Same result:
+Different results:
 
-* DOI
-* ORCID
-* License
-* Model overview
-* Steps to run code
-* Formal dependency management
-* Local execution
-* Remote execution
-
-Different result:
-
-* Link to published paper (I said yes as its within Zenodo, but they said no) **ask tom whether he think that is ok, or whether he thinks it needs to be within the files themselves?**
-* Informal dependency management (they failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not)
-* Code testing (they said yes, I said no) **ask tom what they felt was evidence of testing?**
+* `Link to published paper`
+    * I said yes as its within Zenodo, but they said no
+    * I have amended my answer, as on reflection, I agree that this should be part of the artefacts themselves, and not just meta-data on Zenodo, as the artefacts are what you download, but have kept this as "partially met"
+    * **Get a second opinion on this**
+* Informal dependency management
+    * They failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not, so no changes to make here.
+* Code testing
+    * They said yes but I said no
+    * **Ask tom what they felt was evidence of testing?**
 
 ## Suggested changes for protocol/template
 

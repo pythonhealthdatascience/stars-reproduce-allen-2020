@@ -9,6 +9,8 @@ bibliography: ../quarto_site/references.bib
 
 This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
+*Caveat: Please note that these criteria are based on available information about each badge online, and that we have allowed troubleshooting for execution and reproduction. We cannot guarantee that the badges below would have been awarded in practice by these journals.*
+
 ## Criteria
 
 ```{python}
@@ -23,9 +25,9 @@ criteria = {
     'license': 'Includes an open license',
     'relevant': '''Arefacts are relevant to and contribute to the article's results''',
     'complete': 'Complete set of materials shared (as would be needed to fully reproduce article)',
-    'structure': 'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)',
-    'documentation_sufficient': 'Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)',
-    'documentation_careful': 'Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)',
+    'structure': 'Artefacts are well structured/organised (e.g. to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)',
+    'documentation_sufficient': 'Artefacts are sufficiently documented (i.e. to understand how it works, to enable it to be run, including package versions)',
+    'documentation_careful': 'Artefacts are carefully documented (more than sufficient - i.e. to the extent that reuse and repurposing is facilitated (e.g. changing parameters, reusing for own purpose))',
     # This criteria is kept seperate to documentation_careful, as it specifically requires a README file
     'documentation_readme': 'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript',
     'execute': 'Scripts can be successfully executed',
