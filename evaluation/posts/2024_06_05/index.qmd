@@ -19,6 +19,8 @@ Finished STRESS-DES.
 
 **Uncertainties:**
 
+* `2.5.5 Components - entry and exit points`
+    * **Get a second opinion** on this - have I been too harsh?
 * `5.1 Software or programming language`: "Where frameworks and libraries have been used provide all details including version numbers."
     * This part of criteria is **not** in the report, but is in the linked code.
     * Passed them anyway, as other parts of this criteria (OS, version, build DES software, Python) were provided - and also, wouldn't think you would put this extra level of information in the report?
