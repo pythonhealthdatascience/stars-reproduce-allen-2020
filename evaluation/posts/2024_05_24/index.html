@@ -290,7 +290,7 @@ Note
 <p>Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.</p>
 <p>Decided that it’s not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.</p>
 <p>If timed, 13.33-13.57.</p>
-<div id="eb404ea3" class="cell" data-execution_count="1">
+<div id="0ec7ad63" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -312,7 +312,7 @@ Note
 </div>
 </div>
 </div>
-<div id="a9c3a50d" class="cell" data-execution_count="2">
+<div id="5bb31d96" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlay transparently</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> cv2.addWeighted(original,<span class="fl">0.4</span>,overlay_resize,<span class="fl">0.1</span>,<span class="dv">0</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -332,7 +332,7 @@ Note
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="d1c6a73e" class="cell" data-execution_count="3">
+<div id="191145ef" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
