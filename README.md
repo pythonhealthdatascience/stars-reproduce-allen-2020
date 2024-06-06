@@ -69,3 +69,15 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 ## Citation
 
 If you wish to cite this repository, please refer to the citation file `CITATION.cff`, and the auto-generated alternatives `citation_apalike.apa` and `citation_bibtex.bib`.
+
+Test 1:
+
+https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/6e15e28839a0e35fccdf9d128114d622c665d329/citation_apalike.apa#L1
+
+Test 2:
+
+https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/citation_apalike.apa
+
+Test 3:
+
+https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blame/main/citation_apalike.apa#L1
