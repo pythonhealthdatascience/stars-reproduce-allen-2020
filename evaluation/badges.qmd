@@ -4,17 +4,8 @@ format:
   html:
     code-fold: true
 jupyter: python3
+bibliography: ../quarto_site/references.bib
 ---
-
-<!--
-Template for evaluation of journal article against criteria of various reproducibility badges.
-
-To use this template:
-1. For each criteria in the Python cell, add a 0 if not met and 1 if it is met.
-2. Run the script (i.e. preview the Quarto book) - you will see that the code outputs a formatted list of criteria met, as well as the badges met.
-
-Although this script uses Python, it is applicable regardless of the language used by the study you are evaluating.
--->
 
 This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.
 
@@ -244,3 +235,32 @@ These badges relate to an independent party regenerating the reuslts of the arti
 '''))
 create_badge_callout({k: v for (k, v) in award.items() if k.startswith('reproduce_')})
 ```
+
+## Sources
+
+**National Information Standards Organisation (NISO)** (@niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021)
+
+* "Open Research Objects (ORO)"
+* "Open Research Objects - All (ORO-A)"
+* "Results Reproduced (ROR-R)"
+
+**Association for Computing Machinery (ACM)** (@association_for_computing_machinery_acm_artifact_2020)
+
+* "Artifacts Available"
+* "Artifacts Evaluated - Functional"
+* "Artifacts Evaluated - Resuable"
+* "Results Reproduced"
+
+**Center for Open Science (COS)** (@blohowiak_badges_2023)
+
+* "Open Code"
+
+**Institute of Electrical and Electronics Engineers (IEEE)** (@institute_of_electrical_and_electronics_engineers_ieee_about_nodate)
+
+* "Code Available"
+* "Code Reviewed"
+* "Code Reproducible"
+
+**Psychological Science** (@hardwicke_transparency_2023 and @association_for_psychological_science_aps_psychological_2023)
+
+* "Computational Reproducibility"

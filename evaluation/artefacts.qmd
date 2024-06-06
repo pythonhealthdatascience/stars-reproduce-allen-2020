@@ -5,8 +5,8 @@ bibliography: ../quarto_site/references.bib
 
 This page evaluates the extent to which the original study meets the recommendations for the sharing of code and associated materials. We compare against two standards:
 
-* **Best practice audit** - requirements from the best practice audit by Monks et al. 2023 @monks_computer_2023. The items in this audit were based on the Turing Way  @the_turing_way_community_turing_2022, Taylor et al. 2017 @taylor_open_2017, and the Open Modelling Foundation @the_open_modeling_foundation_omf_reusability_2024.
-* **STARS** - recommendations from the recently published STARS framework by Monks et al. 2024. @monks_towards_2024.
+* **Best practice audit** - requirements from the best practice audit by @monks_computer_2023. The items in this audit were based on @the_turing_way_community_turing_2022, @taylor_open_2017, and @the_open_modeling_foundation_omf_reusability_2024.
+* **STARS** - recommendations from the recently published STARS framework by @monks_towards_2024.
 
 ## Best practice audit
 
