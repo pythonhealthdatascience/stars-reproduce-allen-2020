@@ -243,9 +243,10 @@ div.csl-indent {
 
 
 <p>This page evaluates the extent to which the author-published research artefacts meet the criteria of badges related to reproducibility from various organisations and journals.</p>
+<p><em>Caveat: Please note that these criteria are based on available information about each badge online, and that we have allowed troubleshooting for execution and reproduction. We cannot guarantee that the badges below would have been awarded in practice by these journals.</em></p>
 <section id="criteria" class="level2">
 <h2 class="anchored" data-anchor-id="criteria">Criteria</h2>
-<div id="e3d64a26" class="cell" data-execution_count="1">
+<div id="1759d859" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
@@ -259,9 +260,9 @@ div.csl-indent {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'license'</span>: <span class="st">'Includes an open license'</span>,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'relevant'</span>: <span class="st">'''Arefacts are relevant to and contribute to the article's results'''</span>,</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'complete'</span>: <span class="st">'Complete set of materials shared (as would be needed to fully reproduce article)'</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'structure'</span>: <span class="st">'Artefacts are well structured/organised (e.g. to the extent that reuse is facilitated, adhering to norms and standards of research community)'</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_sufficient'</span>: <span class="st">'Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)'</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_careful'</span>: <span class="st">'Artefacts are carefully documented (more than sufficient - e.g. to the extent that reuse is facilitated)'</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'structure'</span>: <span class="st">'Artefacts are well structured/organised (e.g. to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_sufficient'</span>: <span class="st">'Artefacts are sufficiently documented (i.e. to understand how it works, to enable it to be run, including package versions)'</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_careful'</span>: <span class="st">'Artefacts are carefully documented (more than sufficient - i.e. to the extent that reuse and repurposing is facilitated (e.g. changing parameters, reusing for own purpose))'</span>,</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This criteria is kept seperate to documentation_careful, as it specifically requires a README file</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'documentation_readme'</span>: <span class="st">'Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript'</span>,</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'execute'</span>: <span class="st">'Scripts can be successfully executed'</span>,</span>
@@ -361,9 +362,9 @@ div.csl-indent {
 </ul>
 <p>Criteria related to the structure and documentation of the artefacts -</p>
 <ul>
-<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse is facilitated, adhering to norms and standards of research community)</li>
-<li>✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)</li>
-<li>❌ Artefacts are carefully documented (more than sufficient - e.g.&nbsp;to the extent that reuse is facilitated)</li>
+<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)</li>
+<li>✅ Artefacts are sufficiently documented (i.e.&nbsp;to understand how it works, to enable it to be run, including package versions)</li>
+<li>❌ Artefacts are carefully documented (more than sufficient - i.e.&nbsp;to the extent that reuse and repurposing is facilitated (e.g.&nbsp;changing parameters, reusing for own purpose))</li>
 <li>❌ Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript</li>
 </ul>
 <p>Criteria related to running and reproducing results -</p>
@@ -377,7 +378,7 @@ div.csl-indent {
 </section>
 <section id="badges" class="level2">
 <h2 class="anchored" data-anchor-id="badges">Badges</h2>
-<div id="c8b20a84" class="cell" data-execution_count="2">
+<div id="d28ba14b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Full badge names</span></span>
@@ -601,7 +602,7 @@ div.csl-indent {
 <li>✅ Has a persistent identifier</li>
 <li>✅ Includes an open license</li>
 <li>✅ Complete set of materials shared (as would be needed to fully reproduce article)</li>
-<li>✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)</li>
+<li>✅ Artefacts are sufficiently documented (i.e.&nbsp;to understand how it works, to enable it to be run, including package versions)</li>
 </ul>
 </div>
 </div>
@@ -647,7 +648,7 @@ div.csl-indent {
 <div class="callout-body-container callout-body">
 <p>Meets all criteria:</p>
 <ul>
-<li>✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)</li>
+<li>✅ Artefacts are sufficiently documented (i.e.&nbsp;to understand how it works, to enable it to be run, including package versions)</li>
 <li>✅ Arefacts are relevant to and contribute to the article’s results</li>
 <li>✅ Complete set of materials shared (as would be needed to fully reproduce article)</li>
 <li>✅ Scripts can be successfully executed</li>
@@ -671,12 +672,12 @@ div.csl-indent {
 <div class="callout-body-container callout-body">
 <p>Does not meet all criteria:</p>
 <ul>
-<li>✅ Artefacts are sufficiently documented (eg. to understand how it works, to enable it to be run, including package versions)</li>
-<li>❌ Artefacts are carefully documented (more than sufficient - e.g.&nbsp;to the extent that reuse is facilitated)</li>
+<li>✅ Artefacts are sufficiently documented (i.e.&nbsp;to understand how it works, to enable it to be run, including package versions)</li>
+<li>❌ Artefacts are carefully documented (more than sufficient - i.e.&nbsp;to the extent that reuse and repurposing is facilitated (e.g.&nbsp;changing parameters, reusing for own purpose))</li>
 <li>✅ Arefacts are relevant to and contribute to the article’s results</li>
 <li>✅ Complete set of materials shared (as would be needed to fully reproduce article)</li>
 <li>✅ Scripts can be successfully executed</li>
-<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse is facilitated, adhering to norms and standards of research community)</li>
+<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)</li>
 </ul>
 </div>
 </div>
@@ -788,7 +789,7 @@ div.csl-indent {
 <ul>
 <li>✅ Independent party regenerated results using the authors research artefacts</li>
 <li>❌ Reproduced within approximately one hour (excluding compute time)</li>
-<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse is facilitated, adhering to norms and standards of research community)</li>
+<li>✅ Artefacts are well structured/organised (e.g.&nbsp;to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)</li>
 <li>❌ Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript</li>
 </ul>
 </div>

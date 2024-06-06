@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
-  <li><a href="#evaluation-against-reporting-guidelines" id="toc-evaluation-against-reporting-guidelines" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines">Evaluation against reporting guidelines</a></li>
+  <li><a href="#evaluation-against-reporting-guidelines-pt.-2" id="toc-evaluation-against-reporting-guidelines-pt.-2" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines-pt.-2">Evaluation against reporting guidelines (pt.&nbsp;2)</a></li>
   <li><a href="#comparison-of-my-stress-des-against-the-original-study" id="toc-comparison-of-my-stress-des-against-the-original-study" class="nav-link" data-scroll-target="#comparison-of-my-stress-des-against-the-original-study">Comparison of my STRESS-DES against the original study</a></li>
   <li><a href="#comparing-best-practice-audit-results-with-monks-and-harper" id="toc-comparing-best-practice-audit-results-with-monks-and-harper" class="nav-link" data-scroll-target="#comparing-best-practice-audit-results-with-monks-and-harper">Comparing best practice audit results with Monks and Harper</a></li>
   </ul></li>
@@ -262,44 +262,57 @@ Note
 </div>
 <section id="work-log" class="level2">
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
-<section id="evaluation-against-reporting-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines">Evaluation against reporting guidelines</h3>
-<p>Uncertainties for STRESS-DES:</p>
+<section id="evaluation-against-reporting-guidelines-pt.-2" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines-pt.-2">Evaluation against reporting guidelines (pt.&nbsp;2)</h3>
+<p>Finished STRESS-DES.</p>
+<p><strong>Uncertainties:</strong></p>
 <ul>
-<li>Software or programming language - “Where frameworks and libraries have been used provide all details including version numbers.” - not in the report, but is in the linked code. Passed them anyway, as wouldn’t think you would put this information in the report?</li>
-<li>Model execution - “State the event processing mechanism used e.g.&nbsp;three phase, event, activity, process interaction.” - not sure what this is…
+<li><code>5.1 Software or programming language</code>: “Where frameworks and libraries have been used provide all details including version numbers.”
 <ul>
-<li><code>Simulation - The Practice of Model Development and Use</code> (Stewart Robinson):
+<li>This part of criteria is <strong>not</strong> in the report, but is in the linked code.</li>
+<li>Passed them anyway, as other parts of this criteria (OS, version, build DES software, Python) were provided - and also, wouldn’t think you would put this extra level of information in the report?</li>
+</ul></li>
+<li><code>5.3 Model execution</code>: “State the event processing mechanism used e.g.&nbsp;three phase, event, activity, process interaction.”
+<ul>
+<li><strong>Feeling quite unclear on this</strong>. Did some research onto it but that hasn’t really cleared it up…</li>
+<li>Based answer on Tom’s, but don’t feel confident guessing at this for future ones</li>
+<li>Any <strong>recommended resources</strong> to explain this?</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Event processing mechanism
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>Simulation - The Practice of Model Development and Use</code> (Stewart Robinson):</p>
 <ul>
 <li>There are a few ways to model progress of time - one is time-slicing method, and other is discrete-event simulation (three phase method). “A number of machisms have been proposed for carrying out discrete-event simulation, among them are the <strong>event-based, activity-based, process-based and three-phase approaches</strong>. For a detailed discussion on these see Pidd (1998)”</li>
 <li><strong>Three phase</strong> - Events are classified as B (bound or booked) or C (conditional). B events are state changes scheduled at a point in time (often relates to arrivals or finishing an activity). C events are state changes that depend on cidions of a model (e.g.&nbsp;needing to wait until operator is free, often relat to start of an activity)</li>
-</ul></li>
-<li><a href="https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html">Intro to DES</a>:
+</ul>
+<p><a href="https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html">Intro to DES</a>:</p>
 <ul>
 <li><strong>Activity scanning</strong> - “Basic building block is the activity. Model program’s code segments consist of sequences of activities (operations) waiting to be executed. An activity sequence’s conditions must be satisfied before it is executed. Simulation executive moves from event to event executing those activity sequences whose conditions are satisfied.”</li>
 <li><strong>Event scheduling</strong> - “Basic building block is the event. Model program’s code segments consist of event routines waiting to be executed. Event routine associated with each event type – performs required operations for that type. Simulation executive moves from event to event executing the corresponding event routines”</li>
 <li><strong>Process interaction</strong> - “Basic building block is the process. System consists of a set of interacting processes. Model program’s code for each process includes the operations that it carries out throughout its lifetime. Event sequence for system consists of merging of event sequences for all processes. Future event list consists of a sequence of event nodes (or notices). Each event node indicates the event time and process to which it belongs. Simulation executive carries out the following tasks: (a) placement of processes at particular points of time in the list (b) removal of processes from the event list (c) activation of the process corresponding to the next event node from the event list (d) rescheduling of processes in the event list. Typically, a process object can be in one of several states: (a) active – process is currently executing There is only one such process in a system. (b) ready – process is in event list, waiting for activation at a certain time (c) idle (or blocked) – process is not in event list, but eligible to be be reactivated by some other entity (e.g., waiting for a passive resource) (d) terminated – process has completed its sequence of actions, is not in event list, and cannot be reactivated”</li>
-</ul></li>
-<li><strong>However, still not really sure what this would be?</strong></li>
-</ul></li>
 </ul>
-<p>Uncertainties from ISPOR SDM -</p>
+</div>
+</div>
+</div>
+<p>Then completed the guidelines adapted from ISPOR-SDM.</p>
+<p><strong>Uncertainties:</strong></p>
 <ul>
-<li>15 Is the model generalizability issue discussed? - have I been too harsh on this one?</li>
+<li><code>15 Is the model generalizability issue discussed?</code>
+<ul>
+<li>Have I been too harsh on this one? Or do we want it to be explicitly addressed?</li>
+</ul></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-STRESS
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Event processing mechanisms are unfamiliar, and a little hard to google.</p>
-</div>
-</div>
 </section>
 <section id="comparison-of-my-stress-des-against-the-original-study" class="level3">
 <h3 class="anchored" data-anchor-id="comparison-of-my-stress-des-against-the-original-study">Comparison of my STRESS-DES against the original study</h3>
@@ -362,25 +375,12 @@ STRESS
 </table>
 <iframe width="100%" height="800" src="original_study_stress_des_checklist.pdf">
 </iframe>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-STRESS
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When reporting multiple models in a paper, the STRESS checklist can easily/accidentally just be applied to one of the models in some instances, and it can make it harder to distinguish what relates to which model. As such, might suggest creating seperate checklists for each model.</p>
-</div>
-</div>
 </section>
 <section id="comparing-best-practice-audit-results-with-monks-and-harper" class="level3">
 <h3 class="anchored" data-anchor-id="comparing-best-practice-audit-results-with-monks-and-harper">Comparing best practice audit results with Monks and Harper</h3>
 <p>Compared my decisions for the best practice audit against those made in Monks and Harper.</p>
 <p>Their GitHub is <a href="https://github.com/TomMonks/des_sharing_lit_review">TomMonks/des_sharing_lit_review</a>, which provides the file <code>bp_audit.zip</code>. I used the provided code to clean this and saved it as <code>bp_audit_clean.csv</code>, which can then view here:</p>
-<div id="dae67cea" class="cell" data-execution_count="1">
+<div id="6a426bde" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import review results</span></span>
@@ -518,22 +518,23 @@ STRESS
 </div>
 </div>
 </div>
-<p>Same result:</p>
+<p>Different results:</p>
 <ul>
-<li>DOI</li>
-<li>ORCID</li>
-<li>License</li>
-<li>Model overview</li>
-<li>Steps to run code</li>
-<li>Formal dependency management</li>
-<li>Local execution</li>
-<li>Remote execution</li>
-</ul>
-<p>Different result:</p>
+<li><code>Link to published paper</code>
 <ul>
-<li>Link to published paper (I said yes as its within Zenodo, but they said no) <strong>ask tom whether he think that is ok, or whether he thinks it needs to be within the files themselves?</strong></li>
-<li>Informal dependency management (they failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not)</li>
-<li>Code testing (they said yes, I said no) <strong>ask tom what they felt was evidence of testing?</strong></li>
+<li>I said yes as its within Zenodo, but they said no</li>
+<li>I have amended my answer, as on reflection, I agree that this should be part of the artefacts themselves, and not just meta-data on Zenodo, as the artefacts are what you download, but have kept this as “partially met”</li>
+<li><strong>Get a second opinion on this</strong></li>
+</ul></li>
+<li>Informal dependency management
+<ul>
+<li>They failed it as it was formal, but I will keep as passed, as the intention is to understand whether they had dependency management or not, so no changes to make here.</li>
+</ul></li>
+<li>Code testing
+<ul>
+<li>They said yes but I said no</li>
+<li><strong>Ask tom what they felt was evidence of testing?</strong></li>
+</ul></li>
 </ul>
 </section>
 </section>

@@ -22,27 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -217,8 +197,8 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#badges" id="toc-badges" class="nav-link" data-scroll-target="#badges">Badges</a></li>
   <li><a href="#sharing-research-artefacts" id="toc-sharing-research-artefacts" class="nav-link" data-scroll-target="#sharing-research-artefacts">Sharing research artefacts</a></li>
+  <li><a href="#evaluation-against-reporting-guidelines-stress-des-pt.-1" id="toc-evaluation-against-reporting-guidelines-stress-des-pt.-1" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</a></li>
   </ul></li>
-  <li><a href="#reporting-guidelines" id="toc-reporting-guidelines" class="nav-link" data-scroll-target="#reporting-guidelines">Reporting guidelines</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -247,65 +227,49 @@ Note
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
 <section id="badges" class="level3">
 <h3 class="anchored" data-anchor-id="badges">Badges</h3>
-<p>Evaluating artefacts as in <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a> (as has been copied into <code>original_study/</code>).</p>
-<p>Felt uncertain around these criteria:</p>
+<p>Evaluating artefacts as in <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a> and <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a>.</p>
+<p><strong>Uncertainties:</strong></p>
 <ul>
-<li><code>documentation_sufficient</code> - it was missing one package from environment - but it had an environment file, package versions, and a README explaining how to set up environment and referring to a notebook which runs the code that produces the output - hence, despite missing one, I felt it met this criteria</li>
-<li><code>documentation_careful</code> - I feel the documentation is minimal, but that it was actually still sufficient for running the model - and, as such, presume it might meet this criteria? Unless “reuse” refers to being able to use and change - in which case, there is not much guidance on how to change the parameters, only on how to run it matching up with the paper? In which case, I don’t think it meets these. I think that interpretation also makes sense, as it then distinguishes from “sufficient”?
+<li><code>execute</code>: “Scripts can be successfully executed” (and then <code>regenerated</code>: “Independent party regenerated results using the authors research artefacts”)
 <ul>
-<li>The criteria this relates to is from the <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">Association for Computing Machinery (ACM) (<a href="#ref-association_for_computing_machinery_acm_artifact_2020" role="doc-biblioref">2020</a>)</span> : “The artifacts associated with the paper are of a quality that significantly exceeds minimal functionality. That is, they have all the qualities of the Artifacts Evaluated – Functional level, but, in addition, they are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated. In particular, norms and standards of the research community for artifacts of this type are strictly adhered to”</li>
+<li>Required some minor changes to environment in order for scripts to run</li>
+<li>However, not certain whether the badges would allow minor troubleshooting (or major troubleshooting) in order for a script to run?</li>
+<li>By my criteria (allowing troubleshooting) this would be fine. The step up from this criteria is reproduction (which I again allow troubleshooting) - so it would make sense that this is getting it to run, whilst next step is getting sufficiently similar results. May just need to add a <strong>caveat</strong> that this is with troubleshooting allowed (which may not be journal policy) - in same way that caveat, this is my interpretation of badges from available information and cannot guarantee would or would not be awarded.</li>
 </ul></li>
-<li><code>execute</code> - yes, but with one change to environment. Do they allow changes? I’ve selected yes, as I’m assuming minor troubleshooting is allowed, and the distinction between this and reproduction is that this is just about running scripts, whilst reproduction is about getting sufficiently similar results. Execution required in ACM and IEEE criteria…
+<li><code>hour</code>: Reproduced within approximately one hour (excluding compute time)
 <ul>
-<li>From the <span class="citation" data-cites="association_for_computing_machinery_acm_artifact_2020">Association for Computing Machinery (ACM) (<a href="#ref-association_for_computing_machinery_acm_artifact_2020" role="doc-biblioref">2020</a>)</span>: “Included scripts and/or software used to generate the results in the associated paper can be successfully executed, and included data can be accessed and appropriately manipulated”, with no mention of whether minor troubleshooting is allowed</li>
-<li>From the <span class="citation" data-cites="institute_of_electrical_and_electronics_engineers_ieee_about_nodate">Institute of Electrical and Electronics Engineers (IEEE) (<a href="#ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" role="doc-biblioref">n.d.</a>)</span>: “runs to produce the outputs desired”, with no mention of whether minor troubleshooting is allowed</li>
+<li>Took longer than an hour, but I wasn’t trying to get it done in that time</li>
+<li>If I hadn’t spent time reading and documenting and fiddling with the seeds, then I anticipate I could’ve run it within an hour</li>
+<li>However, <strong>I’m assuming to follow our process and fail it</strong> (for consistency with how we are working and timing)</li>
 </ul></li>
-<li><code>regenerated</code> - as above, unclear whether modification is allowed. For simplicity, have assumed definition we allowed - that you can troubleshoot - but this might not align with journals. Is this an issue?</li>
-<li><code>hour</code> - failed this, but we weren’t trying to do this within an hour. If I had been asked to do that (rather than spend time reading and thinking beforehand), I anticipate I could’ve run it (without going on to then add seeds etc). Hence, does it pass this?
+<li><code>documentation_readme</code>: “Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript”
 <ul>
-<li>Psychological Science (<span class="citation" data-cites="hardwicke_transparency_2023">Hardwicke and Vazire (<a href="#ref-hardwicke_transparency_2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="association_for_psychological_science_aps_psychological_2023">Association for Psychological Science (APS) (<a href="#ref-association_for_psychological_science_aps_psychological_2023" role="doc-biblioref">2023</a>)</span>) require reproduction within an hour, which I think implies some minor troubleshooting would be allowed?</li>
-<li>Others don’t specify either way</li>
+<li>I wouldn’t say it explicitly meets this criteria</li>
+<li>Although it was simple enough that it could do it anyway - directed me to notebook, run that, job done.</li>
+<li><strong>Uncertain on this one</strong></li>
 </ul></li>
-<li><code>documentation_readme</code> - I wouldn’t say it explicitly meets this criteria, although it was simple enough that it could do it anyway</li>
 </ul>
 </section>
 <section id="sharing-research-artefacts" class="level3">
 <h3 class="anchored" data-anchor-id="sharing-research-artefacts">Sharing research artefacts</h3>
-<p>Evaluated against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).</p>
-<p>Uncertainities:</p>
+<p>Evaluated again, this time against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).</p>
+<p><strong>Uncertainties:</strong></p>
 <ul>
-<li>Readme for audit - does it matter if that information is in the readme file? can they pass if readme links to template which overviews it? I think so? Although Table 1 in Monks and Harper 2023 specifies item as Readme, the description is just whether there is an obvious file overviewing purpose</li>
-<li>Citation information - not provided for this study, although Zenodo does provide it, but as code materials themselves don’t contain it, feel it fails this</li>
-<li>Remote code repository - STARS talks about why you should use them (e.g.&nbsp;version control) - but here, evaluating, someone might have done a single upload and not used properly - but purpose of STARS is not to evaluate if something is right or wrong upload so doesn’t specify further - in this case, assuming simplest route of if it is on something like GitHub then it meets criteria</li>
-<li>Enhanced documentation - lots of suggestions of what to do for this</li>
-<li>Remote execution/Online coding environment - Zenodo doesn’t but GitLab does. I was largely working with Zenodo as that was the archived version, but in this case, did say met criteria via GitLab. Importance of which code is chosen when there are two versions. I didn’t initially think it met criteria until checked the GitLab too. Have recommended both are referred to. But do they meet criteria if changes are made to repository after publication? After submission? For example, if we asked them to add a license.</li>
+<li><code>README</code>: “Does the readme file or similar describe the steps required to execute the simulation model?”
+<ul>
+<li>For this, is it sufficient that README is provided which explains environment and links to template that runs model? I’m assuming so.</li>
+<li>However, this decision differs from documentation_readme above, although that requires “clear” documentation</li>
+</ul></li>
+<li>Do they meet criteria is changes are made to a repository <strong>after</strong> publications? (this is general, not specific to this test-run)
+<ul>
+<li>Example: If we asked them to add a licence - do we then fail them on that? I’m presuming so?</li>
+</ul></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Keeping code repository and archive in sync and up-to-date
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Evaluation was made harder as there were slight differences between the archived code (Zenodo) and the production code (GitLab). You might not always want to keep them in sync. But it would be good to keep them in sync up until submission.</p>
-</div>
-</div>
 </section>
-</section>
-<section id="reporting-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="reporting-guidelines">Reporting guidelines</h2>
+<section id="evaluation-against-reporting-guidelines-stress-des-pt.-1" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</h3>
 <p>These were evaluated based ONLY on the journal article and supplementary materials (and not on the linked code repository).</p>
-<p>STRESS uncertanties:</p>
-<ul>
-<li>Model outputs - “Specify how and when they are calculated during the model run along with how any measures of error such as confidence intervals are calculated” - I find this criteria quite hard to apply? Here, it’s just N patients and additional time during model, mediane and extreme. Does it need more detail than that to meet it though?</li>
-<li>Experiementation aims - is it applicable? The DES model, as I understand, just tests one scenario - a worst case scenario - so it’s not really “scenario based analysis” comparing scenarios - but it does have A scenario and justification for it?</li>
-<li>Algorithms - is this applicable in this example? Parameters are just from sampling from distributions, or proportions. Assuming its applicable, and that distribing those distributions answers this question?</li>
-<li>Queues - wasn’t certain about this, as I don’t really know what order they get allocated to units. but that’s not a queue? but it kind of is - in that, at the start of the day, they are waiting to be assigned?</li>
-<li>Entry/exit points - have said not met as can’t find this stated, but also, not sure what the answer is. They are in model on days they need dialysis, and then leave again? unless get unallocated? and then they never return if their state turns to dead?</li>
-</ul>
+<p>Started work on evaluating against STRESS-DES.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -321,6 +285,7 @@ Including checklist
 </div>
 </div>
 </section>
+</section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
 <p>✅ = Made the change.</p>
@@ -334,23 +299,9 @@ Including checklist
 </ul>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-association_for_computing_machinery_acm_artifact_2020" class="csl-entry" role="listitem">
-Association for Computing Machinery (ACM). 2020. <span>“Artifact <span>Review</span> and <span>Badging</span> <span>Version</span> 1.1.”</span> <em>ACM</em>. <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">https://www.acm.org/publications/policies/artifact-review-and-badging-current</a>.
-</div>
-<div id="ref-association_for_psychological_science_aps_psychological_2023" class="csl-entry" role="listitem">
-Association for Psychological Science (APS). 2023. <span>“Psychological <span>Science</span> <span>Submission</span> <span>Guidelines</span>.”</span> <em>APS</em>. <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions">https://www.psychologicalscience.org/publications/psychological_science/ps-submissions</a>.
-</div>
-<div id="ref-hardwicke_transparency_2023" class="csl-entry" role="listitem">
-Hardwicke, Tom E., and Simine Vazire. 2023. <span>“Transparency <span>Is</span> <span>Now</span> the <span>Default</span> at <span>Psychological</span> <span>Science</span>.”</span> <em>Psychological Science</em> 0 (0). https://doi.org/<a href="https://doi.org/10.1177/09567976231221573">https://doi.org/10.1177/09567976231221573</a>.
-</div>
-<div id="ref-institute_of_electrical_and_electronics_engineers_ieee_about_nodate" class="csl-entry" role="listitem">
-Institute of Electrical and Electronics Engineers (IEEE). n.d. <span>“About <span>Content</span> in <span>IEEE</span> <span>Xplore</span>.”</span> <em>IEEE Explore</em>. Accessed May 20, 2024. <a href="https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content">https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
