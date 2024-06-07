@@ -200,7 +200,7 @@
     "href": "index.html#citation",
     "title": "Reproducing Allen et al. 2020",
     "section": "Citation",
-    "text": "Citation\nAPA: Heather A. (2024). Reproducing Allen et al. 2020 URL: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020\nSee CITATION.cff and citation_bibtex.bib for alternative formats."
+    "text": "Citation\nAPA: Heather A., Monks T. (2024). Reproducing Allen et al. 2020 (version 0.2.0). URL: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020\nSee CITATION.cff and citation_bibtex.bib for alternative formats."
   },
   {
     "objectID": "index.html#license",
@@ -208,6 +208,27 @@
     "title": "Reproducing Allen et al. 2020",
     "section": "License",
     "text": "License\nMIT License\nCopyright (c) 2024 STARS Project Team\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "🎉 Thank you for checking out our project! 🎉\nThis page contains guidelines on how to get in touch with us and potentially contribute towards this repository.\n\n\nYou can contact the researchers on this project using the provided email addresses in CITATION.cff.\n\n\n\nIf you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#email",
+    "href": "CONTRIBUTING.html#email",
+    "title": "Contributing",
+    "section": "",
+    "text": "You can contact the researchers on this project using the provided email addresses in CITATION.cff."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#suggesting-changes",
+    "href": "CONTRIBUTING.html#suggesting-changes",
+    "title": "Contributing",
+    "section": "",
+    "text": "If you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
   },
   {
     "objectID": "CHANGELOG.html",

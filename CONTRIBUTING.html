@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducing Allen et al.&nbsp;2020 - Sharing research artefacts</title>
+<title>Reproducing Allen et al.&nbsp;2020</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,48 +20,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,10 +80,10 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Reproducing Allen et al.&nbsp;2020</span>
     </a>
   </div>
@@ -114,11 +94,11 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/study_publication.html"> 
+    <a class="nav-link" href="./quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reproduction/reproduction.html"> 
+    <a class="nav-link" href="./reproduction/reproduction.html"> 
 <span class="menu-text">Reproduction code</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -127,33 +107,33 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../evaluation/scope.html">
+    <a class="dropdown-item" href="./evaluation/scope.html">
  <span class="dropdown-text">Scope</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="./evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/artefacts.html">
+    <a class="dropdown-item" href="./evaluation/artefacts.html">
  <span class="dropdown-text">Sharing research artefacts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/badges.html">
+    <a class="dropdown-item" href="./evaluation/badges.html">
  <span class="dropdown-text">Badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reporting.html">
+    <a class="dropdown-item" href="./evaluation/reporting.html">
  <span class="dropdown-text">Reporting guidelines</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/logbook.html"> 
+    <a class="nav-link" href="./evaluation/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="./evaluation/reproduction_report.html"> 
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
@@ -180,274 +160,41 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#best-practice-audit" id="toc-best-practice-audit" class="nav-link active" data-scroll-target="#best-practice-audit">Best practice audit</a></li>
-  <li><a href="#stars" id="toc-stars" class="nav-link" data-scroll-target="#stars">STARS</a></li>
+  <li><a href="#contributing" id="toc-contributing" class="nav-link active" data-scroll-target="#contributing">Contributing</a>
+  <ul class="collapse">
+  <li><a href="#email" id="toc-email" class="nav-link" data-scroll-target="#email">Email</a></li>
+  <li><a href="#suggesting-changes" id="toc-suggesting-changes" class="nav-link" data-scroll-target="#suggesting-changes">Suggesting changes</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/artefacts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/CONTRIBUTING.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Sharing research artefacts</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>This page evaluates the extent to which the original study meets the recommendations for the sharing of code and associated materials. We compare against two standards:</p>
-<ul>
-<li><strong>Best practice audit</strong> - requirements from the best practice audit by <span class="citation" data-cites="monks_computer_2023">Monks and Harper (<a href="#ref-monks_computer_2023" role="doc-biblioref">2023</a>)</span>. The items in this audit were based on <span class="citation" data-cites="the_turing_way_community_turing_2022">The Turing Way Community (<a href="#ref-the_turing_way_community_turing_2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="taylor_open_2017">Taylor et al. (<a href="#ref-taylor_open_2017" role="doc-biblioref">2017</a>)</span>, and <span class="citation" data-cites="the_open_modeling_foundation_omf_reusability_2024">The Open Modeling Foundation (OMF) (<a href="#ref-the_open_modeling_foundation_omf_reusability_2024" role="doc-biblioref">2024</a>)</span>.</li>
-<li><strong>STARS</strong> - recommendations from the recently published STARS framework by <span class="citation" data-cites="monks_towards_2024">Monks, Harper, and Mustafee (<a href="#ref-monks_towards_2024" role="doc-biblioref">2024</a>)</span>.</li>
-</ul>
-<section id="best-practice-audit" class="level2">
-<h2 class="anchored" data-anchor-id="best-practice-audit">Best practice audit</h2>
-<p>Of the <strong>11</strong> items in this audit:</p>
-<ul>
-<li><strong>9</strong> were met fully (✅)</li>
-<li><strong>1</strong> was met partially (🟡)</li>
-<li><strong>1</strong> was not met (❌)</li>
-</ul>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Description</th>
-<th style="text-align: center;">Met by study?</th>
-<th>Evidence/location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Digital Object Identifier</td>
-<td>Does the model have a DOI and promise of persistence? Can it be cited?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td><a href="https://zenodo.org/doi/10.5281/zenodo.3760625">10.5281/zenodo.3760625</a></td>
-</tr>
-<tr class="even">
-<td>Open Researcher and Contributor ID (ORCID)</td>
-<td>Is the model linked to one or more of the authors via an ORCID?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Monks linked to ORCID on Zenodo and in journal article</td>
-</tr>
-<tr class="odd">
-<td>License</td>
-<td>Does the repository have a recognised open license to control the use of code, liabilty and credit?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>MIT license</td>
-</tr>
-<tr class="even">
-<td>Model overview</td>
-<td>Is there an obvious file that provides an overview of the repository/model and it purpose (e.g.&nbsp;in README file)?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td><code>README.md</code> present but doesn’t overview repository/model or purpose, although does like to <code>Capacity_Model_Template.ipynb</code> which does overview the model</td>
-</tr>
-<tr class="odd">
-<td>Link to published paper</td>
-<td>Do models shared externally from journal articles contain a link to the published article?</td>
-<td style="text-align: center;">🟡 Partially</td>
-<td>Zenodo citations section includes link to the article</td>
-</tr>
-<tr class="even">
-<td>Steps to run code</td>
-<td>Does the readme file or similar describe the steps required to execute the simulation model?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Provided in <code>Capacity_Model_Template.ipynb</code></td>
-</tr>
-<tr class="odd">
-<td>Formal dependency management</td>
-<td>Has a formal tool, e.g.&nbsp;renv, conda, or poetry been used to manage software dependencies for the simulation model?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Conda - <code>environment.yaml</code></td>
-</tr>
-<tr class="even">
-<td>Informal dependency management</td>
-<td>Has an informal list or description of software, or OS dependencies been provided?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Within <code>environment.yaml</code></td>
-</tr>
-<tr class="odd">
-<td>Code Testing</td>
-<td>Is there any evidence of tests that have been applied to the code to check that it functions correctly?</td>
-<td style="text-align: center;">❌ Not met</td>
-<td>No tests found for DES model (tests for Monte Carlo model are available in GitLab repository)</td>
-</tr>
-<tr class="even">
-<td>Local execution</td>
-<td>Can the simulation model and associated files be downloaded and in theory executed on a local machine</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>I have successfully executed</td>
-</tr>
-<tr class="odd">
-<td>Remote execution</td>
-<td>Can the simulation model be executed online using free or commercial infrastructure?</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>The archived code on Zenodo has not been set up to allow this but the <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">production code on GitLab</a> was set up to allow this (on 23rd April 2020, prior to date journal received article)</td>
-</tr>
-</tbody>
-</table>
+<section id="contributing" class="level1">
+<h1>Contributing</h1>
+<p>🎉 Thank you for checking out our project! 🎉</p>
+<p>This page contains guidelines on how to get in touch with us and potentially contribute towards this repository.</p>
+<section id="email" class="level2">
+<h2 class="anchored" data-anchor-id="email">Email</h2>
+<p>You can contact the researchers on this project using the provided email addresses in <code>CITATION.cff</code>.</p>
 </section>
-<section id="stars" class="level2">
-<h2 class="anchored" data-anchor-id="stars">STARS</h2>
-<p>Of the <strong>7</strong> essential STARS components:</p>
+<section id="suggesting-changes" class="level2">
+<h2 class="anchored" data-anchor-id="suggesting-changes">Suggesting changes</h2>
+<p>If you spot an issue, you are welcome to raise this either by:</p>
 <ul>
-<li><strong>5</strong> were met fully (✅)</li>
-<li><strong>1</strong> was met partially (🟡)</li>
-<li><strong>1</strong> was not met (❌)</li>
+<li>Using <strong>GitHub Issues</strong>.</li>
+<li><strong>Forking</strong> the repository, make your changes and submit a pull request for review.</li>
 </ul>
-<p>Of the <strong>5</strong> optional STARS components:</p>
-<ul>
-<li><strong>1</strong> was met fully (✅)</li>
-<li><strong>4</strong> were not met (❌)</li>
-</ul>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Component</th>
-<th>Description</th>
-<th style="text-align: center;">Met by study?</th>
-<th>Evidence/location</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Essential components</strong></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Open license</td>
-<td>Free and open-source software (FOSS) license (e.g.&nbsp;MIT, GNU Public License (GPL))</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>MIT license</td>
-</tr>
-<tr class="odd">
-<td>Dependency management</td>
-<td>Specify software libraries, version numbers and sources (e.g.&nbsp;dependency management tools like pip virtual environment, conda environment, poetry)</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Conda - <code>environment.yaml</code></td>
-</tr>
-<tr class="even">
-<td>FOSS model</td>
-<td>Coded in FOSS language (e.g.&nbsp;R, Julia, Python)</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>Python</td>
-</tr>
-<tr class="odd">
-<td>Minimum documentation</td>
-<td>Minimal instructions (e.g.&nbsp;in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiements</td>
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ORCID</td>
-<td>ORCID for each study author</td>
-<td style="text-align: center;">🟡 Partially</td>
-<td>Only provided for Monks</td>
-</tr>
-<tr class="odd">
-<td>Citation information</td>
-<td>Instructions on how to cite the research artefact (e.g.&nbsp;CITATION.cff file)</td>
-<td style="text-align: center;">❌ Not met</td>
-<td>Not provided</td>
-</tr>
-<tr class="even">
-<td>Remote code repository</td>
-<td>Code available in a remote code repository (e.g.&nbsp;GitHub, GitLab, BitBucket)</td>
-<td style="text-align: center;">✅ Fully</td>
-<td><a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">GitLab</a></td>
-</tr>
-<tr class="odd">
-<td>Open science archive</td>
-<td>Code stored in an open science archive with FORCE11 compliant citation and guaranteed persistance of digital artefacts (e.g.&nbsp;Figshare, Zenodo, the Open Science Framework (OSF), and the Computational Modeling in the Social and Ecological Sciences Network (CoMSES Net))</td>
-<td style="text-align: center;">✅ Fully</td>
-<td><a href="https://zenodo.org/doi/10.5281/zenodo.3760625">Zenodo</a></td>
-</tr>
-<tr class="even">
-<td><strong>Optional components</strong></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Enhanced documentation</td>
-<td>Open and high quality documentation on how the model is implemented and works (e.g.&nbsp;via notebooks and markdown files, brought together using software like Quarto and Jupyter Book). Suggested content includes:<br>• Plain english summary of project and model<br>• Clarifying license<br>• Citation instructions<br>• Contribution instructions<br>• Model installation instructions<br>• Structured code walk through of model<br>• Documentation of modelling cycle using TRACE<br>• Annotated simulation reporting guidelines<br>• Clear description of model validation including its intended purpose</td>
-<td style="text-align: center;">❌ Not met</td>
-<td><code>README.md</code> has simple installation instructions, whilst <code>Capacity_Model_Template.ipynb</code> has plain english summary of model and simple walk through. However, many of these suggestions are not captured, and documentation is felt to just meet the criteria of “minimum documentation”</td>
-</tr>
-<tr class="even">
-<td>Documentation hosting</td>
-<td>Host documentation (e.g.&nbsp;with GitHub pages, GitLab pages, BitBucket Cloud, Quarto Pub)</td>
-<td style="text-align: center;">❌ Not met</td>
-<td>Not hosted.</td>
-</tr>
-<tr class="odd">
-<td>Online coding environment</td>
-<td>Provide an online environment where users can run and change code (e.g.&nbsp;BinderHub, Google Colaboratory, Deepnote)</td>
-<td style="text-align: center;">✅ Fully</td>
-<td>The archived code on Zenodo has not been set up to allow this but the <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19">production code on GitLab</a> was set up to allow this (on 23rd April 2020, prior to date journal received article)</td>
-</tr>
-<tr class="even">
-<td>Model interface</td>
-<td>Provide web application interface to the model so it is accessible to less technical simulation users</td>
-<td style="text-align: center;">❌ Not met</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>Web app hosting</td>
-<td>Host web app online (e.g.&nbsp;Streamlit Community Cloud, ShinyApps hosting)</td>
-<td style="text-align: center;">❌ Not met</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-monks_computer_2023" class="csl-entry" role="listitem">
-Monks, Thomas, and Alison Harper. 2023. <span>“Computer Model and Code Sharing Practices in Healthcare Discrete-Event Simulation: A Systematic Scoping Review.”</span> <em>Journal of Simulation</em> 0 (0): 1–16. <a href="https://doi.org/10.1080/17477778.2023.2260772">https://doi.org/10.1080/17477778.2023.2260772</a>.
-</div>
-<div id="ref-monks_towards_2024" class="csl-entry" role="listitem">
-Monks, Thomas, Alison Harper, and Navonil Mustafee. 2024. <span>“Towards Sharing Tools and Artefacts for Reusable Simulations in Healthcare.”</span> <em>Journal of Simulation</em> 0 (0): 1–20. <a href="https://doi.org/10.1080/17477778.2024.2347882">https://doi.org/10.1080/17477778.2024.2347882</a>.
-</div>
-<div id="ref-taylor_open_2017" class="csl-entry" role="listitem">
-Taylor, Simon J. E., Anastasia Anagnostou, Adedeji Fabiyi, Christine Currie, Thomas Monks, Roberto Barbera, and Bruce Becker. 2017. <span>“Open Science: <span>Approaches</span> and Benefits for Modeling &amp; Simulation.”</span> In <em>2017 <span>Winter</span> <span>Simulation</span> <span>Conference</span> (<span>WSC</span>)</em>, 535–49. <a href="https://doi.org/10.1109/WSC.2017.8247813">https://doi.org/10.1109/WSC.2017.8247813</a>.
-</div>
-<div id="ref-the_open_modeling_foundation_omf_reusability_2024" class="csl-entry" role="listitem">
-The Open Modeling Foundation (OMF). 2024. <span>“Reusability <span>Standards</span>.”</span> {OMF}. <a href="https://www.openmodelingfoundation.org/standards/reusability/">https://www.openmodelingfoundation.org/standards/reusability/</a>.
-</div>
-<div id="ref-the_turing_way_community_turing_2022" class="csl-entry" role="listitem">
-The Turing Way Community. 2022. <span>“The <span>Turing</span> <span>Way</span>: <span>A</span> Handbook for Reproducible, Ethical and Collaborative Research (1.0.2).”</span> <em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.7625728">https://doi.org/10.5281/zenodo.7625728</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1010,22 +757,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../CHANGELOG.html">
+    <a class="nav-link" href="./CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/license.html">
+    <a class="nav-link" href="./quarto_site/license.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/contribute.qmd">
+    <a class="nav-link" href="./quarto_site/contribute.qmd">
 <p>Contributing</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/artefacts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/CONTRIBUTING.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
