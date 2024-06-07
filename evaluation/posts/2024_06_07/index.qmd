@@ -23,6 +23,12 @@ Started on research compendium...
 
 * Moved `.csv` files (`patients.csv`, `travel_matrix.csv`, `units.csv`) from `sim/` to `data/` and modified file paths in scripts accordingly (`model.py` and `units.py`)
 * Moved `.py` files (`sim_replicate.py` and `sim_single.py`) from main folder into `sim/` and modified import in notebook accordingly (`reproduction.ipynb`)
+* Created test for successful reproduction using pytest
+    * Amended `run_replications()` to accept alternative path to save results to
+    * Copied data from my successful reproduction from `output/` to `test/data`
+    * Copied parameters from `reproduction.ipynb` into `test_model.py`
+    * Add `__init__.py` to `sim/` and modified imports in each of the `.py` scripts accordingly
+    * Started on test to run the model and compare test results against saved results in the test folder
 
 ## Suggested changes for protocol/template
 

@@ -1,5 +1,5 @@
-from sim.model import DialysisSim
-from sim.parameters import Scenario, Uniform
+from .model import DialysisSim
+from .parameters import Scenario, Uniform
 
 
 if __name__ == '__main__':

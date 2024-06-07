@@ -2,10 +2,10 @@ import simpy
 import pandas as pd
 import numpy as np
 
-from sim.patient import Patient
-from sim.units import Dialysis_units
-from sim.allocation import AllocatePatients
-from sim.audit import Audit
+from .patient import Patient
+from .units import Dialysis_units
+from .allocation import AllocatePatients
+from .audit import Audit
 
 class Population:
     """
