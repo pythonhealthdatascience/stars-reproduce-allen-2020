@@ -179,14 +179,14 @@
     "href": "index.html",
     "title": "Reproducing Allen et al. 2020",
     "section": "",
-    "text": "Ignore: Broken link check"
+    "text": "This book captures the reproduction of:\n\nAllen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. PLoS One 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction code - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nReport - final report describing the computational reproducibility assessment."
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
     "title": "Reproducing Allen et al. 2020",
-    "section": "About",
-    "text": "About\nThis book captures the reproduction of:\n\nAllen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. PLoS One 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction code - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nReport - final report describing the computational reproducibility assessment."
+    "section": "",
+    "text": "This book captures the reproduction of:\n\nAllen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. PLoS One 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction code - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nReport - final report describing the computational reproducibility assessment."
   },
   {
     "objectID": "index.html#project-team",
