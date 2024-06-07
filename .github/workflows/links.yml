@@ -1,4 +1,5 @@
-name: Links
+name: "Links"
+run-name: Check for broken links in rendered Quarto site
 
 on: push
 

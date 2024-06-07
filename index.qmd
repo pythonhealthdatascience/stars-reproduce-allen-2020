@@ -6,8 +6,6 @@ authors:
     affiliation: University of Exeter
 ---
 
-Ignore: [Broken link check](https://github.com/amyheather/brokenlinkcheck)
-
 ## About
 
 This book captures the reproduction of:
