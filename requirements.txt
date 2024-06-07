@@ -1,5 +1,6 @@
 jupyter==1.0.0
 pandas==2.2.2
+plotly==5.22.0
 
 # Use to test overlaying of images - but don't keep in future environments,
 # as decided that overlay is not the right approach

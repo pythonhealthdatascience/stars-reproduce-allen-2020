@@ -1,6 +1,5 @@
 ---
-title: "Computational reproducibility report"
-subtitle: "For Allen et al. 2020"
+title: "Summary report"
 bibliography: ../quarto_site/references.bib
 authors:
   - name: Amy Heather
@@ -9,26 +8,115 @@ authors:
     affiliation: University of Exeter
 # date: 07/06/2024
 # date-format: "Do MMMM YYYY"
+format:
+  html:
+    page-layout: full
+# Do not show code
+echo: False
 ---
 
-**Study:** Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. *PLoS One* 15, 8 (2020). <https://doi.org/10.1371%2Fjournal.pone.0237628>.
+## Study
 
-**Model:** Discrete-event simulation, dialysis units during COVID-19, keeping COVID positive and negative patients seperate
+This was a discrete-event simulation modeling patient allocation to dialysis units during the pandemic. It required that COVID positive patients were kept seperate from COVID negative patients (with particular units designated for COVID positive cases). It modelled a worst-case scenario of COVID spread over 150 days.
 
-**Contributors:** Amy Heather (reproduction), Tom Monks (advice).
+Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. *PLoS One* 15, 8 (2020). <https://doi.org/10.1371%2Fjournal.pone.0237628>.
 
-**Scope:** Three figures
+## Computational reproducibility
 
-**Reproduction success:** 3 of 3 (100%)
+Successfully reproduced **all 3 figures** within scope.
 
-**Evaluation against guidelines:**
+::: {.panel-tabset}
 
-| Category            | Total Items | Fully Met | Partially Met | Not Met | Not Applicable |
-|---------------------|-------------|-----------|---------------|---------|----------------|
-| Best Practice Audit | 11          | 9         | 1             | 1       | -              |
-| STARS (Essential)   | 7           | 5         | 1             | 1       | -              |
-| STARS (Optional)    | 5           | 1         | -             | 4       | -              |
-| Badges (Criteria)   | 12          | 9         | -             | 3       | -              |
-| Badges (Badges)     | 12          | 10        | -             | 2       | -              |
-| STRESS-DES          | 24          | 15        | 3             | 4       | 2              |
-| ISPOR-SDM           | 18          | 14        | 1             | 1       | 2              |
+## Figure 2
+
+Figure 2 shows the proportion of patients in each COVID state.
+
+![Original](../original_study/article_fig2.png){width=49% .lightbox}
+![Reproduction](../reproduction/output/patients_base_3_month.png){width=49% .lightbox}
+
+## Figure 3
+
+Figure 3 shows the count of patients allocated to each unit over time.
+
+![Original](../original_study/article_fig3.png){width=49% .lightbox}
+![Reproduction](../reproduction/output/units_base_3_month.png){width=49% .lightbox}
+
+## Figure 4
+
+Figure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal.
+
+![Original](../original_study/article_fig4.png){width=49% .lightbox}
+![Reproduction](../reproduction/output/displaced_base_3_month.png){width=49% .lightbox}
+
+:::
+
+## Evaluation against guidelines
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+# Create dataframe of results
+col = ['fully', 'partially', 'not', 'na']
+eval_dict = {
+  'Best practice audit': [9, 1, 1, 0],
+  'STARS (essential)': [5, 1, 1, 0],
+  'STARS (optional)': [1, 0, 4, 0],
+  'Badges (criteria)': [9, 0, 3, 0],
+  'Badges (badges)': [10, 0, 2, 0],
+  'STRESS-DES': [15, 3, 4, 2],
+  'ISPOR-SDM': [14, 1, 1, 2]
+}
+eval_wide = pd.DataFrame(eval_dict, index=col).T
+eval = (eval_wide
+        .melt(ignore_index=False)
+        .reset_index()
+        .rename(columns={'index': 'guideline',
+                         'variable': 'result',
+                         'value': 'count'}))
+
+# Add percentages
+eval['total'] = eval['count'].groupby(eval['guideline']).transform('sum')
+eval['percent'] = eval['count'] / eval['total']
+eval['percentage'] = round(eval['percent']*100, 1).astype(str) + '%'
+
+# Create stacked bar visualisation
+fig = px.bar(
+  eval,
+  x='percent',
+  y='guideline',
+  color='result',
+  color_discrete_map={'fully': '#06a94d',
+                      'partially': '#ffd68c',
+                      'not': '#ff9999',
+                      'na': '#d1dcea'},
+  orientation='h',
+  hover_data={
+    'count': True,
+    'percent': False,
+    'percentage': True,
+    'guideline': False,
+    'result': False})
+  
+# Amend x axis label and ticks
+fig.update_layout(xaxis = dict(
+  range=[0,1],
+  tickmode='array',
+  tickvals=[0, 0.2, 0.4, 0.6, 0.8, 1],
+  ticktext=['0%', '20%', '40%', '60%', '80%', '100%'],
+  title=''))
+
+# Amend y axis label and order
+fig.update_layout(yaxis=dict(
+  autorange='reversed',
+  title=''))
+
+# Relabel legend
+fig.update_layout(legend_title_text='Result')
+newnames = {'fully': 'Fully met', 'partially': 'Partially met',
+            'not': 'Not met', 'na': 'Not applicable'}
+fig.for_each_trace(lambda t: t.update(name = newnames[t.name]))
+
+# Show without toolbar
+fig.show(config={'displayModeBar': False})
+```
