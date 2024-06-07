@@ -40,6 +40,10 @@ website:
     center:
       - text: "Changelog"
         href: CHANGELOG.md
+      - text: "License"
+        href: quarto_site/license.qmd
+      - text: "Contributing"
+        href: quarto_site/contribute.qmd
     right:
       - icon: github
         href: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
