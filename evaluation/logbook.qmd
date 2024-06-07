@@ -12,5 +12,3 @@ title-block-banner: true
 ---
 
 These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.
-
-[Broken link test](https://github.com/amyheather/brokenlinktest)
