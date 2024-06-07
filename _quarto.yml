@@ -43,7 +43,7 @@ website:
       - text: "License"
         href: quarto_site/license.qmd
       - text: "Contributing"
-        href: quarto_site/contribute.qmd
+        href: CONTRIBUTING.md
     right:
       - icon: github
         href: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020
