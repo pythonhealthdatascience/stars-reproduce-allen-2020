@@ -59,8 +59,8 @@ Of the **24** items in the checklist:
 Of the **18** items in the checklist:
 
 * **14** were met fully (✅)
-* **1** were partially met (🟡)
-* **1** were not met (❌)
+* **1** was partially met (🟡)
+* **1** was not met (❌)
 * **2** were not applicable (N/A)
 
 <!-- Handy tips:
