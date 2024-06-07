@@ -151,14 +151,14 @@
     "href": "evaluation/reproduction_report.html#computational-reproducibility",
     "title": "Summary report",
     "section": "Computational reproducibility",
-    "text": "Computational reproducibility\nSuccessfully reproduced all 3 figures within scope.\n\nFigure 2Figure 3Figure 4\n\n\nFigure 2 shows the proportion of patients in each COVID state.\n \n\n\nFigure 3 shows the count of patients allocated to each unit over time.\n \n\n\nFigure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal."
+    "text": "Computational reproducibility\nSuccessfully reproduced all 3 figures (100%) within scope in 7h 6m (17.8%).\n\nFigure 2Figure 3Figure 4\n\n\nFigure 2 shows the proportion of patients in each COVID state.\n \n\n\nFigure 3 shows the count of patients allocated to each unit over time.\n \n\n\nFigure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal."
   },
   {
     "objectID": "evaluation/reproduction_report.html#evaluation-against-guidelines",
     "href": "evaluation/reproduction_report.html#evaluation-against-guidelines",
     "title": "Summary report",
     "section": "Evaluation against guidelines",
-    "text": "Evaluation against guidelines"
+    "text": "Evaluation against guidelines\n\n\n                                                \n\n\nThe original study repository was evaluated against guidance for sharing of artefacts (best practice audit and STARS) and against criteria from journal badges relating to how open and reproducible the model is. The original study article and supplementary materials (excluding code) were evaluated against reporting guidelines for DES models: STRESS-DES, and guidelines adapted from ISPOR-SDM."
   },
   {
     "objectID": "original_study/dialysis-service-delivery-covid19-v1.0/Transport_Model_Template.html",
