@@ -151,7 +151,7 @@
     "href": "evaluation/reproduction_report.html#computational-reproducibility",
     "title": "Summary report",
     "section": "Computational reproducibility",
-    "text": "Computational reproducibility\nSuccessfully reproduced all 3 figures (100%) within scope in 7h 6m (17.8%).\n\nFigure 2Figure 3Figure 4\n\n\nFigure 2 shows the proportion of patients in each COVID state.\n \n\n\nFigure 3 shows the count of patients allocated to each unit over time.\n \n\n\nFigure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal."
+    "text": "Computational reproducibility\nSuccessfully reproduced all 3 figures (100%) within scope in 7h 6m (17.8%).\nRequired troubleshooting:\n\nAdd joblib and remove spyder from environment.yaml\nModifications to enable control for randomness with individual random number streams\n\n\nFigure 2Figure 3Figure 4\n\n\nFigure 2 shows the proportion of patients in each COVID state.\n \n\n\nFigure 3 shows the count of patients allocated to each unit over time.\n \n\n\nFigure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal."
   },
   {
     "objectID": "evaluation/reproduction_report.html#evaluation-against-guidelines",
