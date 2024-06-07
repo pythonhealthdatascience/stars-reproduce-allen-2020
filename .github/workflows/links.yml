@@ -2,6 +2,8 @@ name: Links
 
 on: push
 
+# Source: https://github.com/chendaniely/quarto_website_template/blob/main/.github/workflows/check_links.yml
+
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
@@ -9,9 +11,33 @@ jobs:
       - name: Check out copy of repository
         uses: actions/checkout@v4
 
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      - name: Install python and dependencies
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Restore lychee cache
+        uses: actions/cache@v3
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          args: '--verbose --cache --max-cache-age 1d _site/**/*.html'
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
