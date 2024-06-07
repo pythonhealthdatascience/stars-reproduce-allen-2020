@@ -50,7 +50,5 @@ website:
 
 format:
   html:
-    theme:
-      light: cosmo
-      dark: [solar, quarto_site/dark.scss]
+    theme: cosmo
     toc: true
