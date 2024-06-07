@@ -10,4 +10,17 @@
 
 **How to execute model:**
 
+Part 1. Set up environment. This is to ensure you are using the same software.
+
+Option A. Conda
+
+To use the provided conda environment, run the following in a terminal
+
+    conda env create -f environment.yaml
+    conda activate covid19
+
+Option B. Binder
+
+**Reproduction specs:**
+
 **How to produce each item from scope:**
