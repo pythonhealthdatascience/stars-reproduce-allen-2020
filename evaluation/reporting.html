@@ -425,8 +425,8 @@ div.csl-indent {
 <p>Of the <strong>18</strong> items in the checklist:</p>
 <ul>
 <li><strong>14</strong> were met fully (✅)</li>
-<li><strong>1</strong> were partially met (🟡)</li>
-<li><strong>1</strong> were not met (❌)</li>
+<li><strong>1</strong> was partially met (🟡)</li>
+<li><strong>1</strong> was not met (❌)</li>
 <li><strong>2</strong> were not applicable (N/A)</li>
 </ul>
 <!-- Handy tips:
@@ -1044,7 +1044,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

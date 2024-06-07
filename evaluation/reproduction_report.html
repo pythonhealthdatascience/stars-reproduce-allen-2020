@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducing Allen et al.&nbsp;2020 - Computational reproducibility report</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Summary report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -40,6 +40,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +70,25 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.32.0.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 </head>
@@ -149,23 +171,30 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#study" id="toc-study" class="nav-link active" data-scroll-target="#study">Study</a></li>
+  <li><a href="#computational-reproducibility" id="toc-computational-reproducibility" class="nav-link" data-scroll-target="#computational-reproducibility">Computational reproducibility</a></li>
+  <li><a href="#evaluation-against-guidelines" id="toc-evaluation-against-guidelines" class="nav-link" data-scroll-target="#evaluation-against-guidelines">Evaluation against guidelines</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/reproduction_report.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Computational reproducibility report</h1>
-<p class="subtitle lead">For Allen et al.&nbsp;2020</p>
+<h1 class="title">Summary report</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-author column-page-left">
   <div class="quarto-title-meta-heading">Author</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
@@ -179,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
   </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
       
   
@@ -191,92 +220,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Study:</strong> Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., &amp; Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. <em>PLoS One</em> 15, 8 (2020). <a href="https://doi.org/10.1371%2Fjournal.pone.0237628" class="uri">https://doi.org/10.1371%2Fjournal.pone.0237628</a>.</p>
-<p><strong>Model:</strong> Discrete-event simulation, dialysis units during COVID-19, keeping COVID positive and negative patients seperate</p>
-<p><strong>Contributors:</strong> Amy Heather (reproduction), Tom Monks (advice).</p>
-<p><strong>Scope:</strong> Three figures</p>
-<p><strong>Reproduction success:</strong> 3 of 3 (100%)</p>
-<p><strong>Evaluation against guidelines:</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 15%">
-<col style="width: 12%">
-<col style="width: 17%">
-<col style="width: 10%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Total Items</th>
-<th>Fully Met</th>
-<th>Partially Met</th>
-<th>Not Met</th>
-<th>Not Applicable</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Best Practice Audit</td>
-<td>11</td>
-<td>9</td>
-<td>1</td>
-<td>1</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>STARS (Essential)</td>
-<td>7</td>
-<td>5</td>
-<td>1</td>
-<td>1</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>STARS (Optional)</td>
-<td>5</td>
-<td>1</td>
-<td>-</td>
-<td>4</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>Badges (Criteria)</td>
-<td>12</td>
-<td>9</td>
-<td>-</td>
-<td>3</td>
-<td>-</td>
-</tr>
-<tr class="odd">
-<td>Badges (Badges)</td>
-<td>12</td>
-<td>10</td>
-<td>-</td>
-<td>2</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>STRESS-DES</td>
-<td>24</td>
-<td>15</td>
-<td>3</td>
-<td>4</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>ISPOR-SDM</td>
-<td>18</td>
-<td>14</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
+<section id="study" class="level2">
+<h2 class="anchored" data-anchor-id="study">Study</h2>
+<p>This was a discrete-event simulation modeling patient allocation to dialysis units during the pandemic. It required that COVID positive patients were kept seperate from COVID negative patients (with particular units designated for COVID positive cases). It modelled a worst-case scenario of COVID spread over 150 days.</p>
+<p>Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., &amp; Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. <em>PLoS One</em> 15, 8 (2020). <a href="https://doi.org/10.1371%2Fjournal.pone.0237628" class="uri">https://doi.org/10.1371%2Fjournal.pone.0237628</a>.</p>
+</section>
+<section id="computational-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="computational-reproducibility">Computational reproducibility</h2>
+<p>Successfully reproduced <strong>all 3 figures</strong> within scope.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Figure 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Figure 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Figure 4</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Figure 2 shows the proportion of patients in each COVID state.</p>
+<p><a href="../original_study/article_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Original"><img src="../original_study/article_fig2.png" class="img-fluid" style="width:49.0%" alt="Original"></a> <a href="../reproduction/output/patients_base_3_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Reproduction"><img src="../reproduction/output/patients_base_3_month.png" class="img-fluid" style="width:49.0%" alt="Reproduction"></a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Figure 3 shows the count of patients allocated to each unit over time.</p>
+<p><a href="../original_study/article_fig3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Original"><img src="../original_study/article_fig3.png" class="img-fluid" style="width:49.0%" alt="Original"></a> <a href="../reproduction/output/units_base_3_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Reproduction"><img src="../reproduction/output/units_base_3_month.png" class="img-fluid" style="width:49.0%" alt="Reproduction"></a></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Figure 4 shows the impact on travel time for patients who were allocated to attend a different unit from normal.</p>
+<p><a href="../original_study/article_fig4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Original"><img src="../original_study/article_fig4.png" class="img-fluid" style="width:49.0%" alt="Original"></a> <a href="../reproduction/output/displaced_base_3_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Reproduction"><img src="../reproduction/output/displaced_base_3_month.png" class="img-fluid" style="width:49.0%" alt="Reproduction"></a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluation-against-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-against-guidelines">Evaluation against guidelines</h2>
+<div id="6cc58814" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>                            <div id="03a91ac4-ae23-4f6a-a516-229f261043f6" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("03a91ac4-ae23-4f6a-a516-229f261043f6")) {                    Plotly.newPlot(                        "03a91ac4-ae23-4f6a-a516-229f261043f6",                        [{"alignmentgroup":"True","customdata":[[9,"81.8%","fully"],[5,"71.4%","fully"],[1,"20.0%","fully"],[9,"75.0%","fully"],[10,"83.3%","fully"],[15,"62.5%","fully"],[14,"77.8%","fully"]],"hovertemplate":"count=%{customdata[0]}\u003cbr\u003epercentage=%{customdata[1]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"fully","marker":{"color":"#06a94d","pattern":{"shape":""}},"name":"Fully met","offsetgroup":"fully","orientation":"h","showlegend":true,"textposition":"auto","x":[0.8181818181818182,0.7142857142857143,0.2,0.75,0.8333333333333334,0.625,0.7777777777777778],"xaxis":"x","y":["Best practice audit","STARS (essential)","STARS (optional)","Badges (criteria)","Badges (badges)","STRESS-DES","ISPOR-SDM"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[1,"9.1%","partially"],[1,"14.3%","partially"],[0,"0.0%","partially"],[0,"0.0%","partially"],[0,"0.0%","partially"],[3,"12.5%","partially"],[1,"5.6%","partially"]],"hovertemplate":"count=%{customdata[0]}\u003cbr\u003epercentage=%{customdata[1]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"partially","marker":{"color":"#ffd68c","pattern":{"shape":""}},"name":"Partially met","offsetgroup":"partially","orientation":"h","showlegend":true,"textposition":"auto","x":[0.09090909090909091,0.14285714285714285,0.0,0.0,0.0,0.125,0.05555555555555555],"xaxis":"x","y":["Best practice audit","STARS (essential)","STARS (optional)","Badges (criteria)","Badges (badges)","STRESS-DES","ISPOR-SDM"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[1,"9.1%","not"],[1,"14.3%","not"],[4,"80.0%","not"],[3,"25.0%","not"],[2,"16.7%","not"],[4,"16.7%","not"],[1,"5.6%","not"]],"hovertemplate":"count=%{customdata[0]}\u003cbr\u003epercentage=%{customdata[1]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"not","marker":{"color":"#ff9999","pattern":{"shape":""}},"name":"Not met","offsetgroup":"not","orientation":"h","showlegend":true,"textposition":"auto","x":[0.09090909090909091,0.14285714285714285,0.8,0.25,0.16666666666666666,0.16666666666666666,0.05555555555555555],"xaxis":"x","y":["Best practice audit","STARS (essential)","STARS (optional)","Badges (criteria)","Badges (badges)","STRESS-DES","ISPOR-SDM"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[0,"0.0%","na"],[0,"0.0%","na"],[0,"0.0%","na"],[0,"0.0%","na"],[0,"0.0%","na"],[2,"8.3%","na"],[2,"11.1%","na"]],"hovertemplate":"count=%{customdata[0]}\u003cbr\u003epercentage=%{customdata[1]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"na","marker":{"color":"#d1dcea","pattern":{"shape":""}},"name":"Not applicable","offsetgroup":"na","orientation":"h","showlegend":true,"textposition":"auto","x":[0.0,0.0,0.0,0.0,0.0,0.08333333333333333,0.1111111111111111],"xaxis":"x","y":["Best practice audit","STARS (essential)","STARS (optional)","Badges (criteria)","Badges (badges)","STRESS-DES","ISPOR-SDM"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":""},"range":[0,1],"tickmode":"array","tickvals":[0,0.2,0.4,0.6,0.8,1],"ticktext":["0%","20%","40%","60%","80%","100%"]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":""},"autorange":"reversed"},"legend":{"title":{"text":"Result"},"tracegroupgap":0},"barmode":"relative"},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('03a91ac4-ae23-4f6a-a516-229f261043f6');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -712,7 +715,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/reproduction_report.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/reproduction_report.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -725,6 +728,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
