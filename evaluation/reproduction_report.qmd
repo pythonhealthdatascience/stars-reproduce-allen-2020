@@ -1,13 +1,14 @@
 ---
 title: "Summary report"
+subtitle: "Report summarising computational reproducibility assessment of Allen et al. 2020"
 bibliography: ../quarto_site/references.bib
 authors:
   - name: Amy Heather
     url: https://github.com/amyheather
     orcid: 0000-0002-6596-3479
-    affiliation: University of Exeter
-# date: 07/06/2024
-# date-format: "Do MMMM YYYY"
+#    affiliation: University of Exeter
+date: 06/07/2024
+date-format: "Do MMMM YYYY"
 format:
   html:
     page-layout: full
@@ -23,7 +24,7 @@ Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A sim
 
 ## Computational reproducibility
 
-Successfully reproduced **all 3 figures** within scope.
+Successfully reproduced **all 3 figures (100%)** within scope in **7h 6m (17.8%)**.
 
 ::: {.panel-tabset}
 
@@ -106,10 +107,11 @@ fig.update_layout(xaxis = dict(
   ticktext=['0%', '20%', '40%', '60%', '80%', '100%'],
   title=''))
 
-# Amend y axis label and order
+# Amend y axis label and order, and add space between ticks and plot
 fig.update_layout(yaxis=dict(
   autorange='reversed',
   title=''))
+fig.update_yaxes(ticksuffix = '  ')
 
 # Relabel legend
 fig.update_layout(legend_title_text='Result')
@@ -120,3 +122,5 @@ fig.for_each_trace(lambda t: t.update(name = newnames[t.name]))
 # Show without toolbar
 fig.show(config={'displayModeBar': False})
 ```
+
+<sup>The original study **repository** was evaluated against guidance for **sharing of artefacts** (best practice audit and STARS) and against criteria from journal **badges** relating to how open and reproducible the model is. The original study **article** and supplementary materials (excluding code) were evaluated against **reporting guidelines** for DES models: STRESS-DES, and guidelines adapted from ISPOR-SDM.</sup>
