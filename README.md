@@ -1,7 +1,10 @@
 # STARS: Computational reproducibility of Allen et al. 2020
 
-<!-- Status badge indicating whether CITATION file is still valid via GitHub action -->
+<!-- Status badges checking:
+* Whether CITATION file is still valid via GitHub action
+* Whether there are any broken links in the repository files -->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
+[![Check for broken links](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/check_links.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/check_links.yaml)
 
 ⚠️ ***This is a test-run for STARS work package 1 using a paper that Tom Monks was involved with. It was created to help us test out the reproduction protocol and guide creation of the [template repository](https://github.com/pythonhealthdatascience/stars_reproduction_template).*** ⚠️
 
