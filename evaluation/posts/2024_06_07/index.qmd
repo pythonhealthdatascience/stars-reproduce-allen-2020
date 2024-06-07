@@ -22,6 +22,7 @@ Produced summary report.
 Started on research compendium...
 
 * Moved `.csv` files (`patients.csv`, `travel_matrix.csv`, `units.csv`) from `sim/` to `data/` and modified file paths in scripts accordingly (`model.py` and `units.py`)
+* Moved `.py` files (`sim_replicate.py` and `sim_single.py`) from main folder into `sim/` and modified import in notebook accordingly (`reproduction.ipynb`)
 
 ## Suggested changes for protocol/template
 
