@@ -1,0 +1,28 @@
+---
+title: "Day 7"
+author: "Amy Heather"
+date: "2024-06-07"
+categories: [report, compendium]
+---
+
+::: {.callout-note}
+
+Created summary report and started on research compendium
+
+:::
+
+## Work log
+
+### Summary report
+
+Produced summary report.
+
+### Research compendium
+
+Started on research compendium...
+
+* Moved `.csv` files (`patients.csv`, `travel_matrix.csv`, `units.csv`) from `sim/` to `data/` and modified file paths in scripts accordingly (`model.py` and `units.py`)
+
+## Suggested changes for protocol/template
+
+✅ = Made the change.

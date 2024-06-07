@@ -31,8 +31,8 @@ class Dialysis_units:
     def __init__(self, env):
         """Constructor for dialysis unit"""
         
-        self.unit_info = pd.read_csv('sim/units.csv')
-        self.travel_times = pd.read_csv('sim/travel_matrix.csv', index_col='from_postcode')
+        self.unit_info = pd.read_csv('data/units.csv')
+        self.travel_times = pd.read_csv('data/travel_matrix.csv', index_col='from_postcode')
         self.rank_units_by_travel_time()
         self.rank_cov_units_by_entered_order()
         self.unit_list = list(self.unit_info.subunit)

@@ -99,7 +99,7 @@ class DialysisSim:
         self.audit = Audit(self._env, self.allocate, self.pop, self._params, self._units.unit_info)
         
         # Load patient data:
-        self.patient_data = pd.read_csv('sim/patients.csv')
+        self.patient_data = pd.read_csv('data/patients.csv')
         self.patient_data['COVID status'].fillna('negative', inplace=True)
         
         # Initiate patient population
