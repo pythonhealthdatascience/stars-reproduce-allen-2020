@@ -26,6 +26,11 @@ Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A sim
 
 Successfully reproduced **all 3 figures (100%)** within scope in **7h 6m (17.8%)**.
 
+Required troubleshooting:
+
+* Add joblib and remove spyder from environment.yaml
+* Modifications to enable control for randomness with individual random number streams
+
 ::: {.panel-tabset}
 
 ## Figure 2
