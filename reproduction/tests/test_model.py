@@ -7,49 +7,35 @@ producing consistent results.
 
 import pytest
 import pandas as pd
-# import sim.sim_replicate as sim
-# from sim.parameters import Scenario
 from pathlib import Path
 
-'''
-def run_model():
-    # Run model with parameters from computational reproducibility assessment
-    scenarios = {}
-    scenarios['base_3_month'] = Scenario(
-        run_length=150,
-        proportion_pos_requiring_inpatient=0.6)
-    number_of_replications = 30
-    base_random_set = 2700
-    output_folder = 'test_output'
-    sim.run_replications(
-        scenarios, number_of_replications, base_random_set, output_folder)
-'''
 
-# TO DO: Try removing the init files and see if it works still
-# TO DO: Correct test path to test folder
-# Paths to expected and test outputs from the model
+# Filenames for each of the results to be compared, and folder of containing
+# expected results.
 DISPLACED = 'base_3_month_reps_30_displaced_audit.csv'
 INPATIENT = 'base_3_month_reps_30_inpatient_audit.csv'
 PATIENT = 'base_3_month_reps_30_patient_audit.csv'
 UNIT = 'base_3_month_reps_30_unit_audit.csv'
-EXP_FOLDER = 'data'
-TEST_FOLDER = 'data'
-
-# Create empty list to populate with tuples of paths to test and expected files
-paths = []
-for file in [DISPLACED, INPATIENT, PATIENT, UNIT]:
-    test_path = Path(__file__).parent.joinpath(TEST_FOLDER, file)
-    exp_path = Path(__file__).parent.joinpath(EXP_FOLDER, file)
-    paths.append((test_path, exp_path))
 
 
-# Repeat function on each of the tuples in `paths`
-@pytest.mark.parametrize('test_df, expected_df', paths)
-def test_equal_df(test_df, expected_df):
+# Name of folder containing expected results
+@pytest.fixture
+def exp_folder():
+    return 'exp_results'
+
+
+# Run this function as separate tests on each of the files
+@pytest.mark.parametrize('file', [DISPLACED, INPATIENT, PATIENT, UNIT])
+def test_equal_df(file, exp_folder, request):
     '''
     Test that results are consistent with the expected results (which are
     from the computational reproducibility assessment)
     '''
-    test_result = pd.read_csv(test_df)
-    expected_result = pd.read_csv(expected_df)
-    pd.testing.assert_frame_equal(test_result, expected_result)
+    # Import test and expected results
+    # test_result = pd.read_csv(temp_dir.join(file))
+    test_result = pd.read_csv(Path(__file__).parent.joinpath(
+        request.config.test_folder, file))
+    exp_result = pd.read_csv(Path(__file__).parent.joinpath(exp_folder, file))
+
+    # Check that the dataframes are equal
+    pd.testing.assert_frame_equal(test_result, exp_result)

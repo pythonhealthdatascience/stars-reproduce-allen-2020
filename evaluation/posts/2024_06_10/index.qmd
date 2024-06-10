@@ -1,0 +1,22 @@
+---
+title: "Day 8"
+author: "Amy Heather"
+date: "2024-06-10"
+categories: [compendium]
+---
+
+::: {.callout-note}
+
+Continued working on research compendium.
+
+:::
+
+## Work log
+
+### Research compendium
+
+Continued working on research compendium...
+
+* After various attempts, managed to set up pytest which runs the model then checks dataframes are equal....
+    * Required modifying `sim_replicate.py` so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues
+    * `pytest` only works if run from `reproduction/` folder

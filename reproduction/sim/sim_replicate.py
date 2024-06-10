@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def run_replications(scenarios, number_of_replications=30, base_random_set=0,
-                     output_folder='output'):
+                     output_folder='output', plot=True):
     """
     Main simulation code. Calls multiple runs of prescribed scenarios.
 
@@ -36,7 +36,9 @@ def run_replications(scenarios, number_of_replications=30, base_random_set=0,
         To create the random number set for each replication, the replication
         number is added to this value. The default is 0.
     output_folder : str, optional
-        Path to save .csv result files to.
+        Path to save .csv result files to. Default is 'output'.
+    plot : boolean, optional
+        Whether to create plots. Default is True.
 
     Returns
     -------
@@ -77,10 +79,11 @@ def run_replications(scenarios, number_of_replications=30, base_random_set=0,
             f'{output_folder}/{name}_reps_{N_REPS}_inpatient_audit.csv', index=False)
 
         # Run analysis after all replicate runs in a scenario
-        analysis = EndTrialAnalysis(name, p_audits, u_audits, d_audits, i_audits)
-        analysis.plot_patient_audit()
-        analysis.plot_displaced_audit()
-        analysis.plot_unit_audit()
+        if plot:
+            analysis = EndTrialAnalysis(name, p_audits, u_audits, d_audits, i_audits)
+            analysis.plot_patient_audit()
+            analysis.plot_displaced_audit()
+            analysis.plot_unit_audit()
 
         print('Done.')
 
