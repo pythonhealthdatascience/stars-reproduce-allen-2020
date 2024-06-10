@@ -10,7 +10,6 @@ date-format: "Do MMMM YYYY"
 format:
   html:
     page-layout: full
-# Do not show code
 echo: False
 ---
 

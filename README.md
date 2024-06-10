@@ -39,6 +39,7 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 ├── .gitignore
 ├── CHANGELOG.md
 ├── CITATION.cff
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 ├── _quarto.yml
@@ -56,6 +57,7 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 * `.gitignore` - Instructions for Git of which local objects should not be included in the repository
 * `CHANGELOG.md` - Details changes between versions (as in GitHub releases and versions on Zenodo)
 * `CITATION.cff` - Instructions for citing this repository, created using [CFF INIT](https://citation-file-format.github.io/)
+* `CONTRIBUTING.md` - Contribution instructions for repository
 * `LICENSE` - Details of the license for this work
 * `README.md` - Description for this repository. You'll find a seperate README for the model within the `reproduction/` folder, and potentially also the `original_study/` folder if a README was created by the original study authors
 * `_quarto.yml` - Set-up instructions for the Quarto website
