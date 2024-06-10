@@ -7,7 +7,7 @@ categories: [report, compendium]
 
 ::: {.callout-note}
 
-Created summary report and started on research compendium
+Created summary report and started on research compendium.
 
 :::
 
@@ -29,7 +29,3 @@ Started on research compendium...
     * Copied parameters from `reproduction.ipynb` into `test_model.py`
     * Add `__init__.py` to `sim/` and modified imports in each of the `.py` scripts accordingly
     * Started on test to run the model and compare test results against saved results in the test folder
-
-## Suggested changes for protocol/template
-
-✅ = Made the change.
