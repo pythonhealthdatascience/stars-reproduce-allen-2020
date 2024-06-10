@@ -18,8 +18,12 @@ website:
     left:
       - text: Original study
         href: quarto_site/study_publication.qmd
-      - text: Reproduction code
-        href: reproduction/reproduction.ipynb
+      - text: Reproduction
+        menu:
+          - text: README
+            href: quarto_site/reproduction_readme.qmd
+          - text: Notebook
+            href: reproduction/reproduction.ipynb
       - text: Evaluation
         menu:
           - evaluation/scope.qmd

@@ -1,0 +1,6 @@
+---
+title: "README for reproduction"
+subtitle: "This page contains a copy of the README produced to support reproduction"
+---
+
+{{< include ../reproduction/README.md >}}
