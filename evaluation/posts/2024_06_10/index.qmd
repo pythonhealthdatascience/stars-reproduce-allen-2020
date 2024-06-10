@@ -7,7 +7,7 @@ categories: [compendium]
 
 ::: {.callout-note}
 
-Continued working on research compendium.
+Continued working on research compendium (tests, Docker).
 
 :::
 
@@ -30,3 +30,5 @@ Continued working on research compendium...
     * After rebuilding the container, ran using `sudo docker run -it -p 8080:80 --name covid19_docker covid19`, then did the commands `conda activate covid19` and `jupyter-lab`
     * Opened browser and entered `localhost:8080`
     * Succesfully ran `reproduction.ipynb`
+* Uploaded image to GitHub container registry (<https://github.com/features/packages>) - using this instead of DockerHub as it means the image can be associated with an organisation (whilst DockerHub requires payment for organisations) - and pushed using GitHub action (as had issues trying to push from terminal with my user's personal access token)
+* Created BinderHub config file to use the GHCR image, then set up on <mybinder.org>.
