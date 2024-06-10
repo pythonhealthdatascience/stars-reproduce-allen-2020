@@ -18,5 +18,15 @@ Continued working on research compendium.
 Continued working on research compendium...
 
 * After various attempts, managed to set up pytest which runs the model then checks dataframes are equal....
-    * Required modifying `sim_replicate.py` so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues
-    * `pytest` only works if run from `reproduction/` folder
+    * Required modifying `sim_replicate.py` so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues.
+    * `pytest` only works if run from `reproduction/` folder.
+    * Modified parameters in `conftest.py` to check it returns error when parameters are wrong which it did, so returned to the correct parameters.
+* Encountered error rendering book, but this was because the environment had changed from `quarto_allen_2020` (book environment from `requirements.txt`) to `covid19` (model environment from `environment.yml`), as could be seen from running `quarto check jupyter`. Changing this in terminal and for interpreter and then re-running resolved issue.
+* Displayed reproduction README within quarto site
+* Set up Docker environment...
+    * Created `Dockerfile` and accompanying `jupyter_notebook_config.py` based on <https://github.com/TomMonks/treatment-centre-sim/>
+    * In terminal, ran the command `sudo docker build --tag covid19 .` to build the Docker image
+    * Had mistake in Dockerfile, so removed it with `sudo docker rm containerid`, and confirmed it was gone by running `sudo docker ps -a`
+    * After rebuilding the container, ran using `sudo docker run -it -p 8080:80 --name covid19_docker covid19`, then did the commands `conda activate covid19` and `jupyter-lab`
+    * Opened browser and entered `localhost:8080`
+    * Succesfully ran `reproduction.ipynb`
