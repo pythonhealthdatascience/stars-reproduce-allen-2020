@@ -73,3 +73,7 @@ If you wish to cite this repository, please refer to the citation file `CITATION
 This repository is licensed under the [MIT License](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/LICENSE).
 
 This is aligned with the original study, who also licensed their work under the [MIT License](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/original_study/dialysis-service-delivery-covid19-v1.0/LICENSE).
+
+## Funding
+
+This work is supported by the Medical Research Council [grant number MR/Z503915/1].
