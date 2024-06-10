@@ -16,12 +16,13 @@ DISPLACED = 'base_3_month_reps_30_displaced_audit.csv'
 INPATIENT = 'base_3_month_reps_30_inpatient_audit.csv'
 PATIENT = 'base_3_month_reps_30_patient_audit.csv'
 UNIT = 'base_3_month_reps_30_unit_audit.csv'
+EXP_FOLDER = 'exp_results'
 
 
 # Name of folder containing expected results
 @pytest.fixture
 def exp_folder():
-    return 'exp_results'
+    return EXP_FOLDER
 
 
 # Run this function as separate tests on each of the files
