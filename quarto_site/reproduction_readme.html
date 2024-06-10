@@ -168,7 +168,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#covid-19-dialysis-service-delivery-model" id="toc-covid-19-dialysis-service-delivery-model" class="nav-link active" data-scroll-target="#covid-19-dialysis-service-delivery-model">COVID-19 Dialysis Service Delivery Model</a></li>
+  <li><a href="#covid-19-dialysis-service-delivery-model" id="toc-covid-19-dialysis-service-delivery-model" class="nav-link active" data-scroll-target="#covid-19-dialysis-service-delivery-model">COVID-19 Dialysis Service Delivery Model</a>
+  <ul class="collapse">
+  <li><a href="#steps-to-reproduce-results" id="toc-steps-to-reproduce-results" class="nav-link" data-scroll-target="#steps-to-reproduce-results">Steps to reproduce results</a>
+  <ul class="collapse">
+  <li><a href="#part-1.-set-up-environment" id="toc-part-1.-set-up-environment" class="nav-link" data-scroll-target="#part-1.-set-up-environment">Part 1. Set up environment</a></li>
+  <li><a href="#part-2.-running-the-model" id="toc-part-2.-running-the-model" class="nav-link" data-scroll-target="#part-2.-running-the-model">Part 2. Running the model</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/quarto_site/reproduction_readme.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -201,17 +208,36 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Source code:</strong> <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a>.</p>
 <p><strong>Plain english summary:</strong></p>
 <p><strong>Model scope:</strong></p>
-<p><strong>How to execute model:</strong></p>
-<p>Part 1. Set up environment. This is to ensure you are using the same software.</p>
-<p>Option A. Conda</p>
-<p>To use the provided conda environment, run the following in a terminal</p>
-<pre><code>conda env create -f environment.yaml
-conda activate covid19</code></pre>
-<p>Option B. Binder</p>
 <p><strong>Reproduction specs:</strong></p>
-<p><strong>How to produce each item from scope:</strong></p>
+<section id="steps-to-reproduce-results" class="level2">
+<h2 class="anchored" data-anchor-id="steps-to-reproduce-results">Steps to reproduce results</h2>
+<section id="part-1.-set-up-environment" class="level3">
+<h3 class="anchored" data-anchor-id="part-1.-set-up-environment">Part 1. Set up environment</h3>
+<p>There are two options: using conda to install the provided virtual environment on your local machine, or using a docker image containing all the code and the virtual environment.</p>
+<p><strong>Conda environment:</strong> To use the provided conda environment, run the following in a terminal</p>
+<pre><code>conda env create -f environment.yaml</code></pre>
+<p>You can use this environment in your preferred IDE, such as VSCode. To use the browser-based JupyterLab, run the following:</p>
+<pre><code>conda activate covid19
+jupyter-lab</code></pre>
+<p><strong>Docker:</strong> To use the Docker image, you will need <code>docker</code> installed on your local machine. You can then obtain the image by either:</p>
+<ul>
+<li>Pulling a pre-built image from the GitHub container registry by running <code>docker pull ghcr.io/pythonhealthdatascience/covid19:latest</code>, or</li>
+<li>Building the image locally from the Dockerfile by running <code>docker build --tag covid19 .</code></li>
+</ul>
+<p>To run the image, you should then issue the following commands in your terminal:</p>
+<pre><code>docker run -it -p 8080:80 --name covid19_docker covid19
+conda activate covid19
+jupyter-lab</code></pre>
+<p>Then open your browser and go to <a href="https://localhost:8080" class="uri">https://localhost:8080</a>. This will open Jupyterlab within the reproduction/ directory.</p>
+</section>
+<section id="part-2.-running-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="part-2.-running-the-model">Part 2. Running the model</h3>
+<p>The three items in the scope are all produced by running <code>reproduction.ipynb</code>.</p>
+<p>Run <code>pytest</code> (make sure you current directory is the <code>reproduction/</code> folder) to check that model results from your run are as expected.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
