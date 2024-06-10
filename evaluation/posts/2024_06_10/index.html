@@ -97,10 +97,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../reproduction/reproduction.html"> 
-<span class="menu-text">Reproduction code</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reproduction" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Reproduction</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction">    
+        <li>
+    <a class="dropdown-item" href="../../../quarto_site/reproduction_readme.html">
+ <span class="dropdown-text">README</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../../reproduction/reproduction.html">
+ <span class="dropdown-text">Notebook</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Evaluation</span>
@@ -225,8 +236,20 @@ Note
 <ul>
 <li>After various attempts, managed to set up pytest which runs the model then checks dataframes are equal….
 <ul>
-<li>Required modifying <code>sim_replicate.py</code> so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues</li>
-<li><code>pytest</code> only works if run from <code>reproduction/</code> folder</li>
+<li>Required modifying <code>sim_replicate.py</code> so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues.</li>
+<li><code>pytest</code> only works if run from <code>reproduction/</code> folder.</li>
+<li>Modified parameters in <code>conftest.py</code> to check it returns error when parameters are wrong which it did, so returned to the correct parameters.</li>
+</ul></li>
+<li>Encountered error rendering book, but this was because the environment had changed from <code>quarto_allen_2020</code> (book environment from <code>requirements.txt</code>) to <code>covid19</code> (model environment from <code>environment.yml</code>), as could be seen from running <code>quarto check jupyter</code>. Changing this in terminal and for interpreter and then re-running resolved issue.</li>
+<li>Displayed reproduction README within quarto site</li>
+<li>Set up Docker environment…
+<ul>
+<li>Created <code>Dockerfile</code> and accompanying <code>jupyter_notebook_config.py</code> based on <a href="https://github.com/TomMonks/treatment-centre-sim/" class="uri">https://github.com/TomMonks/treatment-centre-sim/</a></li>
+<li>In terminal, ran the command <code>sudo docker build --tag covid19 .</code> to build the Docker image</li>
+<li>Had mistake in Dockerfile, so removed it with <code>sudo docker rm containerid</code>, and confirmed it was gone by running <code>sudo docker ps -a</code></li>
+<li>After rebuilding the container, ran using <code>sudo docker run -it -p 8080:80 --name covid19_docker covid19</code>, then did the commands <code>conda activate covid19</code> and <code>jupyter-lab</code></li>
+<li>Opened browser and entered <code>localhost:8080</code></li>
+<li>Succesfully ran <code>reproduction.ipynb</code></li>
 </ul></li>
 </ul>
 

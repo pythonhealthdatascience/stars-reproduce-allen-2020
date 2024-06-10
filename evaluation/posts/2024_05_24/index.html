@@ -131,10 +131,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../reproduction/reproduction.html"> 
-<span class="menu-text">Reproduction code</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reproduction" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Reproduction</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction">    
+        <li>
+    <a class="dropdown-item" href="../../../quarto_site/reproduction_readme.html">
+ <span class="dropdown-text">README</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../../reproduction/reproduction.html">
+ <span class="dropdown-text">Notebook</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Evaluation</span>
@@ -287,7 +298,7 @@ Note
 <p>Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.</p>
 <p>Decided that it’s not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.</p>
 <p>If timed, 13.33-13.57.</p>
-<div id="54c70816" class="cell" data-execution_count="1">
+<div id="e928ac69" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -309,7 +320,7 @@ Note
 </div>
 </div>
 </div>
-<div id="e025210e" class="cell" data-execution_count="2">
+<div id="7800d49e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlay transparently</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> cv2.addWeighted(original,<span class="fl">0.4</span>,overlay_resize,<span class="fl">0.1</span>,<span class="dv">0</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -329,7 +340,7 @@ Note
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="5e09a119" class="cell" data-execution_count="3">
+<div id="328cdf3d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>

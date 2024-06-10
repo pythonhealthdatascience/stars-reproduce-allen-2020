@@ -134,10 +134,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../reproduction/reproduction.html"> 
-<span class="menu-text">Reproduction code</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reproduction" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Reproduction</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction">    
+        <li>
+    <a class="dropdown-item" href="../../../quarto_site/reproduction_readme.html">
+ <span class="dropdown-text">README</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../../reproduction/reproduction.html">
+ <span class="dropdown-text">Notebook</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Evaluation</span>
@@ -384,7 +395,7 @@ Event processing mechanism
 <h3 class="anchored" data-anchor-id="comparing-best-practice-audit-results-with-monks-and-harper">Comparing best practice audit results with Monks and Harper</h3>
 <p>Compared my decisions for the best practice audit against those made in Monks and Harper.</p>
 <p>Their GitHub is <a href="https://github.com/TomMonks/des_sharing_lit_review">TomMonks/des_sharing_lit_review</a>, which provides the file <code>bp_audit.zip</code>. I used the provided code to clean this and saved it as <code>bp_audit_clean.csv</code>, which can then view here:</p>
-<div id="5ba47a93" class="cell" data-execution_count="1">
+<div id="f6834680" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import review results</span></span>

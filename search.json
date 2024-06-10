@@ -231,6 +231,76 @@
     "text": "This repository is licensed under the MIT License.\n\n\n\n\n\n\nView license\n\n\n\n\n\nMIT License\nCopyright (c) 2024 STARS Project Team\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\n\nThis is aligned with the original study, who also licensed their work under the MIT License.\n\n\n\n\n\n\nView license\n\n\n\n\n\nMIT License\nCopyright (c) 2020 tmwm201\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
+    "objectID": "quarto_site/study_publication.html",
+    "href": "quarto_site/study_publication.html",
+    "title": "Publication",
+    "section": "",
+    "text": "View at: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/tree/main/original_study/dialysis-service-delivery-covid19-v1.0"
+  },
+  {
+    "objectID": "quarto_site/study_publication.html#code-and-data",
+    "href": "quarto_site/study_publication.html#code-and-data",
+    "title": "Publication",
+    "section": "",
+    "text": "View at: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/tree/main/original_study/dialysis-service-delivery-covid19-v1.0"
+  },
+  {
+    "objectID": "quarto_site/study_publication.html#journal-article",
+    "href": "quarto_site/study_publication.html#journal-article",
+    "title": "Publication",
+    "section": "Journal article",
+    "text": "Journal article"
+  },
+  {
+    "objectID": "quarto_site/study_publication.html#supplementary-materials",
+    "href": "quarto_site/study_publication.html#supplementary-materials",
+    "title": "Publication",
+    "section": "Supplementary materials",
+    "text": "Supplementary materials"
+  },
+  {
+    "objectID": "CHANGELOG.html",
+    "href": "CHANGELOG.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nRelease date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study.\n\n\n\n\n\nRelease date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.2.0",
+    "href": "CHANGELOG.html#v0.2.0",
+    "title": "Changelog",
+    "section": "",
+    "text": "Release date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study."
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.1.0",
+    "href": "CHANGELOG.html#v0.1.0",
+    "title": "Changelog",
+    "section": "",
+    "text": "Release date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "🎉 Thank you for checking out our project! 🎉\nThis page contains guidelines on how to get in touch with us and potentially contribute towards this repository.\n\n\nYou can contact the researchers on this project using the provided email addresses in CITATION.cff.\n\n\n\nIf you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#email",
+    "href": "CONTRIBUTING.html#email",
+    "title": "Contributing",
+    "section": "",
+    "text": "You can contact the researchers on this project using the provided email addresses in CITATION.cff."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#suggesting-changes",
+    "href": "CONTRIBUTING.html#suggesting-changes",
+    "title": "Contributing",
+    "section": "",
+    "text": "If you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Reproducing Allen et al. 2020",
@@ -266,74 +336,11 @@
     "text": "License\nMIT License\nCopyright (c) 2024 STARS Project Team\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing",
+    "objectID": "quarto_site/reproduction_readme.html",
+    "href": "quarto_site/reproduction_readme.html",
+    "title": "README for reproduction",
     "section": "",
-    "text": "🎉 Thank you for checking out our project! 🎉\nThis page contains guidelines on how to get in touch with us and potentially contribute towards this repository.\n\n\nYou can contact the researchers on this project using the provided email addresses in CITATION.cff.\n\n\n\nIf you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#email",
-    "href": "CONTRIBUTING.html#email",
-    "title": "Contributing",
-    "section": "",
-    "text": "You can contact the researchers on this project using the provided email addresses in CITATION.cff."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#suggesting-changes",
-    "href": "CONTRIBUTING.html#suggesting-changes",
-    "title": "Contributing",
-    "section": "",
-    "text": "If you spot an issue, you are welcome to raise this either by:\n\nUsing GitHub Issues.\nForking the repository, make your changes and submit a pull request for review."
-  },
-  {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nRelease date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study.\n\n\n\n\n\nRelease date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
-  },
-  {
-    "objectID": "CHANGELOG.html#v0.2.0",
-    "href": "CHANGELOG.html#v0.2.0",
-    "title": "Changelog",
-    "section": "",
-    "text": "Release date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study."
-  },
-  {
-    "objectID": "CHANGELOG.html#v0.1.0",
-    "href": "CHANGELOG.html#v0.1.0",
-    "title": "Changelog",
-    "section": "",
-    "text": "Release date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
-  },
-  {
-    "objectID": "quarto_site/study_publication.html",
-    "href": "quarto_site/study_publication.html",
-    "title": "Publication",
-    "section": "",
-    "text": "View at: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/tree/main/original_study/dialysis-service-delivery-covid19-v1.0"
-  },
-  {
-    "objectID": "quarto_site/study_publication.html#code-and-data",
-    "href": "quarto_site/study_publication.html#code-and-data",
-    "title": "Publication",
-    "section": "",
-    "text": "View at: https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/tree/main/original_study/dialysis-service-delivery-covid19-v1.0"
-  },
-  {
-    "objectID": "quarto_site/study_publication.html#journal-article",
-    "href": "quarto_site/study_publication.html#journal-article",
-    "title": "Publication",
-    "section": "Journal article",
-    "text": "Journal article"
-  },
-  {
-    "objectID": "quarto_site/study_publication.html#supplementary-materials",
-    "href": "quarto_site/study_publication.html#supplementary-materials",
-    "title": "Publication",
-    "section": "Supplementary materials",
-    "text": "Supplementary materials"
+    "text": "COVID-19 Dialysis Service Delivery Model\nArticle: Allen, M., Bhanji, A., Willemsen, J., Dudfield, S., Logan, S., & Monks, T. A simulation modelling toolkit for organising outpatient dialysis services during the COVID-19 pandemic. PLoS One 15, 8 (2020). https://doi.org/10.1371%2Fjournal.pone.0237628.\nSource code: https://zenodo.org/records/3760626.\nPlain english summary:\nModel scope:\nHow to execute model:\nPart 1. Set up environment. This is to ensure you are using the same software.\nOption A. Conda\nTo use the provided conda environment, run the following in a terminal\nconda env create -f environment.yaml\nconda activate covid19\nOption B. Binder\nReproduction specs:\nHow to produce each item from scope:"
   },
   {
     "objectID": "reproduction/reproduction.html",
@@ -424,7 +431,7 @@
     "href": "evaluation/posts/2024_06_10/index.html#work-log",
     "title": "Day 8",
     "section": "Work log",
-    "text": "Work log\n\nResearch compendium\nContinued working on research compendium…\n\nAfter various attempts, managed to set up pytest which runs the model then checks dataframes are equal….\n\nRequired modifying sim_replicate.py so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues\npytest only works if run from reproduction/ folder"
+    "text": "Work log\n\nResearch compendium\nContinued working on research compendium…\n\nAfter various attempts, managed to set up pytest which runs the model then checks dataframes are equal….\n\nRequired modifying sim_replicate.py so that can choose not to plot the results, else pytest gets libGL errors and opens new windows with figures that you have to close before test continues.\npytest only works if run from reproduction/ folder.\nModified parameters in conftest.py to check it returns error when parameters are wrong which it did, so returned to the correct parameters.\n\nEncountered error rendering book, but this was because the environment had changed from quarto_allen_2020 (book environment from requirements.txt) to covid19 (model environment from environment.yml), as could be seen from running quarto check jupyter. Changing this in terminal and for interpreter and then re-running resolved issue.\nDisplayed reproduction README within quarto site\nSet up Docker environment…\n\nCreated Dockerfile and accompanying jupyter_notebook_config.py based on https://github.com/TomMonks/treatment-centre-sim/\nIn terminal, ran the command sudo docker build --tag covid19 . to build the Docker image\nHad mistake in Dockerfile, so removed it with sudo docker rm containerid, and confirmed it was gone by running sudo docker ps -a\nAfter rebuilding the container, ran using sudo docker run -it -p 8080:80 --name covid19_docker covid19, then did the commands conda activate covid19 and jupyter-lab\nOpened browser and entered localhost:8080\nSuccesfully ran reproduction.ipynb"
   },
   {
     "objectID": "evaluation/posts/2024_06_04/index.html",
