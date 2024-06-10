@@ -9,10 +9,10 @@ RUN mkdir /home/code
 WORKDIR /home/code
 
 # Copy all files across to container
-COPY . /home/code
+COPY ./reproduction /home/code
 
 # Copy jupyter config file
-COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+COPY ./reproduction/docker/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
 # Install anaconda, conda-forge and pip dependencies
 RUN conda update conda && conda env create -f environment.yaml && conda clean -afy 
