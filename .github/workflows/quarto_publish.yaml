@@ -6,6 +6,7 @@ run-name: Render Quarto website and publish on GitHub pages
 on:
   push:
     branches: main
+  workflow_dispatch:
 
 jobs:
   build-deploy:

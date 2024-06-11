@@ -4,7 +4,10 @@ run-name: Publish Docker image on GitHub container registry (ghcr.io)
 
 # Source: https://dev.to/github/publishing-a-docker-image-to-githubs-container-repository-4n50
 
-on: [push]
+on:
+  push:
+    branches: main
+  workflow_dispatch:
 
 jobs:
   Publish-docker-image:
