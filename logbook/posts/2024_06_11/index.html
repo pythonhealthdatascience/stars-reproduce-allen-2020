@@ -232,6 +232,8 @@ Note
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
 <section id="research-compendium" class="level3">
 <h3 class="anchored" data-anchor-id="research-compendium">Research compendium</h3>
+<section id="accessing-the-repository-on-browser-without-any-installs" class="level4">
+<h4 class="anchored" data-anchor-id="accessing-the-repository-on-browser-without-any-installs">Accessing the repository on browser without any installs</h4>
 <p>Explored options for virtual hosting of materials…</p>
 <p><strong>Google Colab:</strong></p>
 <ul>
@@ -272,10 +274,18 @@ Note
 </figure>
 </div>
 <ul>
-<li>Tried simplifying this (<a href="https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html">as Binder recommends against Docker</a>), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere…</li>
+<li>Tried simplifying this (<a href="https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html">as Binder recommends against Docker</a>), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere…
+<ul>
+<li>Requires the <code>.binder/</code> folder to be in the root (so can’t be within the reproduction folder)</li>
+<li>Took 3 minutes 20 to set up</li>
+<li>Test-run of reproduction.ipynb failed - said there was “no module named ‘pandas’”, and <code>!pip list</code> shows that expected packages from environment.yaml haven’t been installed</li>
+<li>Check of python version (<code>!python --version</code>) returns 3.10.14 (incorrect)</li>
+</ul></li>
+<li>Tried a final time, creating a <code>requirements.txt</code> instead with packages, and <code>runtime.txt</code> with the Python version…</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
