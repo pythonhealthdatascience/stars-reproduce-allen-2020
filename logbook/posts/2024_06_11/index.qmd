@@ -90,3 +90,17 @@ python-3.8.1
 **Conclusion:** Decided that for the purposes of these reproduction assessments, to not continue pursuing this at the current moment in time, and to just keep with the options of the environment file or the Binder image (locally or from GHCR).
 
 #### Other aspects of research compendium
+
+README:
+
+* Add operating system (found by running `cat /etc/os-release`, `lscpu` and `free -g` (to see RAM in GB))
+* Recorded runtime (with measurement of time elapsed added to the notebook)
+* Add model summary (copied from final report, with addition of the pathway figure)
+* Add reproduction scope (copied from `scope.qmd`)
+* Created repository overview
+* Tidied instructions on environment set up and running the model
+* Add some extra details on citation and license.
+
+Notebook:
+
+* Made some minor additions, but primarily referred back to the `README.md`

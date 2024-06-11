@@ -31,3 +31,4 @@ Continued working on research compendium...
     * Opened browser and entered `localhost:8080`
     * Succesfully ran `reproduction.ipynb`
 * Uploaded image to GitHub container registry (<https://github.com/features/packages>) - using this instead of DockerHub as it means the image can be associated with an organisation (whilst DockerHub requires payment for organisations) - and pushed using GitHub action (as had issues trying to push from terminal with my user's personal access token)
+    * Issue: Shows README from main repo with customisation options - this is not resolvable, and is an [open issue on GitHub](https://github.com/orgs/community/discussions/25665)
