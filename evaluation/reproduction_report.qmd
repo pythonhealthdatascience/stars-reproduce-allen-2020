@@ -57,7 +57,7 @@ import plotly.express as px
 col = ['fully', 'partially', 'not', 'na']
 eval_dict = {
   'Best practice audit': [9, 1, 1, 0],
-  'STARS (essential)': [5, 1, 1, 0],
+  'STARS (essential)': [5, 2, 1, 0],
   'STARS (optional)': [1, 0, 4, 0],
   'Badges (criteria)': [9, 0, 3, 0],
   'Badges (badges)': [10, 0, 2, 0],

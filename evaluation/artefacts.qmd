@@ -33,10 +33,10 @@ Of the **11** items in this audit:
 
 ## STARS
 
-Of the **7** essential STARS components:
+Of the **8** essential STARS components:
 
 * **5** were met fully (✅)
-* **1** was met partially (🟡)
+* **2** were met partially (🟡)
 * **1** was not met (❌)
 
 Of the **5** optional STARS components:
@@ -50,7 +50,7 @@ Of the **5** optional STARS components:
 | Open license | Free and open-source software (FOSS) license (e.g. MIT, GNU Public License (GPL)) | ✅ Fully | MIT license |
 | Dependency management | Specify software libraries, version numbers and sources (e.g. dependency management tools like pip virtual environment, conda environment, poetry) | ✅ Fully | Conda - `environment.yaml` |
 | FOSS model | Coded in FOSS language (e.g. R, Julia, Python) | ✅ Fully | Python |
-| Minimum documentation | Minimal instructions (e.g. in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiements | | |
+| Minimum documentation | Minimal instructions (e.g. in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiements | 🟡 Partially | Has `README.md` which gives a very short description of the model and some instructions on installation, but with little detail, and with no information on varying parameters |
 | ORCID | ORCID for each study author | 🟡 Partially | Only provided for Monks |
 | Citation information | Instructions on how to cite the research artefact (e.g. CITATION.cff file) | ❌ Not met | Not provided |
 | Remote code repository | Code available in a remote code repository (e.g. GitHub, GitLab, BitBucket) | ✅ Fully | [GitLab](https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19) |
