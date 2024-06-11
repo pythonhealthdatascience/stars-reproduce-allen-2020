@@ -31,7 +31,7 @@ website:
           - evaluation/artefacts.qmd
           - evaluation/badges.qmd
           - evaluation/reporting.qmd
-      - evaluation/logbook.qmd
+      - logbook/logbook.qmd
       - text: Summary
         href: evaluation/reproduction_report.qmd
     # Right-aligned within navbar...
