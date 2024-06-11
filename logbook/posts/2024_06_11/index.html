@@ -225,7 +225,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Continued working on research compendium.</p>
+<p>Continued working on research compendium (online coding environment, documentation).</p>
 </div>
 </div>
 <section id="work-log" class="level2">
@@ -277,11 +277,48 @@ Note
 <li>Tried simplifying this (<a href="https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html">as Binder recommends against Docker</a>), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere…
 <ul>
 <li>Requires the <code>.binder/</code> folder to be in the root (so can’t be within the reproduction folder)</li>
-<li>Took 3 minutes 20 to set up</li>
+<li>Took 3 minutes 20s to set up</li>
 <li>Test-run of reproduction.ipynb failed - said there was “no module named ‘pandas’”, and <code>!pip list</code> shows that expected packages from environment.yaml haven’t been installed</li>
 <li>Check of python version (<code>!python --version</code>) returns 3.10.14 (incorrect)</li>
 </ul></li>
-<li>Tried a final time, creating a <code>requirements.txt</code> instead with packages, and <code>runtime.txt</code> with the Python version…</li>
+<li>Tried a final time, creating a <code>requirements.txt</code> instead with packages, and <code>runtime.txt</code> with the Python version within the <code>.binder/</code> folder…
+<ul>
+<li>Took 3m 25s to set up</li>
+<li>When attempting to test it, connection to the kernel failed and it could not run the cells (“<em>A connection to the notebook server could not be established. The notebook will continue trying to reconnect. Check your network connection or notebook server configuration.</em>”). This persisted after a restart.</li>
+</ul></li>
+</ul>
+<p>Requirements:</p>
+<pre><code>joblib==0.14.1
+jupyterlab==1.2.6
+matplotlib==3.1.3
+notebook==6.0.3
+numpy==1.18.1
+pandas==1.0.1
+pip==20.0.2
+pytest==5.3.5
+scipy==1.4.1
+seaborn==0.10.0
+simpy==3.0.11
+statsmodels==0.11.0</code></pre>
+<p>Runtime:</p>
+<pre><code>python-3.8.1</code></pre>
+<p><strong>Conclusion:</strong> Decided that for the purposes of these reproduction assessments, to not continue pursuing this at the current moment in time, and to just keep with the options of the environment file or the Binder image (locally or from GHCR).</p>
+</section>
+<section id="other-aspects-of-research-compendium" class="level4">
+<h4 class="anchored" data-anchor-id="other-aspects-of-research-compendium">Other aspects of research compendium</h4>
+<p>README:</p>
+<ul>
+<li>Add operating system (found by running <code>cat /etc/os-release</code>, <code>lscpu</code> and <code>free -g</code> (to see RAM in GB))</li>
+<li>Recorded runtime (with measurement of time elapsed added to the notebook)</li>
+<li>Add model summary (copied from final report, with addition of the pathway figure)</li>
+<li>Add reproduction scope (copied from <code>scope.qmd</code>)</li>
+<li>Created repository overview</li>
+<li>Tidied instructions on environment set up and running the model</li>
+<li>Add some extra details on citation and license.</li>
+</ul>
+<p>Notebook:</p>
+<ul>
+<li>Made some minor additions, but primarily referred back to the <code>README.md</code></li>
 </ul>
 
 
