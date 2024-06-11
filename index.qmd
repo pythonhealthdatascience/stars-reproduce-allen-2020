@@ -27,9 +27,12 @@ Conducting this reproduction:
 
 * [Amy Heather](https://github.com/amyheather) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0002-6596-3479)
 
-Other members of the team on STARS:
+Providing support during the reproduction:
 
 * [Thomas Monks](https://github.com/TomMonks) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0003-2631-4481)
+
+Other members of the team on STARS:
+
 * [Alison Harper](https://github.com/AliHarp) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0001-5274-5037)
 * [Navonil Mustafee](https://github.com/NavonilNM) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0002-2204-8924)
 * [Andrew Mayne](https://github.com/andy-mayne) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0003-1263-2286)
