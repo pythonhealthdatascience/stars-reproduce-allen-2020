@@ -3,7 +3,6 @@ title: "Badges"
 format:
   html:
     code-fold: true
-jupyter: python3
 bibliography: ../quarto_site/references.bib
 ---
 
