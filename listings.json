@@ -1,15 +1,16 @@
 [
   {
-    "listing": "/evaluation/logbook.html",
+    "listing": "/logbook/logbook.html",
     "items": [
-      "/evaluation/posts/2024_06_10/index.html",
-      "/evaluation/posts/2024_06_07/index.html",
-      "/evaluation/posts/2024_06_05/index.html",
-      "/evaluation/posts/2024_06_04/index.html",
-      "/evaluation/posts/2024_06_03/index.html",
-      "/evaluation/posts/2024_05_24/index.html",
-      "/evaluation/posts/2024_05_23/index.html",
-      "/evaluation/posts/2024_05_22/index.html"
+      "/logbook/posts/2024_06_11/index.html",
+      "/logbook/posts/2024_06_10/index.html",
+      "/logbook/posts/2024_06_07/index.html",
+      "/logbook/posts/2024_06_05/index.html",
+      "/logbook/posts/2024_06_04/index.html",
+      "/logbook/posts/2024_06_03/index.html",
+      "/logbook/posts/2024_05_24/index.html",
+      "/logbook/posts/2024_05_23/index.html",
+      "/logbook/posts/2024_05_22/index.html"
     ]
   }
 ]

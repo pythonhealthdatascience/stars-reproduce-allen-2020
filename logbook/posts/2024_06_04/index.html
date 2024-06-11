@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Amy Heather">
+<meta name="dcterms.date" content="2024-06-04">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Logbook</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Day 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,65 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -138,10 +80,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Reproducing Allen et al.&nbsp;2020</span>
     </a>
   </div>
@@ -152,7 +94,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/study_publication.html"> 
+    <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -161,11 +103,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction">    
         <li>
-    <a class="dropdown-item" href="../quarto_site/reproduction_readme.html">
+    <a class="dropdown-item" href="../../../quarto_site/reproduction_readme.html">
  <span class="dropdown-text">README</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../reproduction/reproduction.html">
+    <a class="dropdown-item" href="../../../reproduction/reproduction.html">
  <span class="dropdown-text">Notebook</span></a>
   </li>  
     </ul>
@@ -176,33 +118,33 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../evaluation/scope.html">
+    <a class="dropdown-item" href="../../../evaluation/scope.html">
  <span class="dropdown-text">Scope</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/artefacts.html">
+    <a class="dropdown-item" href="../../../evaluation/artefacts.html">
  <span class="dropdown-text">Sharing research artefacts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/badges.html">
+    <a class="dropdown-item" href="../../../evaluation/badges.html">
  <span class="dropdown-text">Badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reporting.html">
+    <a class="dropdown-item" href="../../../evaluation/reporting.html">
  <span class="dropdown-text">Reporting guidelines</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="../evaluation/logbook.html" aria-current="page"> 
+    <a class="nav-link" href="../../../logbook/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="../../../evaluation/reproduction_report.html"> 
 <span class="menu-text">Summary</span></a>
   </li>  
 </ul>
@@ -222,321 +164,156 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Logbook</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Day 5</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">guidelines</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Amy Heather </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 4, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="compendium">compendium <span class="quarto-category-count">(2)</span></div><div class="category" data-category="guidelines">guidelines <span class="quarto-category-count">(2)</span></div><div class="category" data-category="read">read <span class="quarto-category-count">(2)</span></div><div class="category" data-category="report">report <span class="quarto-category-count">(1)</span></div><div class="category" data-category="reproduce">reproduce <span class="quarto-category-count">(3)</span></div><div class="category" data-category="scope">scope <span class="quarto-category-count">(1)</span></div><div class="category" data-category="setup">setup <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
+  <ul class="collapse">
+  <li><a href="#badges" id="toc-badges" class="nav-link" data-scroll-target="#badges">Badges</a></li>
+  <li><a href="#sharing-research-artefacts" id="toc-sharing-research-artefacts" class="nav-link" data-scroll-target="#sharing-research-artefacts">Sharing research artefacts</a></li>
+  <li><a href="#evaluation-against-reporting-guidelines-stress-des-pt.-1" id="toc-evaluation-against-reporting-guidelines-stress-des-pt.-1" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</a></li>
+  </ul></li>
+  <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluated study against guidelines (badges, sharing artefacts, and starting on STRESS-DES reporting).</p>
+</div>
+</div>
+<section id="work-log" class="level2">
+<h2 class="anchored" data-anchor-id="work-log">Work log</h2>
+<section id="badges" class="level3">
+<h3 class="anchored" data-anchor-id="badges">Badges</h3>
+<p>Evaluating artefacts as in <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a> and <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a>.</p>
+<p><strong>Uncertainties:</strong></p>
+<ul>
+<li><code>execute</code>: “Scripts can be successfully executed” (and then <code>regenerated</code>: “Independent party regenerated results using the authors research artefacts”)
+<ul>
+<li>Required some minor changes to environment in order for scripts to run</li>
+<li>However, not certain whether the badges would allow minor troubleshooting (or major troubleshooting) in order for a script to run?</li>
+<li>By my criteria (allowing troubleshooting) this would be fine. The step up from this criteria is reproduction (which I again allow troubleshooting) - so it would make sense that this is getting it to run, whilst next step is getting sufficiently similar results. May just need to add a <strong>caveat</strong> that this is with troubleshooting allowed (which may not be journal policy) - in same way that caveat, this is my interpretation of badges from available information and cannot guarantee would or would not be awarded.</li>
+<li><strong>Chat with Tom:</strong> Fine to just caveat.</li>
+</ul></li>
+<li><code>hour</code>: Reproduced within approximately one hour (excluding compute time)
+<ul>
+<li>Took longer than an hour, but I wasn’t trying to get it done in that time</li>
+<li>If I hadn’t spent time reading and documenting and fiddling with the seeds, then I anticipate I could’ve run it within an hour</li>
+<li>However, <strong>I’m assuming to follow our process and fail it</strong> (for consistency with how we are working and timing)</li>
+<li><strong>Chat with Tom:</strong> Fine to just caveat.</li>
+</ul></li>
+<li><code>documentation_readme</code>: “Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript”
+<ul>
+<li>I wouldn’t say it explicitly meets this criteria</li>
+<li>Although it was simple enough that it could do it anyway - directed me to notebook, run that, job done.</li>
+<li><strong>Uncertain on this one</strong></li>
+<li>Uncertainty is fine - just make a choice, and justify and document that choice in the logbook</li>
+</ul></li>
+</ul>
+</section>
+<section id="sharing-research-artefacts" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-research-artefacts">Sharing research artefacts</h3>
+<p>Evaluated again, this time against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).</p>
+<p><strong>Uncertainties:</strong></p>
+<ul>
+<li><code>README</code>: “Does the readme file or similar describe the steps required to execute the simulation model?”
+<ul>
+<li>For this, is it sufficient that README is provided which explains environment and links to template that runs model? I’m assuming so.</li>
+<li>However, this decision differs from documentation_readme above, although that requires “clear” documentation</li>
+</ul></li>
+<li>Do they meet criteria is changes are made to a repository <strong>after</strong> publications? (this is general, not specific to this test-run)
+<ul>
+<li>Example: If we asked them to add a licence - do we then fail them on that? I’m presuming so?</li>
+<li><strong>Chat with Tom:</strong> Agree that it should be based on stuff prior to publication.</li>
+</ul></li>
+</ul>
+</section>
+<section id="evaluation-against-reporting-guidelines-stress-des-pt.-1" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</h3>
+<p>These were evaluated based ONLY on the journal article and supplementary materials (and not on the linked code repository).</p>
+<p>Started work on evaluating against STRESS-DES.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Including checklist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tom mentioned how this study they provided the filled out STRESS checklist to the journal, but it wasn’t published alongside the article, but that would have been beneficial. This is a good suggestion to think about.</p>
+<p>Also, it has proven quite time consuming to evaluate against the checklist - hence, moreso reason to include it with the article, to make it easier for readers to spot these things.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="suggested-changes-for-protocoltemplate" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
+<p>✅ = Made the change.</p>
+<p>💬 = Noted to discuss with team.</p>
+<p>Protocol:</p>
+<ul>
+<li>✅ Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team. Suggest to detail those uncertainties within logbook</li>
+<li>✅ If there are multiple code locations (e.g.&nbsp;code repository and archive), then refer to both when assessing against criteria</li>
+<li>✅ Recommended sources for evaluation (e.g.&nbsp;reporting guidelines is based on article, badges and sharing of research artefacts are based on code)</li>
+<li>💬 Given how long it is taking, would it be relevant to time these steps?</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="compendium" data-listing-date-sort="1717977600000" data-listing-file-modified-sort="1718035381769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="326">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_06_10/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_06_10/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../evaluation/posts/2024_06_10/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_06_10/index.html" class="no-external">Day 8</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_06_10/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('compendium'); return false;">
-compendium
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_06_10/index.html" class="no-external">Continued working on research compendium (tests, Docker).</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_06_10/index.html" class="no-external">
-<div class="listing-date">
-Jun 10, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="report,compendium" data-listing-date-sort="1717718400000" data-listing-file-modified-sort="1718035381769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="141">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_06_07/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_06_07/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../evaluation/posts/2024_06_07/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_06_07/index.html" class="no-external">Day 7</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_06_07/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('report'); return false;">
-report
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('compendium'); return false;">
-compendium
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_06_07/index.html" class="no-external">Created summary report and started on research compendium.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_06_07/index.html" class="no-external">
-<div class="listing-date">
-Jun 7, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="guidelines" data-listing-date-sort="1717545600000" data-listing-file-modified-sort="1718035381769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1439">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_06_05/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_06_05/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../evaluation/posts/2024_06_05/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_06_05/index.html" class="no-external">Day 6</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_06_05/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('guidelines'); return false;">
-guidelines
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_06_05/index.html" class="no-external">Evaluation against reporting guidelines - finished STRESS-DES, and did for ISPOR-SDM.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_06_05/index.html" class="no-external">
-<div class="listing-date">
-Jun 5, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="guidelines" data-listing-date-sort="1717459200000" data-listing-file-modified-sort="1718035381769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="696">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_06_04/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_06_04/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../evaluation/posts/2024_06_04/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_06_04/index.html" class="no-external">Day 5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_06_04/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('guidelines'); return false;">
-guidelines
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_06_04/index.html" class="no-external">Evaluated study against guidelines (badges, sharing artefacts, and starting on STRESS-DES reporting).</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_06_04/index.html" class="no-external">
-<div class="listing-date">
-Jun 4, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="reproduce" data-listing-date-sort="1717372800000" data-listing-file-modified-sort="1718035381765" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="879">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_06_03/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_06_03/index.html" class="no-external">
-<p class="card-img-top"><img src="../original_study/article_fig2.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../evaluation/posts/2024_06_03/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_06_03/index.html" class="no-external">Day 4</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_06_03/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_06_03/index.html" class="no-external">Chose a seed that produced fairly similar figures to paper. Decided that each figure had now been successfully reproduced. Total time used: 7h 6m (17.8%).</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_06_03/index.html" class="no-external">
-<div class="listing-date">
-Jun 3, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="reproduce" data-listing-date-sort="1716508800000" data-listing-file-modified-sort="1718035381765" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_05_24/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_05_24/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024_05_24/figure_1a.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../evaluation/posts/2024_05_24/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_05_24/index.html" class="no-external">Day 3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_05_24/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_05_24/index.html" class="no-external">Fixed model so that it is reproducible between runs. Total time used: 5h 45m (14.4%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_05_24/index.html" class="no-external">
-<div class="listing-date">
-May 24, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="read,reproduce" data-listing-date-sort="1716422400000" data-listing-file-modified-sort="1718035381761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2543">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external">
-<p class="card-img-top"><img src="../original_study/article_fig4.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">Day 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('read'); return false;">
-read
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">Reviewing code and running model with reproduction of results between runs. Total time used: 4h 36m (11.5%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_05_23/index.html" class="no-external">
-<div class="listing-date">
-May 23, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="setup,read,scope" data-listing-date-sort="1716336000000" data-listing-file-modified-sort="1718035381757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1786">
-<div class="thumbnail">
-<p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a></p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external">
-<p class="card-img-top"><img src="../original_study/article_fig1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">Day 1</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('setup'); return false;">
-setup
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('read'); return false;">
-read
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scope'); return false;">
-scope
-</div>
-</div>
-<div class="listing-description">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">Set-up, reading and defining scope. Total time used: 1h 13m (3%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../evaluation/posts/2024_05_22/index.html" class="no-external">
-<div class="listing-date">
-May 22, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -955,22 +732,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../CHANGELOG.html">
+    <a class="nav-link" href="../../../CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/license.html">
+    <a class="nav-link" href="../../../quarto_site/license.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../CONTRIBUTING.html">
+    <a class="nav-link" href="../../../CONTRIBUTING.html">
 <p>Contributing</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/logbook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

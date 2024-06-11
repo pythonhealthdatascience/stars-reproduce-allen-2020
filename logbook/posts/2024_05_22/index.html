@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amy Heather">
-<meta name="dcterms.date" content="2024-06-04">
+<meta name="dcterms.date" content="2024-05-22">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Day 5</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Day 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -140,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/logbook.html"> 
+    <a class="nav-link" href="../../../logbook/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
@@ -165,9 +199,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Day 5</h1>
+      <h1 class="title">Day 1</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">guidelines</div>
+                <div class="quarto-category">setup</div>
+                <div class="quarto-category">read</div>
+                <div class="quarto-category">scope</div>
               </div>
                   </div>
   </div>
@@ -185,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 4, 2024</p>
+        <p class="date">May 22, 2024</p>
       </div>
     </div>
     
@@ -203,13 +239,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
-  <li><a href="#badges" id="toc-badges" class="nav-link" data-scroll-target="#badges">Badges</a></li>
-  <li><a href="#sharing-research-artefacts" id="toc-sharing-research-artefacts" class="nav-link" data-scroll-target="#sharing-research-artefacts">Sharing research artefacts</a></li>
-  <li><a href="#evaluation-against-reporting-guidelines-stress-des-pt.-1" id="toc-evaluation-against-reporting-guidelines-stress-des-pt.-1" class="nav-link" data-scroll-target="#evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</a></li>
+  <li><a href="#untimed-inform-the-authors" id="toc-untimed-inform-the-authors" class="nav-link" data-scroll-target="#untimed-inform-the-authors">Untimed: Inform the authors</a></li>
+  <li><a href="#untimed-made-repository" id="toc-untimed-made-repository" class="nav-link" data-scroll-target="#untimed-made-repository">Untimed: Made repository</a></li>
+  <li><a href="#upload-materials" id="toc-upload-materials" class="nav-link" data-scroll-target="#upload-materials">12.11 - 12.16: Upload materials</a></li>
+  <li><a href="#choose-license" id="toc-choose-license" class="nav-link" data-scroll-target="#choose-license">12.18-12.19: Choose license</a></li>
+  <li><a href="#untimed-display-article-on-website" id="toc-untimed-display-article-on-website" class="nav-link" data-scroll-target="#untimed-display-article-on-website">Untimed: Display article on website</a></li>
+  <li><a href="#reading-article" id="toc-reading-article" class="nav-link" data-scroll-target="#reading-article">13.20-13.56: Reading article</a></li>
+  <li><a href="#identifying-scope" id="toc-identifying-scope" class="nav-link" data-scroll-target="#identifying-scope">13.56-14.27: Identifying scope</a></li>
+  <li><a href="#untimed-reorganising-scope-page" id="toc-untimed-reorganising-scope-page" class="nav-link" data-scroll-target="#untimed-reorganising-scope-page">Untimed: Reorganising scope page</a></li>
+  <li><a href="#untimed-consensus-decision-on-scope" id="toc-untimed-consensus-decision-on-scope" class="nav-link" data-scroll-target="#untimed-consensus-decision-on-scope">Untimed: Consensus decision on scope</a></li>
+  <li><a href="#untimed-uploading-to-zenodo" id="toc-untimed-uploading-to-zenodo" class="nav-link" data-scroll-target="#untimed-uploading-to-zenodo">Untimed: Uploading to Zenodo</a></li>
   </ul></li>
+  <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -228,75 +272,240 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Evaluated study against guidelines (badges, sharing artefacts, and starting on STRESS-DES reporting).</p>
+<p>Set-up, reading and defining scope. Total time used: 1h 13m (3%)</p>
 </div>
 </div>
 <section id="work-log" class="level2">
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
-<section id="badges" class="level3">
-<h3 class="anchored" data-anchor-id="badges">Badges</h3>
-<p>Evaluating artefacts as in <a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a> and <a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a>.</p>
-<p><strong>Uncertainties:</strong></p>
+<section id="untimed-inform-the-authors" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-inform-the-authors">Untimed: Inform the authors</h3>
+<p>Not relevant for this, as it is a test-run using a paper Tom was involved with and is one of the corresponding authors on.</p>
+</section>
+<section id="untimed-made-repository" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-made-repository">Untimed: Made repository</h3>
+<p>As this is a test-run, was not made using a template (as it does not yet exist, but will be created based on this repository).</p>
+</section>
+<section id="upload-materials" class="level3">
+<h3 class="anchored" data-anchor-id="upload-materials">12.11 - 12.16: Upload materials</h3>
+<p>Links to source of uploaded materials…</p>
+<p>Article:</p>
 <ul>
-<li><code>execute</code>: “Scripts can be successfully executed” (and then <code>regenerated</code>: “Independent party regenerated results using the authors research artefacts”)
+<li><a href="https://doi.org/10.1371%2Fjournal.pone.0237628" class="uri">https://doi.org/10.1371%2Fjournal.pone.0237628</a></li>
+</ul>
+<p>Supplementary materials:</p>
 <ul>
-<li>Required some minor changes to environment in order for scripts to run</li>
-<li>However, not certain whether the badges would allow minor troubleshooting (or major troubleshooting) in order for a script to run?</li>
-<li>By my criteria (allowing troubleshooting) this would be fine. The step up from this criteria is reproduction (which I again allow troubleshooting) - so it would make sense that this is getting it to run, whilst next step is getting sufficiently similar results. May just need to add a <strong>caveat</strong> that this is with troubleshooting allowed (which may not be journal policy) - in same way that caveat, this is my interpretation of badges from available information and cannot guarantee would or would not be awarded.</li>
-<li><strong>Chat with Tom:</strong> Fine to just caveat.</li>
-</ul></li>
-<li><code>hour</code>: Reproduced within approximately one hour (excluding compute time)
+<li><a href="https://doi.org/10.1371/journal.pone.0237628.s001" class="uri">https://doi.org/10.1371/journal.pone.0237628.s001</a></li>
+<li><a href="https://doi.org/10.1371/journal.pone.0237628.s002" class="uri">https://doi.org/10.1371/journal.pone.0237628.s002</a></li>
+</ul>
+<p>Code - both code sources should be the same and pretty much same data, hence used Zenodo as that is the archived version:</p>
 <ul>
-<li>Took longer than an hour, but I wasn’t trying to get it done in that time</li>
-<li>If I hadn’t spent time reading and documenting and fiddling with the seeds, then I anticipate I could’ve run it within an hour</li>
-<li>However, <strong>I’m assuming to follow our process and fail it</strong> (for consistency with how we are working and timing)</li>
-<li><strong>Chat with Tom:</strong> Fine to just caveat.</li>
-</ul></li>
-<li><code>documentation_readme</code>: “Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript”
-<ul>
-<li>I wouldn’t say it explicitly meets this criteria</li>
-<li>Although it was simple enough that it could do it anyway - directed me to notebook, run that, job done.</li>
-<li><strong>Uncertain on this one</strong></li>
-<li>Uncertainty is fine - just make a choice, and justify and document that choice in the logbook</li>
-</ul></li>
+<li><a href="https://zenodo.org/records/3760626" class="uri">https://zenodo.org/records/3760626</a></li>
+<li><a href="https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19" class="uri">https://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19</a></li>
 </ul>
 </section>
-<section id="sharing-research-artefacts" class="level3">
-<h3 class="anchored" data-anchor-id="sharing-research-artefacts">Sharing research artefacts</h3>
-<p>Evaluated again, this time against recommendations for sharing of research artefacts (STARS, and Monks and Harper best practice audit).</p>
-<p><strong>Uncertainties:</strong></p>
-<ul>
-<li><code>README</code>: “Does the readme file or similar describe the steps required to execute the simulation model?”
-<ul>
-<li>For this, is it sufficient that README is provided which explains environment and links to template that runs model? I’m assuming so.</li>
-<li>However, this decision differs from documentation_readme above, although that requires “clear” documentation</li>
-</ul></li>
-<li>Do they meet criteria is changes are made to a repository <strong>after</strong> publications? (this is general, not specific to this test-run)
-<ul>
-<li>Example: If we asked them to add a licence - do we then fail them on that? I’m presuming so?</li>
-<li><strong>Chat with Tom:</strong> Agree that it should be based on stuff prior to publication.</li>
-</ul></li>
-</ul>
+<section id="choose-license" class="level3">
+<h3 class="anchored" data-anchor-id="choose-license">12.18-12.19: Choose license</h3>
+<p>No need to change from MIT, as that was used by Allen et al.&nbsp;2020.</p>
 </section>
-<section id="evaluation-against-reporting-guidelines-stress-des-pt.-1" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation-against-reporting-guidelines-stress-des-pt.-1">Evaluation against reporting guidelines (STRESS-DES pt.&nbsp;1)</h3>
-<p>These were evaluated based ONLY on the journal article and supplementary materials (and not on the linked code repository).</p>
-<p>Started work on evaluating against STRESS-DES.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<section id="untimed-display-article-on-website" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-display-article-on-website">Untimed: Display article on website</h3>
+<p>Set up article and supplementary to display on website in <code>study_publication.qmd</code>.</p>
+</section>
+<section id="reading-article" class="level3">
+<h3 class="anchored" data-anchor-id="reading-article">13.20-13.56: Reading article</h3>
+<p>Read article, making notes in <code>study_summary.qmd</code> (initially rough notes, then tidied slightly).</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Including checklist
+Notes from read through of paper
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tom mentioned how this study they provided the filled out STRESS checklist to the journal, but it wasn’t published alongside the article, but that would have been beneficial. This is a good suggestion to think about.</p>
-<p>Also, it has proven quite time consuming to evaluate against the checklist - hence, moreso reason to include it with the article, to make it easier for readers to spot these things.</p>
+<p><strong>Type of model:</strong> Discrete event simulation (excluding sections of the paper relevant to another model - a Monte-Carlo vehicle routing model of patient transport)</p>
+<p><strong>Purpose of model:</strong> Model service delivery in dialysis network during change in COVID-19 cases.</p>
+<p><strong>How model was created:</strong></p>
+<ul>
+<li>Python 3.8</li>
+<li>SimPy 3</li>
+<li>MatPlotLib</li>
+<li>STRESS reporting guidelines</li>
+<li>DES on Intel i9-7980XE CPU with 64GB RAM running Ubuntu 19.10 Linux</li>
+</ul>
+<p><strong>Context:</strong></p>
+<ul>
+<li>Wessex - mixed urban/rural setting, renal dialysis services cares for 644 patients, nine centres. 75% of patients use patient transport services.</li>
+<li>COVID-positive patients treated seperately to COVID-negative.</li>
+</ul>
+<p><strong>Model design:</strong></p>
+<ul>
+<li>Model change in inpatient and outpatient workload during pandemic at each dialysis unit in network. Estimate over three to six months. Estimate number of patients required to travel to different unit and change in travel time.</li>
+<li>Inputs: Patient location postcode. Travel time routine. Worst case time spread COVID Fergeson. Mortality rate, time patient COVID-positive before admission, and inpatient rate of stay were local parameters.</li>
+<li>Defined period (e.g.&nbsp;one year). Patients progress through phases of COVID (negative, positive, some with inpatient care, recovred, died). In each COVID state, model seeks to put them in appropriate unit and session, opening COVID-positive sessions in units that allow it. COVID-positive don’t mis with others.</li>
+<li>Run 30 times, show median and extremes.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Patient pathway figure from Allen et al.&nbsp;2020</figcaption>
+</figure>
+</div>
+<ul>
+<li>All patients receive dialysis 3 times a week. Each patient starts on either Monday or Tuesday.</li>
+<li>Have proportion of patients either fixed or sampled from stochastic distribution for phases of COVID state and care.</li>
+<li>COVID seperate from uninfected and recovered.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_tab1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Baseline model parameters from Allen et al.&nbsp;2020</figcaption>
+</figure>
+</div>
+<p>For allocation to units, use search strategy:</p>
+<ul>
+<li>COVID negative or recovered - look for place in current unit, if no space, find closest unit (by travel time) with available space</li>
+<li>COVID positive - put in Queen Alexandara, and if full, make capacity in Basingstoke. If new COVID session required, more all COVID negative patients in that session as per neg rules.</li>
+<li>COVID positive inpatient - all in Queen Alexandra (but allows search for unit with inpatients)</li>
+<li>Unallocated - if can’t allocate to any units, attempt again next day</li>
+</ul>
+<p>Once every week, attempts to reallocate patients back to starting unit or closest available. This is so cared more nearby and to compress COVID positive patients into few units and sessions.</p>
+<p>COVID positive converted back to COVID negative when no longer needed.</p>
+<p><strong>Results:</strong></p>
+<ul>
+<li>States current median travel time from home to dialysis unit, and current capacity.</li>
+<li>Figures 2, 3, 4 show impact of COVID infecting 80% patients in next three months.
+<ul>
+<li>Figure 2 - number of patients in each COVID state over 150 days</li>
+<li>Figure 3 - as figure 2, but divided by unit? and with diffferent categories shown.</li>
+<li>Figure 4 - patients displced from current unit, and travel time added</li>
+</ul></li>
+<li>Using half of Queen Alexandra and then Basingstoke for excess for COVID positive copes without any patients being unallocated to session and no need to reduce dialysis frequency.</li>
+<li>Reduces workflow in units not taking COVID positive patients.</li>
+<li>Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 2</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 3</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/article_fig4.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Figure 4</figcaption>
+</figure>
+</div>
+<p><strong>Discusion:</strong></p>
+<ul>
+<li>Dialysis unit can cope with worst case spread. Requires reallocation of patients, will impact on ambulance and efficiency.</li>
+<li>Likely significant patient partessures, current capacity breached, consider moving dislaysi requipment during peak COVID positive.</li>
+<li>Transporting individually unsustainable.(Markov?)</li>
+<li>Model limitations - assumes can reallocate immediatley, assumes current capacity maintained (i.e.&nbsp;no staff shortage), not modelled timing, not included home dialysis.</li>
+</ul>
+</div>
 </div>
 </div>
 </section>
+<section id="identifying-scope" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-scope">13.56-14.27: Identifying scope</h3>
+<p>Made page for scope under evaluation - <code>scope.qmd</code>. Then went through process of:</p>
+<ol type="1">
+<li>Uploading tables and figures</li>
+<li>Added each table and figure, and marking as being within scope or not</li>
+<li>Looking through paper for key results, focussing on abstract and results section.</li>
+<li>Compared those against the tables and figures to check if they are captured or not.</li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes from identification of key results and comparison with figures
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Abstract:</p>
+<ul>
+<li><strong>Need secondary site, reduces workload in other sites, increases in primary site:</strong> “Outpatient COVID-19 cases will spillover to a secondary site while other sites will experience a reduction in workload. The primary site chosen to manage infected patients will experience a significant increase in outpatients and inpatients.”
+<ul>
+<li>Captured in Figure 3</li>
+</ul></li>
+<li><strong>Up to 140 COVID positive with 40-90 inpatients, breaching capacity:</strong> “At the peak of infection, it is predicted there will be up to 140 COVID-19 positive patients with 40 to 90 of these as inpatients, likely breaching current inpatient capacity.”
+<ul>
+<li>Captured in Figure 2 (combine yellow and red lines) and Figure 3 (having inpatients across two sites and not just one)</li>
+</ul></li>
+</ul>
+<p>Results:</p>
+<ul>
+<li><strong>No patients unallocated:</strong> “In the planned strategy of using half of one of the largest units (Queen Alexandra) for COVID-positive dialysis outpatients, and then using a second unit (Basingstoke, also provid- ing up to half of its capacity for COVID-positive dialysis outpatient patients) for any excess, the dialysis system copes without any patients being unable to be allocated to a session (or without any need in dropping dialysis frequency). Workload in units that do not take COVID- positive outpatients will fall during the outbreak (though some work will flow back to them if they need to care for COVID-negative patients displaced from the units caring for COVID- positive patients).”
+<ul>
+<li>Initially thought this was out of scope, but following chat with Tom, noticed that Figure 2 shows no unallocated (purple line)</li>
+</ul></li>
+<li><strong>Displaced patients have 20 minutes (sometimes up to 50) extra travel time</strong> “Outpatients may be displaced from their usual unit of care either because they need to travel to a COVID-positive session in another hospital, or because their unit has had to free up sessions for COVID-positive sessions. These patients typically require 20 minutes extra travel time to get to their temporary place of care (assuming they are travelling alone), with some requiring 50 minutes extra travel in each direction to/from dialysis.”
+<ul>
+<li>Visible in Figure 4</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="untimed-reorganising-scope-page" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-reorganising-scope-page">Untimed: Reorganising scope page</h3>
+<p>Reorganised into collapsible boxes for clearer layout.</p>
+</section>
+<section id="untimed-consensus-decision-on-scope" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-consensus-decision-on-scope">Untimed: Consensus decision on scope</h3>
+<p>Discussed scope with Tom Monks.</p>
+<ul>
+<li>Corrected “Markov” is “Monte Carlo”.</li>
+<li>Whilst discussing, noticed that the number of unallocated patients is in Figure 2, so removed from scope.</li>
+<li>Otherwise agreed with scope.</li>
+</ul>
+</section>
+<section id="untimed-uploading-to-zenodo" class="level3">
+<h3 class="anchored" data-anchor-id="untimed-uploading-to-zenodo">Untimed: Uploading to Zenodo</h3>
+<p>Not doing for this one as it is a test-run.</p>
+</section>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="2561f6eb" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.11'</span>, <span class="st">'12.16'</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.18'</span>, <span class="st">'12.19'</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.20'</span>, <span class="st">'13.56'</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.56'</span>, <span class="st">'14.27'</span>)]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 73m, or 1h 13m
+Total used to date: 73m, or 1h 13m
+Time remaining: 2327m, or 38h 47m
+Used 3.0% of 40 hours max</code></pre>
+</div>
+</div>
 </section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
@@ -304,10 +513,27 @@ Including checklist
 <p>💬 = Noted to discuss with team.</p>
 <p>Protocol:</p>
 <ul>
-<li>✅ Suggest that uncertainties on whether a badge criteria is met or not could be discussed within the STARS team. Suggest to detail those uncertainties within logbook</li>
-<li>✅ If there are multiple code locations (e.g.&nbsp;code repository and archive), then refer to both when assessing against criteria</li>
-<li>✅ Recommended sources for evaluation (e.g.&nbsp;reporting guidelines is based on article, badges and sharing of research artefacts are based on code)</li>
-<li>💬 Given how long it is taking, would it be relevant to time these steps?</li>
+<li>✅ Suggest keeping a record of the links where uploaded materials were sourced from within the logbook (as below)</li>
+<li>✅ Template will contain MIT but default, so modify this section to explain that it is about checking whether need to change from MIT.</li>
+<li>✅ Suggest that create pages to display the journal article, supplementary and code at a point after having gone through the code familiarisation steps.</li>
+<li>✅ Remove suggestion of creating a summary page (as STRESS-DES and ISPOR provide rigorous summaries, and summaries for sake of understanding make more sense to be in logbook)
+<ul>
+<li>✅ And therefore, suggest those reporting guidelines bit include copying and pasting information to answer each there, as much as appropriate (rather than just stating a section in the text to refer to)</li>
+</ul></li>
+<li>✅ Make reference to particular pages in template (e.g.&nbsp;when define scope, the file path to the scope template)</li>
+<li>✅ For scope, suggest focus is on results of simulation, rather than other results like description of sample</li>
+<li>✅ For scope, change from suggesting what to include, to it being a step by step of first look at tables and figures, then look at rest of text for key results, then evaluate whether those key results are covered by the tables and figures.</li>
+<li>✅ When upload journal articles, require to also download the images and tables from the article (not supplementary) as individual files and upload them to the repository too.</li>
+<li>✅ For scope, simplify protocol to just look for key results in abstract and results sections. Don’t think should really need to look in discussion or conclusion, as those are more interpretation focussed, and should otherwise be highlighted in abstract - but don’t make it prescriptive, just a recommendation, as focus here is just on finding key results, and recommending where they are likely to be in most (but not necessarily all) papers</li>
+</ul>
+<p>Template:</p>
+<ul>
+<li>💬 In license, have set “Copyright (c) 2024 STARS Project Team” - is this correct? Also, should it mention the original authors or not? Presuming not, as they will already have license file within that folder, and we will add yet another license file to the reproduction folder so it is stand alone.</li>
+<li>💬 Should we have MIT license for reproduction/ and then CC-BY license for main repository? In which case, would need to specify in repository that changing license in reproduction/ folder and not main folder. And explain somewhere what the license files apply to.</li>
+</ul>
+<p>Other:</p>
+<ul>
+<li>💬 We might sometimes only reproduce part of a study - for example, a paper with multiple models and we focus on the discrete-event simulation. Think about the impact this has, and whether we need to note this somewhere? For example, whether the badges would actually be awarded for this work (or whether that matters - or if important bit is about ability to reproduce the simulation)? Depending on planned output for this work (e.g.&nbsp;if did want to explore publishing with <a href="https://rescience.github.io/">Rescience C</a>, what this would mean). Doesn’t change what we do during replication - just perhaps comments around it re: badges, and what we do with it.</li>
 </ul>
 
 
@@ -747,7 +973,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_06_04/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_05_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

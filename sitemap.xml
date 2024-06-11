@@ -2,106 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/scope.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/logbook.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_06_03/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.765Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_05_23/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.761Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_05_24/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.765Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_05_22/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/badges.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/reproduction_report.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/Transport_Model_Template.html</loc>
-    <lastmod>2024-06-10T16:03:01.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/CONTRIBUTING.html</loc>
-    <lastmod>2024-06-10T16:03:01.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/license.html</loc>
-    <lastmod>2024-06-10T16:03:01.801Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/study_publication.html</loc>
-    <lastmod>2024-06-10T16:03:01.801Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/CHANGELOG.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/CONTRIBUTING.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/reproduction_readme.html</loc>
-    <lastmod>2024-06-10T16:03:01.801Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/reproduction/reproduction.html</loc>
-    <lastmod>2024-06-10T16:03:01.817Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/Capacity_Model_Template.html</loc>
-    <lastmod>2024-06-10T16:03:01.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/vrp/transport_charts.html</loc>
-    <lastmod>2024-06-10T16:03:01.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/artefacts.html</loc>
-    <lastmod>2024-06-10T16:03:01.757Z</lastmod>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
   </url>
   <url>
     <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/reporting.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
   </url>
   <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_06_10/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/artefacts.html</loc>
+    <lastmod>2024-06-11T09:18:59.619Z</lastmod>
   </url>
   <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_06_04/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/vrp/transport_charts.html</loc>
+    <lastmod>2024-06-11T09:18:59.659Z</lastmod>
   </url>
   <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_06_07/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/Capacity_Model_Template.html</loc>
+    <lastmod>2024-06-11T09:18:59.651Z</lastmod>
   </url>
   <url>
-    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/posts/2024_06_05/index.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/reproduction/reproduction.html</loc>
+    <lastmod>2024-06-11T09:18:59.679Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/reproduction_readme.html</loc>
+    <lastmod>2024-06-11T09:18:59.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/logbook.html</loc>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_03/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_05_23/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_05_24/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_05_22/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/CONTRIBUTING.html</loc>
+    <lastmod>2024-06-11T09:18:59.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/CHANGELOG.html</loc>
+    <lastmod>2024-06-11T09:18:59.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_11/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_10/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_04/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_07/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/logbook/posts/2024_06_05/index.html</loc>
+    <lastmod>2024-06-11T09:18:59.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/study_publication.html</loc>
+    <lastmod>2024-06-11T09:18:59.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/quarto_site/license.html</loc>
+    <lastmod>2024-06-11T09:18:59.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/CONTRIBUTING.html</loc>
+    <lastmod>2024-06-11T09:18:59.651Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/original_study/dialysis-service-delivery-covid19-v1.0/Transport_Model_Template.html</loc>
+    <lastmod>2024-06-11T09:18:59.651Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/reproduction_report.html</loc>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/badges.html</loc>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
   </url>
   <url>
     <loc>https://pythonhealthdatascience.github.io/stars-reproduce-allen-2020/evaluation/reproduction_success.html</loc>
-    <lastmod>2024-06-10T16:03:01.769Z</lastmod>
+    <lastmod>2024-06-11T09:18:59.623Z</lastmod>
   </url>
 </urlset>

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amy Heather">
-<meta name="dcterms.date" content="2024-05-24">
+<meta name="dcterms.date" content="2024-06-03">
 
-<title>Reproducing Allen et al.&nbsp;2020 - Day 3</title>
+<title>Reproducing Allen et al.&nbsp;2020 - Day 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/logbook.html"> 
+    <a class="nav-link" href="../../../logbook/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Day 3</h1>
+      <h1 class="title">Day 4</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">reproduce</div>
               </div>
@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 24, 2024</p>
+        <p class="date">June 3, 2024</p>
       </div>
     </div>
     
@@ -237,14 +237,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#work-log" id="toc-work-log" class="nav-link active" data-scroll-target="#work-log">Work log</a>
   <ul class="collapse">
-  <li><a href="#untimed---revision-on-random-numbers" id="toc-untimed---revision-on-random-numbers" class="nav-link" data-scroll-target="#untimed---revision-on-random-numbers">Untimed - Revision on random numbers</a></li>
-  <li><a href="#reproduction" id="toc-reproduction" class="nav-link" data-scroll-target="#reproduction">11.29-12.38 Reproduction</a></li>
-  <li><a href="#untimed-exploring-methods-for-overlaying-figures" id="toc-untimed-exploring-methods-for-overlaying-figures" class="nav-link" data-scroll-target="#untimed-exploring-methods-for-overlaying-figures">Untimed: Exploring methods for overlaying figures</a></li>
+  <li><a href="#modifying-code-to-provide-more-control-over-replication-seeds" id="toc-modifying-code-to-provide-more-control-over-replication-seeds" class="nav-link" data-scroll-target="#modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</a></li>
+  <li><a href="#fixed-issue-in-duplication-between-my-replications" id="toc-fixed-issue-in-duplication-between-my-replications" class="nav-link" data-scroll-target="#fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</a></li>
+  <li><a href="#compared-against-article-figures" id="toc-compared-against-article-figures" class="nav-link" data-scroll-target="#compared-against-article-figures">11.56-12.00 Compared against article figures</a></li>
+  <li><a href="#comparing-against-original-paper" id="toc-comparing-against-original-paper" class="nav-link" data-scroll-target="#comparing-against-original-paper">12.19-12.45 Comparing against original paper</a></li>
+  <li><a href="#tidying-the-notebook-and-creating-reproduction-success-page" id="toc-tidying-the-notebook-and-creating-reproduction-success-page" class="nav-link" data-scroll-target="#tidying-the-notebook-and-creating-reproduction-success-page">16.13-16.24 Tidying the notebook, and creating reproduction success page</a></li>
   </ul></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   <li><a href="#suggested-changes-for-protocoltemplate" id="toc-suggested-changes-for-protocoltemplate" class="nav-link" data-scroll-target="#suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_24/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_06_03/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -263,112 +265,167 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fixed model so that it is reproducible between runs. Total time used: 5h 45m (14.4%)</p>
+<p>Chose a seed that produced fairly similar figures to paper. Decided that each figure had now been successfully reproduced. Total time used: 7h 6m (17.8%).</p>
 </div>
 </div>
 <section id="work-log" class="level2">
 <h2 class="anchored" data-anchor-id="work-log">Work log</h2>
-<section id="untimed---revision-on-random-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="untimed---revision-on-random-numbers">Untimed - Revision on random numbers</h3>
-<p>Spent some time revises how number generation works in Python - <a href="https://amyheather.github.io/programming_notes/python/seeds.html">notes here</a>. I felt this was external to reproducing the model, so did not include it in time.</p>
-<p>If I would have timed it though, it would’ve been apx. 9.30-11.28.</p>
-</section>
-<section id="reproduction" class="level3">
-<h3 class="anchored" data-anchor-id="reproduction">11.29-12.38 Reproduction</h3>
-<p>I returned to trying to modify the code so it can reproduce results between runs.</p>
-<p>A simple fix of adding a seed to some of the Uniform() functions that were still using random_seed=None meant that the simulation would now run <strong>exactly the same</strong> each time.</p>
-<p>Run 1:</p>
-<p><img src="figure_1a.png" width="500"></p>
-<p>Run 2:</p>
-<p><img src="figure_1b.png" width="500"></p>
-<p>Then we needed a <strong>seperate seed with each run</strong> (else every run will produce identical results) This required changes to:</p>
+<section id="modifying-code-to-provide-more-control-over-replication-seeds" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-code-to-provide-more-control-over-replication-seeds">10.30-11.03 Modifying code to provide more control over replication seeds</h3>
+<p>Made changes to <code>sim_replicate.py</code>:</p>
 <ul>
-<li><code>single_run()</code> within <code>sim_replicate.py</code> so it can accept random number set as an argument, and then when it was called in <code>multiple_replications()</code>, to use the rep number as the starting seed</li>
-<li>Scenario, changing it from a frozen dataclass to a class with a function that accepts a random number set, and then prompts generation of distributions from that</li>
+<li>Changed <code>multiple_replications()</code> to accept a base number, so the random number set is the replication number plus the base number</li>
+<li>Changed <code>run_replications()</code> to accept base number to function, and input this to call of <code>multiple_replications()</code></li>
 </ul>
-<p>These changes were based on <a href="https://pythonhealthdatascience.github.io/stars-simpy-example-docs/content/02_model_code/04_model.html">this model</a>.</p>
-<p>As can see, this has fixed it, as we have reproducible results between runs, and varying results within runs.</p>
-<p>Run 1:</p>
-<p><img src="figure_2a.png" width="500"></p>
-<p>Run 2:</p>
-<p><img src="figure_2b.png" width="500"></p>
+<p>Started changing <code>end_trial_analysis.py</code> to enable the function to accept changes to the filename, but then decided a simpler solution (that doesn’t require changing their code in multiple places) is just to use <code>os.rename()</code> within our notebook. Set up notebook to run through 15 different base seeds. Paused timing whilst this ran…</p>
 </section>
-<section id="untimed-exploring-methods-for-overlaying-figures" class="level3">
-<h3 class="anchored" data-anchor-id="untimed-exploring-methods-for-overlaying-figures">Untimed: Exploring methods for overlaying figures</h3>
-<p>Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.</p>
-<p>Decided that it’s not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.</p>
-<p>If timed, 13.33-13.57.</p>
-<div id="8d8046bb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> cv2.imread(<span class="st">'../../../original_study/article_fig4.png'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>overlay <span class="op">=</span> cv2.imread(<span class="st">'figure_2a.png'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Resize overlay to match original image dimensions</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>overlay_resize <span class="op">=</span> cv2.resize(overlay, (original.shape[<span class="dv">1</span>], original.shape[<span class="dv">0</span>]))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># View new image</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> plt.imshow(overlay_resize)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>img</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<section id="fixed-issue-in-duplication-between-my-replications" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-issue-in-duplication-between-my-replications">11.29-11.36 Fixed issue in duplication between my replications</h3>
+<p>Looked over images, but all looked very similar to one another. Realised this was because my method for modifying the seeds still had lots of matching seeds between each run - for example:</p>
+<ul>
+<li>Base 0: Random number sets are 0-30</li>
+<li>Base 1: Random number sets are 1-31</li>
+<li>Base 2: Random number sets are 2-32</li>
+</ul>
+<p>Hence, changed this in <code>reproduction.ipynb</code> so the base numbers were 0, 100, 200, 300 etc, and so:</p>
+<ul>
+<li>Base 0: Random number set 0-30</li>
+<li>Base 100: Random number set 100-130</li>
+<li>Base 200: Random number set 200-230</li>
+</ul>
+<p>Then paused timing as reran again…</p>
+</section>
+<section id="compared-against-article-figures" class="level3">
+<h3 class="anchored" data-anchor-id="compared-against-article-figures">11.56-12.00 Compared against article figures</h3>
+<p>Compared against paper figures. Figures 2 and 3 always generally look quite consistent. Figure 4 can look quite different, and from the runs I’ve done, you can spot for example that our peaks in the left figure, and in the maximum of the right figure, often look lower.</p>
+<p>Trying again with another set of 15, this time 1500 to 2900.</p>
+<p>An alternative to this would be to identify the number of replications required for stable results - but that feels like less of a focus on reproducibility, and more of a focus on valid results.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Simulation stability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From 15 different versions, I’m finding the peaks of the figures from the paper to be slightly higher than typical. Assuming that model parameters are correct and that control of randomness is now implemented appropriately, this highlights the relevance of simulation stability. Although 30 replications were performed, there was not assessment of whether this was the number needed for stability of results. This might be relevant to consider for STARS framework.</p>
+<p>As in ‘Simulation: The Practice of Model Development and Use’ by Stewart Robinson, there are three approaches for selecting the number of replications:</p>
+<ul>
+<li>Rule of thumb - Law and McComas (1990) suggest at least 3-5, although models will often need more than that</li>
+<li>Graphical method - Plot cumulative mean of an output in a graph (X axis is replication number, and Y axis is cumulative mean), and identify when that line becomes flat</li>
+<li>Confidence interval method (recommended method) - Similar to above, but including confidence intervals in the plot (e.g.&nbsp;95%), and basing decision on narrowness of these itnervals. This can be done by calculating the percentage deviations of the confidence interval on each side of the mean with the increasing number of replications. You then set a threshold of the amount of deviation desired.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="comparing-against-original-paper" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-against-original-paper">12.19-12.45 Comparing against original paper</h3>
+<p>Still none with similar blue peak, but decided appropriate number of different seeds have now been tried. From visual comparison, felt base of 2700 produced results that were fairly visually similar - but from looking across them all, often there wasn’t alot between them.</p>
+<p>Here are comparisons of:</p>
+<ul>
+<li>Original study figure</li>
+<li>Figure from base 2700</li>
+<li>Figure from base 2100 (which you can see looks more different from the original than base 2700 - although still pretty similar!)</li>
+</ul>
+<p>Examples of differences to spot between them:</p>
+<ul>
+<li>Peaks of lines in left figure of Figure 4 (and resultant Y axis)</li>
+<li>Peaks of red line in right figure of Figure 4</li>
+<li>Interval of green line in Figure 2</li>
+</ul>
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-2-output-1.png" width="540" height="360" class="figure-img"></p>
-</figure>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 2: <img src="../../../original_study/article_fig2.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="patients_base_3_month_base2700.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="patients_base_3_month_base2100.png"></p>
 </div>
 </div>
 </div>
-<div id="d02cde86" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlay transparently</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> cv2.addWeighted(original,<span class="fl">0.4</span>,overlay_resize,<span class="fl">0.1</span>,<span class="dv">0</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View new image</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> plt.imshow(combined)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>img</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-3-output-1.png" width="540" height="360" class="figure-img"></p>
-</figure>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 3: <img src="../../../original_study/article_fig3.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="units_base_3_month_base2700.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="units_base_3_month_base2100.png" width="500"></p>
 </div>
 </div>
 </div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Original Figure 4: <img src="../../../original_study/article_fig4.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2700: <img src="displaced_base_3_month_base2700.png" width="500"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Base 2100: <img src="displaced_base_3_month_base2100.png" width="500"></p>
+</div>
+</div>
+</div>
+<p>As I believe the parameters are consistent with the paper (as checked on Day 2), and as the models successfully run and produce broadly similar figures (with differences believed to be due to randomness/seeds, and related to simulation stability with this number of replications), I hence believe that at this point, reproduction is complete, and that each of these figures can be considered a <strong>successful reproduction</strong>.</p>
+</section>
+<section id="tidying-the-notebook-and-creating-reproduction-success-page" class="level3">
+<h3 class="anchored" data-anchor-id="tidying-the-notebook-and-creating-reproduction-success-page">16.13-16.24 Tidying the notebook, and creating reproduction success page</h3>
+<p>Simplified the reproduction notebook to just use the base number 2700, deleting the other results.</p>
+<p>Created a reproduction success page, presenting those figures alongside the figures from the original study.</p>
+<p>Not archiving on Zenodo as this is the test-run.</p>
 </section>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="3451dcd3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">276</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'12.38'</span>)]</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5b8954b5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">345</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.30'</span>, <span class="st">'11.03'</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.29'</span>, <span class="st">'11.36'</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.56'</span>, <span class="st">'12.00'</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.19'</span>, <span class="st">'12.45'</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'16.13'</span>, <span class="st">'16.24'</span>)]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print time used and remaining</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 69m, or 1h 9m
-Total used to date: 345m, or 5h 45m
-Time remaining: 2055m, or 34h 15m
-Used 14.4% of 40 hours max</code></pre>
+<pre><code>Time spent today: 81m, or 1h 21m
+Total used to date: 426m, or 7h 6m
+Time remaining: 1974m, or 32h 54m
+Used 17.8% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
 <section id="suggested-changes-for-protocoltemplate" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-changes-for-protocoltemplate">Suggested changes for protocol/template</h2>
 <p>✅ = Made the change.</p>
-<p>💬 = Noted to discuss with team.</p>
 <p>Protocol:</p>
 <ul>
-<li>💬 Protocol should more clearly state if certain timestamps are needed. Currently the suggestion is time to create each figure - but is this definitely our focus? Or is it instead, time to set up the environment, time to get the simulation running, time to get it to reproduce between runs, time to successful reproduction. For this study, the figure from Krafczyk wouldn’t make alot of sense, as we all-or-nothing reproduce them. Depending on decision, need to be clear in protocol about what is being timed and what is not.</li>
+<li>✅ Reproduction complete not necessarily when figures exactly match, but when you think they are quite similar and you think differences are due to things like seeds/randomness, and model stability</li>
 </ul>
 
 
@@ -808,7 +865,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/evaluation/posts/2024_05_24/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/edit/main/logbook/posts/2024_06_03/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
