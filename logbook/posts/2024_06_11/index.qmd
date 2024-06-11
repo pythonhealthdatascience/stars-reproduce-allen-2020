@@ -1,0 +1,56 @@
+---
+title: "Day 9"
+author: "Amy Heather"
+date: "2024-06-11"
+categories: [compendium]
+---
+
+::: {.callout-note}
+
+Continued working on research compendium.
+
+:::
+
+## Work log
+
+### Research compendium
+
+Explored options for virtual hosting of materials...
+
+**Google Colab:**
+
+* Simply add 'tocolab' within the url so it becomes 'githubtocolab.com/' - e.g. <https://githubtocolab.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/reproduction/reproduction.ipynb>. This has a few issues though...
+    * Won't have the environment set up, so you'll need to pip install dependencies within this script.
+    * Can't use local materials (e.g. the local sim package) without uploading those files to Google Drive
+    * Have to "hack" it to correct version of Python
+
+```
+!python3 --version
+!sudo apt-get install python3.8
+!sudo apt-get update -y
+!sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+!sudo update-alternatives --config python3
+!python3 --version
+```
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/pythonhealthdatascience/stars-reproduce-allen-2020/blob/main/reproduction/reproduction.ipynb)<nbsp>
+
+**BinderHub:**
+
+* Created BinderHub config file to use the GHCR image (`reproduction/binderhub/config.yaml`)
+
+```
+config:
+  BinderHub:
+    use_registry: true
+    image_prefix: ghcr.io/pythonhealthdatascience/covid19:latest
+```
+
+* Then set up on <mybinder.org>. This set up but had some issues:
+    * Takes a long time to set-up.
+    * Test-run of reproduction.ipynb failed - said there was "no module named 'simpy'".
+    * Displayed whole repository (rather than just the reproduction folder) - but looks like this is not supported by binder as an option - closest is to modify url so it points to a particular notebook - <https://mybinder.org/v2/gh/pythonhealthdatascience/stars-reproduce-allen-2020/HEAD?labpath=reproduction%2Freproduction.ipynb>.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pythonhealthdatascience/stars-reproduce-allen-2020/HEAD?labpath=reproduction%2Freproduction.ipynb)
+
+* Tried simplifying this ([as Binder recommends against Docker](https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html)), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere...

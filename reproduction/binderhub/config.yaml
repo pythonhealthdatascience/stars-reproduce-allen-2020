@@ -1,4 +1,0 @@
-config:
-  BinderHub:
-    use_registry: true
-    image_prefix: ghcr.io/pythonhealthdatascience/covid19:latest
