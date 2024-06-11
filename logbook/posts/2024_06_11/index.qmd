@@ -7,7 +7,7 @@ categories: [compendium]
 
 ::: {.callout-note}
 
-Continued working on research compendium.
+Continued working on research compendium (online coding environment, documentation).
 
 :::
 
@@ -57,7 +57,36 @@ config:
 
 * Tried simplifying this ([as Binder recommends against Docker](https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html)), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere...
     * Requires the `.binder/` folder to be in the root (so can't be within the reproduction folder)
-    * Took 3 minutes 20 to set up
+    * Took 3 minutes 20s to set up
     * Test-run of reproduction.ipynb failed - said there was "no module named 'pandas'", and `!pip list` shows that expected packages from environment.yaml haven't been installed
     * Check of python version (`!python --version`) returns 3.10.14 (incorrect)
-* Tried a final time, creating a `requirements.txt` instead with packages, and `runtime.txt` with the Python version...
+* Tried a final time, creating a `requirements.txt` instead with packages, and `runtime.txt` with the Python version within the `.binder/` folder...
+    * Took 3m 25s to set up
+    * When attempting to test it, connection to the kernel failed and it could not run the cells ("*A connection to the notebook server could not be established. The notebook will continue trying to reconnect. Check your network connection or notebook server configuration.*"). This persisted after a restart.
+
+Requirements:
+
+```
+joblib==0.14.1
+jupyterlab==1.2.6
+matplotlib==3.1.3
+notebook==6.0.3
+numpy==1.18.1
+pandas==1.0.1
+pip==20.0.2
+pytest==5.3.5
+scipy==1.4.1
+seaborn==0.10.0
+simpy==3.0.11
+statsmodels==0.11.0
+```
+
+Runtime:
+
+```
+python-3.8.1
+```
+
+**Conclusion:** Decided that for the purposes of these reproduction assessments, to not continue pursuing this at the current moment in time, and to just keep with the options of the environment file or the Binder image (locally or from GHCR).
+
+#### Other aspects of research compendium
