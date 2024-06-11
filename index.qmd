@@ -15,12 +15,13 @@ This book captures the reproduction of:
 Use the navigation bar above to view:
 
 * **Original study** - the original study article and associated artefacts.
-* **Reproduction code** - code and documentation from reproduction of the model.
+* **Reproduction** - code and documentation from reproduction of the model.
 * **Evaluation** - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.
 * **Logbook** - chronological entries detailing reproduction work.
-* **Report** - final report describing the computational reproducibility assessment.
+* **Summary** - summary of the computational reproducibility assessment.
 
 ## Project team
+
 <!-- ORCID icon CC 1.0 from https://figshare.com/articles/figure/ORCID_iD_icon_graphics/5008697/4 -->
 
 Conducting this reproduction:
