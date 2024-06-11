@@ -15,6 +15,8 @@ Continued working on research compendium.
 
 ### Research compendium
 
+#### Accessing the repository on browser without any installs
+
 Explored options for virtual hosting of materials...
 
 **Google Colab:**
@@ -54,3 +56,8 @@ config:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pythonhealthdatascience/stars-reproduce-allen-2020/HEAD?labpath=reproduction%2Freproduction.ipynb)
 
 * Tried simplifying this ([as Binder recommends against Docker](https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html)), so removed the config file and instead copied the environment file into a .binder folder in the root, as then Binder should ignore configuration files elsewhere...
+    * Requires the `.binder/` folder to be in the root (so can't be within the reproduction folder)
+    * Took 3 minutes 20 to set up
+    * Test-run of reproduction.ipynb failed - said there was "no module named 'pandas'", and `!pip list` shows that expected packages from environment.yaml haven't been installed
+    * Check of python version (`!python --version`) returns 3.10.14 (incorrect)
+* Tried a final time, creating a `requirements.txt` instead with packages, and `runtime.txt` with the Python version...
