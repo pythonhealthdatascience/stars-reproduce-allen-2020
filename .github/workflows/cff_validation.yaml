@@ -6,8 +6,8 @@ run-name: Check if CITATION.cff is still valid
 
 on:
   push:
-    paths:
-      - CITATION.cff
+    branches: main
+    paths: CITATION.cff
   workflow_dispatch:
 
 jobs:

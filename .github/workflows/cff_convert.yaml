@@ -3,8 +3,8 @@ run-name: Convert CITATION.cff to other formats
 
 on:
   push:
-    paths:
-      - CITATION.cff
+    branches: main
+    paths: CITATION.cff
   workflow_dispatch:
 
 jobs:
