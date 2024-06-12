@@ -333,7 +333,14 @@
     "href": "CHANGELOG.html",
     "title": "Changelog",
     "section": "",
-    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nRelease date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study.\n\n\n\n\n\nRelease date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nRelease date: 12th June 2024\nContributors: Amy Heather\nEvaluated the original study against guidelines, wrote the summary report, and reorganised the reproduction files to create a research compendium.\n\n\n\nEvaluation of the original study article and artefacts against various guidelines.\nSummary report.\n\n\n\n\n\nReorganised and added to reproduction/ to create a research compendium.\n\n\n\n\n\nRelease date: 3rd June 2024\nContributors: Amy Heather\nCompleted work on reproducing items from the agreed scope.\n\n\n\nAttempted reproduction of items from the original study.\n\n\n\n\n\nRelease date: 22nd May 2024\nContributors: Amy Heather\nDefined scope for the reproducibility assessment.\n\n\n\nBasic repository which includes a page defining the agreed scope for the reproducibility assessment."
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.3.0",
+    "href": "CHANGELOG.html#v0.3.0",
+    "title": "Changelog",
+    "section": "",
+    "text": "Release date: 12th June 2024\nContributors: Amy Heather\nEvaluated the original study against guidelines, wrote the summary report, and reorganised the reproduction files to create a research compendium.\n\n\n\nEvaluation of the original study article and artefacts against various guidelines.\nSummary report.\n\n\n\n\n\nReorganised and added to reproduction/ to create a research compendium."
   },
   {
     "objectID": "CHANGELOG.html#v0.2.0",
@@ -460,6 +467,13 @@
     "title": "Publication",
     "section": "Supplementary materials",
     "text": "Supplementary materials"
+  },
+  {
+    "objectID": "quarto_site/study_publication.html#sources",
+    "href": "quarto_site/study_publication.html#sources",
+    "title": "Publication",
+    "section": "Sources",
+    "text": "Sources\nArticle:\n\nhttps://doi.org/10.1371%2Fjournal.pone.0237628\n\nSupplementary materials:\n\nhttps://doi.org/10.1371/journal.pone.0237628.s001\nhttps://doi.org/10.1371/journal.pone.0237628.s002\n\nCode - two similar sources, chose Zenodo:\n\nhttps://zenodo.org/records/3760626\nhttps://git.exeter.ac.uk/tmwm201/dialysis-service-delivery-covid19"
   },
   {
     "objectID": "quarto_site/license.html",
