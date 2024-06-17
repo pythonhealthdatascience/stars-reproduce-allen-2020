@@ -282,7 +282,7 @@ div.csl-indent {
 <td>2.1 Base model overview diagram</td>
 <td>Describe the base model using appropriate diagrams and description. This could include one or more process flow, activity cycle or equivalent diagrams sufficient to describe the model to readers. Avoid complicated diagrams in the main text. The goal is to describe the breadth and depth of the model with respect to the system being studied.</td>
 <td>✅ Fully</td>
-<td><code>Figure 1</code>: “Schematic representation of patient pathway”<br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a></td>
+<td><code>Figure 1</code>: “Schematic representation of patient pathway” (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>) <br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a></td>
 </tr>
 <tr class="odd">
 <td>2.2 Base model logic</td>
@@ -300,7 +300,7 @@ div.csl-indent {
 <td>2.4 Algorithms</td>
 <td>Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.&nbsp;scheduling of arrivals/ appointments/ operations/ maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible. Pseudo-code may be used to describe an algorithm.</td>
 <td>✅ Fully</td>
-<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1”<br><br><code>Table 1</code>: Baseline model parameters<br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a><br><br><code>Materials and methods - unit search strategy</code>: “When allocating patients to units, the following search strategy is employed.<br>• COVID negative: First look for place in current unit attended. If no room there place in the closest unit (judged by estimated travel time) with available space.<br>• COVID-positive: Place all COVID-positive patients first in Queen Alexandra Hospital, Portsmouth, and if capacity there is fully utilised open up capacity in Basingstoke. If a new COVID session is required, the model will displace all COVID negative patients in that session, and seek to re-allocate them according to the rules for allocating COVID negative patients.<br>• COVID-positive inpatient: All inpatients are placed in Queen Alexandra Hospital, Portsmouth (though the model allows searching by travel time if another unit were to open to renal COVID-positive inpatients).<br>• COVID-recovered: Treat as COVID negative.<br>• Unallocated patients: If a patient cannot be allocated to any unit, the model attempts to allocate them each day.”</td>
+<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1”<br><br><code>Table 1</code>: Baseline model parameters (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>) <br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a><br><br><code>Materials and methods - unit search strategy</code>: “When allocating patients to units, the following search strategy is employed.<br>• COVID negative: First look for place in current unit attended. If no room there place in the closest unit (judged by estimated travel time) with available space.<br>• COVID-positive: Place all COVID-positive patients first in Queen Alexandra Hospital, Portsmouth, and if capacity there is fully utilised open up capacity in Basingstoke. If a new COVID session is required, the model will displace all COVID negative patients in that session, and seek to re-allocate them according to the rules for allocating COVID negative patients.<br>• COVID-positive inpatient: All inpatients are placed in Queen Alexandra Hospital, Portsmouth (though the model allows searching by travel time if another unit were to open to renal COVID-positive inpatients).<br>• COVID-recovered: Treat as COVID negative.<br>• Unallocated patients: If a patient cannot be allocated to any unit, the model attempts to allocate them each day.”</td>
 </tr>
 <tr class="even">
 <td>2.5.1 Components - entities</td>
@@ -330,7 +330,7 @@ div.csl-indent {
 <td>2.5.5 Components - entry/exit points</td>
 <td>Give details of the model boundaries i.e.&nbsp;all arrival and exit points of entities. Detail the arrival mechanism (e.g.&nbsp;‘thinning’ to mimic a non-homogenous Poisson process or balking)</td>
 <td>❌ Not met</td>
-<td>Not explicitly described in the paper. However, understand from Tom that it is a fixed population where patients exit the dialysis model at mortality. This is indicated by <code>Figure 1</code>, but as I did not feel it to be clearly detailed in the paper, this has been evaluated as not met.<br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a></td>
+<td>Not explicitly described in the paper. However, understand from Tom that it is a fixed population where patients exit the dialysis model at mortality. This is indicated by <code>Figure 1</code> (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>), but as I did not feel it to be clearly detailed in the paper, this has been evaluated as not met.<br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a></td>
 </tr>
 <tr class="odd">
 <td><strong>Data</strong></td>
@@ -354,7 +354,7 @@ div.csl-indent {
 <td>3.3 Input parameters</td>
 <td>List all input variables in the model. Provide a description of their use and include parameter values. For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters. Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>• Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions.</td>
 <td>✅ Fully</td>
-<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1… The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Table 1</code>: Baseline model parameters<br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
+<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1… The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Table 1</code>: Baseline model parameters (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>) <br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
 </tr>
 <tr class="odd">
 <td>3.4 Assumptions</td>
@@ -484,7 +484,7 @@ div.csl-indent {
 <td>3 Is the model structure described?</td>
 <td>…the model’s conceptual structure was described in the form of either graphical or text presentation.</td>
 <td>✅ Fully</td>
-<td><code>Figure 1</code>: “Schematic representation of patient pathway”<br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a><br><br><code>Materials and methods - Dialysis model</code> section provides a detailed description of how the model works, and how patients flow through it</td>
+<td><code>Figure 1</code>: “Schematic representation of patient pathway” (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>) <br><a href="../original_study/article_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 1: Schematic representation of patient pathway"><img src="../original_study/article_fig1.png" class="img-fluid" alt="Figure 1: Schematic representation of patient pathway"></a><br><br><code>Materials and methods - Dialysis model</code> section provides a detailed description of how the model works, and how patients flow through it</td>
 </tr>
 <tr class="odd">
 <td>4 Is the time horizon given?</td>
@@ -520,13 +520,13 @@ div.csl-indent {
 <td>8 Are the parameters used to populate model frameworks specified?</td>
 <td>…all relevant parameters fed into model frameworks were disclosed.</td>
 <td>✅ Fully</td>
-<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1… The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Table 1</code>: Baseline model parameters<br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
+<td><code>Materials and methods - patient progression model</code>: “The proportions of patients and times in each phase is either fixed or sampled from stochastic distributions as given in Table 1… The baseline model takes a worst case progression of COVID, infecting 80% of the dialysis population over 3 months.”<br><br><code>Table 1</code>: Baseline model parameters (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>) <br><a href="../original_study/article_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Table 1: Baseline model parameters"><img src="../original_study/article_tab1.png" class="img-fluid" alt="Table 1: Baseline model parameters"></a></td>
 </tr>
 <tr class="odd">
 <td>9 Are model uncertainties discussed?</td>
 <td>…the uncertainty surrounding parameter estimations and adopted statistical methods (eg, 95% confidence intervals or possibility distributions) were reported.</td>
 <td>✅ Fully</td>
-<td>All figures include the minimum and maximum from 30 trials (shown with fainter lines), alongside the median results (shown with bolder lines). Example from <code>Figure 2</code>:<br><a href="../original_study/article_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure 2: Patient state over time"><img src="../original_study/article_fig2.png" class="img-fluid" alt="Figure 2: Patient state over time"></a></td>
+<td>All figures include the minimum and maximum from 30 trials (shown with fainter lines), alongside the median results (shown with bolder lines). Example from <code>Figure 2</code> (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>): <br><a href="../original_study/article_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure 2: Patient state over time"><img src="../original_study/article_fig2.png" class="img-fluid" alt="Figure 2: Patient state over time"></a></td>
 </tr>
 <tr class="even">
 <td>10 Are sensitivity analyses performed and reported?</td>
@@ -602,6 +602,9 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-allen_simulation_2020" class="csl-entry" role="listitem">
+Allen, Michael, Amir Bhanji, Jonas Willemsen, Steven Dudfield, Stuart Logan, and Thomas Monks. 2020. <span>“A Simulation Modelling Toolkit for Organising Outpatient Dialysis Services During the <span>COVID</span>-19 Pandemic.”</span> <em>PLOS ONE</em> 15 (8): e0237628. <a href="https://doi.org/10.1371/journal.pone.0237628">https://doi.org/10.1371/journal.pone.0237628</a>.
+</div>
 <div id="ref-monks_strengthening_2019" class="csl-entry" role="listitem">
 Monks, Thomas, Christine S. M. Currie, Bhakti Stephan Onggo, Stewart Robinson, Martin Kunc, and Simon J. E. Taylor. 2019. <span>“Strengthening the Reporting of Empirical Simulation Studies: <span>Introducing</span> the <span>STRESS</span> Guidelines.”</span> <em>Journal of Simulation</em> 13 (1): 55–67. <a href="https://doi.org/10.1080/17477778.2018.1442155">https://doi.org/10.1080/17477778.2018.1442155</a>.
 </div>
@@ -1055,7 +1058,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -351,7 +371,7 @@ Notes from read through of paper
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Patient pathway figure from Allen et al.&nbsp;2020</figcaption>
+<figcaption>Patient pathway figure from <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <ul>
@@ -362,7 +382,7 @@ Notes from read through of paper
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_tab1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Baseline model parameters from Allen et al.&nbsp;2020</figcaption>
+<figcaption>Baseline model parameters from <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <p>For allocation to units, use search strategy:</p>
@@ -390,19 +410,19 @@ Notes from read through of paper
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_fig2.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Figure 2</figcaption>
+<figcaption>Figure 2 - <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Figure 3</figcaption>
+<figcaption>Figure 3 - <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_fig4.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Figure 4</figcaption>
+<figcaption>Figure 4 - <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <p><strong>Discusion:</strong></p>
@@ -483,7 +503,7 @@ Notes from identification of key results and comparison with figures
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="230bd69c" class="cell" data-execution_count="1">
+<div id="7997e1d3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -537,9 +557,14 @@ Used 3.0% of 40 hours max</code></pre>
 </ul>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-allen_simulation_2020" class="csl-entry" role="listitem">
+Allen, Michael, Amir Bhanji, Jonas Willemsen, Steven Dudfield, Stuart Logan, and Thomas Monks. 2020. <span>“A Simulation Modelling Toolkit for Organising Outpatient Dialysis Services During the <span>COVID</span>-19 Pandemic.”</span> <em>PLOS ONE</em> 15 (8): e0237628. <a href="https://doi.org/10.1371/journal.pone.0237628">https://doi.org/10.1371/journal.pone.0237628</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

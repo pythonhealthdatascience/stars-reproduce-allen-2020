@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -213,7 +233,7 @@ Figure 2
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig2.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Figure 2. “Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
+<figcaption>Figure 2. “Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -234,7 +254,7 @@ Figure 3
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig3.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 3. “Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
+<figcaption>Figure 3. “Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -255,7 +275,7 @@ Figure 4
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig4.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4. “Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.”</figcaption>
+<figcaption>Figure 4. “Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -280,7 +300,7 @@ Table 1
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_tab1.png" class="img-fluid figure-img"></p>
-<figcaption>Table 1. “Baseline model parameters.”</figcaption>
+<figcaption>Table 1. “Baseline model parameters.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -302,7 +322,7 @@ Figure 1
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig1.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1. “Schematic representation of patient pathway.”</figcaption>
+<figcaption>Figure 1. “Schematic representation of patient pathway.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -323,8 +343,8 @@ Figure 5
 <p>Outside scope as it is a result of the Monte Carlo model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../original_study/article_fig1.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 5. “One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.”</figcaption>
+<p><img src="../original_study/article_fig5.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5. “One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -346,7 +366,7 @@ Figure 6
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../original_study/article_fig6.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 6. “Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.”</figcaption>
+<figcaption>Figure 6. “Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g.&nbsp;2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time.” <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -354,9 +374,14 @@ Figure 6
 </div>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-allen_simulation_2020" class="csl-entry" role="listitem">
+Allen, Michael, Amir Bhanji, Jonas Willemsen, Steven Dudfield, Stuart Logan, and Thomas Monks. 2020. <span>“A Simulation Modelling Toolkit for Organising Outpatient Dialysis Services During the <span>COVID</span>-19 Pandemic.”</span> <em>PLOS ONE</em> 15 (8): e0237628. <a href="https://doi.org/10.1371/journal.pone.0237628">https://doi.org/10.1371/journal.pone.0237628</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

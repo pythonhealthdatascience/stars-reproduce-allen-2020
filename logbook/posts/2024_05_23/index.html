@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -440,7 +460,7 @@ Notes from looking over their code and data
 </section>
 <section id="reproduction-1" class="level3">
 <h3 class="anchored" data-anchor-id="reproduction-1">14.19-15.12 Reproduction</h3>
-<p>Original:</p>
+<p>Original (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>):</p>
 <p><img src="../../../original_study/article_fig4.png" width="500"></p>
 <p>Run 1:</p>
 <p><img src="displaced_base_3_month_rerun1.png" width="500"></p>
@@ -453,7 +473,7 @@ Notes from looking over their code and data
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../../original_study/article_tab1.png" class="img-fluid figure-img"></p>
-<figcaption>Table 1</figcaption>
+<figcaption>Table 1 - <span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
 </div>
 <pre><code>number_of_replications = 30
@@ -501,7 +521,7 @@ scenarios['base_3_month'] = Scenario(
 <li>NormalParams 1</li>
 <li>UniformParams 2</li>
 </ul>
-<p>Original:</p>
+<p>Original (<span class="citation" data-cites="allen_simulation_2020">Allen et al. (<a href="#ref-allen_simulation_2020" role="doc-biblioref">2020</a>)</span>):</p>
 <p><img src="../../../original_study/article_fig4.png" width="500"></p>
 <p>Run 1 with seeds added:</p>
 <p><img src="displaced_base_3_month_seed1.png" width="500"></p>
@@ -555,7 +575,7 @@ Random seeds
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="3947b040" class="cell" data-execution_count="1">
+<div id="1fcfd24d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -621,9 +641,14 @@ Used 11.5% of 40 hours max</code></pre>
 </ul>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-allen_simulation_2020" class="csl-entry" role="listitem">
+Allen, Michael, Amir Bhanji, Jonas Willemsen, Steven Dudfield, Stuart Logan, and Thomas Monks. 2020. <span>“A Simulation Modelling Toolkit for Organising Outpatient Dialysis Services During the <span>COVID</span>-19 Pandemic.”</span> <em>PLOS ONE</em> 15 (8): e0237628. <a href="https://doi.org/10.1371/journal.pone.0237628">https://doi.org/10.1371/journal.pone.0237628</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
