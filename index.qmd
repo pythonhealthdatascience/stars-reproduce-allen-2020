@@ -38,6 +38,12 @@ Other members of the team on STARS:
 * [Navonil Mustafee](https://github.com/NavonilNM) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0002-2204-8924)
 * [Andrew Mayne](https://github.com/andy-mayne) [![ORCID icon](quarto_site/ORCIDiD_icon16x16.png)](https://orcid.org/0000-0003-1263-2286)
 
+## Protocol
+
+The protocol for this work is summarised in the diagram below and archived on Zenodo: **Link to Zenodo once published**.
+
+![Workflow for computational reproducibility assessment](./quarto_site/stars_wp1_workflow.png)
+
 ## Citation
 
 **APA:**
@@ -47,4 +53,4 @@ See `CITATION.cff` and `citation_bibtex.bib` for alternative formats.
 
 ## License
 
-{{< include LICENSE >}}
+See [License page](./quarto_site/license.qmd).

@@ -1,4 +1,4 @@
-# STARS: Computational reproducibility of Allen et al. 2020
+# STARS: Computational reproducibility of Allen et al. 2020 <a href="https://github.com/pythonhealthdatascience"><img src="quarto_site/stars_logo_blue.png" align="right" height="120" alt="STARS" /></a>
 
 <!-- Status badge from GitHub action checking validity of CITATION.cff -->
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-allen-2020/actions/workflows/cff_validation.yaml)
@@ -20,6 +20,12 @@ This website is created using Quarto and hosted using GitHub Pages. It shares ev
 * Evaluation of the original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.
 * Logbook with chronological entries detailing reproduction work.
 * Final report describing the computational reproducibility assessment.
+
+## Protocol
+
+The protocol for this work is summarised in the diagram below and archived on Zenodo: **Link to Zenodo once published**.
+
+![Workflow](./quarto_site/stars_wp1_workflow.png)
 
 ## Repository overview
 
