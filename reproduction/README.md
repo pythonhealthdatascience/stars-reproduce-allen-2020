@@ -8,17 +8,17 @@ This is a discrete-event simulation modeling patient allocation to dialysis unit
 
 Model patient pathway figure from the original study:
 
-![Patient pathway figure](../original_study/article_fig1.png)
+![Patient pathway figure. Image and caption source: Allen et al. 2020.](../original_study/article_fig1.png)
 
 ## Scope of the reproduction
 
 In this assessment, we attempted to reproduced three figures.
 
-![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig2.png){width=50%}
+![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."  Image and caption source: Allen et al. 2020.](../original_study/article_fig2.png){width=50%}
 
-![Figure 3. "Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig3.png){width=50%}
+![Figure 3. "Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."  Image and caption source: Allen et al. 2020.](../original_study/article_fig3.png){width=50%}
 
-![Figure 4. "Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig4.png){width=50%}
+![Figure 4. "Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." Image and caption source: Allen et al. 2020.](../original_study/article_fig4.png){width=50%}
 
 ## Reproducing these results
 

@@ -1,5 +1,6 @@
 ---
 title: "Scope"
+bibliography: ../quarto_site/references.bib
 ---
 
 This page outlines that parts of the journal article which we will attempt to reproduce.
@@ -10,7 +11,7 @@ This page outlines that parts of the journal article which we will attempt to re
 
 ## Figure 2
 
-![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig2.png){width=80%}
+![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." @allen_simulation_2020](../original_study/article_fig2.png){width=80%}
 
 :::
 
@@ -18,7 +19,7 @@ This page outlines that parts of the journal article which we will attempt to re
 
 ## Figure 3
 
-![Figure 3. "Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig3.png)
+![Figure 3. "Progression of patient population through COVID infection, assuming 80% become infected over three months, with 15% mortality. The figure also shows the number of patients not allocated to a dialysis session at any time. The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." @allen_simulation_2020](../original_study/article_fig3.png)
 
 :::
 
@@ -26,7 +27,7 @@ This page outlines that parts of the journal article which we will attempt to re
 
 ## Figure 4
 
-![Figure 4. "Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials."](../original_study/article_fig4.png)
+![Figure 4. "Patient displacement. The number of patients displaced from their current unit (left panel) and the additional travel time to the unit of care (right panel) for displaced patients. These results do not include those receiving inpatient care. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." @allen_simulation_2020](../original_study/article_fig4.png)
 
 :::
 
@@ -38,7 +39,7 @@ This page outlines that parts of the journal article which we will attempt to re
 
 Outside scope as it is a table of model parameters rather than outputs.
 
-![Table 1. "Baseline model parameters."](../original_study/article_tab1.png)
+![Table 1. "Baseline model parameters." @allen_simulation_2020](../original_study/article_tab1.png)
 
 :::
 
@@ -48,7 +49,7 @@ Outside scope as it is a table of model parameters rather than outputs.
 
 Outside scope as it is a flow chart representing the model pathways.
 
-![Figure 1. "Schematic representation of patient pathway."](../original_study/article_fig1.png)
+![Figure 1. "Schematic representation of patient pathway." @allen_simulation_2020](../original_study/article_fig1.png)
 
 :::
 
@@ -58,7 +59,7 @@ Outside scope as it is a flow chart representing the model pathways.
 
 Outside scope as it is a result of the Monte Carlo model.
 
-![Figure 5. "One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time."](../original_study/article_fig1.png)
+![Figure 5. "One-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time." @allen_simulation_2020](../original_study/article_fig5.png)
 
 :::
 
@@ -68,6 +69,6 @@ Outside scope as it is a result of the Monte Carlo model.
 
 Outside scope as it is a result of the Monte Carlo model.
 
-![Figure 6. "Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time."](../original_study/article_fig6.png)
+![Figure 6. "Two-way ambulance transport time distributions (1000 model runs). Results compare population COVID-positive and ambulance seating capacity (e.g. 2 = 2 seats.) Figures do not include ambulance clean-down/turnaround time." @allen_simulation_2020](../original_study/article_fig6.png)
 
 :::

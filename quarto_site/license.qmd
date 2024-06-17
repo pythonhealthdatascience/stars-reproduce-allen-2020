@@ -1,5 +1,6 @@
 ---
-title: "Open Source License"
+title: "Code and article licenses"
+bibliography: ../quarto_site/references.bib
 ---
 
 This repository is licensed under the MIT License.
@@ -12,7 +13,7 @@ This repository is licensed under the MIT License.
 
 :::
 
-This is aligned with the original study, who also licensed their work under the MIT License.
+This is aligned with the original study, who also licensed their code under the MIT License.
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
@@ -22,3 +23,13 @@ This is aligned with the original study, who also licensed their work under the 
 
 :::
 
+<!-- TODO: Add info about the article license -->
+The original study was published in the journal "PLOS ONE". They distributed the article under the Creative Commons Attribution 4.0 International (CC-BY-4.0) license. We have therefore been able to upload the article and images to this repository.
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## View copyright statement from journal
+
+"© 2020 Allen et al. This is an open access article distributed under the terms of the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited." - @allen_simulation_2020
+
+:::

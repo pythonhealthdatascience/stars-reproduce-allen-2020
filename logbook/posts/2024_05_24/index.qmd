@@ -3,6 +3,7 @@ title: "Day 3"
 author: "Amy Heather"
 date: "2024-05-24"
 categories: [reproduce]
+bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
@@ -55,6 +56,8 @@ Run 2:
 Exploring methods for overlaying figures. Not timed as not about reproduction of this study, but about how we are going to do this each time when reproducing.
 
 Decided that it's not helpful to do this - spend more time fiddling around with getting them to resize and overlay correctly - and that the simplest option here would be to compare by eye.
+
+Base image sourced from @allen_simulation_2020
 
 If timed, 13.33-13.57.
 

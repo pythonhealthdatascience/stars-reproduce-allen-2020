@@ -1,5 +1,6 @@
 ---
 title: "Reproduction success"
+bibliography: ../quarto_site/references.bib
 ---
 
 Of the three items in the scope, 100% (3 out of 3) were considered to be **successfully reproduced**.
@@ -8,7 +9,7 @@ In each case, it was felt that there were **minimal variation** between the orig
 
 ## Figure 2
 
-Original figure:
+Original figure (@allen_simulation_2020):
 
 ![](../original_study/article_fig2.png){width=70% fig-align="center"}
 
@@ -18,7 +19,7 @@ Reproduction:
 
 ## Figure 3
 
-Original figure:
+Original figure (@allen_simulation_2020):
 
 ![](../original_study/article_fig3.png){width=70% fig-align="center"}
 
@@ -28,7 +29,7 @@ Reproduction:
 
 ## Figure 4
 
-Original figure:
+Original figure (@allen_simulation_2020):
 
 ![](../original_study/article_fig4.png){width=70% fig-align="center"}
 

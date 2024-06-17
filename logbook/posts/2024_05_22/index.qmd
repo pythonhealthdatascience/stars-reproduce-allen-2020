@@ -3,6 +3,7 @@ title: "Day 1"
 author: "Amy Heather"
 date: "2024-05-22"
 categories: [setup, read, scope]
+bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
@@ -79,13 +80,13 @@ Read article, making notes in `study_summary.qmd` (initially rough notes, then t
 * Defined period (e.g. one year). Patients progress through phases of COVID (negative, positive, some with inpatient care, recovred, died). In each COVID state, model seeks to put them in appropriate unit and session, opening COVID-positive sessions in units that allow it. COVID-positive don't mis with others.
 * Run 30 times, show median and extremes.
 
-![Patient pathway figure from Allen et al. 2020](../../../original_study/article_fig1.png){width=50%}
+![Patient pathway figure from @allen_simulation_2020](../../../original_study/article_fig1.png){width=50%}
 
 * All patients receive dialysis 3 times a week. Each patient starts on either Monday or Tuesday.
 * Have proportion of patients either fixed or sampled from stochastic distribution for phases of COVID state and care.
 * COVID seperate from uninfected and recovered.
 
-![Baseline model parameters from Allen et al. 2020](../../../original_study/article_tab1.png){width=50%}
+![Baseline model parameters from @allen_simulation_2020](../../../original_study/article_tab1.png){width=50%}
 
 For allocation to units, use search strategy:
 
@@ -109,11 +110,11 @@ COVID positive converted back to COVID negative when no longer needed.
 * Reduces workflow in units not taking COVID positive patients.
 * Displaced patients typically need 20 extra minutes to get to temporary care place (sometimes 50 minutes)
 
-![Figure 2](../../../original_study/article_fig2.png){width=50%}
+![Figure 2 - @allen_simulation_2020](../../../original_study/article_fig2.png){width=50%}
 
-![Figure 3](../../../original_study/article_fig3.png){width=50%}
+![Figure 3 - @allen_simulation_2020](../../../original_study/article_fig3.png){width=50%}
 
-![Figure 4](../../../original_study/article_fig4.png){width=50%}
+![Figure 4 - @allen_simulation_2020](../../../original_study/article_fig4.png){width=50%}
 
 **Discusion:**
 

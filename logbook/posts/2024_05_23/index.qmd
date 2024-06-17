@@ -3,6 +3,7 @@ title: "Day 2"
 author: "Amy Heather"
 date: "2024-05-23"
 categories: [read, reproduce]
+bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
@@ -182,7 +183,7 @@ Updated the files accordingly.
 
 ### 14.19-15.12 Reproduction
 
-Original:
+Original (@allen_simulation_2020):
 
 <img src="../../../original_study/article_fig4.png" width="500" />
 
@@ -197,7 +198,7 @@ Run 2:
 * Ran again and compared images to see if its varying between runs - it looked quite different! I saved each under new file names so not overwritten
 * Model parameters input in the notebook look to match the paper (Table 1). Its 30 replications as in the paper too.
 
-![Table 1](../../../original_study/article_tab1.png)
+![Table 1 - @allen_simulation_2020](../../../original_study/article_tab1.png)
 
 ```
 number_of_replications = 30
@@ -251,7 +252,7 @@ Change random_state in parameters.py from None to having a value for each in the
 * NormalParams 1
 * UniformParams 2
 
-Original:
+Original (@allen_simulation_2020):
 
 <img src="../../../original_study/article_fig4.png" width="500" />
 

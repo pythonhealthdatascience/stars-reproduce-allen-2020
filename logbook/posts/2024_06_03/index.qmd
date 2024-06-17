@@ -3,6 +3,7 @@ title: "Day 4"
 author: "Amy Heather"
 date: "2024-06-03"
 categories: [reproduce]
+bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
@@ -75,7 +76,7 @@ Examples of differences to spot between them:
 * Interval of green line in Figure 2
 
 ::: {layout-ncol=3}
-Original Figure 2:
+Original Figure 2 (@allen_simulation_2020):
 <img src="../../../original_study/article_fig2.png" />
 
 Base 2700:
@@ -86,7 +87,7 @@ Base 2100:
 :::
 
 ::: {layout-ncol=3}
-Original Figure 3:
+Original Figure 3 (@allen_simulation_2020):
 <img src="../../../original_study/article_fig3.png" width="500" />
 
 Base 2700:
@@ -97,7 +98,7 @@ Base 2100:
 :::
 
 ::: {layout-ncol=3}
-Original Figure 4:
+Original Figure 4 (@allen_simulation_2020):
 <img src="../../../original_study/article_fig4.png" width="500" />
 
 Base 2700:
