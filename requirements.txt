@@ -8,3 +8,7 @@ plotly==5.22.0
 # as decided that overlay is not the right approach
 opencv-python==4.9.0.80
 matplotlib==3.9.0
+
+# 17 June 2024: Tenacity (one of the dependencies of the above) released 8.4.0
+# today which breaks langchain, so force to use 8.3.0
+tenacity==8.3.0
