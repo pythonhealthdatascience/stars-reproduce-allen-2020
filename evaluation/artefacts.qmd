@@ -10,6 +10,8 @@ This page evaluates the extent to which the original study meets the recommendat
 
 ## Best practice audit
 
+**Note: This was removed from the protocol after this test-run due to overlap with the STARS framework, which was designed to build on these criteria**
+
 Of the **11** items in this audit:
 
 * **9** were met fully (✅)
